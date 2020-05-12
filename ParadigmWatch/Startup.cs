@@ -24,7 +24,7 @@ namespace ParadigmWatch
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // WE WILL ENABLES THIS AGAIN ONCE WE HAVE A DATABASE READY :)
+            // WE WILL ENABLES THIS AGAIN ONCE WE HAVE A DATABASE READY :)  
             //services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
 
