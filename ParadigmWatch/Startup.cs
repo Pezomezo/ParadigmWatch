@@ -10,7 +10,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+/// <summary>
+/// /TESTER
+/// </summary>
 namespace ParadigmWatch
 {
     public class Startup
@@ -24,7 +26,7 @@ namespace ParadigmWatch
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // WE WILL ENABLES THIS AGAIN ONCE WE HAVE A DATABASE READY :)
+            // WE WILL ENABLES THIS AGAIN ONCE WE HAVE A DATABASE READY :)  
             //services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
 
