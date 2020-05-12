@@ -10,7 +10,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+/// <summary>
+/// /TESTER
+/// </summary>
 namespace ParadigmWatch
 {
     public class Startup
