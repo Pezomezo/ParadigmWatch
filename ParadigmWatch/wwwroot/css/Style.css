@@ -1,0 +1,270 @@
+﻿body {
+    background-color: #1F2125;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+/* #C3A261 */
+h4{
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+}
+
+
+
+#page {
+    grid-template-columns: repeat(10, 1fr );
+    grid-template-rows: auto auto auto auto 50vh;
+    display: grid;
+
+}
+#hero {
+    grid-column: 1/11;
+    grid-row: 1/2;
+    height: 100vh;
+
+}
+.heroContent {
+    position: absolute;
+    grid-template-columns: repeat(10, 9.914vw );
+    grid-template-rows: repeat(10, 10vh);
+    display: grid;
+    z-index: 1;
+}
+
+.slider {
+    overflow: hidden;
+    position: relative;
+    width:1fr;
+    height: 100vh;
+}
+.content {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sliderText {
+    position: absolute;
+    z-index: 1;
+    font-size: 15vw;
+    color: #C3A261;
+    margin:0;
+}
+.sliderImg {
+    position: absolute;
+    z-index: 2;
+    max-width: 25vw;
+}
+
+
+    #slide1 {
+        left: 0px;
+        z-index: -1;
+        background-image: url(/Images/ApolloBackground.jpg);
+        background-size: cover;
+    }
+#slide2 {
+    z-index: -1;
+    background-image: url(/Images/ApolloBackground.jpg);
+    background-size: cover;
+}
+
+.sideText {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.bigParagraph {
+    margin: 0 0 0 8vw;
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+}
+
+.bigThinParagraph {
+    margin: 0px 0 0px 9vw;
+    transform: rotate(-90deg);
+    transform-origin: bottom left;
+    font-weight: 300;
+}
+.slideCounter {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 100px;
+    width: 100%;
+    grid-column: 9/10;
+}
+#currentSlide{
+    font-size: 5rem;
+    
+}
+.classesRemaining{
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+
+
+
+.slideDetails {
+    grid-column: 3 / 10;
+    grid-row: 1/9;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+.productShort {
+    font-weight: 300;
+}
+
+.navigationLinks {
+    grid-column: 3 / 11;
+    grid-row: 9/10;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-self: flex-end;
+}
+    .navigationLinks > a {
+        color: white;
+        margin-right: 40vw;
+        text-decoration: none;
+    }
+.slideController {
+    position: absolute;
+    grid-column: 9/10;
+    grid-row: 8/9;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+}
+.slideControllerButtons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.sliderControlLabel{
+    margin: 10px 10px 0 10px ;
+}
+
+.control {
+    width: 50px;
+    height: 50px;
+    border: solid 2px #C3A261;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productTitle {
+    font-size: 2em;
+    color: #C3A261;
+}
+#disclaimer {
+    grid-column: 1/ 2;
+    grid-row: 2/3;
+    background-color: darkgray;
+}
+
+#productDisplay {
+    grid-column: 1/11;
+    grid-row: 3/4;
+    background-color: chocolate;
+}
+
+#premise {
+    grid-column: 1/11;
+    grid-row: 4/5;
+    background-color: aqua;
+}
+
+footer {
+    grid-column: 1/11;
+    grid-row: 5/6;
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+
+
+    .bigParagraph {
+        margin: 0 0 -0.75vw 8vw;
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+        font-size: 1.5em;
+    }
+
+    .bigThinParagraph {
+        margin: 0px 0 0 9vw;
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+        font-size: 1.2em;
+    }
+
+    a {
+        font-size: 1.5em;
+    }
+
+    .slideDetails {
+        grid-column: 2 / 4;
+        grid-row: 1/10;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+    }
+
+    .navigationLinks {
+        grid-column: 7 / 10;
+        grid-row: 7/10;
+        width: 100%;
+        position: absolute;
+        display: inline-flex;
+        justify-content: space-between;
+        align-self: flex-end;
+    }
+
+        .navigationLinks > a {
+            color: white;
+            margin-right: 0px;
+            white-space: nowrap;
+            height: 5vh;
+            display: flex;
+            align-items: center;
+        }
+
+    .slideController {
+        display: flex;
+        justify-self: flex-end;
+        align-self: flex-end;
+        width: 100%;
+    }
+
+    .navigationLinks > a:last-child {
+        width: 12vw;
+        height: 5vh;
+        border-radius: 500px;
+        display: flex;
+        justify-content: center;
+        background-color: #C3A261;
+    }
+}
