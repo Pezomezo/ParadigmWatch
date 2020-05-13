@@ -2,13 +2,52 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700" rel="stylesheet" />
+
+    <link href="~/css/Style.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div class="container">
+   
+    <div id="page">
+        <nav>
+            <ul>
+                <li>Home</li>
+            </ul>
+        </nav>
+
+
         @RenderBody()
+
+
+        <footer>
+            <div id="share">
+                <h3 class="subTitle"></h3>
+                <ul class="SocialMediaIcons">
+                    <li class="MediaLink"></li>
+                    <li class="MediaLink"></li>
+                    <li class="MediaLink"></li>
+                    <li class="MediaLink"></li>
+                    <li class="MediaLink"></li>
+                </ul>
+
+            </div>
+            <div id="footerContent">
+                <ul id="footerlinks">
+                    <li class="footerLinkItem"></li>
+                    <li class="footerLinkItem"></li>
+                    <li class="footerLinkItem"></li>
+                    <li class="footerLinkItem"></li>
+                </ul>
+                <ul id="footerContacts">
+                    <li class="footerContactsItem"></li>
+                    <li class="footerContactsItem"></li>
+                    <li class="footerContactsItem"></li>
+                </ul>
+            </div>
+        </footer>
     </div>
+
 </body>
 </html>
