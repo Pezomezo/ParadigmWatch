@@ -10,6 +10,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ParadigmWatch.Data;
+using ParadigmWatch.Models;
 /// <summary>
 /// /TESTER
 /// </summary>
@@ -27,19 +29,20 @@ namespace ParadigmWatch
         public void ConfigureServices(IServiceCollection services)
         {
             // WE WILL ENABLES THIS AGAIN ONCE WE HAVE A DATABASE READY :)  
-            //services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
+            services.AddDbContext<ParadigmWatchContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
 
-            //services.AddIdentity<AppUser, IdentityRole>(opts => {
-            //    opts.User.RequireUniqueEmail = true;
-            //    //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
-            //    opts.Password.RequiredLength = 6;
-            //    opts.Password.RequireNonAlphanumeric = false;
-            //    opts.Password.RequireLowercase = false;
-            //    opts.Password.RequireUppercase = false;
-            //    opts.Password.RequireDigit = false;
-            //}).AddEntityFrameworkStores<AppIdentityDbContext>()
-            //.AddDefaultTokenProviders();
+            services.AddIdentity<AppUser, IdentityRole>(opts =>
+            {
+                opts.User.RequireUniqueEmail = true;
+                //opts.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz";
+                opts.Password.RequiredLength = 6;
+                opts.Password.RequireNonAlphanumeric = false;
+                opts.Password.RequireLowercase = false;
+                opts.Password.RequireUppercase = false;
+                opts.Password.RequireDigit = false;
+            }).AddEntityFrameworkStores<ParadigmWatchContext>()
+            .AddDefaultTokenProviders();
 
             //services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Users/Login");
 
