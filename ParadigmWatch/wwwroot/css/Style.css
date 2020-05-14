@@ -194,25 +194,6 @@ nav {
 }
 
 
-    #slide1 {
-        left: 0px;
-        z-index: -1;
-        background-image: url(/Images/apolloBackground.jpg);
-        background-size: cover;
-    }
-#slide2 {
-    left: 0px;
-    z-index: -2;
-    background-image: url(/Images/apolloBackground.jpg);
-    background-size: cover;
-}
-#slide3 {
-    left: 0px;
-    z-index: -3;
-    background-image: url(/Images/apolloBackground.jpg);
-    background-size: cover;
-}
-
 .sideText {
     position: absolute;
     width: 100%;
