@@ -37,14 +37,27 @@ namespace ParadigmWatch.Infrastructure
             WatchPart Hooks = new WatchPart() { Id = 5, Name = "Hooks", TextureMap = MetalicTexture, Shader = baseShader };
 
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
-            Watch SimpleWatch = new Watch() { Id = 1, Name = "The Basic", Description = "This is a basic model you can configure it to your liking", ModelPath = "Models/somethibg", Price = 100.50m };
+            Watch SimpleWatch = new Watch() { Id = 1, Name = "Apollo", Description = "This is a basic model you can configure it to your liking", WatchImagePath = "Apollo.png", ModelPath = "Models/somethibg", Price = 100.50m };
+            SimpleWatch.AddComponent(Sleeves);
+            SimpleWatch.AddComponent(Pointers);
+            SimpleWatch.AddComponent(BackSide);
+            SimpleWatch.AddComponent(BodyPart);
+            SimpleWatch.AddComponent(Hooks);
+            // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
+            Watch JunoWatch = new Watch() { Id = 1, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
+            SimpleWatch.AddComponent(Sleeves);
+            SimpleWatch.AddComponent(Pointers);
+            SimpleWatch.AddComponent(BackSide);
+            SimpleWatch.AddComponent(BodyPart);
+            SimpleWatch.AddComponent(Hooks);
+            // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
+            Watch MercuryWatch = new Watch() { Id = 1, Name = "Mercury", Description = "A bald statemnt. That is how I would describe this watch.", WatchImagePath = "Mercury.png", ModelPath = "Models/somethibg", Price = 100.50m };
             SimpleWatch.AddComponent(Sleeves);
             SimpleWatch.AddComponent(Pointers);
             SimpleWatch.AddComponent(BackSide);
             SimpleWatch.AddComponent(BodyPart);
             SimpleWatch.AddComponent(Hooks);
 
-             
             // Create a User
             AppUser Adamka = new AppUser() { Id = "sdfghjklélkjhgfd", UserName = "Adamka", Email = "pezolino19@gmail.com", City = "Pomáz", Address = "Ond utca 9", ZipCode = 2013, CreditCard = "You wish;)" };
 
@@ -55,6 +68,8 @@ namespace ParadigmWatch.Infrastructure
 
             // Place them into the Watches List so we can access them in the code :)
             Watches.Add(SimpleWatch);
+            Watches.Add(JunoWatch);
+            Watches.Add(MercuryWatch);
 
             // Place the invoices into the list so we can access them through the program :)
             invoices.Add(AdamkaInvoice);
