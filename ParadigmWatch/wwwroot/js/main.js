@@ -10,14 +10,6 @@ let sliderCounter = 0;
 
 let sliderTexts = document.getElementsByClassName('sliderText');
 
-/*
- 
-  left: 0px;
-        z-index: -1;
-        background-image: url(/Images/apolloBackground.jpg);
-        background-size: cover;
- 
- */
 
 
 for (let sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
