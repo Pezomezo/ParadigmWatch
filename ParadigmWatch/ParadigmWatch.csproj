@@ -29,7 +29,6 @@
     <Folder Include="wwwroot\Images\" />
     <Folder Include="Controllers\" />
     <Folder Include="Migrations\" />
-    <Folder Include="wwwroot\" />
 
   </ItemGroup>
 

@@ -27,8 +27,8 @@
 
             <div class="slideController">
                 <div class="slideControllerButtons">
-                    <div class="control"><</div>
-                    <div class="control">></div>
+                    <div id="back" class="control"><</div>
+                    <div id="next" class="control">></div>
                 </div>
                 <div class="slideControllerButtons">
                     <p class="lightParagraph sliderControlLabel">Back</p>
@@ -49,15 +49,26 @@
         </div>
         <div class="slider">
             <div class="content wrapper">
-                <img class="sliderImg" src="~/Images/Apollo.png" alt="Apollo" />
-                <h2 class="sliderText">APOLLO</h2>
+                <div class="sliderElement" id="slide1">
+                    <img class="sliderImg" src="~/Images/Apollo.png" alt="Apollo" />
+                    <h2 class="sliderText">APOLLO</h2>
+                </div>
+            </div>
 
-                <div class="content" id="slide1"></div>
-            </div>
             <div class="content wrapper">
-                <h2 class="sliderText">APOLLO</h2>
-                <div class="content" id="slide1"></div>
+                <div class="sliderElement" id="slide2">
+                    <img class="sliderImg" src="~/Images/Apollo.png" alt="Apollo" />
+                    <h2 class="sliderText">MERCURY</h2>
+                </div>
             </div>
+
+            <div class="content wrapper">
+                <div class="sliderElement" id="slide3">
+                    <img class="sliderImg" src="~/Images/Apollo.png" alt="Apollo" />
+                    <h2 class="sliderText">JUNO</h2>
+                </div>
+            </div>
+
         </div>
 
 
