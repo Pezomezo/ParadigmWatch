@@ -1,0 +1,70 @@
+﻿@using ParadigmWatch.Models;
+@model IEnumerable<Watch>
+
+@{
+    ViewData["Title"] = Model.ToList()[0].Name;
+}
+
+<section id="ProductShow">
+    <div class="ShowContainer">
+        <div class="showTop">
+            <p id="location">A > B > C</p>
+        </div>
+        <div class="showDown">
+            <h1 class="title">@Model.ToList()[0].Name</h1>
+            <p class="price">@Model.ToList()[0].Price $</p>
+            <div class="detailsContainer">
+                <p class="description">@Model.ToList()[0].Description</p>
+                <div class="navigationLinksShow">
+                    <a href="#" class="secondaryLink">Learn More</a>
+                    <a href="#" class="primaryLink">Build your own</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="imageCenter">
+        <img class="sliderImg" src="~/Images/@Model.ToList()[0].WatchImagePath" alt="@Model.ToList()[0].Name" />
+
+    </div>
+    
+</section>
+
+<section id="HighlightComponent">
+    <div class="hlContainer">
+        <h2 class="hlTitle">@Model.ToList()[0].WatchComponents.ToList()[0].TextureMap.TextureName</h2>
+        <p class="hlDesc">@Model.ToList()[0].WatchComponents.ToList()[0].TextureMap.TextureDesc</p>
+    </div>
+
+    
+</section>
+
+<section id="components">
+    @for (int i = 3; i < 6; i++)
+    {
+        <div class="component">
+            <h3 class="compTitle">@Model.ToList()[0].WatchComponents.ToList()[i].TextureMap.TextureName</h3>
+            <p class="compDesc">@Model.ToList()[0].WatchComponents.ToList()[i].TextureMap.TextureDesc</p>
+        </div>
+    }
+
+
+</section>
+
+<section id="recommendations">
+    <h3>You may also like</h3>
+    <div class="productsRec">
+        @foreach (var item in Model)
+        {
+            <div class="productContainer">
+                <a class="productImage">
+                    <img src="~/Images/@item.WatchImagePath" alt="" />
+                </a>
+                <div class="productDescription">
+                    <h2>@item.Name</h2>
+                    <p>@item.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+</section>
