@@ -12,7 +12,7 @@ let sliderCounter = 0;
 nextButton.addEventListener('click', () => {
     if (sliderCounter < 2) {
 
-        let currentSlider = document.getElementById(`slide${sliderCounter + 1}`)
+        let currentSlider = document.getElementById(`${sliderCounter + 1}`)
         currentSlider.style.transition = '1s'
         currentSlider.style.left = '-100vw'
 
@@ -21,7 +21,7 @@ nextButton.addEventListener('click', () => {
         console.log(sliderCounter)
     } else {
         for (let i = 0; i < slides.length; i++) {
-            let slider = document.getElementById(`slide${i+1}`)
+            let slider = document.getElementById(`${i+1}`)
             slider.style.left = '0px'
             sliderCounter = 0;
             currentSlide.textContent = `01`
@@ -32,7 +32,7 @@ nextButton.addEventListener('click', () => {
 backButton.addEventListener('click', () => {
     if (sliderCounter > 0) {
 
-        let currentSlider = document.getElementById(`slide${sliderCounter}`)
+        let currentSlider = document.getElementById(`${sliderCounter}`)
         currentSlider.style.transition = '1s'
         currentSlider.style.left = '0px'
 
@@ -41,7 +41,7 @@ backButton.addEventListener('click', () => {
         console.log(sliderCounter)
     } else {
         for (let i = 0; i < slides.length - 1; i++) {
-            let slider = document.getElementById(`slide${i+1}`)
+            let slider = document.getElementById(`${i+1}`)
             slider.style.left = '-100vw'
             sliderCounter = 2;
             currentSlide.textContent = `03`

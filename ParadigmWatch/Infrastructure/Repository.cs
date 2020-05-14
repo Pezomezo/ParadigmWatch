@@ -44,14 +44,14 @@ namespace ParadigmWatch.Infrastructure
             SimpleWatch.AddComponent(BodyPart);
             SimpleWatch.AddComponent(Hooks);
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
-            Watch JunoWatch = new Watch() { Id = 1, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
+            Watch JunoWatch = new Watch() { Id = 2, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
             SimpleWatch.AddComponent(Sleeves);
             SimpleWatch.AddComponent(Pointers);
             SimpleWatch.AddComponent(BackSide);
             SimpleWatch.AddComponent(BodyPart);
             SimpleWatch.AddComponent(Hooks);
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
-            Watch MercuryWatch = new Watch() { Id = 1, Name = "Mercury", Description = "A bald statemnt. That is how I would describe this watch.", WatchImagePath = "Mercury.png", ModelPath = "Models/somethibg", Price = 100.50m };
+            Watch MercuryWatch = new Watch() { Id = 3, Name = "Mercury", Description = "A bald statemnt. That is how I would describe this watch.", WatchImagePath = "Mercury.png", ModelPath = "Models/somethibg", Price = 100.50m };
             SimpleWatch.AddComponent(Sleeves);
             SimpleWatch.AddComponent(Pointers);
             SimpleWatch.AddComponent(BackSide);
