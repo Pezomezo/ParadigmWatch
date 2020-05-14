@@ -733,4 +733,138 @@ footer {
         width: 20%;
     }
 
+
 }
+
+/*------------------------------------------------------------------------------------------------------------*/
+
+#storeDisclaimer {
+    grid-column: 1/11;
+    grid-row: 1/2;
+    background: linear-gradient(0deg, #1F2125 0%, #343841 100%);
+    height: 35vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#storeProductDisplay {
+    grid-column: 1/11;
+    grid-row: 2/3;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.storeProducts {
+    /*display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    flex-direction: row;*/
+    margin-top: calc(10% - 2rem);
+    flex-wrap: wrap;
+    flex: 1 1 calc(50% - 2rem);
+}
+
+.storeProductContainer:nth-child(odd) {
+    grid-column: 1 / 11;
+    grid-row: 3/ 4;
+    width: 80vw;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin: 15px 0 15px 0;
+}
+
+.storeProductContainer {
+    grid-column: 1 / 11;
+    grid-row: 3/ 4;
+    width: 80vw;
+    display: flex;
+    justify-content: space-around;
+    margin: 15px 0 15px 0;
+}
+
+.storeProductImage {
+    width: 15%;
+    height: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+    .storeProductImage > img {
+        max-width: 20%;
+        transition: 1s;
+        position: absolute;
+    }
+
+        .storeProductImage > img:hover {
+            max-width: 22%;
+        }
+
+.storeProductDescription {
+    display: flex;
+    width: 100%;
+    height: 35vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: linear-gradient(90deg, #1F2125 0%, #343841 100%);
+    padding: 0 25px 0 25px;
+    border-radius: 500px;
+}
+
+.storeProductDescription:nth-child(2n+1) {
+    display: flex;
+    width: 100%;
+    height: 35vh;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    background: linear-gradient(90deg, #1F2125 0%, #343841 100%);
+    padding: 0 25px 0 25px;
+    border-radius: 500px;
+}
+
+    .storeProductDescription > h2 {
+        margin-bottom: 25px;
+    }
+
+.storeShop {
+    width: 150px;
+    height: 50px;
+    border-radius: 300px;
+    border: none;
+    background-color: #C3A261;
+    font-weight: 700;
+    color: white;
+    margin: 25px 0 0 25px;
+    cursor: pointer;
+}
+
+    .storeShop:hover {
+        background-color: white;
+        color: #C3A261;
+    }
+
+
+.storeButtonsList {
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 35px 0 5px 0;
+}
+
+.storeWatchName {
+    position: relative;
+    font-size: 4vw;
+    color: #C3A261;
+    margin: 0;
+}
+
