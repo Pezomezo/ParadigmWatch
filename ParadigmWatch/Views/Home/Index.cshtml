@@ -1,29 +1,31 @@
-﻿
+﻿@using ParadigmWatch.Models;
+@model IEnumerable<Watch>
 @{
     ViewData["Title"] = "Paradigm watch";
 }
 
-    <section id="hero">
+<section id="hero">
 
 
-        <div class="heroContent">
-            <aside class="sideText">
-                <div class="sideTextContainer">
-                    <h4 class="bigParagraph">Award winning</h4>
-                    <p class="bigThinParagraph">By GTFO congress</p>
-                </div>
-                <div class="sideTextContainer">
-                    <h4 class="bigParagraph">Swiss design</h4>
-                    <p class="bigThinParagraph">3000 moving parts</p>
-                </div>
-
-            </aside>
-
-
-            <div class="slideCounter">
-                <p id="currentSlide">01</p>
-                <p class="classesRemaining">/03</p>
+    <div class="heroContent">
+        <aside class="sideText">
+            <div class="sideTextContainer">
+                <h4 class="bigParagraph">Award winning</h4>
+                <p class="bigThinParagraph">By GTFO congress</p>
             </div>
+            <div class="sideTextContainer">
+                <h4 class="bigParagraph">Swiss design</h4>
+                <p class="bigThinParagraph">3000 moving parts</p>
+            </div>
+
+        </aside>
+
+
+        <div class="slideCounter">
+            <p id="currentSlide">01</p>
+            <p class="classesRemaining">/03</p>
+        </div>
+
 
             <div class="slideController">
                 <div class="slideControllerButtons">
@@ -34,19 +36,21 @@
                     <p class="lightParagraph sliderControlLabel">Back</p>
                     <p class="lightParagraph sliderControlLabel">Next</p>
                 </div>
-            </div>
 
-
-            <div class="slideDetails">
-                <h2 class="productTitle">Apollo</h2>
-                <p class="productShort">“MY AMAZING MOTTO IS SO GREAT, THAT IS UNSPEAKABLE”</p>
-            </div>
-
-            <div class="navigationLinks">
-                <a href="#" class="secondaryLink">Learn More</a>
-                <a href="#" class="primaryLink">Build your own</a>
             </div>
         </div>
+
+
+        <div class="slideDetails">
+            <h2 class="productTitle">Apollo</h2>
+            <p class="productShort">“MY AMAZING MOTTO IS SO GREAT, THAT IS UNSPEAKABLE”</p>
+        </div>
+
+        <div class="navigationLinks">
+            <a href="#" class="secondaryLink">Learn More</a>
+            <a href="#" class="primaryLink">Build your own</a>
+        </div>
+
         <div class="slider">
             <div class="content wrapper">
                 <div class="sliderElement" id="slide1">
@@ -69,12 +73,15 @@
                 </div>
             </div>
 
+
+
         </div>
+    </div>
 
 
 
 
-    </section>
+</section>
 
 @* ______________________________________            NEW SECTION           _________________________________________________ *@
 
@@ -119,7 +126,7 @@
             </div>
             <div class="sortBy">
                 <label for="sortOrder" class="selector">Select by:</label>
-                <select  id="sortOrder">
+                <select id="sortOrder">
                     <option value="A-Z">A to Z</option>
                     <option value="A-Z">Z to A</option>
                 </select>
@@ -128,35 +135,18 @@
         <div class="separator"></div>
     </div>
     <div class="products">
-        <div class="productContainer">
-            <a class="productImage">
-                <img src="~/Images/Apollo.png" alt="" />
-            </a>
-            <div class="productDescription">
-                <h2>Apollo</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. Nullam convallis, velit eu varius bibendum, lectus justo consequat tortor, sed</p>
+        @foreach (var item in Model)
+        {
+            <div class="productContainer">
+                <a class="productImage">
+                    <img src="~/Images/@item.WatchImagePath" alt="" />
+                </a>
+                <div class="productDescription">
+                    <h2>@item.Name</h2>
+                    <p>@item.Description</p>
+                </div>
             </div>
-        </div>
-        @*  *@
-        <div class="productContainer">
-            <a class="productImage">
-                <img src="~/Images/Apollo.png" alt="" />
-            </a>
-            <div class="productDescription">
-                <h2>Apollo</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. Nullam convallis, velit eu varius bibendum, lectus justo consequat tortor, sed</p>
-            </div>
-        </div>        
-        <div class="productContainer">
-            <a class="productImage">
-                <img src="~/Images/Apollo.png" alt="" />
-            </a>
-            <div class="productDescription">
-                <h2>Apollo</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. Nullam convallis, velit eu varius bibendum, lectus justo consequat tortor, sed</p>
-            </div>
-        </div>
-        @*  *@
+        }
     </div>
     <button class="shop">Go to shop</button>
 </section>
@@ -165,9 +155,11 @@
 
 <section id="premise">
     <h3 class="disclaimer"> Premise</h3>
-    <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. <br />
-    Nullam convallis, velit eu varius bibendum, lectus justo consequat tortor, sed commodo enim augue ut lectus. Vestibulum a <br />
-    blandit sapien id, sagittis orci. Praesent sed orci nec tortor efficitur varius. Sed tempor massa nec lorem sagittis, ac.</p>
+    <p class="text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. <br />
+        Nullam convallis, velit eu varius bibendum, lectus justo consequat tortor, sed commodo enim augue ut lectus. Vestibulum a <br />
+        blandit sapien id, sagittis orci. Praesent sed orci nec tortor efficitur varius. Sed tempor massa nec lorem sagittis, ac.
+    </p>
 </section>
 
 @* ______________________________________            NEW SECTION           _________________________________________________ *@
