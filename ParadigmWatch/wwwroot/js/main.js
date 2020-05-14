@@ -11,12 +11,20 @@ let sliderCounter = 0;
 let sliderTexts = document.getElementsByClassName('sliderText');
 
 
-for (let sliderCount = 0; sliderCount < sliderTexts.length; sliderCount++) {
-    let currentSlider = document.getElementById(`slide${sliderCount + 1}`)
+
+for (let sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
+    let currentSlider = document.getElementById(`${sliderCount }`)
     
-    let currentText = sliderTexts[sliderCount].textContent.toLowerCase();
+    let currentText = sliderTexts[sliderCount -1].textContent.toLowerCase();
+
+    currentSlider.style.zIndex = `${sliderCount * -1}`
+    currentSlider.style.left = '0px'
+    currentSlider.style.backgroundSize = 'cover'
     currentSlider.style.backgroundImage = `url(/Images/${currentText}Background.jpg)`
     console.log(`url(/Images/${currentText}Background.jpg)`)
+
+    console.log(document.getElementById(`${sliderCount + 1}`))
+
 }
 
 
