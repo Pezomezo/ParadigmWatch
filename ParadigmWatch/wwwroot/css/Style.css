@@ -8,6 +8,9 @@
 h1, h2, h3, h4, h5, h6, p {
     margin: 0;
 }
+ul{
+    list-style: none;
+}
 
 /* #C3A261 */
 h4{
@@ -16,15 +19,115 @@ h4{
 
 nav {
     position: fixed;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    left: 0%;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 3;
+    background-color: rgba(0,0,0,0);
+}
+
+.mobileContainer {
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: flex-start;
+    width: 70%;
+    height: 100vh;
+    justify-content: center;
+    display: none;
+}
+
+.burgerMenu{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.line{
+    width: 100%;
+    height: 10px;
+    background-color: white;
 }
 
 
 
+.logo {
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    width: 8.5%;
+    justify-content: flex-end;
+}
+.logo > h2{
+    font-size: 1rem;
+    font-weight: 400;
+
+}
+.logo > img{
+    height: 25px;
+    max-width: 100%;
+}
+
+
+
+
+.navigation {
+    display: inline-flex;
+    width: 40%;
+    height: 100vh;
+    justify-content: center;
+    padding: 0;
+    flex-direction: column;
+    
+}
+.navigationItem > a {
+    color: #1F2125;
+    text-decoration: none;
+    font-weight: 700;
+}
+.navigationItem {
+    margin-bottom: 50px;
+    padding: 5px;
+}
+    .navigationItem:hover {
+        background-color: white;
+        color: #C3A261;
+    }
+
+
+.login {
+    display: inline-flex;
+    justify-content: center;
+    padding: 0;
+    flex-direction: column;
+    height: 100vh;
+}
+.loginItem {
+    margin-left: 50px;
+    margin-bottom: 50px;
+    padding: 5px;
+}
+    .loginItem > a {
+        color: #1F2125;
+        text-decoration: none;
+        font-weight: 700;
+    }
+.loginItem:hover {
+    background-color: white;
+    color: #C3A261;
+}
+
 #page {
     grid-template-columns: repeat(10, 1fr );
-    grid-template-rows: auto auto auto auto 50vh;
+    grid-template-rows: auto auto auto auto auto;
     display: grid;
-
 }
 #hero {
     grid-column: 1/11;
@@ -57,14 +160,14 @@ nav {
 .sliderText {
     position: absolute;
     z-index: 1;
-    font-size: 15vw;
+    font-size: 25vw;
     color: #C3A261;
     margin:0;
 }
 .sliderImg {
     position: absolute;
     z-index: 2;
-    max-width: 25vw;
+    max-width: 50vw;
 }
 
 
@@ -97,7 +200,7 @@ nav {
 }
 
 .bigThinParagraph {
-    margin: 0px 0 0px 9vw;
+    margin: 0px 0px 0px 12vw;
     transform: rotate(-90deg);
     transform-origin: bottom left;
     font-weight: 300;
@@ -132,6 +235,7 @@ nav {
 }
 .productShort {
     font-weight: 300;
+
 }
 
 .navigationLinks {
@@ -143,6 +247,7 @@ nav {
     align-self: flex-end;
 }
     .navigationLinks > a {
+        white-space: nowrap;
         color: white;
         margin-right: 40vw;
         text-decoration: none;
@@ -179,50 +284,300 @@ nav {
     color: #C3A261;
 }
 #disclaimer {
-    grid-column: 1/ 2;
+    grid-column: 1/ 11;
     grid-row: 2/3;
-    background-color: darkgray;
+    background: linear-gradient(0deg, #1F2125 0%, #343841 100%);
+    height: 35vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content : center;
+}
+.disclaimer{
+    font-size: 2rem;
+}
+.text{
+    margin-top: 50px;
+    font-weight: 400;
 }
 
 #productDisplay {
-    grid-column: 1/11;
+    grid-column: 2/10;
     grid-row: 3/4;
-    background-color: chocolate;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.sortProduct{
+    width: 100%;
+}
+.sortContent {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.sortBy{
+    margin-bottom: 10px;
+}
+.sortType {
+    display: flex;
+    align-items: center;
+}
+.sortGrid {
+    width: 40px;
+    height: 40px;
+    border: solid 2px #C3A261;
+    margin-right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-#premise {
-    grid-column: 1/11;
-    grid-row: 4/5;
-    background-color: aqua;
+.sortGridRow{
+    
+    display: flex;
 }
+
+.sortGridBox {
+    width: 10px;
+    height: 10px;
+    background-color: #C3A261;
+    margin: 1px;
+}
+
+
+.sortList {
+    width: 40px;
+    height: 40px;
+    border: solid 2px #C3A261;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+
+.sortListBox {
+    width: 5px;
+    height: 5px;
+    background-color: #C3A261;
+    margin: 1px;
+}
+.sortListRectangle {
+    width: 15px;
+    height: 5px;
+    background-color: #C3A261;
+    margin: 1px;
+}
+
+#sortOrder {
+    width: 150px;
+    background-color: #1F2125;
+    color: #C3A261;
+    border: none;
+    margin-left: 25px;
+}
+.selector {
+    color: #C3A261;
+}
+
+.separator {
+    width: 100%;
+    
+    height: 2px;
+    background-color: #C3A261;
+}
+.products{
+    display: inline-flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+.productContainer {
+    width: 30%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.productImage > img {
+    max-width: 15%;
+    transition: 1s;
+    position: absolute;
+}
+
+.productImage > img:hover{
+    max-width: 16%;
+}
+
+.productDescription {
+    display: flex;
+    width: 40%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #1F2125 0%, #343841 100%);
+    padding: 0 25px 0 25px;
+    border-radius: 15%;
+}
+.productDescription > h2 {
+    margin-bottom: 25px;
+}
+
+.shop {
+    width: 200px;
+    height: 50px;
+    border-radius: 500px;
+    border: none;
+    background-color: #C3A261;
+    font-weight: 700;
+    color: white;
+    margin: 50px 0 0 0;
+    cursor: pointer;
+}
+    .shop:hover {
+        background-color: white; 
+        color: #C3A261;
+    }
+
+
+
+
+    #premise {
+        grid-column: 1/11;
+        grid-row: 4/5;
+        background: linear-gradient(180deg, #1F2125 0%, #343841 100%);
+        height: 35vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
 footer {
     grid-column: 1/11;
     grid-row: 5/6;
+    background-color: #343841;
+    display: flex;
+    flex-direction: column;
+}
+#share{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.SocialMediaIcons {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    width: 20%;
+    justify-content: space-between;
+}
+.MediaLink {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #C3A261;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#footerContent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
 @media only screen and (min-width: 1200px) {
+    nav {
+        position: fixed;
+        display: inline-flex;
+        flex-direction: row;
+        width: 80%;
+        left: 10%;
+        justify-content: space-between;
+        align-items: flex-start;
+        z-index: 3;
+        background-color: rgba(0,0,0,0);
+    }
+    .burgerMenu {
+        display: none;
+        
+    }
 
+    .mobileContainer {
+        flex-direction: row;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 80%;
+        height: 100px;
+        margin-top: 25px;
+    }
+    .logo{
+        margin-top: 25px;
+    }
+    .navigation {
+        margin: 0;
+        display: inline-flex;
+        justify-content: space-between;
+        height: 100px;
+        flex-direction: row;
+    }
+    .navigationItem > a {
+        color: white;
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 1rem;
+    }
+    .navigationItem:hover {
+        background-color: rgba(0,0,0,0);
+    }
+    .login {
+        margin: 0;
+        display: inline-flex;
+        justify-content: space-between;
+        height: 100px;
+        flex-direction: row;
+    }
+    .loginItem {
+        margin-left: 30px;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
 
+        .loginItem > a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        .loginItem:hover {
+            background-color: rgba(0,0,0,0);
+        }
 
     .bigParagraph {
-        margin: 0 0 -0.75vw 8vw;
+        margin: 0 0 -1.2vw 8vw;
         transform: rotate(-90deg);
         transform-origin: bottom left;
         font-size: 1.5em;
     }
 
     .bigThinParagraph {
-        margin: 0px 0 0 9vw;
+        margin: 0px 0 5px 9vw;
         transform: rotate(-90deg);
         transform-origin: bottom left;
         font-size: 1.2em;
     }
 
-    a {
-        font-size: 1.5em;
-    }
+
 
     .slideDetails {
         grid-column: 2 / 4;
@@ -241,30 +596,55 @@ footer {
         display: inline-flex;
         justify-content: space-between;
         align-self: flex-end;
+        font-size: 1.5em;
+        font-weight: 700;
     }
 
-        .navigationLinks > a {
-            color: white;
-            margin-right: 0px;
-            white-space: nowrap;
-            height: 5vh;
+
+    .navigationLinks > a {
+        
+        margin-right: 0px;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        
+    }
+
+
+        .slideController {
             display: flex;
-            align-items: center;
+            justify-self: flex-end;
+            align-self: flex-end;
+            width: 100%;
         }
 
-    .slideController {
-        display: flex;
-        justify-self: flex-end;
-        align-self: flex-end;
-        width: 100%;
-    }
-
     .navigationLinks > a:last-child {
-        width: 12vw;
+        color: #1F2125;
+        width: 13vw;
         height: 5vh;
         border-radius: 500px;
         display: flex;
         justify-content: center;
-        background-color: #C3A261;
+        background-color: #4580D9;
+    }
+
+        .navigationLinks > a:last-child:hover {
+            color: #4580D9;
+            background-color: white;
+        }
+
+
+    .sliderText {
+        position: absolute;
+        z-index: 1;
+        font-size: 15vw;
+        color: #C3A261;
+        margin: 0;
+    }
+
+    .sliderImg {
+        position: absolute;
+        z-index: 2;
+        max-width: 25vw;
     }
 }
