@@ -13,7 +13,7 @@ namespace ParadigmWatch.Models
         public DateTime OrderDate { get; set; }
         [Column(TypeName = "float")]
         public decimal TotalPrice { get; set; }
-        public List<OrderItem> OrderItems { get; set; }
+        public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 
         public AppUser User { get; set; }
 
