@@ -24,6 +24,15 @@
                    <div class="line"></div>
                    <div class="line"></div>
                </div>
+
+               <ul>
+                   <li>
+                       <a asp-controller="Product" asp-action="Index"> Login </a>
+                       <a asp-controller="Customer" asp-action="Index"> Customers </a>
+                       <a asp-controller="Invoice" asp-action="Index"> Invoices </a>
+                       <a asp-controller="Cart" asp-action="Index"> Cart </a>
+                   </li>
+               </ul>
                <ul class="navigation">
                    <li class="navigationItem"><a href="#">Home</a></li>
                    <li class="navigationItem"><a href="#">Store</a></li>
@@ -33,7 +42,8 @@
                <ul class="login">
                    <li class="loginItem"><a href="#">&#9898; Cart</a></li>
                    <li class="loginItem"><a href="#">&#9898; Favorites</a></li>
-                   <li class="loginItem"><a href="#">Login / Register</a></li>
+                   @*<li class="loginItem"><a href="#">Login / Register</a></li>*@
+                   <li class="loginItem"><a asp-controller="Login" asp-action="Index">Login / Register</a></li>
                </ul>
            </div>
 
