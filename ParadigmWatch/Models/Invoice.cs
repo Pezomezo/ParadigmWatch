@@ -15,5 +15,15 @@ namespace ParadigmWatch.Models
         public decimal TotalPrice { get; set; }
         public List<OrderItem> OrderItems { get; set; }
 
+        public AppUser User { get; set; }
+
+        public Invoice()
+        {
+        }
+
+        public void AddOrderItem(Watch watch, int quantity)
+        {
+            this.OrderItems.Add(new OrderItem(watch, quantity));
+        }
     }
 }
