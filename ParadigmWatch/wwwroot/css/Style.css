@@ -885,7 +885,7 @@ footer {
 
 
 #storeProductDisplay {
-    grid-column: 1/11;
+    grid-column: 2/10;
     grid-row: 2/3;
     height: auto;
     display: flex;
@@ -894,65 +894,48 @@ footer {
 }
 
 .storeProducts {
-    /*display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
-    flex-direction: row;*/
-    margin-top: calc(10% - 2rem);
-    flex-wrap: wrap;
-    flex: 1 1 calc(50% - 2rem);
+    margin: 50px 0 50px 0;
+    display: flex;
+    grid-column: 1/ 11;
+    width: 80vw;
+    grid-row: 3/4;
+    flex-direction: column;
 }
 
-.storeProductContainer:nth-child(odd) {
-    grid-column: 1 / 11;
-    grid-row: 3/ 4;
-    width: 80vw;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: flex-end;
-    margin: 15px 0 15px 0;
-}
+
 
 .storeProductContainer {
-    grid-column: 1 / 11;
-    grid-row: 3/ 4;
-    width: 80vw;
-    display: flex;
-    justify-content: space-around;
-    margin: 15px 0 15px 0;
-}
-
-.storeProductImage {
-    width: 15%;
-    height: 100%;
     display: inline-flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    height: 40vh;
+    width: 100%;
+    align-items: center;
+    background: linear-gradient(90deg, #1F2125 0%, #343841 100%);
+    margin-bottom: 25px;
+    justify-content: space-between;
+    border-radius: 25px;
 }
-
-    .storeProductImage > img {
-        max-width: 20%;
-        transition: 1s;
-        position: absolute;
+    .storeProductContainer:nth-child(odd) {
+        flex-direction: row-reverse;
+        background: linear-gradient(-90deg, #1F2125 0%, #343841 100%);
+    }
+    .storeProductContainer:nth-child(odd) > a {
+        justify-content: flex-end;
     }
 
-        .storeProductImage > img:hover {
-            max-width: 22%;
-        }
-
-.storeProductDescription {
+.storeProductImage {
+    position: relative;
     display: flex;
-    width: 100%;
-    height: 35vh;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    background: linear-gradient(90deg, #1F2125 0%, #343841 100%);
-    padding: 0 25px 0 25px;
-    border-radius: 500px;
 }
+
+
+
+    .storeProductImage > img {
+        max-width: 50%;
+    }
+
+    .storeProductDescription {
+
+    }
 
 .storeProductDescription:nth-child(2n+1) {
     display: flex;
@@ -996,8 +979,10 @@ footer {
 
 .storeWatchName {
     position: relative;
-    font-size: 4vw;
+    font-size: 2rem;
     color: #C3A261;
     margin: 0;
 }
-
+.storeWatchDesc {
+    font-size: 1.3rem;
+}

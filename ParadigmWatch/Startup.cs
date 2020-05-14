@@ -71,11 +71,7 @@ namespace ParadigmWatch
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "",
-                    pattern: "/store/",
-                    defaults: new {controller = "ProductPage", action = "Index"}
-                    );
+
 
                 endpoints.MapControllerRoute(
                     name: "default",
