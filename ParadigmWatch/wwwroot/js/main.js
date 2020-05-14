@@ -8,13 +8,25 @@ let currentSlide = document.getElementById('currentSlide')
 
 let sliderCounter = 0;
 
+let sliderTexts = document.getElementsByClassName('sliderText');
+
+
+for (let sliderCount = 0; sliderCount < sliderTexts.length; sliderCount++) {
+    let currentSlider = document.getElementById(`slide${sliderCount + 1}`)
+    
+    let currentText = sliderTexts[sliderCount].textContent.toLowerCase();
+    currentSlider.style.backgroundImage = `url(/Images/${currentText}Background.jpg)`
+    console.log(`url(/Images/${currentText}Background.jpg)`)
+}
+
 
 nextButton.addEventListener('click', () => {
-    if (sliderCounter < 2) {
+    if (sliderCounter < slides.length - 1) {
 
         let currentSlider = document.getElementById(`${sliderCounter + 1}`)
         currentSlider.style.transition = '1s'
         currentSlider.style.left = '-100vw'
+
 
         currentSlide.textContent = `0${sliderCounter + 2}`
         sliderCounter++
