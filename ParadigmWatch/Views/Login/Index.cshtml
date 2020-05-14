@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+    
+
+        @* ______________________________________            NEW SECTION           _________________________________________________ *@
+
+        <section id="identityContainer">
+           
+            <div class="identityForm">
+                <div class="identityRegister">
+                    <ul class="identityUl">
+                        <li>
+                            <h2 class="identityTitle">Register</h2>
+                            <p class="identityText">and get 10% off every product!</p>
+                        </li>
+                    </ul>
+
+                </div>
+              
+                <div class="identityLogin">
+                    <div class="loginContent">
+
+                        <div class="container">
+
+                            <div class="bg-primary m-1 p-1 text-white identityCenter" ><h4>Log In</h4></div>
+                            <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
+                                <ul>
+                                    <li style="display:none"></li>
+                                </ul>
+                            </div>
+                            <form method="post" action="/Account/Login">
+                                <input type="hidden" name="returnUrl" value="/" />
+                                <div class="form-group">
+                                    <label for="Email">Name</label><br />
+                                    <input class="form-control" type="text" data-val="true" data-val-required="The Email field is required." id="Email" name="Email" value="your email" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="Password">Password</label><br />
+                                    <input class="form-control" type="password" data-val="true" data-val-required="The Password field is required." id="Password" name="Password"  value="your password"/>
+                                </div>
+                                <button class="btn btn-primary identityLoginBtn" type="submit">Submit</button>
+                                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8I0AKu4iJ_lJg6IiUju-bl6tFEbk6y1O1uzQjJ67xx0Ww5b8qkSbJ9KmJG6eXB_URzBsU05iNJ4PwPQgk8sNoJdqD8QARizqC5LCd67J502GMxwvJ9YWbrmv0b41ehe-EALlcTr02o2EDwv9wSukLIs" />
+                            </form>
+                            <p>forget passwords?</p>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+           
+        </section>
+
+        @* ______________________________________            NEW SECTION           _________________________________________________ *@
+
+       
+        @* ______________________________________            NEW SECTION           _________________________________________________ *@
+

@@ -283,6 +283,7 @@ nav {
     font-size: 2em;
     color: #C3A261;
 }
+
 #disclaimer {
     grid-column: 1/ 11;
     grid-row: 2/3;
@@ -442,6 +443,7 @@ nav {
         background-color: white; 
         color: #C3A261;
     }
+
 
 
 

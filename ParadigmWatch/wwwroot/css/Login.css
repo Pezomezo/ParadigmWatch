@@ -1,0 +1,110 @@
+﻿body {
+    background-color: #1F2125;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+/* #C3A261 */
+h4 {
+    margin: 0;
+}
+
+nav {
+    position: fixed;
+    display: inline-flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    left: 0%;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 3;
+    background-color: rgba(0,0,0,0);
+}
+
+/*
+    identity 
+             */
+.identityLoginBtn {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.form-control {
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+    box-shadow: none;
+    shape-outside: none;
+    text-shadow: none;
+}
+
+.identityUl {
+    padding: 0;
+}
+
+.identityCenter {
+    margin-top: 25%;
+    text-align: center;
+}
+
+.identityText {
+    font-size: 1em;
+    color: #C3A261;
+    text-align: center;
+}
+
+.identityTitle {
+    font-size: 1em;
+    color: #C3A261;
+    text-align: center;
+}
+
+#identityContainer {
+    grid-column: 2/10;
+    grid-row: 3/4;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.identityForm {
+    display: inline-flex;
+    justify-content: space-between;
+    margin: 200px 0;
+}
+
+.identityRegister {
+    width: 50%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid #C3A261;
+    margin: 5px;
+    padding: 5px;
+}
+
+.identityLogin {
+    background-color: #C3A261;
+    width: 50%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #C3A261;
+    margin: 5px;
+    padding: 5px;
+}
+
+.loginContent {
+    margin: 0 auto;
+}
+
