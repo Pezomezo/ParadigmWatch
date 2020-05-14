@@ -33,10 +33,6 @@ nav {
 /*
     identity 
              */
-.identityLoginBtn {
-    width: 100%;
-    border-radius: 10px;
-}
 
 .form-control {
     background-color: #000000;
@@ -85,8 +81,8 @@ nav {
 
 .identityRegister {
     width: 50%;
-    height: 300px;
-    display: flex;
+    height: 500px;
+    display: block;
     justify-content: space-between;
     border: 2px solid #C3A261;
     margin: 5px;
@@ -107,4 +103,32 @@ nav {
 .loginContent {
     margin: 0 auto;
 }
+
+.idnetityFormRegistration {
+    border: 1px solid #C3A261;
+}
+
+.form-RegGroup {
+    color: #C3A261;
+    text-align: center;
+}
+
+.identityLetter {
+    color: #C3A261;
+}
+
+.identityLoginBtn {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.identityRegBtn {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #C3A261;
+    color: #fff;
+}
+
+
+
 
