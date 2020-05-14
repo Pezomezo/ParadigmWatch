@@ -11,6 +11,10 @@ h1, h2, h3, h4, h5, h6, p {
 ul{
     list-style: none;
 }
+a {
+    text-decoration: none;
+    color: white;
+}
 
 /* #C3A261 */
 h4{
@@ -19,6 +23,15 @@ h4{
 
 nav {
     position: fixed;
+    background-color: rgba(0,0,0,0);
+    width: 100%;
+    z-index: 3;
+}
+#active {
+    text-decoration: underline;
+    color: #C3A261;
+}
+#navContent {
     display: inline-flex;
     flex-direction: row-reverse;
     width: 100%;
@@ -26,7 +39,6 @@ nav {
     justify-content: center;
     align-items: flex-start;
     z-index: 3;
-    background-color: rgba(0,0,0,0);
 }
 
 .mobileContainer {
@@ -89,8 +101,10 @@ nav {
 }
 .navigationItem > a {
     color: #1F2125;
-    text-decoration: none;
     font-weight: 700;
+}
+.navigationItem:hover a {
+    color: #C3A261;
 }
 .navigationItem {
     margin-bottom: 50px;
@@ -116,7 +130,6 @@ nav {
 }
     .loginItem > a {
         color: #1F2125;
-        text-decoration: none;
         font-weight: 700;
     }
 .loginItem:hover {
@@ -129,6 +142,7 @@ nav {
     grid-template-rows: auto auto auto auto auto;
     display: grid;
 }
+/*---------------------------------------------             Hero Slider             ------------------------------------------------------------*/
 #hero {
     grid-column: 1/11;
     grid-row: 1/2;
@@ -157,12 +171,21 @@ nav {
     justify-content: center;
     align-items: center;
 }
+.sliderElement {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
 .sliderText {
     position: absolute;
     z-index: 1;
     font-size: 25vw;
     color: #C3A261;
-    margin:0;
+    margin: 0;
 }
 .sliderImg {
     position: absolute;
@@ -178,7 +201,14 @@ nav {
         background-size: cover;
     }
 #slide2 {
-    z-index: -1;
+    left: 0px;
+    z-index: -2;
+    background-image: url(/Images/ApolloBackground.jpg);
+    background-size: cover;
+}
+#slide3 {
+    left: 0px;
+    z-index: -3;
     background-image: url(/Images/ApolloBackground.jpg);
     background-size: cover;
 }
@@ -250,7 +280,6 @@ nav {
         white-space: nowrap;
         color: white;
         margin-right: 40vw;
-        text-decoration: none;
     }
 .slideController {
     position: absolute;
@@ -277,7 +306,13 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: 1s;
 }
+    .control:hover {
+        
+        background-color: #C3A261;
+    }
 
 .productTitle {
     font-size: 2em;
@@ -292,15 +327,17 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content : center;
+    align-items: center;
 }
 .disclaimer{
     font-size: 2rem;
 }
 .text{
+    width:60%;
     margin-top: 50px;
     font-weight: 400;
 }
-
+/*---------------------------------------------             ProductDisplay             ------------------------------------------------------------*/
 #productDisplay {
     grid-column: 2/10;
     grid-row: 3/4;
@@ -390,26 +427,37 @@ nav {
     height: 2px;
     background-color: #C3A261;
 }
-.products{
+.products {
     display: inline-flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     margin-top: 25px;
+    flex-direction: column;
 }
 .productContainer {
-    width: 30%;
+    width: 100%;
     height: 300px;
     display: flex;
     justify-content: space-between;
+    margin: 15px 0 15px 0;
     
 }
+.productImage {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .productImage > img {
-    max-width: 15%;
+    max-width: 30%;
     transition: 1s;
     position: absolute;
 }
 
 .productImage > img:hover{
-    max-width: 16%;
+    max-width: 32%;
 }
 
 .productDescription {
@@ -444,7 +492,7 @@ nav {
     }
 
 
-
+/*---------------------------------------------             Premise             ------------------------------------------------------------*/
 
     #premise {
         grid-column: 1/11;
@@ -455,8 +503,9 @@ nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
     }
-
+/*---------------------------------------------             footer             ------------------------------------------------------------*/
 footer {
     grid-column: 1/11;
     grid-row: 5/6;
@@ -474,7 +523,7 @@ footer {
     display: flex;
     flex-direction: row;
     padding: 0;
-    width: 20%;
+    width: 40%;
     justify-content: space-between;
 }
 .MediaLink {
@@ -486,29 +535,58 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
+.MediaLink:hover{
+    background-color: white;
+}
+    .MediaLink:hover a{
+        color: #C3A261;
+    }
 
 #footerContent{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-
+#footerlinks{
+    font-size:1.5rem;
+}
+.footerLinkItem{
+    margin: 15px 0 15px 0;
+    font-size: 1rem;
+}
+#footerContacts {
+    font-size: 1.5rem;
+}
+.footerContactsItem {
+    margin: 15px 0 15px 0;
+    font-size: 1rem;
+}
+/*---------------------------------------------             Responsive             ------------------------------------------------------------*/
 @media only screen and (min-width: 1200px) {
     nav {
         position: fixed;
+        background-color: rgba(0,0,0,0);
+        width: 100%;
+        height: 75px;
+        display: flex;
+        justify-content: center;
+        z-index: 3;
+    }
+
+    #navContent {
         display: inline-flex;
         flex-direction: row;
         width: 80%;
         left: 10%;
         justify-content: space-between;
         align-items: flex-start;
-        z-index: 3;
-        background-color: rgba(0,0,0,0);
+        
+        
     }
     .burgerMenu {
         display: none;
-        
     }
 
     .mobileContainer {
@@ -532,7 +610,6 @@ footer {
     }
     .navigationItem > a {
         color: white;
-        text-decoration: none;
         font-weight: 400;
         font-size: 1rem;
     }
@@ -554,7 +631,6 @@ footer {
 
         .loginItem > a {
             color: white;
-            text-decoration: none;
             font-weight: 400;
             font-size: 1rem;
         }
@@ -620,7 +696,7 @@ footer {
 
     .navigationLinks > a:last-child {
         color: #1F2125;
-        width: 13vw;
+        width: 250px;
         height: 5vh;
         border-radius: 500px;
         display: flex;
@@ -647,4 +723,29 @@ footer {
         z-index: 2;
         max-width: 25vw;
     }
+    .products {
+
+        display: inline-flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-top: 25px;
+    }
+    .productContainer {
+        width: 30%;
+        height: 300px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .productImage > img {
+        max-width: 15%;
+        transition: 1s;
+        position: absolute;
+    }
+    .productImage > img:hover{
+        max-width: 16%;
+    }
+    .SocialMediaIcons {
+        width: 20%;
+    }
+
 }
