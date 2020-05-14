@@ -26,17 +26,14 @@
             <p class="classesRemaining">/03</p>
         </div>
 
-
-            <div class="slideController">
-                <div class="slideControllerButtons">
-                    <div id="back" class="control"><</div>
-                    <div id="next" class="control">></div>
-                </div>
-                <div class="slideControllerButtons">
-                    <p class="lightParagraph sliderControlLabel">Back</p>
-                    <p class="lightParagraph sliderControlLabel">Next</p>
-                </div>
-
+        <div class="slideController">
+            <div class="slideControllerButtons">
+                <div id="back" class="control"><</div>
+                <div id="next" class="control">></div>
+            </div>
+            <div class="slideControllerButtons">
+                <p class="lightParagraph sliderControlLabel">Back</p>
+                <p class="lightParagraph sliderControlLabel">Next</p>
             </div>
         </div>
 
@@ -50,32 +47,33 @@
             <a href="#" class="secondaryLink">Learn More</a>
             <a href="#" class="primaryLink">Build your own</a>
         </div>
-
-        <div class="slider">
+    </div>
+    <div class="slider">
+        @foreach (var item in Model)
+        {
             <div class="content wrapper">
-                <div class="sliderElement" id="slide1">
-                    <img class="sliderImg" src="~/Images/Apollo.png" alt="Apollo" />
-                    <h2 class="sliderText">APOLLO</h2>
+                <div class="sliderElement" id="@item.Id">
+                    <img class="sliderImg" src="~/Images/@item.WatchImagePath" alt="@item.Name" />
+                    <h2 class="sliderText">@item.Name.ToUpper()</h2>
                 </div>
             </div>
+        }
 
-            <div class="content wrapper">
-                <div class="sliderElement" id="slide2">
-                    <img class="sliderImg" src="~/Images/Apollo.png" alt="Apollo" />
-                    <h2 class="sliderText">MERCURY</h2>
-                </div>
+
+        @*<div class="content wrapper">
+            <div class="sliderElement" id="slide2">
+                <img class="sliderImg" src="~/Images/Apollo.png" alt="Apollo" />
+                <h2 class="sliderText">MERCURY</h2>
             </div>
-
-            <div class="content wrapper">
-                <div class="sliderElement" id="slide3">
-                    <img class="sliderImg" src="~/Images/Apollo.png" alt="Apollo" />
-                    <h2 class="sliderText">JUNO</h2>
-                </div>
-            </div>
-
-
-
         </div>
+
+        <div class="content wrapper">
+            <div class="sliderElement" id="slide3">
+                <img class="sliderImg" src="~/Images/Apollo.png" alt="Apollo" />
+                <h2 class="sliderText">JUNO</h2>
+            </div>
+        </div>*@
+
     </div>
 
 
