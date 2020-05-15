@@ -299,6 +299,7 @@ nav {
     font-size: 2em;
     color: #C3A261;
 }
+
 #disclaimer {
     grid-column: 1/ 11;
     grid-row: 2/3;
@@ -352,7 +353,16 @@ nav {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+    cursor: pointer;
 }
+
+    .sortGrid:hover {
+        background-color: #C3A261;
+    }
+        .sortGrid:hover  div div {
+            background-color: #1F2125;
+        }
+
 
 .sortGridRow{
     
@@ -367,6 +377,7 @@ nav {
 }
 
 
+
 .sortList {
     width: 40px;
     height: 40px;
@@ -375,15 +386,23 @@ nav {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
+    .sortList:hover {
+        background-color: #C3A261;
+    }
+        .sortList:hover div div {
+            background-color: #1F2125;
+        }
 
-.sortListBox {
-    width: 5px;
-    height: 5px;
-    background-color: #C3A261;
-    margin: 1px;
-}
+
+        .sortListBox {
+            width: 5px;
+            height: 5px;
+            background-color: #C3A261;
+            margin: 1px;
+        }
 .sortListRectangle {
     width: 15px;
     height: 5px;
@@ -474,6 +493,7 @@ nav {
 
 
 /*---------------------------------------------             Premise             ------------------------------------------------------------*/
+
 
     #premise {
         grid-column: 1/11;
