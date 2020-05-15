@@ -10,6 +10,8 @@
     <Compile Remove="Migrations\20200513141219_InitialCreate.Designer.cs" />
     <Compile Remove="Migrations\20200513144046_InitialCreate.cs" />
     <Compile Remove="Migrations\20200513144046_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200515153513_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200515153513_InitialCreate.Designer.cs" />
     <Compile Remove="Migrations\AppIdentityDbContextModelSnapshot.cs" />
   </ItemGroup>
 
@@ -30,8 +32,6 @@
   <ItemGroup>
 
     <Folder Include="wwwroot\Images\" />
-
-    <Folder Include="Migrations\" />
 
   </ItemGroup>
 

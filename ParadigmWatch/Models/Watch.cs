@@ -15,7 +15,8 @@ namespace ParadigmWatch.Models
         public string ModelPath { get; set; }
         [Column(TypeName = "float")]
         public decimal Price { get; set; }
-        public List<WatchPart> WatchComponents { get; set; } = new List<WatchPart>();
+        public List<WatchPart> WatchParts { get; set; } = new List<WatchPart>();
+        public List<WatchComponents> WatchComponents { get; set; } = new List<WatchComponents>();
 
         public Watch()
         {
@@ -23,7 +24,7 @@ namespace ParadigmWatch.Models
 
         public void AddComponent(WatchPart part)
         {
-            this.WatchComponents.Add(part);
+            this.WatchParts.Add(part);
         }
     }
 }

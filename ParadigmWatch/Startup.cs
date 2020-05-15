@@ -37,6 +37,10 @@ namespace ParadigmWatch
             services.AddMemoryCache();
             services.AddSession();
 
+            services.AddDbContext<ParadigmWatchContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"))
+                );
+
             // WE WILL ENABLES THIS AGAIN ONCE WE HAVE A DATABASE READY :)  
             services.AddDbContext<ParadigmWatchContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
@@ -88,6 +92,8 @@ namespace ParadigmWatch
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
