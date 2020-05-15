@@ -65,8 +65,11 @@
                 <h2 class="storeWatchName">@item.Name</h2>
                 <p class="storeWatchDesc">@item.Description</p>
                 <div class="storeButtonsList">
-                    <button class="storeShop">Details</button>
-                    <button class="storeShop">Build your own</button>
+                    <form method="post">
+                        <button class="storeShop" asp-controller="ProductPage" asp-action="Index" asp-route-watchName="@item.Name">Details</button>
+                        <button class="storeShop">Build your own</button>
+                    </form>
+                    
                 </div>
                 
             </div>

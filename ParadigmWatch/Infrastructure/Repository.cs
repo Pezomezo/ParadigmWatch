@@ -33,6 +33,7 @@ namespace ParadigmWatch.Infrastructure
             WatchPart Sleeves = new WatchPart() { Id = 1, Name = "Sleeves", TextureMap = leatherTexture, Shader = baseShader };
             WatchPart Pointers = new WatchPart() { Id = 2, Name = "Pointers", TextureMap = MetalicTexture, Shader = baseShader };
             WatchPart BackSide = new WatchPart() { Id = 3, Name = "BackSide", TextureMap = MetalicTexture, Shader = baseShader, TextMap = baseText };
+            WatchPart GoldenBack = new WatchPart() { Id = 3, Name = "BackSide", TextureMap = GoldTexture, Shader = baseShader, TextMap = baseText };
             WatchPart BodyPart = new WatchPart() { Id = 4, Name = "TheRoundThing", TextureMap = SilverTexture, Shader = baseShader };
             WatchPart Hooks = new WatchPart() { Id = 5, Name = "Hooks", TextureMap = MetalicTexture, Shader = baseShader };
 
@@ -45,18 +46,18 @@ namespace ParadigmWatch.Infrastructure
             SimpleWatch.AddComponent(Hooks);
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
             Watch JunoWatch = new Watch() { Id = 2, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
-            SimpleWatch.AddComponent(Sleeves);
-            SimpleWatch.AddComponent(Pointers);
-            SimpleWatch.AddComponent(BackSide);
-            SimpleWatch.AddComponent(BodyPart);
-            SimpleWatch.AddComponent(Hooks);
+            JunoWatch.AddComponent(Sleeves);
+            JunoWatch.AddComponent(Pointers);
+            JunoWatch.AddComponent(GoldenBack);
+            JunoWatch.AddComponent(BodyPart);
+            JunoWatch.AddComponent(Hooks);
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
             Watch MercuryWatch = new Watch() { Id = 3, Name = "Mercury", Description = "A bald statemnt. That is how I would describe this watch.", WatchImagePath = "Mercury.png", ModelPath = "Models/somethibg", Price = 100.50m };
-            SimpleWatch.AddComponent(Sleeves);
-            SimpleWatch.AddComponent(Pointers);
-            SimpleWatch.AddComponent(BackSide);
-            SimpleWatch.AddComponent(BodyPart);
-            SimpleWatch.AddComponent(Hooks);
+            MercuryWatch.AddComponent(Sleeves);
+            MercuryWatch.AddComponent(Pointers);
+            MercuryWatch.AddComponent(BackSide);
+            MercuryWatch.AddComponent(BodyPart);
+            MercuryWatch.AddComponent(Hooks);
 
             // Create a User
             AppUser Adamka = new AppUser() { Id = "sdfghjklélkjhgfd", UserName = "Adamka", Email = "pezolino19@gmail.com", City = "Pomáz", Address = "Ond utca 9", ZipCode = 2013, CreditCard = "You wish;)" };
