@@ -1,4 +1,5 @@
 ﻿@using ParadigmWatch.Models;
+@using ParadigmWatch.Infrastructure
 @model Watch
 
 @{
@@ -16,7 +17,18 @@
             <div class="detailsContainer">
                 <p class="description">@Model.Description</p>
                 <div class="navigationLinksShow">
-                    <a href="#" class="secondaryLink">Learn More</a>
+                    <form id="@Model.Id" asp-action="AddToCart"
+                          asp-controller="Cart" method="post">
+                        <input type="hidden" name="ProductId" value="@Model.Id" />
+                        <input type="hidden" name="returnUrl"
+                               value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                        <span class="">
+                            <button type="submit"
+                                    class="shop">
+                                Add To Cart
+                            </button>
+                        </span>
+                    </form>
                     <a href="#" class="primaryLink">Build your own</a>
                 </div>
             </div>
