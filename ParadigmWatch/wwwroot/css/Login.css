@@ -81,7 +81,7 @@ nav {
 
 .identityRegister {
     width: 50%;
-    height: 500px;
+    height: 590px;
     display: block;
     justify-content: space-between;
     border: 2px solid #C3A261;
@@ -110,7 +110,7 @@ nav {
 
 .form-RegGroup {
     color: #C3A261;
-    text-align: center;
+    margin: 0 auto;
 }
 
 .identityLetter {
