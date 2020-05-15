@@ -22,12 +22,12 @@
             </div>
         </div>
     </div>
-   
+
     <div class="imageCenter">
         <img class="sliderImg" src="~/Images/@Model.WatchImagePath" alt="@Model.Name" />
 
     </div>
-    
+
 </section>
 
 <section id="HighlightComponent">
@@ -36,17 +36,29 @@
         <p class="hlDesc">@Model.WatchComponents[0].TextureMap.TextureDesc</p>
     </div>
 
-    
+
 </section>
 
 <section id="components">
-    @foreach (var item in Model.WatchComponents)
+    @if (true)
     {
-        <div class="component">
-            <h3 class="compTitle">@item.TextureMap.TextureName</h3>
-            <p class="compDesc">@item.TextureMap.TextureDesc</p>
-        </div>
+        List<string> textures = new List<string>();
+        @foreach (var item in Model.WatchComponents)
+        {
+
+            string foundTexture = textures.Where(texture => texture.Equals(item.TextureMap.TextureName)).FirstOrDefault();
+            if (foundTexture == null)
+            {
+                <div class="component">
+                    <h3 class="compTitle">@item.TextureMap.TextureName</h3>
+                    <p class="compDesc">@item.TextureMap.TextureDesc</p>
+                </div>
+                textures.Add(item.TextureMap.TextureName);
+            }
+
+        }
     }
+
 
 
 </section>
@@ -55,15 +67,15 @@
     <h3>You may also like</h3>
     <div class="productsRec">
 
-            <div class="productContainer">
-                <a class="productImage">
-                    <img src="~/Images/@Model.WatchImagePath" alt="" />
-                </a>
-                <div class="productDescription">
-                    <h2>@Model.Name</h2>
-                    <p>@Model.Description</p>
-                </div>
+        <div class="productContainer">
+            <a class="productImage">
+                <img src="~/Images/@Model.WatchImagePath" alt="" />
+            </a>
+            <div class="productDescription">
+                <h2>@Model.Name</h2>
+                <p>@Model.Description</p>
             </div>
-        
+        </div>
+
     </div>
 </section>
