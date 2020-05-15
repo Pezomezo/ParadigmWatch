@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using ParadigmWatch.Data;
 using ParadigmWatch.Models;
 using ParadigmWatch.Models.ViewModels;
+using Microsoft.AspNetCore.StaticFiles;
 /// <summary>
 /// /TESTER
 /// </summary>
@@ -63,6 +64,17 @@ namespace ParadigmWatch
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            var options = new StaticFileOptions
+            {
+                ContentTypeProvider = new FileExtensionContentTypeProvider()
+            };
+            ((FileExtensionContentTypeProvider)options.ContentTypeProvider).Mappings.Add(
+                new KeyValuePair<string, string>(".obj", "text/plain"));
+
+
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
