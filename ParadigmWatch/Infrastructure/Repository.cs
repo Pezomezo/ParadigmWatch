@@ -31,31 +31,34 @@ namespace ParadigmWatch.Infrastructure
 
             // Create the different Watch Components
             WatchPart Sleeves = new WatchPart() { Id = 1, Name = "Sleeves", TextureMap = leatherTexture, Shader = baseShader };
-            WatchPart Pointers = new WatchPart() { Id = 2, Name = "Pointers", TextureMap = MetalicTexture, Shader = baseShader };
-            WatchPart BackSide = new WatchPart() { Id = 3, Name = "BackSide", TextureMap = MetalicTexture, Shader = baseShader, TextMap = baseText };
-            WatchPart GoldenBack = new WatchPart() { Id = 3, Name = "BackSide", TextureMap = GoldTexture, Shader = baseShader, TextMap = baseText };
-            WatchPart BodyPart = new WatchPart() { Id = 4, Name = "TheRoundThing", TextureMap = SilverTexture, Shader = baseShader };
-            WatchPart Hooks = new WatchPart() { Id = 5, Name = "Hooks", TextureMap = MetalicTexture, Shader = baseShader };
+            WatchPart GekkoSleeves = new WatchPart() { Id = 2, Name = "Sleeves", TextureMap = GekkoTexture, Shader = baseShader };
+            WatchPart ElephantSleeves = new WatchPart() { Id = 3, Name = "Sleeves", TextureMap = ElephantTexture, Shader = baseShader };
+            WatchPart Pointers = new WatchPart() { Id = 4, Name = "Pointers", TextureMap = MetalicTexture, Shader = baseShader };
+            WatchPart SilverPointers = new WatchPart() { Id = 5, Name = "Pointers", TextureMap = GoldTexture, Shader = baseShader };
+            WatchPart BackSide = new WatchPart() { Id = 6, Name = "BackSide", TextureMap = MetalicTexture, Shader = baseShader, TextMap = baseText };
+            WatchPart GoldenBack = new WatchPart() { Id = 7, Name = "BackSide", TextureMap = GoldTexture, Shader = baseShader, TextMap = baseText };
+            WatchPart BodyPart = new WatchPart() { Id = 8, Name = "TheRoundThing", TextureMap = SilverTexture, Shader = baseShader };
+            WatchPart Hooks = new WatchPart() { Id = 9, Name = "Hooks", TextureMap = MetalicTexture, Shader = baseShader };
 
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
             Watch SimpleWatch = new Watch() { Id = 1, Name = "Apollo", Description = "This is a basic model you can configure it to your liking", WatchImagePath = "Apollo.png", ModelPath = "Models/somethibg", Price = 100.50m };
             SimpleWatch.AddComponent(Sleeves);
-            SimpleWatch.AddComponent(Pointers);
+            SimpleWatch.AddComponent(SilverPointers);
             SimpleWatch.AddComponent(BackSide);
             SimpleWatch.AddComponent(BodyPart);
             SimpleWatch.AddComponent(Hooks);
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
             Watch JunoWatch = new Watch() { Id = 2, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
-            JunoWatch.AddComponent(Sleeves);
+            JunoWatch.AddComponent(GekkoSleeves);
             JunoWatch.AddComponent(Pointers);
             JunoWatch.AddComponent(GoldenBack);
             JunoWatch.AddComponent(BodyPart);
             JunoWatch.AddComponent(Hooks);
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
             Watch MercuryWatch = new Watch() { Id = 3, Name = "Mercury", Description = "A bald statemnt. That is how I would describe this watch.", WatchImagePath = "Mercury.png", ModelPath = "Models/somethibg", Price = 100.50m };
-            MercuryWatch.AddComponent(Sleeves);
+            MercuryWatch.AddComponent(ElephantSleeves);
             MercuryWatch.AddComponent(Pointers);
-            MercuryWatch.AddComponent(BackSide);
+            MercuryWatch.AddComponent(GoldenBack);
             MercuryWatch.AddComponent(BodyPart);
             MercuryWatch.AddComponent(Hooks);
 

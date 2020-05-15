@@ -311,6 +311,7 @@ transition: 1s;
 font-size: 2em;
 color: #C3A261;
 }
+
 #disclaimer {
 grid-column: 1/ 11;
 grid-row: 2/3;
@@ -505,17 +506,20 @@ cursor: pointer;
 
 /*---------------------------------------------             Premise             ------------------------------------------------------------*/
 
-#premise {
-    grid-column: 1/11;
-    grid-row: 4/5;
-    background: linear-gradient(180deg, #1F2125 0%, #343841 100%);
-    height: 35vh;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
+
+    #premise {
+        grid-column: 1/11;
+        grid-row: 4/5;
+        background: linear-gradient(180deg, #1F2125 0%, #343841 100%);
+        height: 35vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
 /*---------------------------------------------             footer             ------------------------------------------------------------*/
 footer {
 grid-column: 1/11;
