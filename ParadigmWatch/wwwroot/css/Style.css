@@ -1194,3 +1194,23 @@ width: 80%;
 
 }
 
+/*####################################################### CART Style HERE #############################################################*/
+
+.cartTable {
+    grid-column: 2/10;
+    grid-row: 3/4;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    margin: 35px,0px,35px,0px;
+}
+
+.cart-container {
+    height:75%;
+    width:100%;
+    flex-direction: column;
+    background-color: white;
+    margin:35px,0px,35px,0px;
+}
