@@ -1,0 +1,80 @@
+﻿@using ParadigmWatch.Models
+@model IEnumerable<Watch>
+@{
+    ViewData["Title"] = "Paradigm Watch Store";
+}
+
+
+<section id="storeDisclaimer">
+    <h2 class="disclaimer">PREMIUM QUALITY WATCHES</h2>
+    <p class="text">
+        A high-end futuristic watch tailor only for your hand!  Customize your own <br />
+        watch to the finest detail in our 3D watch editor
+    </p>
+</section>
+
+
+<section id="storeProductDisplay">
+    <div class="sortProduct">
+        <div class="sortContent">
+            <div class="sortType">
+                <div class="sortGrid">
+                    <div class="sortGridRow">
+                        <div class="sortGridBox"></div>
+                        <div class="sortGridBox"></div>
+                    </div>
+                    <div class="sortGridRow">
+                        <div class="sortGridBox"></div>
+                        <div class="sortGridBox"></div>
+                    </div>
+                </div>
+                <div class="sortList">
+                    <div class="sortListRow">
+                        <div class="sortListBox"></div>
+                        <div class="sortListBox"></div>
+                        <div class="sortListBox"></div>
+                    </div>
+                    <div class="sortListRow">
+                        <div class="sortListRectangle"></div>
+                        <div class="sortListRectangle"></div>
+                        <div class="sortListRectangle"></div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="sortBy">
+                <label for="sortOrder" class="selector">Select by:</label>
+                <select id="sortOrder">
+                    <option value="A-Z">A to Z</option>
+                    <option value="A-Z">Z to A</option>
+                </select>
+            </div>
+        </div>
+        <div class="separator"></div>
+    </div>
+    
+    <div class="storeProducts">
+        @foreach (var item in Model)
+        {
+        <div class="storeProductContainer">
+            <a class="storeProductImage">
+                <img src="~/Images/@item.WatchImagePath" alt="" />
+            </a>
+            <div class="storeProductDescription">
+                <h2 class="storeWatchName">@item.Name</h2>
+                <p class="storeWatchDesc">@item.Description</p>
+                <div class="storeButtonsList">
+                    <form method="post">
+                        <button class="storeShop" asp-controller="ProductPage" asp-action="Index" asp-route-watchName="@item.Name">Details</button>
+                        <button class="storeShop">Build your own</button>
+                    </form>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        }
+    </div>
+</section>

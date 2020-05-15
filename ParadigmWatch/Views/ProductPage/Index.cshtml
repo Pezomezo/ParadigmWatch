@@ -1,0 +1,81 @@
+﻿@using ParadigmWatch.Models;
+@model Watch
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<section id="ProductShow">
+    <div class="ShowContainer">
+        <div class="showTop">
+            <p id="location">A > B > C</p>
+        </div>
+        <div class="showDown">
+            <h1 class="title">@Model.Name</h1>
+            <p class="price">@Model.Price $</p>
+            <div class="detailsContainer">
+                <p class="description">@Model.Description</p>
+                <div class="navigationLinksShow">
+                    <a href="#" class="secondaryLink">Learn More</a>
+                    <a href="#" class="primaryLink">Build your own</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="imageCenter">
+        <img class="sliderImg" src="~/Images/@Model.WatchImagePath" alt="@Model.Name" />
+
+    </div>
+
+</section>
+
+<section id="HighlightComponent">
+    <div class="hlContainer">
+        <h2 class="hlTitle">@Model.WatchComponents[0].TextureMap.TextureName</h2>
+        <p class="hlDesc">@Model.WatchComponents[0].TextureMap.TextureDesc</p>
+    </div>
+
+
+</section>
+
+<section id="components">
+    @if (true)
+    {
+        List<string> textures = new List<string>();
+        @foreach (var item in Model.WatchComponents)
+        {
+
+            string foundTexture = textures.Where(texture => texture.Equals(item.TextureMap.TextureName)).FirstOrDefault();
+            if (foundTexture == null)
+            {
+                <div class="component">
+                    <h3 class="compTitle">@item.TextureMap.TextureName</h3>
+                    <p class="compDesc">@item.TextureMap.TextureDesc</p>
+                </div>
+                textures.Add(item.TextureMap.TextureName);
+            }
+
+        }
+    }
+
+
+
+</section>
+
+<section id="recommendations">
+    <h3>You may also like</h3>
+    <div class="productsRec">
+
+        <div class="productContainer">
+            <a class="productImage">
+                <img src="~/Images/@Model.WatchImagePath" alt="" />
+            </a>
+            <div class="productDescription">
+                <h2>@Model.Name</h2>
+                <p>@Model.Description</p>
+            </div>
+        </div>
+
+    </div>
+</section>
