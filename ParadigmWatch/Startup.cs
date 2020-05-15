@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ParadigmWatch.Data;
 using ParadigmWatch.Models;
+using ParadigmWatch.Models.ViewModels;
 /// <summary>
 /// /TESTER
 /// </summary>
@@ -28,6 +29,13 @@ namespace ParadigmWatch
 
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddControllersWithViews();
+            services.AddMemoryCache();
+            services.AddSession();
+
             // WE WILL ENABLES THIS AGAIN ONCE WE HAVE A DATABASE READY :)  
             services.AddDbContext<ParadigmWatchContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
