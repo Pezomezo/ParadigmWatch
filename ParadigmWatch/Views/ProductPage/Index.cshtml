@@ -9,7 +9,7 @@
 <section id="ProductShow">
     <div class="ShowContainer">
         <div class="showTop">
-            <p id="location">A > B > C</p>
+            <p id="location">@Url.RouteUrl(ViewContext.RouteData.Values)</p>
         </div>
         <div class="showDown">
             <h1 class="title">@Model.Name</h1>
@@ -81,7 +81,8 @@
     <h3>You may also like</h3>
     <div class="productsRec">
 
-        @await Component.InvokeAsync("YouMayAlsoLike", Model.Name);
+        @await Component.InvokeAsync("YouMayAlsoLike", Model.Name)
 
     </div>
 </section>
+<script type="text/javascript" src="~/js/ProductPage.js"></script>

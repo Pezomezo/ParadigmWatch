@@ -20,5 +20,6 @@ namespace ParadigmWatch.Models
         public TextMap TextMap { get; set; }
 
         public Watch Watch { get; set; }
+        public string ComponentPath {get; set;}
     }
 }
