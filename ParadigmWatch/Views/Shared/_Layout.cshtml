@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 
 <html>
 <head>
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700" rel="stylesheet" />
-    <link href="~/css/Login.css" rel="stylesheet" />
     <link href="~/css/Style.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
@@ -18,7 +18,13 @@
 
         @RenderBody()
 
-        @await Html.PartialAsync("_FooterView")
+        @if (Url.RouteUrl(ViewContext.RouteData.Values) != "/ThreeD")
+        {
+            @await Html.PartialAsync("_FooterView")
+
+        }
+
+
     </div>
     <script src="~/js/Shared.js" type="text/javascript"></script>
 </body>
