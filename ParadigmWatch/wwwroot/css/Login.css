@@ -52,16 +52,8 @@ nav {
     text-align: center;
 }
 
-.identityText {
-    font-size: 1em;
+.identityText, .identityTitle {
     color: #C3A261;
-    text-align: center;
-}
-
-.identityTitle {
-    font-size: 1em;
-    color: #C3A261;
-    text-align: center;
 }
 
 #identityContainer {
@@ -84,7 +76,7 @@ nav {
     height: 590px;
     display: block;
     justify-content: space-between;
-    border: 2px solid #C3A261;
+    border: 1px solid #C3A261;
     margin: 5px;
     padding: 5px;
 }
