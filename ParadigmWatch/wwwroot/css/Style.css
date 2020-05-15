@@ -862,6 +862,132 @@ margin-top: 25px;
 }
 
 
+/*#############################################################################LOGIN  %%###########################################################*/
+
+
+.form-control {
+    background-color: #000000;
+    color: white;
+    border-radius: 25px;
+    box-shadow: none;
+    shape-outside: none;
+    text-shadow: none;
+    margin-bottom: 25px;
+    width: 100%;
+    padding: 5px;
+    background-color: #1F2125;
+}
+
+.identityUl {
+    padding: 0;
+}
+
+.identityCenter {
+    margin: 15% 0 25px 0;
+    text-align: center;
+}
+
+.identityText, .identityTitle {
+    color: #C3A261;
+    margin-bottom: 10px;
+}
+
+.identityTitle, .why {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+#identityContainer {
+    grid-column: 2/10;
+    grid-row: 1/2;
+    margin: 10vh 0 10vh 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.identityForm {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    grid-row: 2/3;
+}
+
+.identityRegister {
+    width: 50%;
+    height: auto;
+    display: block;
+    justify-content: space-between;
+    border: 1px solid #C3A261;
+    margin: 5px;
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
+}
+
+.identityLogin {
+    background-color: #C3A261;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #C3A261;
+    margin: 5px;
+    grid-template-columns: repeat(12, 1fr);
+    display: grid;
+}
+
+.loginContent {
+    margin: 0 auto;
+    grid-column: 2/12;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+}
+
+.idnetityFormRegistration {
+    border: 1px solid #C3A261;
+}
+
+.form-RegGroup {
+    color: #C3A261;
+    margin: 0 auto;
+}
+
+.identityLetter {
+    color: #C3A261;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-evenly;
+}
+
+.identityLoginBtn {
+    width: 100%;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    color: #1F2125;
+    padding: 10px 5px 10px 5px;
+    margin: 20px 0 20px 0;
+}
+
+.identityRegBtn {
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    background-color: #C3A261;
+    color: #fff;
+    padding: 10px 5px 10px 5px;
+    margin: 20px 0 20px 0;
+}
+
+
+/*####################################################################################################################################################*/
+
+
 
 @media only screen and (min-width: 1200px) {
 nav {

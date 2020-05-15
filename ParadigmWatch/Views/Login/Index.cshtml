@@ -17,8 +17,7 @@
 
                             <div class="bg-primary m-1 p-1 text-white identityCenter">
                                 <h2 class="identityTitle">Register</h2>
-                                <p class="identityText">and get 10% off
-                                <p class="identityText">every product!
+                                <p class="identityText">and get 10% off every product! </p>
                             </div>
                             <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
                                 <ul>
@@ -29,42 +28,46 @@
                                 <input type="hidden" name="returnUrl" value="/" />
                                 <div class="form-RegGroup">
                                     <label for="FirstName">First name</label><br />
-                                    <input class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="FirstName" name="FirstName" value="John..." />
+                                    <input class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="FirstName" name="FirstName" placeholder="John..."  />
                                 </div>
                                 <div class="form-RegGroup">
                                     <label for="LastName">Last name</label><br />
-                                    <input class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="LastName" name="LastName" value="Smith..." />
+                                    <input class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="LastName" name="LastName" placeholder="Smith..." />
                                 </div>
                                 <div class="form-RegGroup">
                                     <label for="Email">Email</label><br />
 
-                                    <input class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="Email" name="Email" value="example@email.com..." />
+                                    <input class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="Email" name="Email" placeholder="example@email.com..." />
                                 </div>
                                 <div class="form-RegGroup">
                                     <label for="password">Password</label><br />
-                                    <input class="form-control idnetityFormRegistration" type="password" data-val="true" data-val-required="The Password field is required." id="Password" name="Password" value="your password" />
+                                    <input class="form-control idnetityFormRegistration" type="password" data-val="true" data-val-required="The Password field is required." id="Password" name="Password" placeholder="your password" />
                                 </div>
                                 <div class="form-RegGroup">
                                     <label for="city">City</label><br />
-                                    <input class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="City" name="City" value="Los Angeles" />
+                                    <input class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="City" name="City" placeholder="Los Angeles" />
                                 </div>
                                 <div class="form-RegGroup">
                                     <label for="adress">Adress</label><br />
-                                    <input class="form-control idnetityFormRegistration" type="adress" data-val="true" data-val-required="Field is required." id="Adress" name="Adress" value="Moholan drive" />
+                                    <input class="form-control idnetityFormRegistration" type="adress" data-val="true" data-val-required="Field is required." id="Adress" name="Adress" placeholder="Moholan drive" />
                                 </div>
                                 <div class="form-RegGroup">
                                     <label for="portel">Portel code</label><br />
-                                    <input class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="PortelCode" name="PortelCode" value="Portel code" />
+                                    <input class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="PortelCode" name="PortelCode" placeholder="Portel code" />
                                 </div>
                                 <div class="identityLetter">
-                                    <ul>
-                                        <li style="list-style:circle">
-                                            <p>I agree <p>privacy policy
-                                        </li>
-                                        <li style="list-style:circle">
-                                            <p>I subscribe <p>newsletter
-                                        </li>
-                                    </ul>
+
+                                    <div>
+                                        <input type="radio" />
+                                        <label>I agree privacy policy</label>
+                                    </div>
+                                    
+                                    <div>
+                                        <input type="radio" />
+                                        <label>I would like to subscribe newsletter</label>
+                                    </div>
+                                    
+
                                 </div>
                                 <button class="btn btn-primary identityRegBtn" type="submit">Register now</button>
                                 <input name="__RequestVerificationToken" type="hidden" value="CfDJ8I0AKu4iJ_lJg6IiUju-bl6tFEbk6y1O1uzQjJ67xx0Ww5b8qkSbJ9KmJG6eXB_URzBsU05iNJ4PwPQgk8sNoJdqD8QARizqC5LCd67J502GMxwvJ9YWbrmv0b41ehe-EALlcTr02o2EDwv9wSukLIs" />
@@ -78,7 +81,7 @@
                     <div class="loginContent">
                         <div class="container">
 
-                            <div class="bg-primary m-1 p-1 text-white identityCenter"><h4>Log In</h4></div>
+                            <div class="bg-primary why p-1 text-white  identityCenter"><h4>Log In</h4></div>
                             <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
                                 <ul>
                                     <li style="display:none"></li>
@@ -88,16 +91,16 @@
                                 <input type="hidden" name="returnUrl" value="/" />
                                 <div class="form-group">
                                     <label for="Email">Name</label><br />
-                                    <input class="form-control" type="text" data-val="true" data-val-required="The Email field is required." id="Email" name="Email" value="your email" />
+                                    <input class="form-control" type="text" data-val="true" data-val-required="The Email field is required." id="Email" name="Email" placeholder="your email" />
                                 </div>
                                 <div class="form-group">
                                     <label for="Password">Password</label><br />
-                                    <input class="form-control" type="password" data-val="true" data-val-required="The Password field is required." id="Password" name="Password" value="your password" />
+                                    <input class="form-control" type="password" data-val="true" data-val-required="The Password field is required." id="Password" name="Password" placeholder="your password" />
                                 </div>
                                 <button class="btn btn-primary identityLoginBtn" type="submit">Submit</button>
                                 <input name="__RequestVerificationToken" type="hidden" value="CfDJ8I0AKu4iJ_lJg6IiUju-bl6tFEbk6y1O1uzQjJ67xx0Ww5b8qkSbJ9KmJG6eXB_URzBsU05iNJ4PwPQgk8sNoJdqD8QARizqC5LCd67J502GMxwvJ9YWbrmv0b41ehe-EALlcTr02o2EDwv9wSukLIs" />
                             </form>
-                            <p>forget passwords?</p>
+                            <a href="#">forget passwords?</a>
                         </div>
                     </div>
                 </div>
@@ -108,5 +111,4 @@
         @* ______________________________________            NEW SECTION           _________________________________________________ *@
 
        
-        @* ______________________________________            NEW SECTION           _________________________________________________ *@
 

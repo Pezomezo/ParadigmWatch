@@ -4,9 +4,14 @@ let navContent = document.getElementById('navContent')
 let navItem = document.querySelector('nav')
 
 
+
 let mobileContainer = document.getElementsByClassName('mobileContainer').item(0)
 
-console.log(mobileContainer)
+
+
+
+
+
 
 burgerMenu.addEventListener('click', () => {
     if (mobile1.style.display == '' && mobile2.style.display == '') {
