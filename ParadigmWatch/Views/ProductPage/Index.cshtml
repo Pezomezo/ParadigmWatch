@@ -44,8 +44,8 @@
 
 <section id="HighlightComponent">
     <div class="hlContainer">
-        <h2 class="hlTitle">@Model.WatchComponents[0].TextureMap.TextureName</h2>
-        <p class="hlDesc">@Model.WatchComponents[0].TextureMap.TextureDesc</p>
+        <h2 class="hlTitle">@Model.WatchParts[0].TextureMap.TextureName</h2>
+        <p class="hlDesc">@Model.WatchParts[0].TextureMap.TextureDesc</p>
     </div>
 
 
@@ -55,9 +55,9 @@
     @if (true)
     {
         List<string> textures = new List<string>();
-        textures.Add(Model.WatchComponents[0].TextureMap.TextureName);
+        textures.Add(Model.WatchParts[0].TextureMap.TextureName);
         int counter = 0;
-        @foreach (var item in Model.WatchComponents)
+        @foreach (var item in Model.WatchParts)
         {
 
             string foundTexture = textures.Where(texture => texture.Equals(item.TextureMap.TextureName)).FirstOrDefault();
