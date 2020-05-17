@@ -27,10 +27,16 @@ background-color: rgba(0,0,0,0);
 width: 100%;
 z-index: 3;
 }
-#active {
-text-decoration: underline;
-color: #C3A261;
+
+.footerLinkItem #active:hover {
+    color: #C3A261;
 }
+
+.footerLinkItem #active {
+    text-decoration: none;
+    color: #fff;
+}
+
 #navContent {
     display: inline-flex;
     flex-direction: row-reverse;

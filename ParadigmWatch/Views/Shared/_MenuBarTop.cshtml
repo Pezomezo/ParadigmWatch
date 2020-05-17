@@ -16,12 +16,12 @@
                 </li>
                 <li class="navigationItem">
                 <a asp-action="Index" asp-controller="Store">Store</a></li>
-                <li class="navigationItem"><a href="#">About</a></li>
-                <li class="navigationItem"><a href="#">Contact</a></li>
+                <li class="navigationItem"><a asp-controller="#" asp-action="About">About</a></li>
+                <li class="navigationItem"><a asp-controller="#" asp-action="Contact">Contact</a></li>
             </ul>
             <ul id="mobile2" class="login ">
-                <li class="loginItem"><a href="#">&#9898; Cart</a></li>
-                <li class="loginItem"><a href="#">&#9898; Favorites</a></li>
+                <li class="loginItem"><a asp-controller="#" asp-action="Index"> Cart</a></li>
+                <li class="loginItem"><a asp-controller="#" asp-action="Index"> Favorites</a></li>
                 <li class="loginItem"><a asp-controller="Login" asp-action="Index">Login / Register</a></li>
             </ul>
         </div>
