@@ -15,7 +15,6 @@ using ParadigmWatch.Models;
 using ParadigmWatch.Models.ViewModels;
 using Microsoft.AspNetCore.StaticFiles;
 /// <summary>
-/// /TESTER
 /// </summary>
 namespace ParadigmWatch
 {
@@ -72,7 +71,7 @@ namespace ParadigmWatch
             ((FileExtensionContentTypeProvider)options.ContentTypeProvider).Mappings.Add(
                 new KeyValuePair<string, string>(".obj", "text/plain"));
 
-
+            
 
 
             if (env.IsDevelopment())
