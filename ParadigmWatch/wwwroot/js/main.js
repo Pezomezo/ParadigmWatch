@@ -1,4 +1,4 @@
-﻿let navItem = document.querySelector('nav')
+﻿
 let slides = document.querySelectorAll('.sliderElement')
 
 let nextButton = document.getElementById('next')
@@ -10,6 +10,7 @@ let sliderCounter = 0;
 
 let sliderTexts = document.getElementsByClassName('sliderText');
 
+let burgerMenu = document.getElementById('burgerMenu')
 
 
 for (let sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
@@ -72,13 +73,6 @@ backButton.addEventListener('click', () => {
 })
 
 
-function navStyle() {
-    if (window.scrollY > 0) {
-        navItem.style.transition = '1s';
-        navItem.style.backgroundColor = '#1F2125'
-    } else {
-        navItem.style.backgroundColor = 'rgba(0,0,0,0)'
-    }
-}
 
-setInterval(navStyle, 100)
+
+

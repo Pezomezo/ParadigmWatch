@@ -12,8 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ParadigmWatch.Data;
 using ParadigmWatch.Models;
+using ParadigmWatch.Models.ViewModels;
+using Microsoft.AspNetCore.StaticFiles;
 /// <summary>
-/// /TESTER
 /// </summary>
 namespace ParadigmWatch
 {
@@ -28,6 +29,17 @@ namespace ParadigmWatch
 
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddControllersWithViews();
+            services.AddMemoryCache();
+            services.AddSession();
+
+            services.AddDbContext<ParadigmWatchContext>(
+                options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"))
+                );
+
             // WE WILL ENABLES THIS AGAIN ONCE WE HAVE A DATABASE READY :)  
             services.AddDbContext<ParadigmWatchContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
@@ -51,6 +63,17 @@ namespace ParadigmWatch
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            var options = new StaticFileOptions
+            {
+                ContentTypeProvider = new FileExtensionContentTypeProvider()
+            };
+            ((FileExtensionContentTypeProvider)options.ContentTypeProvider).Mappings.Add(
+                new KeyValuePair<string, string>(".obj", "text/plain"));
+
+            
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -68,6 +91,8 @@ namespace ParadigmWatch
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,0 +1,52 @@
+﻿@using ParadigmWatch.Models.ViewModels
+@model CartIndexViewModel
+@{
+    ViewData["Title"] = "Cart";
+}
+
+<div class="cartTable">
+
+    <h2>Your cart</h2>
+    <div class="cart-container">
+        <div class="cart-container-topLine">
+                <a>Quantity</a>
+                <a>Item</a>
+                <a class="text-right">Price</a>
+                <a class="text-right">Subtotal</a>
+        </div>
+        <div class="cart-container-middleSection">
+            @foreach (var line in Model.Cart.Lines)
+            {
+                <div>
+                    <h2 class="cart-text-left">@line.Product.Name</h2>
+                    <p class="cart-text-center">@line.Quantity</p>
+                    <p class="cart-text-right">@line.Product.Price.ToString("c")</p>
+                    <p class="cart-text-right">
+                        @((line.Quantity * line.Product.Price).ToString("c"))
+                    </p>
+                    <div class="cart-removeButton" >
+                        <form asp-action="RemoveFromCart" method="post">
+                            <input type="hidden" name="ProductId"
+                                   value="@line.Product.Id" />
+                            <input type="hidden" name="returnUrl"
+                                   value="@Model.ReturnUrl" />
+                            <button type="submit" class="shop">
+                                Remove
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            }
+        </div>
+        <div class="cart-container-bottom">
+                <h3 colspan="3" class="text-right">Total:</h3>
+                <p class="text-right">
+                    @Model.Cart.ComputeTotalValue().ToString("c")</p>
+        </div>
+    </div>
+    <div class="text-center">
+        <a class="shop" href="@Model.ReturnUrl">Continue shopping</a>
+    </div>
+
+</div>

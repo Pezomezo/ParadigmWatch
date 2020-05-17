@@ -15,6 +15,10 @@ namespace ParadigmWatch.Models
         [Column(TypeName = "float")]
         public decimal TotalPrice { get; set; }
 
+        public OrderItem()
+        {
+        }
+
         public OrderItem(Watch watch, int quanity)
         {
             Watch = watch;
