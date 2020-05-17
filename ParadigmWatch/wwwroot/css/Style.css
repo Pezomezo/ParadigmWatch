@@ -1160,27 +1160,54 @@ nav {
     z-index: 2;
     max-width: 25vw;
 }
-.products {
+    .products {
+        display: inline-flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-top: 25px;
+    }
 
-    display: inline-flex;
-    justify-content: space-between;
-    flex-direction: row;
-    margin-top: 25px;
-}
-.productContainer {
-    width: 30%;
-    height: 300px;
-    display: flex;
-    justify-content: space-between;
-}
-.productImage > img {
-    max-width: 15%;
-    transition: 1s;
-    position: absolute;
-}
-.productImage > img:hover{
-    max-width: 16%;
-}
+
+
+    .productContainer {
+        width: 25vw;
+        height: 300px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+
+    .productDescription {
+        position: absolute;
+        display: initial;
+        width: 30%;
+        /*height: 100%;*/
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /*background: linear-gradient(270deg, #1F2125 0%, #343841 100%);*/
+        padding: 0;
+        border-radius: 15%;
+        box-sizing: border-box;
+        max-width: 0px;
+    }
+
+
+
+    .productImage > img {
+        max-width: 15%;
+        transition: 1s;
+        position: absolute;
+        margin-top: 65px;
+        margin-left: -25px;
+    }
+
+
+
+        .productImage > img:hover {
+            max-width: 16%;
+        }
 .SocialMediaIcons {
     width: 20%;
 }
