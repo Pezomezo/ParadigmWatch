@@ -1230,7 +1230,6 @@ nav {
         transition: 1s;
         position: absolute;
         margin-top: 65px;
-        margin-left: -25px;
         z-index: 1;
     }
 
