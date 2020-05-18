@@ -452,11 +452,14 @@ background-color: #C3A261;
 }
 
 .products {
-display: inline-flex;
-justify-content: center;
-align-items: center;
-margin-top: 25px;
-flex-direction: column;
+    max-width: 1360px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .productContainer {
@@ -472,11 +475,11 @@ margin: 15px 0 15px 0;
 }
 
 .productImage {
-width: 15%;
-height: 100%;
-display: flex;
-flex-direction: column;
-/*justify-content: center;*/
+    width: 15%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .productImage > img {
@@ -505,7 +508,7 @@ margin-bottom: 25px;
 }
 
 .shop {
-width: 200px;
+width: 150px;
 height: 50px;
 border-radius: 500px;
 border: none;
@@ -624,8 +627,17 @@ height: 80%;
 width: 80%;
 z-index: 1;
 }
+
+.showTop {
+    margin-top: 50px;
+}
+
 .showDown{
 width: 100%;
+}
+
+.showDown p {
+        width: 180px;
 }
 .detailsContainer {
 width: 100%;
@@ -633,25 +645,29 @@ display: flex;
 justify-content: space-between;
 }
 
+.navigationLinksShow button {
+margin: 5px;
+}
+
 .navigationLinksShow {
-display: flex;
+/*display: flex;*/
 }
 .navigationLinksShow > a {
-    margin-left: 50px;
+    /*margin-left: 50px;*/
     height: 5vh;
     display: flex;
     align-items: center;
 }
-.navigationLinksShow > a:last-child {
-    color: #1F2125;
-    font-weight: 700;
-    width: 250px;
-    height: 50px;
-    border-radius: 500px;
-    display: flex;
-    justify-content: center;
-    background-color: #4580D9;
-}
+    .navigationLinksShow > a:last-child {
+        color: #1F2125;
+        font-weight: 700;
+        width: 150px;
+        height: 50px;
+        border-radius: 500px;
+        display: flex;
+        justify-content: center;
+        background-color: #4580D9;
+    }
     .navigationLinksShow > a:last-child:hover {
         color: #4580D9;
         background-color: white;
@@ -724,13 +740,26 @@ align-items: center;
 flex-direction: column;
 margin-bottom: 25px;
 }
+
 .productsRec {
-width: 100%;
-display: inline-flex;
-justify-content: space-between;
-flex-direction: row;
-margin-top: 25px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
 }
+
+    /*.productsRec p {
+        width: 200px;
+        padding:25px;
+        margin-left: 170px;
+        margin-top: 25px;
+        background: linear-gradient(90deg, #1F2125 0%, #1F2125 40%, #343841 100%);
+        border-radius: 15px;
+    }*/
+
 /*#############################################################################################################################################*/
 
 
@@ -1179,7 +1208,6 @@ nav {
     max-width: 25vw;
 }
     .products {
-        max-width: 1360px;
         margin:0 auto;
         display: inline-flex;
         justify-content: space-between;
@@ -1229,7 +1257,7 @@ nav {
         max-width: 13%;
         transition: 1s;
         position: absolute;
-        margin-top: 65px;
+        /*margin-top: 65px;*/
         z-index: 1;
     }
 
@@ -1238,16 +1266,23 @@ nav {
         .productImage > img:hover {
             max-width: 16%;
         }
+
+    .productsRec p {
+        width: 200px;
+        padding: 25px;
+        margin-left: 170px;
+        margin-top: 25px;
+        background: linear-gradient(90deg, #1F2125 0%, #1F2125 40%, #343841 100%);
+        border-radius: 15px;
+    }
+
+    .showDown p {
+        width: 400px;
+    }
+
 .SocialMediaIcons {
     width: 20%;
 }
-
-
-
-
-
-
-
 
 .storeProducts {
 margin: 50px 0 50px 0;
@@ -1257,8 +1292,6 @@ width: 80vw;
 grid-row: 3/4;
 flex-direction: column;
 }
-
-
 
 .storeProductContainer {
 display: inline-flex;
@@ -1271,6 +1304,7 @@ justify-content: space-between;
 border-radius: 25px;
 flex-direction: row;
 }
+
 
 .storeProductContainer:nth-child(odd) {
     flex-direction: row-reverse;
@@ -1303,15 +1337,10 @@ flex-direction: row;
         align-items: flex-start;
     }
 
-
-
-
 .storeProductImage {
 position: relative;
 display: flex;
 }
-
-
 
 .storeProductImage > img {
     max-width: 100%;
@@ -1320,8 +1349,6 @@ display: flex;
 .storeProductDescription {
 margin: 25px;
 }
-
-
 
 .storeProductDescription > h2 {
     margin-bottom: 25px;
