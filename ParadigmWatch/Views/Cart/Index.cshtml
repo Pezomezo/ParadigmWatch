@@ -4,49 +4,60 @@
     ViewData["Title"] = "Cart";
 }
 
-<div class="cartTable">
+<section id="cartTable">
 
-    <h2>Your cart</h2>
     <div class="cart-container">
-        <div class="cart-container-topLine">
-                <a>Quantity</a>
-                <a>Item</a>
-                <a class="text-right">Price</a>
-                <a class="text-right">Subtotal</a>
+        <div class="cart-firstrow">
+            <a class="cart-container-Product">Product</a>
+            <a class="cart-container-Quantity">Quantity</a>
+            <a class="cart-container-Price">Price</a>
         </div>
+
         <div class="cart-container-middleSection">
             @foreach (var line in Model.Cart.Lines)
             {
-                <div>
-                    <h2 class="cart-text-left">@line.Product.Name</h2>
+                <div class="cart-middle-content">
+                    <img class="productImage" src="~/Images/@line.Product.WatchImagePath" />
+                    <div class="cart-product-details">
+                        <h2 class="cart-middle-name">@line.Product.Name</h2>
+                        <p class="cart-middle-desc">@line.Product.Description</p>
+                    </div>
+
                     <p class="cart-text-center">@line.Quantity</p>
-                    <p class="cart-text-right">@line.Product.Price.ToString("c")</p>
                     <p class="cart-text-right">
                         @((line.Quantity * line.Product.Price).ToString("c"))
                     </p>
-                    <div class="cart-removeButton" >
+                    <div class="cart-removeButton">
                         <form asp-action="RemoveFromCart" method="post">
                             <input type="hidden" name="ProductId"
                                    value="@line.Product.Id" />
                             <input type="hidden" name="returnUrl"
                                    value="@Model.ReturnUrl" />
-                            <button type="submit" class="shop">
+                            <button type="submit" class="cart-delete">
                                 Remove
                             </button>
                         </form>
                     </div>
-
                 </div>
+
+
             }
         </div>
+        <hr class="cart-bottom-line">
         <div class="cart-container-bottom">
-                <h3 colspan="3" class="text-right">Total:</h3>
-                <p class="text-right">
-                    @Model.Cart.ComputeTotalValue().ToString("c")</p>
+            <h3 colspan="3" class="cartTotal">Total:</h3>
+            <p class="text-right">
+                @Model.Cart.ComputeTotalValue().ToString("c")
+            </p>
+        </div>
+
+        <div class="cartBottom">
+            <div class="cart-shop marginOnRight">
+                <a href="@Model.ReturnUrl">Continue shopping</a>
+            </div>
+            <div class="cart-shop">
+                <a>Check out</a>
+            </div>
         </div>
     </div>
-    <div class="text-center">
-        <a class="shop" href="@Model.ReturnUrl">Continue shopping</a>
-    </div>
-
-</div>
+</section>

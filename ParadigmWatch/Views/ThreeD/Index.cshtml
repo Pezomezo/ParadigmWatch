@@ -1,11 +1,32 @@
-﻿
+﻿@using ParadigmWatch.Models;
+@using ParadigmWatch.Infrastructure
+@model Watch
+
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = Model.Name;
 }
+
+<p id="startingModel" style="display:none">@Model.Name</p>
+
+@foreach(WatchPart part in Model.WatchParts)
+{
+    <div style="margin-top: 500px; display: none">
+        
+        <p class="componentTypeId">@part.ComponentTypeId</p>
+        <p class="ComponentName">@part.Name</p>
+        <p class="textureMap">@part.TextureMap.ImagePath</p>
+        <p class="metallnessProp">@part.Shader.Metalness</p>
+        <p class="normalMap">@part.Shader.NormalMapPath</p>
+        <p class="normalIntensity">@part.Shader.NormalMapIntensity</p>
+        <p class="roughnessProp">@part.Shader.Roughness</p>
+        
+    </div>
+    
+    }
 
 <div id="canvas"></div>
 
-
-<script src="~/js/Three.js" type="module"></script>
-<script src="~/js/OBJLoader.js" type="module"></script>
-<script src="~/js/3dPlayground.js" type="module"></script>
+    <script src="~/js/Three.js" type="module"></script>
+    <script src="~/js/OBJLoader.js" type="module"></script>
+    <script src="~/js/3dPlayground.js" type="module"></script>
