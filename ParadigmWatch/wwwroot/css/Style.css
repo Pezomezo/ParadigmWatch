@@ -168,6 +168,7 @@ grid-row: 1/2;
 height: 100vh;
 
 }
+
 .heroContent {
 position: absolute;
 grid-template-columns: repeat(10, 9.914vw );
@@ -1012,6 +1013,10 @@ nav {
     justify-content: center;
     z-index: 3;
 }
+
+    .heroContent {
+        grid-template-columns: repeat(10, 9.8vw );
+    }
 
     #mobile1 {
         display: inline-flex;
