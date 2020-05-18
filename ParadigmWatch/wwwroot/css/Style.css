@@ -1002,6 +1002,7 @@ margin-top: 25px;
 
 
 @media only screen and (min-width: 1200px) {
+
 nav {
     position: fixed;
     background-color: rgba(0,0,0,0);
@@ -1173,6 +1174,7 @@ nav {
     max-width: 25vw;
 }
     .products {
+        max-width: 1360px;
         display: inline-flex;
         justify-content: space-between;
         flex-direction: row;
@@ -1211,9 +1213,9 @@ nav {
         height: 300px;
         float: left;
         opacity: 1;
-        background: linear-gradient(90deg, #1F2125 0%, #343841 100%);
+        background: linear-gradient(90deg, #1F2125 0%, #1F2125 40%, #343841 100%); 
         border-radius: 15px;
-        display:block;
+        display: block;
     }
 
 
