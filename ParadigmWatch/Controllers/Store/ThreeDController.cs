@@ -10,9 +10,12 @@ namespace ParadigmWatch.Controllers.Store
 {
     public class ThreeDController : Controller
     {
-        public IActionResult Index()
+
+        public IActionResult Index(string watchName)
         {
-            return View();
+            Watch returnedWatch = Repository.Watches.ToList().Where<Watch>(item => item.Name.Equals(watchName)).First();
+            Console.WriteLine("CAME FROM ANOTHER VIEW: " + returnedWatch);
+            return View(returnedWatch);
         }
     }
 }

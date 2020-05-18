@@ -69,7 +69,7 @@ namespace ParadigmWatch
                 ContentTypeProvider = new FileExtensionContentTypeProvider()
             };
             ((FileExtensionContentTypeProvider)options.ContentTypeProvider).Mappings.Add(
-                new KeyValuePair<string, string>(".obj", "text/plain"));
+                new KeyValuePair<string, string>(".glb", "text/plain"));
 
             
 
@@ -85,7 +85,12 @@ namespace ParadigmWatch
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles(
+                new StaticFileOptions
+                {   /* unknown mime types (ie: .fx) files will not be served, otherwise! */
+                    ServeUnknownFileTypes = true
+                }
+);
             app.UseAuthentication();
 
             app.UseRouting();

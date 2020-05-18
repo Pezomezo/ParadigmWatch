@@ -10,6 +10,7 @@ namespace ParadigmWatch.Models
         public int Id { get; set; }
         public int WatchId { get; set; }
         public Watch Watch { get; set; }
+        public string watchComponentPath { set; get; }
         public int WatchPartId { get; set; }
         public WatchPart WatchPart { get; set; }
     }

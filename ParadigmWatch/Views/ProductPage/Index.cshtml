@@ -29,7 +29,9 @@
                             </button>
                         </span>
                     </form>
-                    <a href="#" class="primaryLink">Build your own</a>
+                    <form asp-controller="ThreeD" asp-action="Index" asp-route-watchName="@Model.Name" method="post">
+                        <button type="submit" class="shop">Build your own</button>
+                    </form>
                 </div>
             </div>
         </div>
