@@ -15,52 +15,77 @@ namespace ParadigmWatch.Infrastructure
         static Repository()
         {
             // Here come the different textures
-            Texture leatherTexture = new Texture() { Id = 1, TextureName = "Leather", TextureDesc = "This Leather makes you look rich&stuff", ImagePath = "Image/something", TexturePrice = 12.22m };
-            Texture GekkoTexture = new Texture() { Id = 2, TextureName = "Gekko", TextureDesc = "Feel the Gekko", ImagePath = "Image/something", TexturePrice = 15.22m };
-            Texture CrocodileTexture = new Texture() { Id = 3, TextureName = "Crocodile", TextureDesc = "Wanna be the most badass person? try this then!", ImagePath = "Image/something", TexturePrice = 33.4m };
-            Texture ElephantTexture = new Texture() { Id = 4, TextureName = "Elephant", TextureDesc = "You are just cruel at this point :D", ImagePath = "Image/something", TexturePrice = 120.22m };
+            Texture leatherTexture = new Texture() { Id = 1, TextureName = "Leather", TextureDesc = "This Leather makes you look rich&stuff", ImagePath = "models/strap.png", TexturePrice = 12.22m };
+            Texture chromeTexture = new Texture() { Id = 2, TextureName = "Chrome", TextureDesc = "Feel the Gekko", ImagePath = "models/chrome.png", TexturePrice = 15.22m };
+            Texture ApolloTexture = new Texture() { Id = 3, TextureName = "Apollo Dial", TextureDesc = "Wanna be the most badass person? try this then!", ImagePath = "models/watchFrontTexture.png", TexturePrice = 33.4m };
+            Texture clockHandleTexture = new Texture() { Id = 4, TextureName = "Solid Handle", TextureDesc = "You are just cruel at this point :D", ImagePath = "", TexturePrice = 120.22m };
             Texture MetalicTexture = new Texture() { Id = 5, TextureName = "Metalic", TextureDesc = "Smooth life", ImagePath = "Image/something", TexturePrice = 50.22m };
             Texture GoldTexture = new Texture() { Id = 6, TextureName = "Gold", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "Image/something", TexturePrice = 250.22m };
-            Texture SilverTexture = new Texture() { Id = 7, TextureName = "Silver", TextureDesc = "The name is Bond, James Bond...", ImagePath = "Image/something", TexturePrice = 200.22m };
+            Texture empty = new Texture() { Id = 0, TextureName = "", TextureDesc = "", ImagePath = "", TexturePrice = 0m };
 
             // Here come the different shaders
-            StandardShader baseShader = new StandardShader() { Id = 1, Metalness = 12.2m, NormalMapIntensity = 3.0m, NormalMapPath = "Image/something", Roughness = 5m };
+            StandardShader LeatherShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0.1m, NormalMapPath = "models/strap.png", Roughness = 0.3m };
+            StandardShader ChromeShader = new StandardShader() { Id = 1, Metalness = 1m, NormalMapIntensity = 0.1m, NormalMapPath = "models/chrome.png", Roughness = 0.15m };
+            StandardShader ApolloShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0.5m };
+            StandardShader clockHandleShader = new StandardShader() { Id = 1, Metalness = 1m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m };
+            StandardShader emptyShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m };
 
             // Here come the different TextMaps (If any cause I am not sure ask Robi :D)
             TextMap baseText = new TextMap() { Id = 1, ImagePath = "Image/something" };
 
             // Create the different Watch Components
-            WatchPart Sleeves = new WatchPart() { Id = 1, Name = "Sleeves", TextureMap = leatherTexture, Shader = baseShader };
-            WatchPart GekkoSleeves = new WatchPart() { Id = 2, Name = "Sleeves", TextureMap = GekkoTexture, Shader = baseShader };
-            WatchPart ElephantSleeves = new WatchPart() { Id = 3, Name = "Sleeves", TextureMap = ElephantTexture, Shader = baseShader };
-            WatchPart Pointers = new WatchPart() { Id = 4, Name = "Pointers", TextureMap = MetalicTexture, Shader = baseShader };
-            WatchPart SilverPointers = new WatchPart() { Id = 5, Name = "Pointers", TextureMap = GoldTexture, Shader = baseShader };
-            WatchPart BackSide = new WatchPart() { Id = 6, Name = "BackSide", TextureMap = MetalicTexture, Shader = baseShader, TextMap = baseText };
-            WatchPart GoldenBack = new WatchPart() { Id = 7, Name = "BackSide", TextureMap = GoldTexture, Shader = baseShader, TextMap = baseText };
-            WatchPart BodyPart = new WatchPart() { Id = 8, Name = "TheRoundThing", TextureMap = SilverTexture, Shader = baseShader };
-            WatchPart Hooks = new WatchPart() { Id = 9, Name = "Hooks", TextureMap = MetalicTexture, Shader = baseShader };
+            /*
+             back 
+             base
+             ring
+             glass
+             background
+             pointers
+             sleeves
+             thingy
+             */
+
+            WatchPart Pattern = new WatchPart() { Id = 1, Name = "Apollo", TextureMap = ApolloTexture, Shader = ApolloShader, TextMap = baseText, ComponentTypeId = 0 };
+            WatchPart BackSide = new WatchPart() { Id = 2, Name = "Chrome Back part", TextureMap = chromeTexture, Shader = ChromeShader, TextMap = baseText, ComponentTypeId = 1 };
+            WatchPart BaseComponent = new WatchPart() { Id = 3, Name = "Chrome Base", TextureMap = chromeTexture, Shader = ChromeShader, ComponentTypeId = 2};
+            WatchPart Decoration = new WatchPart() { Id = 4, Name = "Chrome Decorations", TextureMap = chromeTexture, Shader = ChromeShader, TextMap = baseText, ComponentTypeId = 3 };
+            WatchPart Pointers = new WatchPart() { Id = 5, Name = "Silver Pointer",TextureMap = clockHandleTexture, Shader = clockHandleShader, ComponentTypeId = 4};
+            WatchPart Sleeves = new WatchPart() { Id = 6, Name = "Sleeves", TextureMap = leatherTexture, Shader = LeatherShader, ComponentTypeId = 5 };
+            WatchPart Glass = new WatchPart() { Id = 7, Name = "Glass", TextureMap = empty, Shader = emptyShader, ComponentTypeId = 6};
+            WatchPart Ring = new WatchPart() { Id = 8, Name = "Chrome Ring", TextureMap = chromeTexture, Shader = ChromeShader, ComponentTypeId = 7 };
+
+
+
 
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
-            Watch SimpleWatch = new Watch() { Id = 1, Name = "Apollo", Description = "This is a basic model you can configure it to your liking", WatchImagePath = "Apollo.png", ModelPath = "Models/somethibg", Price = 100.50m };
-            SimpleWatch.AddComponent(Sleeves);
-            SimpleWatch.AddComponent(SilverPointers);
+            Watch SimpleWatch = new Watch() { Id = 1, Name = "Apollo", Description = "This is a basic model you can configure it to your liking", WatchImagePath = "Apollo.png", ModelPath="models/Watch.gltf",  Price = 100.50m };
+            SimpleWatch.AddComponent(Pattern);
             SimpleWatch.AddComponent(BackSide);
-            SimpleWatch.AddComponent(BodyPart);
-            SimpleWatch.AddComponent(Hooks);
+            SimpleWatch.AddComponent(BaseComponent);
+            SimpleWatch.AddComponent(Decoration);
+            SimpleWatch.AddComponent(Pointers);
+            SimpleWatch.AddComponent(Sleeves);
+            SimpleWatch.AddComponent(Glass);
+            SimpleWatch.AddComponent(Ring);
+
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
             Watch JunoWatch = new Watch() { Id = 2, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
-            JunoWatch.AddComponent(GekkoSleeves);
-            JunoWatch.AddComponent(Pointers);
-            JunoWatch.AddComponent(GoldenBack);
-            JunoWatch.AddComponent(BodyPart);
-            JunoWatch.AddComponent(Hooks);
+            JunoWatch.AddComponent(Sleeves);
+            JunoWatch.AddComponent(Sleeves);
+            JunoWatch.AddComponent(Sleeves);
+            JunoWatch.AddComponent(Sleeves);
+            JunoWatch.AddComponent(Sleeves);
+            JunoWatch.AddComponent(Sleeves);
+            JunoWatch.AddComponent(Sleeves);
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
             Watch MercuryWatch = new Watch() { Id = 3, Name = "Mercury", Description = "A bald statemnt. That is how I would describe this watch.", WatchImagePath = "Mercury.png", ModelPath = "Models/somethibg", Price = 100.50m };
-            MercuryWatch.AddComponent(ElephantSleeves);
-            MercuryWatch.AddComponent(Pointers);
-            MercuryWatch.AddComponent(GoldenBack);
-            MercuryWatch.AddComponent(BodyPart);
-            MercuryWatch.AddComponent(Hooks);
+            MercuryWatch.AddComponent(Sleeves);
+            MercuryWatch.AddComponent(Sleeves);
+            MercuryWatch.AddComponent(Sleeves);
+            MercuryWatch.AddComponent(Sleeves);
+            MercuryWatch.AddComponent(Sleeves);
+            MercuryWatch.AddComponent(Sleeves);
+
 
             // Create a User
             AppUser Adamka = new AppUser() { Id = "sdfghjklélkjhgfd", UserName = "Adamka", Email = "pezolino19@gmail.com", City = "Pomáz", Address = "Ond utca 9", ZipCode = 2013, CreditCard = "You wish;)" };

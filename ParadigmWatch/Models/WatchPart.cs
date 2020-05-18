@@ -22,6 +22,7 @@ namespace ParadigmWatch.Models
         public int TextMapId { get; set; }
         public TextMap TextMap { get; set; }
         public int WatchComponentsId { get; set; }
+        public int ComponentTypeId { set; get; }
         public List<WatchComponents> WatchComponents { get; set; }
     }
 }
