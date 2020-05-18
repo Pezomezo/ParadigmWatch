@@ -1175,6 +1175,7 @@ nav {
 }
     .products {
         max-width: 1360px;
+        margin:0 auto;
         display: inline-flex;
         justify-content: space-between;
         flex-direction: row;
