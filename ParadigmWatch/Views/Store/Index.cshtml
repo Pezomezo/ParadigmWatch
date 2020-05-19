@@ -1,5 +1,5 @@
-﻿@using ParadigmWatch.Models
-@model IEnumerable<Watch>
+﻿@using ParadigmWatch.Models.ViewModels
+@model IEnumerable<WatchViewModel>
 @{
     ViewData["Title"] = "Paradigm Watch Store";
 }
@@ -59,14 +59,14 @@
         {
         <div class="storeProductContainer">
             <a class="storeProductImage">
-                <img src="~/Images/@item.WatchImagePath" alt="" />
+                <img src="~/Images/@item.Watch.WatchImagePath" alt="" />
             </a>
             <div class="storeProductDescription">
-                <h2 class="storeWatchName">@item.Name</h2>
-                <p class="storeWatchDesc">@item.Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. Nullam convallis, </p>
+                <h2 class="storeWatchName">@item.Watch.Name</h2>
+                <p class="storeWatchDesc">@item.Watch.Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. Nullam convallis, </p>
                 <div class="storeButtonsList">
                     <form method="post">
-                        <button class="storeShop" asp-controller="ProductPage" asp-action="Index" asp-route-watchName="@item.Name">Details</button>
+                        <button class="storeShop" asp-controller="ProductPage" asp-action="Index" asp-route-watchName="@item.Watch.Name">Details</button>
                         <button class="storeShop">Build your own</button>
                     </form>
                     

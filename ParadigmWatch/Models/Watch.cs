@@ -14,7 +14,6 @@ namespace ParadigmWatch.Models
         public string Description { get; set; }
         public string WatchImagePath { get; set; }
         public string ModelPath { get; set; }
-        [Column(TypeName = "float")]
         public decimal Price { get; set; }
         public List<WatchPart> WatchParts { get; set; } = new List<WatchPart>();
         public List<WatchComponents> WatchComponents { get; set; } = new List<WatchComponents>();
