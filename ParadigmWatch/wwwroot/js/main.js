@@ -1,4 +1,38 @@
-﻿
+﻿//The scrool effect
+
+//REVEAL GENERAL SETTING
+window.sr = ScrollReveal({
+    reset: true
+});
+
+// Custom Settings
+
+sr.reveal('.foo-2', {
+    duration: 2000,
+    mobile: true
+});
+
+sr.reveal('.foo-3', {
+    origin: 'left',
+    rotate: {
+        x: 0,
+        y: 100,
+        z: 0
+    },
+    duration: 2000
+});
+
+sr.reveal('.foo-5', {
+    scale: 10
+});
+
+sr.reveal('.foo-6', {
+    class: 'h-scroll-reveal',
+    duration: 2000,
+    scale: 1,
+    distance: '20px'
+});
+
 let slides = document.querySelectorAll('.sliderElement')
 
 let nextButton = document.getElementById('next')
