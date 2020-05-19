@@ -57,7 +57,7 @@ namespace ParadigmWatch.Models.ViewModels
         {
             List<StandardShader> Shaders = DB.StandardShaders.ToList();
 
-            Watch.WatchParts.ForEach(part => part.Shader = Shaders.Find(shader => shader.Id == part.TextureMapId));
+            Watch.WatchParts.ForEach(part => part.Shader = Shaders.Find(shader => shader.Id == part.ShaderId));
         }
         private void FillUpTextMap()
         {
