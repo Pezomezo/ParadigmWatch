@@ -47,6 +47,10 @@
             <a href="#" class="secondaryLink">Learn More</a>
             <a href="#" class="primaryLink">Build your own</a>
         </div>
+
+        <div class="arrowController">
+            <a id="arrowButton" href="#disclaimer"></a>
+        </div>
     </div>
     <div class="slider">
         @foreach (var item in Model)
@@ -120,7 +124,7 @@
     <div class="products">
         @foreach (var item in Model)
         {
-            <div class="productContainer">
+            <div class="productContainer foo-2">
                 <a class="productImage">
                     <img src="~/Images/@item.Watch.WatchImagePath" alt="" />
                 </a>
@@ -148,4 +152,6 @@
 
 @* ______________________________________            NEW SECTION           _________________________________________________ *@
 
+
+<script src="~/js/ScrollReveal.js"></script>
 <script src="~/js/main.js" type="text/javascript"></script>

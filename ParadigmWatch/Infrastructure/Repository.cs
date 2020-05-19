@@ -107,6 +107,7 @@ namespace ParadigmWatch.Infrastructure
 
             //// Place the invoices into the list so we can access them through the program :)
             //invoices.Add(AdamkaInvoice);
+
         }
     }
 }
