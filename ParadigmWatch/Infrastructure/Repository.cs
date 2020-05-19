@@ -58,7 +58,7 @@ namespace ParadigmWatch.Infrastructure
 
 
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
-            Watch SimpleWatch = new Watch() { Id = 1, Name = "Apollo", Description = "This is a basic model you can configure it to your liking", WatchImagePath = "Apollo.png", ModelPath="models/Watch.gltf",  Price = 100.50m };
+            Watch SimpleWatch = new Watch() { Id = 1, Name = "Apollo", Description = "This is a basic model you can configure it to your liking. Apollo is one of the most powerful Greeks gods, and gave name to the Apollo moon program.", WatchImagePath = "Apollo.png", ModelPath="models/Watch.gltf",  Price = 100.50m };
             SimpleWatch.AddComponent(Pattern);
             SimpleWatch.AddComponent(BackSide);
             SimpleWatch.AddComponent(BaseComponent);
@@ -70,7 +70,7 @@ namespace ParadigmWatch.Infrastructure
 
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
 
-            Watch JunoWatch = new Watch() { Id = 2, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
+            Watch JunoWatch = new Watch() { Id = 2, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time. Juno is a Roman goddess who had the highest rank and was married to Jupiter.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
             JunoWatch.AddComponent(Sleeves);
             JunoWatch.AddComponent(Sleeves);
             JunoWatch.AddComponent(Sleeves);
@@ -79,7 +79,7 @@ namespace ParadigmWatch.Infrastructure
             JunoWatch.AddComponent(Sleeves);
             JunoWatch.AddComponent(Sleeves);
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
-            Watch MercuryWatch = new Watch() { Id = 3, Name = "Mercury", Description = "A bald statemnt. That is how I would describe this watch.", WatchImagePath = "Mercury.png", ModelPath = "Models/somethibg", Price = 100.50m };
+            Watch MercuryWatch = new Watch() { Id = 3, Name = "Mercury", Description = "A bald statemnt. That is how I would describe this watch. Mercury is a great god in Roman mythology and is the closest planet to the sun.", WatchImagePath = "Mercury.png", ModelPath = "Models/somethibg", Price = 100.50m };
             MercuryWatch.AddComponent(Sleeves);
             MercuryWatch.AddComponent(Sleeves);
             MercuryWatch.AddComponent(Sleeves);

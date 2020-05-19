@@ -451,6 +451,16 @@ height: 2px;
 background-color: #C3A261;
 }
 
+#arrowButton {
+    position:absolute;
+    left:48.5vw;
+    top:85vh;
+    width: 50px;
+    height: 21.5px;
+    background-image: url(../Images/arrow.svg);
+    background-size: 100%;
+}
+
 .products {
     max-width: 1360px;
     display: inline-flex;
@@ -649,11 +659,7 @@ justify-content: space-between;
 margin: 5px;
 }
 
-.navigationLinksShow {
-/*display: flex;*/
-}
 .navigationLinksShow > a {
-    /*margin-left: 50px;*/
     height: 5vh;
     display: flex;
     align-items: center;
@@ -751,14 +757,6 @@ margin-bottom: 25px;
     flex-wrap: wrap;
 }
 
-    /*.productsRec p {
-        width: 200px;
-        padding:25px;
-        margin-left: 170px;
-        margin-top: 25px;
-        background: linear-gradient(90deg, #1F2125 0%, #1F2125 40%, #343841 100%);
-        border-radius: 15px;
-    }*/
 
 /*#############################################################################################################################################*/
 
@@ -1207,6 +1205,7 @@ nav {
     z-index: 2;
     max-width: 25vw;
 }
+
     .products {
         margin:0 auto;
         display: inline-flex;
