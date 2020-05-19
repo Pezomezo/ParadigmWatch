@@ -1,15 +1,16 @@
-﻿@using ParadigmWatch.Models;
+﻿@using ParadigmWatch.Models.ViewModels;
+@using ParadigmWatch.Models;
 @using ParadigmWatch.Infrastructure
-@model Watch
+@model WatchViewModel
 
 
 @{
-    ViewData["Title"] = Model.Name;
+    ViewData["Title"] = Model.Watch.Name;
 }
 
-<p id="startingModel" style="display:none">@Model.Name</p>
+<p id="startingModel" style="display:none">@Model.Watch.Name</p>
 
-@foreach(WatchPart part in Model.WatchParts)
+@foreach(WatchPart part in Model.Watch.WatchParts)
 {
     <div style="margin-top: 500px; display: none">
         
