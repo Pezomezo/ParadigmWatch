@@ -8,19 +8,25 @@
     ViewData["Title"] = Model.Watch.Name;
 }
 
+
 <p id="startingModel" style="display:none">@Model.Watch.Name</p>
+
 
 @foreach(WatchPart part in Model.Watch.WatchParts)
 {
     <div style="margin-top: 500px; display: none">
         
-        <p class="componentTypeId"> @part.PartType.Name</p>
+        <p class="PartModelPath">@part.ModelPath</p>
+        <p class="PartName">@part.Name</p>
+        <p class="componentTypeId">@part.ComponentTypeId</p>
+
         <p class="ComponentName">@part.Name</p>
         <p class="textureMap">@part.TextureMap.ImagePath</p>
         <p class="metallnessProp">@part.Shader.Metalness</p>
         <p class="normalMap">@part.Shader.NormalMapPath</p>
         <p class="normalIntensity">@part.Shader.NormalMapIntensity</p>
         <p class="roughnessProp">@part.Shader.Roughness</p>
+        <p class="EnvMapInt">@part.Shader.EnvMapIntensity</p>
         
     </div>
     
@@ -28,6 +34,7 @@
 
 <div id="canvas"></div>
 
-    <script src="~/js/Three.js" type="module"></script>
-    <script src="~/js/OBJLoader.js" type="module"></script>
+    <script src="~/js/Three.js"></script>
+    <script src="~/js/GLTFLoader.js" type="module"></script>
+<script src="~/js/TrackballControls.js" type="module"></script>
     <script src="~/js/3dPlayground.js" type="module"></script>

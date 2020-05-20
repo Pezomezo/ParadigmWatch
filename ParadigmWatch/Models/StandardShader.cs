@@ -11,9 +11,12 @@ namespace ParadigmWatch.Models
     public class StandardShader
     {
         public int Id { get; set; }
+        [Column(TypeName = "float")]
+        
         public decimal Metalness { get; set; }
         public decimal Roughness { get; set; }
         public string NormalMapPath { get; set; }
         public decimal NormalMapIntensity { get; set; }
+        public int EnvMapIntensity { set; get; }
     }
 }
