@@ -24,5 +24,7 @@ namespace ParadigmWatch.Models
         public int WatchComponentsId { get; set; }
         public int ComponentTypeId { set; get; }
         public List<WatchComponents> WatchComponents { get; set; }
+        public string ModelPath { set; get; }
+
     }
 }

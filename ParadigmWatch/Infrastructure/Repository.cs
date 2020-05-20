@@ -24,11 +24,11 @@ namespace ParadigmWatch.Infrastructure
             Texture empty = new Texture() { Id = 0, TextureName = "", TextureDesc = "", ImagePath = "", TexturePrice = 0m };
 
             // Here come the different shaders
-            StandardShader LeatherShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0.1m, NormalMapPath = "models/strap.png", Roughness = 0.3m };
-            StandardShader ChromeShader = new StandardShader() { Id = 1, Metalness = 1m, NormalMapIntensity = 0.1m, NormalMapPath = "models/chrome.png", Roughness = 0.15m };
-            StandardShader ApolloShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0.5m };
-            StandardShader clockHandleShader = new StandardShader() { Id = 1, Metalness = 1m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m };
-            StandardShader emptyShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m };
+            StandardShader LeatherShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0.1m, NormalMapPath = "models/strap.png", Roughness = 1m, EnvMapIntensity = 1 };
+            StandardShader ChromeShader = new StandardShader() { Id = 1, Metalness = 1m, NormalMapIntensity = 0.01m, NormalMapPath = "models/chrome.png", Roughness = 0.15m, EnvMapIntensity = 2 };
+            StandardShader ApolloShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0.5m, EnvMapIntensity = 1 };
+            StandardShader clockHandleShader = new StandardShader() { Id = 1, Metalness = 1m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m, EnvMapIntensity = 1 };
+            StandardShader emptyShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m, EnvMapIntensity = 1 };
 
             // Here come the different TextMaps (If any cause I am not sure ask Robi :D)
             TextMap baseText = new TextMap() { Id = 1, ImagePath = "Image/something" };
@@ -45,17 +45,16 @@ namespace ParadigmWatch.Infrastructure
              thingy
              */
 
-            WatchPart Pattern = new WatchPart() { Id = 1, Name = "Apollo", TextureMap = ApolloTexture, Shader = ApolloShader, TextMap = baseText, ComponentTypeId = 0 };
-            WatchPart BackSide = new WatchPart() { Id = 2, Name = "Chrome Back part", TextureMap = chromeTexture, Shader = ChromeShader, TextMap = baseText, ComponentTypeId = 1 };
-            WatchPart BaseComponent = new WatchPart() { Id = 3, Name = "Chrome Base", TextureMap = chromeTexture, Shader = ChromeShader, ComponentTypeId = 2};
-            WatchPart Decoration = new WatchPart() { Id = 4, Name = "Chrome Decorations", TextureMap = chromeTexture, Shader = ChromeShader, TextMap = baseText, ComponentTypeId = 3 };
-            WatchPart Pointers = new WatchPart() { Id = 5, Name = "Silver Pointer",TextureMap = clockHandleTexture, Shader = clockHandleShader, ComponentTypeId = 4};
-            WatchPart Sleeves = new WatchPart() { Id = 6, Name = "Sleeves", TextureMap = leatherTexture, Shader = LeatherShader, ComponentTypeId = 5 };
-            WatchPart Glass = new WatchPart() { Id = 7, Name = "Glass", TextureMap = empty, Shader = emptyShader, ComponentTypeId = 6};
-            WatchPart Ring = new WatchPart() { Id = 8, Name = "Chrome Ring", TextureMap = chromeTexture, Shader = ChromeShader, ComponentTypeId = 7 };
+            WatchPart Pattern = new WatchPart() { Id = 1, Name = "Apollo", TextureMap = ApolloTexture, Shader = ApolloShader, TextMap = baseText, ComponentTypeId = 0, ModelPath = "models/Parts/Backgrounds/Apollo.gltf" };
+            WatchPart BackSide = new WatchPart() { Id = 2, Name = "Chrome Back part", TextureMap = chromeTexture, Shader = ChromeShader, TextMap = baseText, ComponentTypeId = 1, ModelPath = "models/Parts/BackSides/DefaultBack.gltf" };
+            WatchPart BaseComponent = new WatchPart() { Id = 3, Name = "Chrome Base", TextureMap = chromeTexture, Shader = ChromeShader, ComponentTypeId = 2, ModelPath = "models/Parts/Bases/DefaultBase.gltf" };
+            WatchPart Decoration = new WatchPart() { Id = 4, Name = "Chrome Decorations", TextureMap = chromeTexture, Shader = ChromeShader, TextMap = baseText, ComponentTypeId = 3, ModelPath = "models/Parts/Decorations/DefaultDecoration.gltf" };
+            WatchPart Pointers = new WatchPart() { Id = 5, Name = "Silver Pointer",TextureMap = clockHandleTexture, Shader = clockHandleShader, ComponentTypeId = 4, ModelPath = "models/Parts/Pointers/DefaultPointer.gltf" };
+            WatchPart Sleeves = new WatchPart() { Id = 6, Name = "Sleeves", TextureMap = leatherTexture, Shader = LeatherShader, ComponentTypeId = 5, ModelPath = "models/Parts/Sleeves/DefaultSleeve.gltf" };
+            WatchPart Glass = new WatchPart() { Id = 7, Name = "Glass", TextureMap = empty, Shader = emptyShader, ComponentTypeId = 6,  ModelPath = "models/Parts/Glasses/DefaultGlass.gltf" };
+            WatchPart Ring = new WatchPart() { Id = 8, Name = "Chrome Ring", TextureMap = chromeTexture, Shader = ChromeShader, ComponentTypeId = 7, ModelPath = "models/Parts/Rings/DefaultRing.gltf" };
 
-
-
+            
 
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
             Watch SimpleWatch = new Watch() { Id = 1, Name = "Apollo", Description = "This is a basic model you can configure it to your liking", WatchImagePath = "Apollo.png", ModelPath="models/Watch.gltf",  Price = 100.50m };
