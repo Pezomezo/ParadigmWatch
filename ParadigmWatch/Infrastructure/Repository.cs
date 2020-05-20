@@ -68,6 +68,7 @@ namespace ParadigmWatch.Infrastructure
             SimpleWatch.AddComponent(Ring);
 
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
+
             Watch JunoWatch = new Watch() { Id = 2, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
             JunoWatch.AddComponent(Sleeves);
             JunoWatch.AddComponent(Sleeves);
@@ -84,6 +85,7 @@ namespace ParadigmWatch.Infrastructure
             MercuryWatch.AddComponent(Sleeves);
             MercuryWatch.AddComponent(Sleeves);
             MercuryWatch.AddComponent(Sleeves);
+
 
 
             // Create a User
