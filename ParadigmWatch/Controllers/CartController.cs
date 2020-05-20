@@ -32,12 +32,16 @@ namespace ParadigmWatch.Controllers
 
         public RedirectToActionResult AddToCart(int productId, string returnUrl)
         {
+
+            
+
             Watch product = dataContext.Watches
             .FirstOrDefault(p => p.Id == productId);
             if (product != null)
             {
                 cart.AddItem(product, 1);
             }
+            Console.WriteLine(product);
             return RedirectToAction("Index", new { returnUrl });
         }
 

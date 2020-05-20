@@ -24,6 +24,7 @@ namespace ParadigmWatch.Infrastructure
             Texture empty = new Texture() { Id = 0, TextureName = "", TextureDesc = "", ImagePath = "", TexturePrice = 0m };
 
             // Here come the different shaders
+
             StandardShader LeatherShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0.1m, NormalMapPath = "models/strap.png", Roughness = 1m, EnvMapIntensity = 1 };
             StandardShader ChromeShader = new StandardShader() { Id = 1, Metalness = 1m, NormalMapIntensity = 0.01m, NormalMapPath = "models/chrome.png", Roughness = 0.15m, EnvMapIntensity = 2 };
             StandardShader ApolloShader = new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0.5m, EnvMapIntensity = 1 };
@@ -54,55 +55,60 @@ namespace ParadigmWatch.Infrastructure
             WatchPart Glass = new WatchPart() { Id = 7, Name = "Glass", TextureMap = empty, Shader = emptyShader, ComponentTypeId = 6,  ModelPath = "models/Parts/Glasses/DefaultGlass.gltf" };
             WatchPart Ring = new WatchPart() { Id = 8, Name = "Chrome Ring", TextureMap = chromeTexture, Shader = ChromeShader, ComponentTypeId = 7, ModelPath = "models/Parts/Rings/DefaultRing.gltf" };
 
+
             
 
             // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
-            Watch SimpleWatch = new Watch() { Id = 1, Name = "Apollo", Description = "This is a basic model you can configure it to your liking", WatchImagePath = "Apollo.png", ModelPath="models/Watch.gltf",  Price = 100.50m };
-            SimpleWatch.AddComponent(Pattern);
-            SimpleWatch.AddComponent(BackSide);
-            SimpleWatch.AddComponent(BaseComponent);
-            SimpleWatch.AddComponent(Decoration);
-            SimpleWatch.AddComponent(Pointers);
-            SimpleWatch.AddComponent(Sleeves);
-            SimpleWatch.AddComponent(Glass);
-            SimpleWatch.AddComponent(Ring);
+            //Watch SimpleWatch = new Watch() { Id = 1, Name = "Apollo", Description = "This is a basic model you can configure it to your liking", WatchImagePath = "Apollo.png", ModelPath="models/Watch.gltf",  Price = 100.50m };
+            //SimpleWatch.AddComponent(Pattern);
+            //SimpleWatch.AddComponent(BackSide);
+            //SimpleWatch.AddComponent(BaseComponent);
+            //SimpleWatch.AddComponent(Decoration);
+            //SimpleWatch.AddComponent(Pointers);
+            //SimpleWatch.AddComponent(Sleeves);
+            //SimpleWatch.AddComponent(Glass);
+            //SimpleWatch.AddComponent(Ring);
 
-            // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
+            //// Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
 
-            Watch JunoWatch = new Watch() { Id = 2, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
-            JunoWatch.AddComponent(Sleeves);
-            JunoWatch.AddComponent(Sleeves);
-            JunoWatch.AddComponent(Sleeves);
-            JunoWatch.AddComponent(Sleeves);
-            JunoWatch.AddComponent(Sleeves);
-            JunoWatch.AddComponent(Sleeves);
-            JunoWatch.AddComponent(Sleeves);
-            // Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
-            Watch MercuryWatch = new Watch() { Id = 3, Name = "Mercury", Description = "A bald statemnt. That is how I would describe this watch.", WatchImagePath = "Mercury.png", ModelPath = "Models/somethibg", Price = 100.50m };
-            MercuryWatch.AddComponent(Sleeves);
-            MercuryWatch.AddComponent(Sleeves);
-            MercuryWatch.AddComponent(Sleeves);
-            MercuryWatch.AddComponent(Sleeves);
-            MercuryWatch.AddComponent(Sleeves);
-            MercuryWatch.AddComponent(Sleeves);
-
-
-
-            // Create a User
-            AppUser Adamka = new AppUser() { Id = "sdfghjklélkjhgfd", UserName = "Adamka", Email = "pezolino19@gmail.com", City = "Pomáz", Address = "Ond utca 9", ZipCode = 2013, CreditCard = "You wish;)" };
-
-            // Create an Invoice and add the order item to it ----> Dont forget to populate the Invoices list with your newly added invoice at the bottom!
-            Invoice AdamkaInvoice = new Invoice() { InvoiceId = 1, OrderDate = DateTime.Now, User = Adamka };
-            AdamkaInvoice.AddOrderItem(SimpleWatch, 2);
+            //Watch JunoWatch = new Watch() { Id = 2, Name = "Juno", Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", WatchImagePath = "Juno.png", ModelPath = "Models/somethibg", Price = 100.50m };
+            //JunoWatch.AddComponent(Pattern);
+            //JunoWatch.AddComponent(BackSide);
+            //JunoWatch.AddComponent(BaseComponent);
+            //JunoWatch.AddComponent(Decoration);
+            //JunoWatch.AddComponent(Pointers);
+            //JunoWatch.AddComponent(Sleeves);
+            //JunoWatch.AddComponent(Glass);
+            //JunoWatch.AddComponent(Ring);
+            //// Build up the watches here  ----> Dont forget to populate the Watches list with your newly added watch at the bottom!
+            //Watch MercuryWatch = new Watch() { Id = 3, Name = "Mercury", Description = "A bald statemnt. That is how I would describe this watch.", WatchImagePath = "Mercury.png", ModelPath = "Models/somethibg", Price = 100.50m };
+            //MercuryWatch.AddComponent(Pattern);
+            //MercuryWatch.AddComponent(BackSide);
+            //MercuryWatch.AddComponent(BaseComponent);
+            //MercuryWatch.AddComponent(Decoration);
+            //MercuryWatch.AddComponent(Pointers);
+            //MercuryWatch.AddComponent(Sleeves);
+            //MercuryWatch.AddComponent(Glass);
+            //MercuryWatch.AddComponent(Ring);
 
 
-            // Place them into the Watches List so we can access them in the code :)
-            Watches.Add(SimpleWatch);
-            Watches.Add(JunoWatch);
-            Watches.Add(MercuryWatch);
 
-            // Place the invoices into the list so we can access them through the program :)
-            invoices.Add(AdamkaInvoice);
+            //// Create a User
+            //AppUser Adamka = new AppUser() { Id = "sdfghjklélkjhgfd", UserName = "Adamka", Email = "pezolino19@gmail.com", City = "Pomáz", Address = "Ond utca 9", ZipCode = 2013, CreditCard = "You wish;)" };
+
+            //// Create an Invoice and add the order item to it ----> Dont forget to populate the Invoices list with your newly added invoice at the bottom!
+            //Invoice AdamkaInvoice = new Invoice() { InvoiceId = 1, OrderDate = DateTime.Now, User = Adamka };
+            //AdamkaInvoice.AddOrderItem(SimpleWatch, 2);
+
+
+            //// Place them into the Watches List so we can access them in the code :)
+            //Watches.Add(SimpleWatch);
+            //Watches.Add(JunoWatch);
+            //Watches.Add(MercuryWatch);
+
+            //// Place the invoices into the list so we can access them through the program :)
+            //invoices.Add(AdamkaInvoice);
+
         }
     }
 }

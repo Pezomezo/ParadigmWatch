@@ -1,5 +1,5 @@
-﻿@using ParadigmWatch.Models;
-@model IEnumerable<Watch>
+﻿@using ParadigmWatch.Models.ViewModels;
+@model IEnumerable<WatchViewModel>
 @{
     ViewData["Title"] = "Paradigm watch";
 }
@@ -47,15 +47,19 @@
             <a href="#" class="secondaryLink">Learn More</a>
             <a href="#" class="primaryLink">Build your own</a>
         </div>
+
+        <div class="arrowController">
+            <a id="arrowButton" href="#disclaimer"></a>
+        </div>
     </div>
     <div class="slider">
         @foreach (var item in Model)
         {
             <div class="content wrapper">
 
-                <div class="sliderElement" id="@item.Id">
-                    <img class="sliderImg" src="~/Images/@item.WatchImagePath" alt="@item.Name" />
-                    <h2 class="sliderText">@item.Name.ToUpper()</h2>
+                <div class="sliderElement" id="@item.Watch.Id">
+                    <img class="sliderImg" src="~/Images/@item.Watch.WatchImagePath" alt="@item.Watch.Name" />
+                    <h2 class="sliderText">@item.Watch.Name.ToUpper()</h2>
 
                 </div>
             </div>
@@ -120,14 +124,14 @@
     <div class="products">
         @foreach (var item in Model)
         {
-            <div class="productContainer">
+            <div class="productContainer foo-2">
                 <a class="productImage">
-                    <img src="~/Images/@item.WatchImagePath" alt="" />
+                    <img src="~/Images/@item.Watch.WatchImagePath" alt="" />
                 </a>
                 <div class="productDescription">
                     <div class="ellipseWrap"></div>
-                    <h2>@item.Name</h2>
-                    <p>@item.Description</p>
+                    <h2>@item.Watch.Name</h2>
+                    <p>@item.Watch.Description</p>
                 </div>
             </div>
         }
@@ -148,4 +152,6 @@
 
 @* ______________________________________            NEW SECTION           _________________________________________________ *@
 
+
+<script src="~/js/ScrollReveal.js"></script>
 <script src="~/js/main.js" type="text/javascript"></script>

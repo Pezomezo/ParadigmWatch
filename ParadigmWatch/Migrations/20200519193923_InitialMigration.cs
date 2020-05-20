@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ParadigmWatch.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class InitialMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -51,6 +51,19 @@ namespace ParadigmWatch.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Backgrounds",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    BackgroundPictureFilePath = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Backgrounds", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -113,6 +126,19 @@ namespace ParadigmWatch.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Watch", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "WatchPartType",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_WatchPartType", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -222,6 +248,26 @@ namespace ParadigmWatch.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Discounts",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(nullable: true),
+                    DiscountAmount = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Discounts", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Discounts_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Invoice",
                 columns: table => new
                 {
@@ -253,11 +299,19 @@ namespace ParadigmWatch.Migrations
                     ShaderId = table.Column<int>(nullable: false),
                     TextMapId = table.Column<int>(nullable: false),
                     WatchComponentsId = table.Column<int>(nullable: false),
+                    TypeId = table.Column<int>(nullable: false),
+                    PartTypeId = table.Column<int>(nullable: true),
                     WatchId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_WatchPart", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_WatchPart_WatchPartType_PartTypeId",
+                        column: x => x.PartTypeId,
+                        principalTable: "WatchPartType",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_WatchPart_StandardShader_ShaderId",
                         column: x => x.ShaderId,
@@ -313,24 +367,25 @@ namespace ParadigmWatch.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "WatchComponents",
+                name: "RelationTableWatch",
                 columns: table => new
                 {
                     WatchId = table.Column<int>(nullable: false),
                     WatchPartId = table.Column<int>(nullable: false),
-                    Id = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false),
+                    watchComponentPath = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_WatchComponents", x => new { x.WatchId, x.WatchPartId });
+                    table.PrimaryKey("PK_RelationTableWatch", x => new { x.WatchId, x.WatchPartId });
                     table.ForeignKey(
-                        name: "FK_WatchComponents_Watch_WatchId",
+                        name: "FK_RelationTableWatch_Watch_WatchId",
                         column: x => x.WatchId,
                         principalTable: "Watch",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_WatchComponents_WatchPart_WatchPartId",
+                        name: "FK_RelationTableWatch_WatchPart_WatchPartId",
                         column: x => x.WatchPartId,
                         principalTable: "WatchPart",
                         principalColumn: "Id",
@@ -340,7 +395,14 @@ namespace ParadigmWatch.Migrations
             migrationBuilder.InsertData(
                 table: "StandardShader",
                 columns: new[] { "Id", "Metalness", "NormalMapIntensity", "NormalMapPath", "Roughness" },
-                values: new object[] { 1, 12.199999999999999, 3.0, "Image/something", 5.0 });
+                values: new object[,]
+                {
+                    { 1, 0.0, 0.10000000000000001, "models/strap.png", 0.29999999999999999 },
+                    { 2, 1.0, 0.10000000000000001, "models/chrome.png", 0.14999999999999999 },
+                    { 3, 0.0, 0.0, "", 0.5 },
+                    { 4, 1.0, 0.0, "", 0.0 },
+                    { 5, 0.0, 0.0, "", 0.0 }
+                });
 
             migrationBuilder.InsertData(
                 table: "TextMap",
@@ -352,13 +414,13 @@ namespace ParadigmWatch.Migrations
                 columns: new[] { "Id", "ImagePath", "TextureDesc", "TextureName", "TexturePrice" },
                 values: new object[,]
                 {
-                    { 1, "Image/something", "This Leather makes you look rich&stuff", "Leather", 12.220000000000001 },
-                    { 2, "Image/something", "Feel the Gekko", "Gekko", 15.220000000000001 },
-                    { 3, "Image/something", "Wanna be the most badass person? try this then!", "Crocodile", 33.399999999999999 },
-                    { 4, "Image/something", "You are just cruel at this point :D", "Elephant", 120.22 },
+                    { 7, "", "", "", 0.0 },
                     { 5, "Image/something", "Smooth life", "Metalic", 50.219999999999999 },
+                    { 4, "", "You are just cruel at this point :D", "Solid Handle", 120.22 },
                     { 6, "Image/something", "If you are into that Pimpin' lifestyle", "Gold", 250.22 },
-                    { 7, "Image/something", "The name is Bond, James Bond...", "Silver", 200.22 }
+                    { 2, "models/chrome.png", "Feel the Gekko", "Chrome", 15.220000000000001 },
+                    { 1, "models/strap.png", "This Leather makes you look rich&stuff", "Leather", 12.220000000000001 },
+                    { 3, "models/watchFrontTexture.png", "Wanna be the most badass person? try this then!", "Apollo Dial", 33.399999999999999 }
                 });
 
             migrationBuilder.InsertData(
@@ -366,47 +428,70 @@ namespace ParadigmWatch.Migrations
                 columns: new[] { "Id", "Description", "ModelPath", "Name", "Price", "WatchImagePath" },
                 values: new object[,]
                 {
-                    { 1, "This is a basic model you can configure it to your liking", "Models/somethibg", "Apollo", 100.5, "Apollo.png" },
-                    { 2, "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", "Models/somethibg", "Juno", 100.5, "Juno.png" },
-                    { 3, "A bald statemnt. That is how I would describe this watch.", "Models/somethibg", "Mercury", 100.5, "Mercury.png" }
+                    { 1, "This is a basic model you can configure it to your liking", "models/Watch.gltf", "Apollo", 100.5, "Apollo.png" },
+                    { 2, "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.", "models/Watch.gltf", "Juno", 100.5, "Juno.png" },
+                    { 3, "A bald statemnt. That is how I would describe this watch.", "models/Watch.gltf", "Mercury", 100.5, "Mercury.png" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "WatchPartType",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 7, "Glass" },
+                    { 1, "Pattern" },
+                    { 2, "BackSide" },
+                    { 3, "Base" },
+                    { 4, "Decoration" },
+                    { 5, "Pointer" },
+                    { 6, "Sleeve" },
+                    { 8, "Ring" }
                 });
 
             migrationBuilder.InsertData(
                 table: "WatchPart",
-                columns: new[] { "Id", "Name", "ShaderId", "TextMapId", "TextureMapId", "WatchComponentsId", "WatchId" },
+                columns: new[] { "Id", "Name", "PartTypeId", "ShaderId", "TextMapId", "TextureMapId", "TypeId", "WatchComponentsId", "WatchId" },
                 values: new object[,]
                 {
-                    { 1, "Sleeves", 1, 1, 1, 0, null },
-                    { 2, "Sleeves", 1, 1, 2, 0, null },
-                    { 3, "Sleeves", 1, 1, 3, 0, null },
-                    { 4, "Pointers", 1, 1, 5, 0, null },
-                    { 6, "BackSide", 1, 1, 5, 0, null },
-                    { 9, "Hooks", 1, 1, 5, 0, null },
-                    { 5, "Pointers", 1, 1, 6, 0, null },
-                    { 7, "BackSide", 1, 1, 6, 0, null },
-                    { 8, "TheRoundThing", 1, 1, 7, 0, null }
+                    { 6, "Sleeves", null, 1, 1, 1, 6, 0, null },
+                    { 2, "Chrome Back part", null, 2, 1, 2, 2, 0, null },
+                    { 3, "Chrome Base", null, 2, 1, 2, 3, 0, null },
+                    { 4, "Chrome Decorations", null, 2, 1, 2, 4, 0, null },
+                    { 8, "Chrome Ring", null, 2, 1, 2, 8, 0, null },
+                    { 1, "Apollo", null, 3, 1, 3, 1, 0, null },
+                    { 5, "Silver Pointer", null, 4, 1, 4, 5, 0, null },
+                    { 7, "Glass", null, 5, 1, 7, 7, 0, null }
                 });
 
             migrationBuilder.InsertData(
-                table: "WatchComponents",
-                columns: new[] { "WatchId", "WatchPartId", "Id" },
+                table: "RelationTableWatch",
+                columns: new[] { "WatchId", "WatchPartId", "Id", "watchComponentPath" },
                 values: new object[,]
                 {
-                    { 1, 1, 0 },
-                    { 2, 2, 0 },
-                    { 3, 3, 0 },
-                    { 2, 4, 0 },
-                    { 3, 4, 0 },
-                    { 1, 6, 0 },
-                    { 3, 6, 0 },
-                    { 1, 9, 0 },
-                    { 2, 9, 0 },
-                    { 3, 9, 0 },
-                    { 1, 5, 0 },
-                    { 2, 7, 0 },
-                    { 1, 8, 0 },
-                    { 2, 8, 0 },
-                    { 3, 8, 0 }
+                    { 1, 6, 0, null },
+                    { 1, 7, 0, null },
+                    { 3, 5, 0, null },
+                    { 2, 5, 0, null },
+                    { 1, 5, 0, null },
+                    { 3, 1, 0, null },
+                    { 2, 1, 0, null },
+                    { 1, 1, 0, null },
+                    { 3, 8, 0, null },
+                    { 2, 8, 0, null },
+                    { 1, 8, 0, null },
+                    { 3, 4, 0, null },
+                    { 2, 4, 0, null },
+                    { 1, 4, 0, null },
+                    { 3, 3, 0, null },
+                    { 2, 3, 0, null },
+                    { 1, 3, 0, null },
+                    { 3, 2, 0, null },
+                    { 2, 2, 0, null },
+                    { 1, 2, 0, null },
+                    { 3, 6, 0, null },
+                    { 2, 6, 0, null },
+                    { 2, 7, 0, null },
+                    { 3, 7, 0, null }
                 });
 
             migrationBuilder.CreateIndex(
@@ -449,6 +534,11 @@ namespace ParadigmWatch.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Discounts_UserId",
+                table: "Discounts",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Invoice_UserId",
                 table: "Invoice",
                 column: "UserId");
@@ -464,9 +554,14 @@ namespace ParadigmWatch.Migrations
                 column: "WatchID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WatchComponents_WatchPartId",
-                table: "WatchComponents",
+                name: "IX_RelationTableWatch_WatchPartId",
+                table: "RelationTableWatch",
                 column: "WatchPartId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_WatchPart_PartTypeId",
+                table: "WatchPart",
+                column: "PartTypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WatchPart_ShaderId",
@@ -507,10 +602,16 @@ namespace ParadigmWatch.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Backgrounds");
+
+            migrationBuilder.DropTable(
+                name: "Discounts");
+
+            migrationBuilder.DropTable(
                 name: "OrderItem");
 
             migrationBuilder.DropTable(
-                name: "WatchComponents");
+                name: "RelationTableWatch");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
@@ -523,6 +624,9 @@ namespace ParadigmWatch.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "WatchPartType");
 
             migrationBuilder.DropTable(
                 name: "StandardShader");

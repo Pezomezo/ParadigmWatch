@@ -1,4 +1,65 @@
-﻿
+﻿//The arrow effect
+const watch = document.querySelector("#arrowButton");
+
+let position = 0;
+
+//speed
+const speed = 15; //px per sec
+const framerate = 60; //frames per sec
+
+let last;
+function step() {
+    // The now preformance
+    const now = performance.now();
+
+    //difference = delta on now and last now, and if last exist it uses last or it uses 0 if last does not exist
+    const delta = now - last || 0;
+    last = now;
+
+    // The 1000 / delta gives the perfect speed at all conditions
+    position += speed / (1000 / delta);
+    if (position > 12) {
+        position = 0;
+    }
+    watch.style.transform = `translateY(${position}px)`;
+    requestAnimationFrame(step);
+}
+step();
+
+//The scrool effect
+
+
+window.sr = ScrollReveal({
+    reset: true
+});
+
+// Custom Settings
+sr.reveal('.foo-2', {
+    duration: 2000,
+    mobile: true
+});
+
+sr.reveal('.foo-3', {
+    origin: 'left',
+    rotate: {
+        x: 0,
+        y: 100,
+        z: 0
+    },
+    duration: 2000
+});
+
+sr.reveal('.foo-5', {
+    scale: 10
+});
+
+sr.reveal('.foo-6', {
+    class: 'h-scroll-reveal',
+    duration: 2000,
+    scale: 1,
+    distance: '20px'
+});
+
 let slides = document.querySelectorAll('.sliderElement')
 
 let nextButton = document.getElementById('next')

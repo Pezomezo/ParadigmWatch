@@ -1,9 +1,9 @@
-﻿@using ParadigmWatch.Models;
+﻿@using ParadigmWatch.Models.ViewModels;
 @using ParadigmWatch.Infrastructure
-@model Watch
+@model WatchViewModel
 
 @{
-    ViewData["Title"] = Model.Name;
+    ViewData["Title"] = Model.Watch.Name;
 }
 
 <section id="ProductShow">
@@ -12,14 +12,14 @@
             <p id="location">@Url.RouteUrl(ViewContext.RouteData.Values)</p>
         </div>
         <div class="showDown">
-            <h1 class="title">@Model.Name</h1>
-            <p class="price">@Model.Price $</p>
+            <h1 class="title">@Model.Watch.Name</h1>
+            <p class="price">@Model.Watch.Price $</p>
             <div class="detailsContainer">
-                <p class="description">@Model.Description</p>
+                <p class="description">@Model.Watch.Description</p>
                 <div class="navigationLinksShow">
-                    <form id="@Model.Id" asp-action="AddToCart"
+                    <form id="@Model.Watch.Id" asp-action="AddToCart"
                           asp-controller="Cart" method="post">
-                        <input type="hidden" name="ProductId" value="@Model.Id" />
+                        <input type="hidden" name="ProductId" value="@Model.Watch.Id" />
                         <input type="hidden" name="returnUrl"
                                value="@ViewContext.HttpContext.Request.PathAndQuery()" />
                         <span class="">
@@ -29,7 +29,7 @@
                             </button>
                         </span>
                     </form>
-                    <form asp-controller="ThreeD" asp-action="Index" asp-route-watchName="@Model.Name" method="post">
+                    <form asp-controller="ThreeD" asp-action="Index" asp-route-watchName="@Model.Watch.Name" method="post">
                         <button type="submit" class="shop">Build your own</button>
                     </form>
                 </div>
@@ -38,7 +38,7 @@
     </div>
 
     <div class="imageCenter">
-        <img class="sliderImg" src="~/Images/@Model.WatchImagePath" alt="@Model.Name" />
+        <img class="sliderImg" src="~/Images/@Model.Watch.WatchImagePath" alt="@Model.Watch.Name" />
 
     </div>
 
@@ -46,20 +46,18 @@
 
 <section id="HighlightComponent">
     <div class="hlContainer">
-        <h2 class="hlTitle">@Model.WatchParts[0].TextureMap.TextureName</h2>
-        <p class="hlDesc">@Model.WatchParts[0].TextureMap.TextureDesc</p>
+        <h2 class="hlTitle">@Model.Watch.WatchParts[0].TextureMap.TextureName</h2>
+        <p class="hlDesc">@Model.Watch.WatchParts[0].TextureMap.TextureDesc</p>
     </div>
-
-
 </section>
 
 <section id="components">
     @if (true)
     {
         List<string> textures = new List<string>();
-        textures.Add(Model.WatchParts[0].TextureMap.TextureName);
+        textures.Add(Model.Watch.WatchParts[0].TextureMap.TextureName);
         int counter = 0;
-        @foreach (var item in Model.WatchParts)
+        @foreach (var item in Model.Watch.WatchParts)
         {
 
             string foundTexture = textures.Where(texture => texture.Equals(item.TextureMap.TextureName)).FirstOrDefault();
@@ -83,7 +81,7 @@
     <h3>You may also like</h3>
     <div class="productsRec">
 
-        @await Component.InvokeAsync("YouMayAlsoLike", Model.Name)
+        @await Component.InvokeAsync("YouMayAlsoLike", Model.Watch.Name)
 
     </div>
 </section>
