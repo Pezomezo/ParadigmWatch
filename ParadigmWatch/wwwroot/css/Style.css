@@ -1568,6 +1568,7 @@ width: 80%;
     font-size: 1em;
 }
 
+
 #threeGui {
     position: absolute;
     z-index: 1;
@@ -1592,4 +1593,5 @@ width: 80%;
 }
 .hidden{
     display: none;
+
 }

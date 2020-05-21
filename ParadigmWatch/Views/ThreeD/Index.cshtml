@@ -9,6 +9,7 @@
 }
 
 
+
 <p id="startingModel" class="hidden">@Model.Watch.Name</p>
 
 <div id="threeGui">
@@ -45,7 +46,14 @@
 
 
 
-<div id="canvas"></div>
+<div id="canvas" class="ThreeDBackgroundSelector">
+    <select onselect="getBGname()" id="bgDropDown" href="#">
+        @foreach (var item in ViewBag.BGNames)
+        {
+            <option>@item.Text</option>
+        }
+    </select>
+</div>
 
 <script src="~/js/Three.js"></script>
 <script src="~/js/GLTFLoader.js" type="module"></script>
