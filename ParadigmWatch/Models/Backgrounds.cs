@@ -9,6 +9,7 @@ namespace ParadigmWatch.Models
     public class Backgrounds
     {
         public int Id { get; set; }
-        public string BackgroundPictureFilePath { get; set; }
+        public string BackgroundName { get; set; }
+        public string fileName { get; set; }
     }
 }

@@ -10,11 +10,12 @@ var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHei
 var renderer = new THREE.WebGLRenderer();
 //let domElement = document.getElementById('canvas')
 
+var e = document.getElementById("bgDropDown");
+let HDRIBG = e.options[e.selectedIndex].value;
+console.log(HDRIBG + ' : BG HERE')
 
-
-
-const enviroment = new THREE.CubeTextureLoader()
-    .setPath('models/hdri1/')
+let enviroment = new THREE.CubeTextureLoader()
+    .setPath('models/' + HDRIBG +'/')
     .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
 
 var glass = new THREE.MeshPhongMaterial({
@@ -29,8 +30,12 @@ var glass = new THREE.MeshPhongMaterial({
 
 glass.envMap.mapping = THREE.CubeRefractionMapping;
 
-
-
+function getBGname()
+{
+    let HDRIBG = e.options[e.selectedIndex].value;
+    console.log(HDRIBG + ' : BG GET')
+}
+// Create a shader with the assigned parameters
 function populateStandardShader(elementTypeRaw, textureMap = undefined, normalMap = undefined, metallnessProp = 0, normalIntensity = 0, roughnessProp = 0, EnvMapInt = 1, color = 0xffffff) {
     let elementType = elementTypeRaw.toString()
     let hasTexture = false;
@@ -207,11 +212,11 @@ async function init() {
 
         
     })
-
-
+        
 
     var render = function () {
-
+       
+        console.log(HDRIBG);
         requestAnimationFrame(render);
         renderer.render(scene, camera);
     }

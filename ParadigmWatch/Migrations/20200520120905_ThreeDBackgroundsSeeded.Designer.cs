@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParadigmWatch.Data;
 
 namespace ParadigmWatch.Migrations
 {
     [DbContext(typeof(ParadigmWatchContext))]
-    partial class ParadigmWatchContextModelSnapshot : ModelSnapshot
+    [Migration("20200520120905_ThreeDBackgroundsSeeded")]
+    partial class ThreeDBackgroundsSeeded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -273,42 +275,6 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 6,
                             BackgroundName = "HallwayBG",
-                            fileName = "pz.png"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            BackgroundName = "ShanghaiBG",
-                            fileName = "nx.png"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            BackgroundName = "ShanghaiBG",
-                            fileName = "ny.png"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            BackgroundName = "ShanghaiBG",
-                            fileName = "nz.png"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            BackgroundName = "ShanghaiBG",
-                            fileName = "px.png"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            BackgroundName = "ShanghaiBG",
-                            fileName = "py.png"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            BackgroundName = "ShanghaiBG",
                             fileName = "pz.png"
                         });
                 });
