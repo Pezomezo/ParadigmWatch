@@ -15,17 +15,22 @@ namespace ParadigmWatch.Controllers
     {
 
         private ParadigmWatchContext DB;
+        WatchCreator WatchCreation;
+        WatchViewModel WatchVM;
 
-        public ProductPageController(ParadigmWatchContext dB)
+        public ProductPageController(ParadigmWatchContext db)
         {
-            DB = dB;
+            DB = db;
+            WatchCreation = new WatchCreator(db);
         }
 
         public IActionResult Index(string watchName)
         {
-            WatchViewModel returnedWatch = new WatchViewModel(DB.Watches.Where(watch => watch.Name.Equals(watchName)).First(), DB);
-            Console.WriteLine("CAME FROM ANOTHER VIEW: " + returnedWatch);
-            return View(returnedWatch);
+            WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Name.Equals(watchName)).First());
+
+            WatchCreation.InitWatch(WatchVM);
+            Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
+            return View(WatchVM);
         }
     }
 }

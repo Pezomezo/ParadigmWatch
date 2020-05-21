@@ -15,18 +15,30 @@ namespace ParadigmWatch.Controllers
     public class HomeController : Controller
     {
         ParadigmWatchContext DB;
+        WatchCreator WatchCreation;
         List<WatchViewModel> Watches;
         public HomeController(ParadigmWatchContext db)
         {
             DB = db;
+            WatchCreation = new WatchCreator(db);
             Watches = new List<WatchViewModel>();
         }
 
         [AllowAnonymous]
         public IActionResult Index()
         {
-            DB.Watches.ToList().ForEach(item => Watches.Add( new WatchViewModel(item, DB)));
+            DB.Watches.ToList().ForEach(item => Watches.Add(new WatchViewModel(item)));
+            InitWatch();
             return View(Watches);
         }
+
+        private void InitWatch()
+        {
+            foreach (var watch in Watches)
+            {
+                WatchCreation.InitWatch(watch);
+            }
+        }
+       
     }
 }
