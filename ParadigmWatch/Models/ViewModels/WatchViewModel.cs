@@ -9,8 +9,12 @@ namespace ParadigmWatch.Models.ViewModels
     public class WatchViewModel
     {
 
+        public string TypeName { get; set; }
         private ParadigmWatchContext DB;
         public Watch Watch { get; set; }
+
+        
+
 
         public WatchViewModel(Watch watch, ParadigmWatchContext db)
         {
@@ -28,7 +32,9 @@ namespace ParadigmWatch.Models.ViewModels
             FillUpShaders();
             FillUpTextures();
             FillUpTextMap();
+            
         }
+
 
 
         private void AddParts()

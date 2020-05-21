@@ -1567,3 +1567,29 @@ width: 80%;
 .cart-middle-desc {
     font-size: 1em;
 }
+
+#threeGui {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20vw;
+}
+
+#GUI {
+    padding: 10px;
+
+    background-color: rgba(0,0,0,0.5);
+}
+#canvas{
+    z-index: 0;
+    position: absolute;
+}
+.guiPartType{
+    font-size: 1rem;
+}
+.hidden{
+    display: none;
+}

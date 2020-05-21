@@ -12,14 +12,19 @@ namespace ParadigmWatch.Controllers.Store
 {
     public class ThreeDController : Controller
     {
+        
+
         private ParadigmWatchContext DB;
 
         public ThreeDController(ParadigmWatchContext dB)
         {
             DB = dB;
         }
+
         public IActionResult Index(string watchName)
         {
+
+         
             WatchViewModel returnedWatch = new WatchViewModel(DB.Watches.Where(watch => watch.Name.Equals(watchName)).First(), DB);
             Console.WriteLine("CAME FROM ANOTHER VIEW: " + returnedWatch);
             return View(returnedWatch);

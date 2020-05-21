@@ -101,9 +101,9 @@ async function init() {
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
 
-   
+    let canvas = document.getElementById('canvas')
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    canvas.appendChild(renderer.domElement);
 
     window.addEventListener('resize', () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -256,7 +256,7 @@ function animate() {
 
 let controls = new THREE.TrackballControls(camera, renderer.domElement);
 
-controls.rotateSpeed = 20.0;
+controls.rotateSpeed = 1;
 controls.zoomSpeed = 1.2;
 controls.panSpeed = 0.8;
 
