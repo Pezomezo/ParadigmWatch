@@ -15,14 +15,18 @@ namespace ParadigmWatch.Controllers.Store
 {
     public class ThreeDController : Controller
     {
+        
+
         private ParadigmWatchContext DB;
         WatchViewModel WatchVM;
         public ThreeDController(ParadigmWatchContext dB)
         {
             DB = dB;
         }
+
         public IActionResult Index(string watchName)
         {
+
 
             WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Name.Equals(watchName)).First());
             InitWatch();
@@ -107,6 +111,7 @@ namespace ParadigmWatch.Controllers.Store
             List<TextMap> Texts = DB.TextMaps.ToList();
 
             WatchVM.Watch.WatchParts.ForEach(part => part.TextMap = Texts.Find(text => text.Id == part.TextMapId));
+
         }
     }
 }
