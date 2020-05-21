@@ -38,7 +38,7 @@ namespace ParadigmWatch.Controllers.Store
 
         private void FillUpParts()
         {
-            DB.WatchParts.ForEachAsync(part => this.WatchVM.AddPart(part));
+            DB.WatchParts.ToList().ForEach(part => this.WatchVM.AddPart(part));
         }
 
         private IEnumerable<SelectListItem> GetaBackgrounds()
