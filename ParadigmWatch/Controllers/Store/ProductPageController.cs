@@ -13,7 +13,6 @@ namespace ParadigmWatch.Controllers
 {
     public class ProductPageController : Controller
     {
-
         private ParadigmWatchContext DB;
         WatchCreator WatchCreation;
         WatchViewModel WatchVM;

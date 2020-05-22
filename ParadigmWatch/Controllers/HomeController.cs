@@ -24,7 +24,7 @@ namespace ParadigmWatch.Controllers
             Watches = new List<WatchViewModel>();
         }
 
-        [Authorize]
+        [AllowAnonymous]
         public IActionResult Index()
         {
             DB.Watches.ToList().ForEach(item => Watches.Add(new WatchViewModel(item)));

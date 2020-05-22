@@ -8,14 +8,14 @@
 
 @foreach (var item in Model)
 {
-    <div class="productContainer">
-        <a class="productImage">
-            <img src="~/Images/@item.WatchImagePath" alt="" />
-        </a>
-        <div class="productDescription">
-            <h2>@item.Name</h2>
-            <p>@item.Description</p>
+        <div class="productContainer">
+            <a asp-controller="ProductPage" asp-action="Index" asp-route-watchId="@item.Id" class="productImage">
+                <img src="~/Images/@item.WatchImagePath" alt="" />
+            </a>
+            <div class="productDescription">
+                <h2>@item.Name</h2>
+                <p>@item.Description</p>
+            </div>
         </div>
-    </div>
 }
 

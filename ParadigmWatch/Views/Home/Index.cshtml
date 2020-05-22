@@ -127,7 +127,7 @@
         @foreach (var item in Model)
         {
             <div class="productContainer foo-2">
-                <a class="productImage">
+                <a asp-controller="ProductPage" asp-action="Index" asp-route-watchId="@item.Watch.Id" class="productImage">
                     <img src="~/Images/@item.Watch.WatchImagePath" alt="" />
                 </a>
                 <div class="productDescription">
