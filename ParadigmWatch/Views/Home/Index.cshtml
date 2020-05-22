@@ -7,6 +7,18 @@
 <section id="hero">
 
 
+    <div id="videoController">
+        <video autoplay muted loop id="myVideo">
+            <source src="~/video/backgroundComp1Morph.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+
+        <div class="videoContent">
+
+            <button id="myBtn" onclick="myFunction()">Pause</button>
+        </div>
+    </div>
+
     <div class="heroContent">
         <aside class="sideText">
             <div class="sideTextContainer">
@@ -45,7 +57,7 @@
 
         <div class="navigationLinks">
             <a href="#" class="secondaryLink">Learn More</a>
-            <a href="#" class="primaryLink">Build your own</a>
+            <button class="build"><a asp-action="Index" asp-controller="Store">Build your own</a></button>
         </div>
 
         <div class="arrowController">

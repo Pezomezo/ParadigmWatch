@@ -60,18 +60,38 @@ sr.reveal('.foo-6', {
     distance: '20px'
 });
 
+// Video controller
+
+// Go to video
+var video = document.getElementById("myVideo");
+// Go to button
+var btn = document.getElementById("myBtn");
+
+// Make the pause, play and text change
+function myFunction() {
+    if (video.paused) {
+        video.play();
+        btn.innerHTML = "Pause";
+    } else {
+        video.pause();
+        btn.innerHTML = "Play";
+    }
+}
+
+// Slider
+
 let slides = document.querySelectorAll('.sliderElement')
 
 let nextButton = document.getElementById('next')
 let backButton = document.getElementById('back')
 
-let currentSlide = document.getElementById('currentSlide')
+//let currentSlide = document.getElementById('currentSlide')
 
 let sliderCounter = 0;
 
 let sliderTexts = document.getElementsByClassName('sliderText');
 
-let burgerMenu = document.getElementById('burgerMenu')
+//let burgerMenu = document.getElementById('burgerMenu')
 
 
 for (let sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
@@ -82,8 +102,8 @@ for (let sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
     currentSlider.style.zIndex = `${sliderCount * -1}`
     currentSlider.style.left = '0px'
     currentSlider.style.backgroundSize = 'cover'
-    currentSlider.style.backgroundImage = `url(/Images/${currentText}Background.jpg)`
-    console.log(`url(/Images/${currentText}Background.jpg)`)
+    currentSlider.style.backgroundImage = `url(/Images/${currentText}Background.png)`
+    //console.log(`url(/Images/${currentText}Background.jpg)`)
 
     console.log(document.getElementById(`${sliderCount + 1}`))
 
