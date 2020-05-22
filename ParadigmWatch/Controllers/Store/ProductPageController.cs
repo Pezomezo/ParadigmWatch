@@ -24,9 +24,9 @@ namespace ParadigmWatch.Controllers
             WatchCreation = new WatchCreator(db);
         }
 
-        public IActionResult Index(string watchName)
+        public IActionResult Index(int watchId)
         {
-            WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Name.Equals(watchName)).First());
+            WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(watchId)).First());
 
             WatchCreation.InitWatch(WatchVM);
             Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);

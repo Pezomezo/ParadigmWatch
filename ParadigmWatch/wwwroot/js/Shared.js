@@ -3,15 +3,7 @@ let mobile2 = document.getElementById('mobile2')
 let navContent = document.getElementById('navContent')
 let navItem = document.querySelector('nav')
 
-
-
 let mobileContainer = document.getElementsByClassName('mobileContainer').item(0)
-
-
-
-
-
-
 
 burgerMenu.addEventListener('click', () => {
     if (mobile1.style.display == '' && mobile2.style.display == '') {
@@ -29,9 +21,6 @@ burgerMenu.addEventListener('click', () => {
     }
 
 })
-
-
-
 
 function navStyle() {
     if (window.innerWidth > 1200 && window.scrollY > 0) {
