@@ -24,11 +24,9 @@ namespace ParadigmWatch.Controllers.Store
             DB = dB;
         }
 
-        public IActionResult Index(string watchName)
+        public IActionResult Index(int watchId)
         {
-
-
-            WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Name.Equals(watchName)).First());
+            WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(watchId)).First());
             InitWatch();
             FillUpParts();
             Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);

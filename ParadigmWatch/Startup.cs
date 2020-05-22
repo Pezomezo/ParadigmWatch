@@ -39,8 +39,7 @@ namespace ParadigmWatch
             services.AddDbContext<ParadigmWatchContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection"))
                 );
-
-            // WE WILL ENABLES THIS AGAIN ONCE WE HAVE A DATABASE READY :)  
+ 
             services.AddDbContext<ParadigmWatchContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
 
@@ -56,7 +55,7 @@ namespace ParadigmWatch
             }).AddEntityFrameworkStores<ParadigmWatchContext>()
             .AddDefaultTokenProviders();
 
-            //services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Users/Login");
+            services.ConfigureApplicationCookie(opts => opts.LoginPath = "/Login/Index");
 
             services.AddControllersWithViews();
         }
