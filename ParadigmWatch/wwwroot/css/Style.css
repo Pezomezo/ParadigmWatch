@@ -713,9 +713,27 @@ display: flex;
 justify-content: space-between;
 }
 
-.navigationLinksShow button {
+/*.navigationLinksShow button {
 margin: 5px;
+}*/
+
+/*button setup*/
+button {
+    border: 2px solid #C3A261;
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0);
 }
+
+    button:hover {
+        border: 2px solid #C3A261;
+        background-color: rgba(255, 0, 0, 0);
+        color: #4580D9;
+    }
+
+    button:focus {
+        outline: 0;
+    }
+
 
 .navigationLinksShow > a {
     height: 5vh;
