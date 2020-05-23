@@ -1100,6 +1100,24 @@ margin-bottom: 25px;
     margin: 20px 0 20px 0;
 }
 
+/*button setup*/
+button {
+    border: 2px solid #C3A261;
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+    button:hover {
+        border: 2px solid #C3A261;
+        background-color: rgba(255, 0, 0, 0);
+        color: #4580D9;
+    }
+
+    button:focus {
+        outline: 0;
+    }
+
+
 
 /*####################################################################################################################################################*/
 
