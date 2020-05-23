@@ -12,7 +12,14 @@
     <Compile Remove="Migrations\20200513144046_InitialCreate.Designer.cs" />
     <Compile Remove="Migrations\20200515153513_InitialCreate.cs" />
     <Compile Remove="Migrations\20200515153513_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200515154131_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200515154131_InitialCreate.Designer.cs" />
     <Compile Remove="Migrations\AppIdentityDbContextModelSnapshot.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\js\OBJLoader.js" />
+    <Content Remove="wwwroot\js\script.js" />
   </ItemGroup>
 
   <ItemGroup>

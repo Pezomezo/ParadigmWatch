@@ -221,6 +221,118 @@ namespace ParadigmWatch.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("ParadigmWatch.Models.Backgrounds", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BackgroundName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("fileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Backgrounds");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BackgroundName = "HallwayBG",
+                            fileName = "nx.png"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BackgroundName = "HallwayBG",
+                            fileName = "ny.png"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BackgroundName = "HallwayBG",
+                            fileName = "nz.png"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BackgroundName = "HallwayBG",
+                            fileName = "px.png"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BackgroundName = "HallwayBG",
+                            fileName = "py.png"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BackgroundName = "HallwayBG",
+                            fileName = "pz.png"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            BackgroundName = "ShanghaiBG",
+                            fileName = "nx.png"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BackgroundName = "ShanghaiBG",
+                            fileName = "ny.png"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            BackgroundName = "ShanghaiBG",
+                            fileName = "nz.png"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            BackgroundName = "ShanghaiBG",
+                            fileName = "px.png"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            BackgroundName = "ShanghaiBG",
+                            fileName = "py.png"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            BackgroundName = "ShanghaiBG",
+                            fileName = "pz.png"
+                        });
+                });
+
+            modelBuilder.Entity("ParadigmWatch.Models.Discounts", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DiscountAmount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Discounts");
+                });
+
             modelBuilder.Entity("ParadigmWatch.Models.Invoice", b =>
                 {
                     b.Property<int>("InvoiceId")
@@ -279,6 +391,9 @@ namespace ParadigmWatch.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("EnvMapIntensity")
+                        .HasColumnType("int");
+
                     b.Property<double>("Metalness")
                         .HasColumnType("float");
 
@@ -299,10 +414,47 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 1,
-                            Metalness = 12.199999999999999,
-                            NormalMapIntensity = 3.0,
-                            NormalMapPath = "Image/something",
-                            Roughness = 5.0
+                            EnvMapIntensity = 0,
+                            Metalness = 0.0,
+                            NormalMapIntensity = 0.10000000000000001,
+                            NormalMapPath = "models/strap.png",
+                            Roughness = 0.29999999999999999
+                        },
+                        new
+                        {
+                            Id = 2,
+                            EnvMapIntensity = 0,
+                            Metalness = 1.0,
+                            NormalMapIntensity = 0.10000000000000001,
+                            NormalMapPath = "models/chrome.png",
+                            Roughness = 0.14999999999999999
+                        },
+                        new
+                        {
+                            Id = 3,
+                            EnvMapIntensity = 0,
+                            Metalness = 0.0,
+                            NormalMapIntensity = 0.0,
+                            NormalMapPath = "",
+                            Roughness = 0.5
+                        },
+                        new
+                        {
+                            Id = 4,
+                            EnvMapIntensity = 0,
+                            Metalness = 1.0,
+                            NormalMapIntensity = 0.0,
+                            NormalMapPath = "",
+                            Roughness = 0.0
+                        },
+                        new
+                        {
+                            Id = 5,
+                            EnvMapIntensity = 0,
+                            Metalness = 0.0,
+                            NormalMapIntensity = 0.0,
+                            NormalMapPath = "",
+                            Roughness = 0.0
                         });
                 });
 
@@ -360,7 +512,7 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 1,
-                            ImagePath = "Image/something",
+                            ImagePath = "models/strap.png",
                             TextureDesc = "This Leather makes you look rich&stuff",
                             TextureName = "Leather",
                             TexturePrice = 12.220000000000001
@@ -368,25 +520,25 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 2,
-                            ImagePath = "Image/something",
+                            ImagePath = "models/chrome.png",
                             TextureDesc = "Feel the Gekko",
-                            TextureName = "Gekko",
+                            TextureName = "Chrome",
                             TexturePrice = 15.220000000000001
                         },
                         new
                         {
                             Id = 3,
-                            ImagePath = "Image/something",
+                            ImagePath = "models/watchFrontTexture.png",
                             TextureDesc = "Wanna be the most badass person? try this then!",
-                            TextureName = "Crocodile",
+                            TextureName = "Apollo Dial",
                             TexturePrice = 33.399999999999999
                         },
                         new
                         {
                             Id = 4,
-                            ImagePath = "Image/something",
+                            ImagePath = "",
                             TextureDesc = "You are just cruel at this point :D",
-                            TextureName = "Elephant",
+                            TextureName = "Solid Handle",
                             TexturePrice = 120.22
                         },
                         new
@@ -408,10 +560,10 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 7,
-                            ImagePath = "Image/something",
-                            TextureDesc = "The name is Bond, James Bond...",
-                            TextureName = "Silver",
-                            TexturePrice = 200.22
+                            ImagePath = "",
+                            TextureDesc = "",
+                            TextureName = "",
+                            TexturePrice = 0.0
                         });
                 });
 
@@ -423,9 +575,6 @@ namespace ParadigmWatch.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ModelPath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -446,7 +595,6 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 1,
                             Description = "This is a basic model you can configure it to your liking",
-                            ModelPath = "Models/somethibg",
                             Name = "Apollo",
                             Price = 100.5,
                             WatchImagePath = "Apollo.png"
@@ -455,7 +603,6 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 2,
                             Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.",
-                            ModelPath = "Models/somethibg",
                             Name = "Juno",
                             Price = 100.5,
                             WatchImagePath = "Juno.png"
@@ -464,7 +611,6 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 3,
                             Description = "A bald statemnt. That is how I would describe this watch.",
-                            ModelPath = "Models/somethibg",
                             Name = "Mercury",
                             Price = 100.5,
                             WatchImagePath = "Mercury.png"
@@ -482,17 +628,38 @@ namespace ParadigmWatch.Migrations
                     b.Property<int>("Id")
                         .HasColumnType("int");
 
+                    b.Property<string>("watchComponentPath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("WatchId", "WatchPartId");
 
                     b.HasIndex("WatchPartId");
 
-                    b.ToTable("WatchComponents");
+                    b.ToTable("RelationTableWatch");
 
                     b.HasData(
                         new
                         {
                             WatchId = 1,
                             WatchPartId = 1,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 1,
+                            WatchPartId = 2,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 1,
+                            WatchPartId = 3,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 1,
+                            WatchPartId = 4,
                             Id = 0
                         },
                         new
@@ -510,13 +677,19 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             WatchId = 1,
-                            WatchPartId = 8,
+                            WatchPartId = 7,
                             Id = 0
                         },
                         new
                         {
                             WatchId = 1,
-                            WatchPartId = 9,
+                            WatchPartId = 8,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
+                            WatchPartId = 1,
                             Id = 0
                         },
                         new
@@ -528,7 +701,25 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             WatchId = 2,
+                            WatchPartId = 3,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
                             WatchPartId = 4,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
+                            WatchPartId = 5,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
+                            WatchPartId = 6,
                             Id = 0
                         },
                         new
@@ -545,8 +736,14 @@ namespace ParadigmWatch.Migrations
                         },
                         new
                         {
-                            WatchId = 2,
-                            WatchPartId = 9,
+                            WatchId = 3,
+                            WatchPartId = 1,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 3,
+                            WatchPartId = 2,
                             Id = 0
                         },
                         new
@@ -564,19 +761,25 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             WatchId = 3,
+                            WatchPartId = 5,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 3,
                             WatchPartId = 6,
                             Id = 0
                         },
                         new
                         {
                             WatchId = 3,
-                            WatchPartId = 8,
+                            WatchPartId = 7,
                             Id = 0
                         },
                         new
                         {
                             WatchId = 3,
-                            WatchPartId = 9,
+                            WatchPartId = 8,
                             Id = 0
                         });
                 });
@@ -588,10 +791,16 @@ namespace ParadigmWatch.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ModelPath")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
+
+                    b.Property<int?>("PartTypeId")
+                        .HasColumnType("int");
 
                     b.Property<int>("ShaderId")
                         .HasColumnType("int");
@@ -602,6 +811,9 @@ namespace ParadigmWatch.Migrations
                     b.Property<int>("TextureMapId")
                         .HasColumnType("int");
 
+                    b.Property<int>("TypeId")
+                        .HasColumnType("int");
+
                     b.Property<int>("WatchComponentsId")
                         .HasColumnType("int");
 
@@ -609,6 +821,8 @@ namespace ParadigmWatch.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PartTypeId");
 
                     b.HasIndex("ShaderId");
 
@@ -624,83 +838,147 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Sleeves",
-                            ShaderId = 1,
+                            ModelPath = "models/Parts/Backgrounds/Apollo.gltf",
+                            Name = "Apollo",
+                            ShaderId = 3,
                             TextMapId = 1,
-                            TextureMapId = 1,
+                            TextureMapId = 3,
+                            TypeId = 1,
                             WatchComponentsId = 0
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Sleeves",
-                            ShaderId = 1,
+                            ModelPath = "models/Parts/BackSides/DefaultBack.gltf",
+                            Name = "Chrome Back part",
+                            ShaderId = 2,
                             TextMapId = 1,
                             TextureMapId = 2,
+                            TypeId = 2,
                             WatchComponentsId = 0
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Sleeves",
-                            ShaderId = 1,
+                            ModelPath = "models/Parts/Bases/DefaultBase.gltf",
+                            Name = "Chrome Base",
+                            ShaderId = 2,
                             TextMapId = 1,
-                            TextureMapId = 3,
+                            TextureMapId = 2,
+                            TypeId = 3,
                             WatchComponentsId = 0
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Pointers",
-                            ShaderId = 1,
+                            ModelPath = "models/Parts/Decorations/DefaultDecoration.gltf",
+                            Name = "Chrome Decorations",
+                            ShaderId = 2,
                             TextMapId = 1,
-                            TextureMapId = 5,
+                            TextureMapId = 2,
+                            TypeId = 4,
                             WatchComponentsId = 0
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Pointers",
-                            ShaderId = 1,
+                            ModelPath = "models/Parts/Pointers/DefaultPointer.gltf",
+                            Name = "Silver Pointer",
+                            ShaderId = 4,
                             TextMapId = 1,
-                            TextureMapId = 6,
+                            TextureMapId = 4,
+                            TypeId = 5,
                             WatchComponentsId = 0
                         },
                         new
                         {
                             Id = 6,
-                            Name = "BackSide",
+                            ModelPath = "models/Parts/Sleeves/DefaultSleeve.gltf",
+                            Name = "Sleeves",
                             ShaderId = 1,
                             TextMapId = 1,
-                            TextureMapId = 5,
+                            TextureMapId = 1,
+                            TypeId = 6,
                             WatchComponentsId = 0
                         },
                         new
                         {
                             Id = 7,
-                            Name = "BackSide",
-                            ShaderId = 1,
+                            ModelPath = "models/Parts/Glasses/DefaultGlass.gltf",
+                            Name = "Glass",
+                            ShaderId = 5,
                             TextMapId = 1,
-                            TextureMapId = 6,
+                            TextureMapId = 7,
+                            TypeId = 7,
                             WatchComponentsId = 0
                         },
                         new
                         {
                             Id = 8,
-                            Name = "TheRoundThing",
-                            ShaderId = 1,
+                            ModelPath = "models/Parts/Rings/DefaultRing.gltf",
+                            Name = "Chrome Ring",
+                            ShaderId = 2,
                             TextMapId = 1,
-                            TextureMapId = 7,
+                            TextureMapId = 2,
+                            TypeId = 8,
                             WatchComponentsId = 0
+                        });
+                });
+
+            modelBuilder.Entity("ParadigmWatch.Models.WatchPartType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WatchPartType");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Pattern"
                         },
                         new
                         {
-                            Id = 9,
-                            Name = "Hooks",
-                            ShaderId = 1,
-                            TextMapId = 1,
-                            TextureMapId = 5,
-                            WatchComponentsId = 0
+                            Id = 2,
+                            Name = "BackSide"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Base"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Decoration"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Pointer"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Sleeve"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Glass"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "Ring"
                         });
                 });
 
@@ -780,6 +1058,13 @@ namespace ParadigmWatch.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("ParadigmWatch.Models.Discounts", b =>
+                {
+                    b.HasOne("ParadigmWatch.Models.AppUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+                });
+
             modelBuilder.Entity("ParadigmWatch.Models.Invoice", b =>
                 {
                     b.HasOne("ParadigmWatch.Models.AppUser", "User")
@@ -817,6 +1102,10 @@ namespace ParadigmWatch.Migrations
 
             modelBuilder.Entity("ParadigmWatch.Models.WatchPart", b =>
                 {
+                    b.HasOne("ParadigmWatch.Models.WatchPartType", "PartType")
+                        .WithMany()
+                        .HasForeignKey("PartTypeId");
+
                     b.HasOne("ParadigmWatch.Models.StandardShader", "Shader")
                         .WithMany()
                         .HasForeignKey("ShaderId")

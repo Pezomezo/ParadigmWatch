@@ -1,32 +1,114 @@
 ﻿
-import * as THREE from './three.module.js';
 import { GLTFLoader } from './GLTFLoader.js';
-import { MeshStandardMaterial } from '../build/three.module.js';
+
+let BackgroundsTexture, BackgroundsNormal, BackSidesTexture, BackSidesNormal, BasesTexture, BasesNormal, DecorationsTexture, DecorationsNormal, RingsTexture, RingsNormal, SleevesTexture, SleevesNormal
+ 
+
+var scene = new THREE.Scene();
+let myobj = new THREE.Object3D()
+var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+var renderer = new THREE.WebGLRenderer();
+//let domElement = document.getElementById('canvas')
+
+var e = document.getElementById("bgDropDown");
+let HDRIBG = e.options[e.selectedIndex].value;
+console.log(HDRIBG + ' : BG HERE')
+
+let enviroment = new THREE.CubeTextureLoader()
+    .setPath('models/' + HDRIBG +'/')
+    .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
+
+var glass = new THREE.MeshPhongMaterial({
+    color: 0xffffff,
+    envMap: enviroment,
+    refractionRatio: 0.9,
+    depthWrite: false,
+    opacity: 0.4,
+    transparent: true
+})
 
 
-var num = "<%=feevalue%>";
-console.log(num)
-function init() {
+glass.envMap.mapping = THREE.CubeRefractionMapping;
 
-    // The object we will select on click and drag around
-    var selectedItem = null;
+function getBGname()
+{
+    let HDRIBG = e.options[e.selectedIndex].value;
+    console.log(HDRIBG + ' : BG GET')
+}
+// Create a shader with the assigned parameters
+function populateStandardShader(elementTypeRaw, textureMap = undefined, normalMap = undefined, metallnessProp = 0, normalIntensity = 0, roughnessProp = 0, EnvMapInt = 1, color = 0xffffff) {
+    let elementType = elementTypeRaw.toString()
+    let hasTexture = false;
 
-    var scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf0f0f0);
+    if (textureMap != undefined || normalMap != undefined) {
 
-    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        let tempText = `${elementType}Texture = new THREE.TextureLoader().load('${textureMap}')`
+        let flipingBug = `${elementType}Texture.flipY = false`
+        let tempNorm = `${elementType}Normal = new THREE.TextureLoader().load('${normalMap}')`
+        let texture = eval(tempText)
+        let normal = eval(tempNorm)
+        eval(flipingBug)
+        hasTexture = true
+        return ShaderBuilder(texture, normal, metallnessProp, normalIntensity, roughnessProp, hasTexture, EnvMapInt, color)
+    } else {
+
+        return ShaderBuilder(textureMap, normalMap, metallnessProp, normalIntensity, roughnessProp, hasTexture, EnvMapInt, color)
+    }
+}
+
+
+
+function ShaderBuilder(texture, normal, metallnessProp, normalIntensity, roughnessProp, hasTexture, EnvMapInt, color) {
+
+    if (hasTexture) {
+
+        var currentMat = new THREE.MeshStandardMaterial({
+            color: 0xffffff,
+            map: texture,
+            bumpMap: normal,
+            bumpScale: normalIntensity,
+            metalness: metallnessProp,
+            envMap: enviroment,
+            envMapIntensity: EnvMapInt,
+            roughness: roughnessProp
+        })
+        currentMat.envMap.mapping = THREE.CubeRefractionMapping;
+
+        return currentMat
+    } else {
+        var currentMat = new THREE.MeshStandardMaterial({
+            color: color,
+            metalness: metallnessProp,
+            envMap: enviroment,
+            envMapIntensity: 1,
+            roughness: roughnessProp
+        })
+        currentMat.envMap.mapping = THREE.CubeRefractionMapping;
+
+        return currentMat
+    }
+
+}
+
+
+
+async function init() {
+
+
+
+    scene.background = enviroment
+
+   
     camera.position.z = 3;
 
     camera.position.set(-2, -2, 5);
     camera.up = new THREE.Vector3(0, 0, 1);
     camera.lookAt(new THREE.Vector3(0, 0, 0));
 
-    var raycaster = new THREE.Raycaster();
-    var mouse = new THREE.Vector2();
 
-    var renderer = new THREE.WebGLRenderer();
+    let canvas = document.getElementById('canvas')
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
+    canvas.appendChild(renderer.domElement);
 
     window.addEventListener('resize', () => {
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -38,216 +120,151 @@ function init() {
 
     var light = new THREE.SpotLight(0xffffff, 1.5);
     light.position.set(0, 500, 2000);
+    scene.add(light)
 
-    scene.add(light);
-
-
-    function onMouseClick(event) {
-
-        // calculate mouse position in normalized device coordinates
-        // (-1 to +1) for both components
-
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
-
-        console.log(mouse);
-        raycaster.setFromCamera(mouse, camera);
-
-        var intersects = raycaster.intersectObjects(scene.children, true)
-        for (let i = 0; i < intersects.length; i++) {
-            this.selectedItem = intersects[i].object;
-        }
-        console.log(this.selectedItem)
-    }
-
-    function onMouseMove(event) {
-
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
-
-        raycaster.setFromCamera(mouse, camera);
-
-        if (this.selectedItem != null) {
-            console.log('moving')
-            console.log(this.selectedItem);
-            this.selectedItem.position.copy(new THREE.Vector3(mouse.x, mouse.y, 0));
-            console.log(selectedItem.position);
-        }
-    }
-
-    function onDocumentMouseCancel(event) {
-        if (this.selectedItem) {
-            console.log('Cancelling');
-            this.selectedItem = null;
-        }
-    }
 
 
 
     /* Prop Init */
     const startingModel = document.getElementById('startingModel').textContent
+
+    let baseModel = []
+    const PartModelPath = document.getElementsByClassName('PartModelPath')
+    const PartName = document.getElementsByClassName('PartName')
     const elementType = document.getElementsByClassName('componentTypeId')
     const textureMap = document.getElementsByClassName('textureMap')
     const metallnessProp = document.getElementsByClassName('metallnessProp')
     const normalMap = document.getElementsByClassName('normalMap')
     const normalIntensity = document.getElementsByClassName('normalIntensity')
     const roughnessProp = document.getElementsByClassName('roughnessProp')
+    const EnvMapInt = document.getElementsByClassName('EnvMapInt')
 
-    const chromeTexture = new THREE.TextureLoader().load('models/chrome.png')
-    const chromeNormal = new THREE.TextureLoader().load('models/chromeNormal.jpg')
-
-
-    const watchFront = new THREE.TextureLoader().load('models/watchFrontTexture.png')
-    watchFront.flipY = false
-
-    const strapTexture = new THREE.TextureLoader().load('models/strap.png')
-
-
-    const enviroment = new THREE.CubeTextureLoader()
-        .setPath('models/hdri1/')
-        .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
-
-
-    console.log(elementType, textureMap, metallnessProp, normalMap, normalIntensity, roughnessProp, startingModel)
-    const loader = new GLTFLoader();
     
-    loader.load(
-        // resource URL
-        `models/${startingModel}.gltf`,
-        // called when resource is loaded
-        (gltf) => {
 
-            let elements = gltf.scene.children
+    for (let i = 0; i < PartModelPath.length; i++) {
+        baseModel.push(PartModelPath.item(i).textContent)
+    }
+    const loader = new GLTFLoader();
 
+    baseModel.forEach((component, i) => {
 
-     let comps = []
-     gltf.scene.children.forEach((component, i) => {
-         var obj = component.clone()
-               
+        loader.load(
+            `${component}`,
+            (model) => {
 
-         comps.push(obj)
+                let currentScene = model.scene
+                currentScene.name = PartName.item(i).textContent
 
-     })
+                let path = `${component}`
+                let words = path.split('/');
 
+                let elemType = words[2]
+                let currentTexture = textureMap.item(i).textContent
+                let currentNorm = normalMap.item(i).textContent
+                let currentMetal = metallnessProp.item(i).textContent
+                let currentNormIt = normalIntensity.item(i).textContent
+                let currentRou = roughnessProp.item(i).textContent
+                let currentEnvMapInt = EnvMapInt.item(i).textContent
 
-            comps.forEach((e, index) => {
-                var glass = new THREE.MeshPhongMaterial({
-                    color: 0xffffff,
-                    envMap: enviroment,
-                    refractionRatio: 0.9,
-                    depthWrite: false,
-                    opacity: 0.4,                       
-                    transparent: true
-                })
-
-                
-                glass.envMap.mapping = THREE.CubeRefractionMapping;
-
-                var chrome = new THREE.MeshStandardMaterial({
-                    color: 0xffffff,
-                    map: chromeTexture,
-                    bumpMap: chromeTexture,
-                    bumpScale: 0.1,
-                    metalness: 1,
-                    envMap: enviroment,
-                    envMapIntensity: 5,
-                    roughness: 0
-                })
-                chrome.envMap.mapping = THREE.CubeRefractionMapping;
-
-
-                var dial = new THREE.MeshStandardMaterial({
-                    
-                    map: watchFront
-                })
-                var strap = new THREE.MeshStandardMaterial({ map: strapTexture, bumpMap: strapTexture, bumpScale: 0.1 })
-
-                var handle = new THREE.MeshStandardMaterial({ color: 0xffffff })
-
-                switch (index) {
-                    case 0:
-                        e.material = dial
-                        break;
-                    case 1:
-                        e.material = chrome
-                        break;
-                    case 2: 
-                        e.material = chrome
-                        break;
-                    case 3: 
-                        e.material = chrome
-                        break;
-                    case 4:
-                        e.children.forEach((elem) => {
-                            elem.material = handle
-                        })
-                        break;
-                    case 5:
-                        e.material = strap
-                        break;
-                    case 6:
-                        e.material = glass
-                        break;
-                    case 7:
-                        e.material = chrome
-                        break;
-                    case 8:
-                        e.material = strap
-                        break;
-                    case 9:
-                        e.material = strap
-                        break;
+                if (words[2] == 'Pointers') {
+                    currentScene.children[0].children.forEach((element) => {
+                        element.material = populateStandardShader(elemType)
+                        element.material.name = words[2]
+                    })
+                     scene.add(currentScene)
                 }
-
-
                
+                if (words[2] == 'Glasses') {
+                    currentScene.children.forEach((element) => {
+                        element.material = glass
+                        element.material.name = words[2]
+                    })
+                    scene.add(currentScene)
+                }
+                
 
-         scene.add(e)
-     })
-            
-            
-     
+                else {
+                    currentScene.children.forEach((element) => {
+                        element.material = populateStandardShader(elemType, currentTexture, currentNorm, currentMetal, currentNormIt, currentRou, currentEnvMapInt)
+                        element.material.name = words[2]
+                    })
+                    scene.add(currentScene)
+                }
+                
 
-            renderer.render(scene, camera);
-        },
-        // called when loading is in progresses
-        function (xhr) {
-            console.log((xhr.loaded / xhr.total * 100) + '% loaded');
+                //scene.add(currentScene)
+                
+                
+                renderer.render(scene, camera);
+            },
+            // called when loading is in progresses
+            function (xhr) {
+               //console.log((xhr.loaded / xhr.total * 100) + '% loaded');
 
-        },
-        // called when loading has errors
-        function (error) {
-            console.log('An error happened');
+            },
+            // called when loading has errors
+            function (error) {
+                console.log('An error happened');
 
-        })
-    console.log(scene)  
+            })
 
 
-    // var cubes = []
-    // cubes.push(cube)
-    // var controls = THREE.DragControls(cubes, camera, renderer.domElement);
+
+        
+    })
+        
+
     var render = function () {
-
+       
+        console.log(HDRIBG);
         requestAnimationFrame(render);
         renderer.render(scene, camera);
     }
-    window.addEventListener('click', onMouseClick, false);
-    window.addEventListener('mousemove', onMouseMove, false);
-    window.addEventListener('mouseup', onDocumentMouseCancel, false);
     render();
 
 
 
+    myobj.name = 'CurrentWatch'
 
+    
+}
 
+function locator() {
+    scene.remove()
 
-
-
-
+   //console.log(scene.getObjectByName('Glass').children[0].material = populateStandardShader('Glasses'))
 }
 
 
 
 
-init();
+async function initialize() {
+    init()
+    let promise = new Promise((res, rej) => {
+        setTimeout(() => res("loaded"), 1000)
+    });
 
+    let result = await promise;
+
+    locator()
+}
+
+initialize();
+
+
+function animate() {
+    requestAnimationFrame(animate);
+   
+    controls.update();
+    renderer.render(scene, camera);
+}
+
+let controls = new THREE.TrackballControls(camera, renderer.domElement);
+
+controls.rotateSpeed = 1;
+controls.zoomSpeed = 1.2;
+controls.panSpeed = 0.8;
+
+controls.keys = [65, 83, 68];
+
+animate();
