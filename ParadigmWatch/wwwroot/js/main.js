@@ -4,7 +4,7 @@ const watch = document.querySelector("#arrowButton");
 let position = 0;
 
 //speed
-const speed = 15; //px per sec
+const speed = 10; //px per sec
 const framerate = 60; //frames per sec
 
 let last;
@@ -18,7 +18,7 @@ function step() {
 
     // The 1000 / delta gives the perfect speed at all conditions
     position += speed / (1000 / delta);
-    if (position > 12) {
+    if (position > 10) {
         position = 0;
     }
     watch.style.transform = `translateY(${position}px)`;

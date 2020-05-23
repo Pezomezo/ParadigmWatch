@@ -197,7 +197,7 @@ display: grid;
     border:none;
     border-radius:25px;
     background: rgba(255, 0, 0, 0);
-    color: #f1f1f1;
+    color: #fff;
     cursor: pointer;
     z-index:11;
 }
@@ -330,13 +330,16 @@ align-self: flex-end;
 .build {
     width: 150px;
     height: 50px;
-    border-radius: 500px;
-    border: none;
-    background-color: #4580D9;
-    font-weight: 700;
-    color: #222;
+    border: 2px solid #C3A261;
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0);
     margin: 50px 0 0 0;
     cursor: pointer;
+}
+
+.build:hover a{
+    background-color: rgba(255, 0, 0, 0);
+    color: #4580D9;
 }
 
 .slideController {
@@ -365,7 +368,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 cursor: pointer;
-transition: 1s;
+transition: .5s;
 }
 .control:hover {
         
@@ -575,20 +578,19 @@ margin-bottom: 25px;
 }
 
 .shop {
-width: 150px;
-height: 50px;
-border-radius: 500px;
-border: none;
-background-color: #C3A261;
-font-weight: 700;
-color: white;
-margin: 50px 0 0 0;
-cursor: pointer;
+    width: 150px;
+    height: 50px;
+    border: 2px solid #C3A261;
+    color:#fff;
+    background-color: rgba(255, 0, 0, 0);
+    font-weight: 700;
+    margin: 50px 0 0 0;
+    cursor: pointer;
 }
-.shop:hover {
-    background-color: white; 
-    color: #C3A261;
-}
+    .shop:hover {
+        border: 2px solid #C3A261;
+        background-color: rgba(255, 0, 0, 0);
+    }
 
 
 /*---------------------------------------------             Premise             ------------------------------------------------------------*/
@@ -631,22 +633,21 @@ width: 60%;
 justify-content: space-between;
 }
 .MediaLink {
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background-color: #C3A261;
-color: white;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #C3A261;
+    background-color: rgba(255, 0, 0, 0);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-.MediaLink:hover{
-background-color: white;
-}
-.MediaLink:hover a{
-    color: #C3A261;
-}
+    .MediaLink:hover a{
+        color: #4580D9;
+        background-color: rgba(255, 0, 0, 0);
+    }
 
 #footerContent{
 display: flex;
@@ -919,9 +920,8 @@ margin-bottom: 25px;
 .storeShop {
     width: 150px;
     height: 50px;
-    border-radius: 300px;
-    border: none;
-    background-color: #C3A261;
+    border: 2px solid #C3A261;
+    background-color: rgba(255, 0, 0, 0);
     font-weight: 700;
     color: white;
     margin: 25px 0 0 25px;
@@ -929,8 +929,9 @@ margin-bottom: 25px;
 }
 
     .storeShop:hover {
-        background-color: white;
-        color: #C3A261;
+        border: 2px solid #C3A261;
+        color: #4580D9;
+        background-color: rgba(255, 0, 0, 0);
     }
 
 
@@ -1410,22 +1411,22 @@ margin: 25px;
     margin-bottom: 25px;
 }
 
-.storeShop {
-width: 150px;
-height: 50px;
-border-radius: 300px;
-border: none;
-background-color: #C3A261;
-font-weight: 700;
-color: white;
-margin: 25px 0 0 25px;
-cursor: pointer;
-}
+    .storeShop {
+        width: 150px;
+        height: 50px;
+        border: 2px solid #C3A261;
+        color: #fff;
+        background-color: rgba(255, 0, 0, 0);
+        font-weight: 700;
+        margin: 25px 0 0 25px;
+        cursor: pointer;
+    }
 
-.storeShop:hover {
-    background-color: white;
-    color: #C3A261;
-}
+        .storeShop:hover {
+            border: 2px solid #C3A261;
+            background-color: rgba(255, 0, 0, 0);
+            color: #4580D9;
+        }
 
 
 .storeButtonsList {
@@ -1624,3 +1625,20 @@ width: 80%;
 .cart-middle-desc {
     font-size: 1em;
 }
+
+button {
+    border: 2px solid #C3A261;
+    color: #4580D9;
+    background-color: rgba(255, 0, 0, 0);
+    color: #4580D9;
+}
+
+button:hover {
+    border: 2px solid #C3A261;
+    background-color: rgba(255, 0, 0, 0);
+    color: #4580D9;
+}
+
+    button:focus {
+        outline: 0;
+    }
