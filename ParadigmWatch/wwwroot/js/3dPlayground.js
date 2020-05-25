@@ -293,32 +293,54 @@ function GuiFunctionality() {
     for (let WatchPart = 0; WatchPart < GuiItem.length; WatchPart++) {
         // Gives each list Item a click event that will allow us to switch out materials on the 3D object
         GuiItem.item(WatchPart).addEventListener('click', () => {
-            console.log(GuiItem.item(WatchPart).children[0].innerText)
+            console.log(GuiItem.item(WatchPart).textContent)
             console.log(scene.children)
             // Searches the JSON data to find the selected Object
             let GuiItemTypes = dataList.filter((type) => {
-                return type.Name == GuiItem.item(WatchPart).innerText;
+                return type.Name == GuiItem.item(WatchPart).textContent;
             })
-
             console.log('Gui Items ' + GuiItemTypes[0].TypeId);
+            // Getting the name of the part we are replacing
+            let partName = findSelectedType(GuiItemTypes[0].TypeId)[0]
+            // Setting the selected boolean to false for the one we are switching out
+            dataList.forEach(element => {
+                // WHen we find the element we set the isSelected to false and then deleting it from the scene
+                if ( element.Name === partName ) {
+                    let selectedName = findSelectedType(GuiItemTypes[0].TypeId)
+                    element.isSelected = false;
+                    console.log('We found you: '  + element.Name, selectedName[0])
+                    DeleteModelFromView(selectedName[0] + '-' + selectedName[1]);
+
+                }
+                // We find the object the user selected and update the model with it :)
+                if (element.WatchPartId == GuiItemTypes[0].WatchPartId) {
+                    element.isSelected = true;
+                    loadModel(element);
+                    console.log(scene.children);
+                }
+            })
         })
     }
-
 }
 
 // Finds the Child of the scene which we want to switch out 
 function findSelectedType(typeId) {
     // Finds the child element of the scene we want to switch out
+    console.log('Inside the selector: ' + typeId)
     let sameTypes = scene.children.filter((child) => {
-        return child.Name.split('-')[1] == typeId;
+        return child.name.split('-')[1] == typeId;
     });
     // splitted the name into two parts [0] = Name, [1] = TypeId
-    let splittedName = sameTypes[0].Name.split('-');
-    return splittedName[0];
+    let splittedName = sameTypes[0].name.split('-');
+    
+    return splittedName;
 }
 
+// Deleting the object which was previously on the model so we can replace it with the new object later
 function DeleteModelFromView(guiName) {
-
+    var selectedObject = scene.getObjectByName(guiName);
+    scene.remove(selectedObject);
+    animate();
 }
 
 
