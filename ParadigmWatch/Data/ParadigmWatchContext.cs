@@ -118,11 +118,11 @@ namespace ParadigmWatch.Data
                 );
 
             modelBuilder.Entity<StandardShader>().HasData(
-                new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0.1m, NormalMapPath = "models/strap.png", Roughness = 0.3m },
-                new StandardShader() { Id = 2, Metalness = 1m, NormalMapIntensity = 0.1m, NormalMapPath = "models/chrome.png", Roughness = 0.15m },
-                new StandardShader() { Id = 3, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0.5m },
-                new StandardShader() { Id = 4, Metalness = 1m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m },
-                new StandardShader() { Id = 5, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m }
+                new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0.1m, NormalMapPath = "models/strap.png", Roughness = 0.9m, EnvMapIntensity = 1},
+                new StandardShader() { Id = 2, Metalness = 1m, NormalMapIntensity = 0.05m, NormalMapPath = "models/chrome.png", Roughness = 0.15m, EnvMapIntensity = 2 },
+                new StandardShader() { Id = 3, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0.5m, EnvMapIntensity = 1 },
+                new StandardShader() { Id = 4, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m, EnvMapIntensity = 1 },
+                new StandardShader() { Id = 5, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m, EnvMapIntensity = 1 }
                 );
 
             modelBuilder.Entity<Watch>().HasData(
