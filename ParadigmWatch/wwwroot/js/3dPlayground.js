@@ -1,9 +1,5 @@
 ﻿
 
-
-
-
-
 import { GLTFLoader } from './GLTFLoader.js';
 
 let BackgroundsTexture, BackgroundsNormal, BackSidesTexture, BackSidesNormal, BasesTexture, BasesNormal, DecorationsTexture, DecorationsNormal, RingsTexture, RingsNormal, SleevesTexture, SleevesNormal
@@ -76,9 +72,11 @@ let path = './js/WatchPartsJSON.js'
                     GuiContent.appendChild(currentGuiItem)
 
                     GUI.appendChild(GuiContent)
+                    
                 })
 
                 addGuiFunctions()
+                BuildUpAnimation()
             })
 
     }
@@ -96,6 +94,10 @@ let HDRIBG = e.options[e.selectedIndex].value;
 
 let enviroment = new THREE.CubeTextureLoader()
     .setPath('models/' + HDRIBG +'/')
+    .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
+
+let enviromentFlipped = new THREE.CubeTextureLoader()
+    .setPath(`models/${HDRIBG}Flipped/`)
     .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
 
 var glass = new THREE.MeshPhongMaterial({
@@ -177,7 +179,7 @@ async function init() {
 
 
 
-    scene.background = enviroment
+    scene.background = enviromentFlipped
 
    
     camera.position.z = 3;
@@ -209,7 +211,8 @@ async function init() {
 
 
 
-    JsonLoader(path)    
+    JsonLoader(path)
+   
 
     var render = function () {
        
@@ -235,7 +238,9 @@ function locator() {
 }
 
 
+function BuildUpAnimation() {
 
+}
 
 async function initialize() {
     init()
@@ -271,34 +276,7 @@ animate();
 
 function addGuiFunctions() {
 
-    let GUIlist = document.getElementsByClassName('GUIlist')
-    let GuiOption = document.getElementsByClassName('GuiOption')
-    let GuiItem = document.getElementsByClassName('GuiItem')
-    //Collapse function
-    for (let gui = 0; gui < GUIlist.length; gui++) {
-        let cGui = GUIlist.item(gui)
-        cGui.addEventListener('click', () => {
-            let cOpt = GuiOption.item(gui)
 
-
-            console.log(cOpt.scrollHeight)
-            for (let close = 0; close < GuiOption.length; close++) {
-                if (close != gui) {
-                    GuiOption.item(close).style.height = '0px'
-                }
-            }
-
-            cOpt.style.height = `${cOpt.scrollHeight}px`
-
-
-        })
-    }
-
-    for (let WatchPart = 0; WatchPart < GuiItem.length; WatchPart++) {
-        GuiItem.item(WatchPart).addEventListener('click', () => {
-            console.log(GuiItem.item(WatchPart))
-        })
-    }
 }
 
 
