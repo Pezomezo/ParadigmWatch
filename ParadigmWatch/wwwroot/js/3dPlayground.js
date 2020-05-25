@@ -39,7 +39,7 @@ let dataList = []
                     currentGuiName.classList.add('GUIlist')
 
                     let currentName = document.createElement('h2')
-                    currentName.textContent = item.TypeId
+                    currentName.textContent = data[item-1].Type
                     currentName.classList.add('guiPartType')
 
                     let arrow = document.createElement('div')
@@ -74,12 +74,12 @@ let dataList = []
                     })
 
                     console.log(currentGuiItem)
-                    //GuiContent.appendChild(currentGuiName)
-                    //GuiContent.appendChild(currentGuiItem)
+                    GuiContent.appendChild(currentGuiName)
+                    GuiContent.appendChild(currentGuiItem)
 
-                    //GUI.appendChild(GuiContent)
+                    GUI.appendChild(GuiContent)
                 })
-                
+                GuiFunctionality()
             })
     }
 
@@ -160,8 +160,9 @@ function ShaderBuilder(texture, normal, metallnessProp, normalIntensity, roughne
             color: color,
             metalness: metallnessProp,
             envMap: enviroment,
-            envMapIntensity: 1,
-            roughness: roughnessProp
+            envMapIntensity: 5,
+            roughness: roughnessProp,
+
         })
         currentMat.envMap.mapping = THREE.CubeRefractionMapping;
 
@@ -198,8 +199,10 @@ async function init() {
     })
 
 
-    var light = new THREE.SpotLight(0xffffff, 1.5);
-    light.position.set(0, 500, 2000);
+    var light = new THREE.AmbientLight(0xffffff, 0.4);
+    var spotLight = new THREE.SpotLight(0xffffff, 1);
+    spotLight.position.set(500, 500, 2000);
+    scene.add(spotLight)
     scene.add(light)
 
 
@@ -265,8 +268,6 @@ controls.keys = [65, 83, 68];
 
 animate();
 
-
-
 function GuiFunctionality() {
     let GUIlist = document.getElementsByClassName('GUIlist')
     let GuiOption = document.getElementsByClassName('GuiOption')
@@ -276,8 +277,6 @@ function GuiFunctionality() {
         let cGui = GUIlist.item(gui)
         cGui.addEventListener('click', () => {
             let cOpt = GuiOption.item(gui)
-
-
             console.log(cOpt.scrollHeight)
             for (let close = 0; close < GuiOption.length; close++) {
                 if (close != gui) {
@@ -324,6 +323,7 @@ function DeleteModelFromView(guiName) {
 
 
 
+
 const loader = new GLTFLoader();
 
 function loadModel(jsonObject) {
@@ -341,13 +341,31 @@ function loadModel(jsonObject) {
 
                 let elemType = words[2]
 
+
+                
+
                 let currentTexture = jsonObject.TextureImagePath
+                if (!jsonObject.TextureImagePath) {
+                    currentTexture = undefined
+                }
                 let currentNorm = jsonObject.NormalMapPath
+                if (!jsonObject.NormalMapPath) {
+                    currentNorm = undefined
+                }
+
                 let currentMetal = jsonObject.Metalness
                 let currentNormIt = jsonObject.NormalMapIntensity
                 let currentRou = jsonObject.Roughness
                 let currentEnvMapInt = jsonObject.EnvMapInt
 
+
+                if (words[2] == 'Pointers') {
+                    currentScene.children[0].children.forEach((element) => {
+                        element.material = populateStandardShader(elemType, currentTexture, currentNorm, currentMetal, currentNormIt, currentRou, currentEnvMapInt)
+                        element.material.name = words[2]
+                    })
+                    scene.add(currentScene)
+                }
 
                 if (words[2] == 'Glasses') {
                     currentScene.children.forEach((element) => {

@@ -1624,7 +1624,6 @@ width: 80%;
 }
 
 
-
 .GUIlist:hover {
     background-color: #4580D9;
     color: white;
@@ -1638,7 +1637,7 @@ width: 80%;
     border: none;
     font-size: 0.9rem;
     cursor: pointer;
-    padding-left: 50px;
+    padding:10px 0px 10px 50px;
     margin: 0;
 }
 

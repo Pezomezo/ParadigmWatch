@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParadigmWatch.Data;
 
 namespace ParadigmWatch.Migrations
 {
     [DbContext(typeof(ParadigmWatchContext))]
-    partial class ParadigmWatchContextModelSnapshot : ModelSnapshot
+    [Migration("20200525122700_PointerChange")]
+    partial class PointerChange
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -414,25 +416,25 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 1,
-                            EnvMapIntensity = 1,
+                            EnvMapIntensity = 0,
                             Metalness = 0.0,
                             NormalMapIntensity = 0.10000000000000001,
                             NormalMapPath = "models/strap.png",
-                            Roughness = 0.90000000000000002
+                            Roughness = 0.29999999999999999
                         },
                         new
                         {
                             Id = 2,
-                            EnvMapIntensity = 2,
+                            EnvMapIntensity = 0,
                             Metalness = 1.0,
-                            NormalMapIntensity = 0.050000000000000003,
+                            NormalMapIntensity = 0.10000000000000001,
                             NormalMapPath = "models/chrome.png",
                             Roughness = 0.14999999999999999
                         },
                         new
                         {
                             Id = 3,
-                            EnvMapIntensity = 1,
+                            EnvMapIntensity = 0,
                             Metalness = 0.0,
                             NormalMapIntensity = 0.0,
                             NormalMapPath = "",
@@ -441,7 +443,7 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 4,
-                            EnvMapIntensity = 1,
+                            EnvMapIntensity = 0,
                             Metalness = 0.0,
                             NormalMapIntensity = 0.0,
                             NormalMapPath = "",
@@ -450,7 +452,7 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 5,
-                            EnvMapIntensity = 1,
+                            EnvMapIntensity = 0,
                             Metalness = 0.0,
                             NormalMapIntensity = 0.0,
                             NormalMapPath = "",

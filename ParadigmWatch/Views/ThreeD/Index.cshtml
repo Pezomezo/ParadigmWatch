@@ -22,79 +22,8 @@
 <div id="threeGui">
 
     <ul id="GUI">
-        @foreach (WatchPart part in Model.Watch.WatchParts)
-        {
-            <li>
-                <div class="GUIlist">
-                    <h2 class="guiPartType">@part.PartType.Name</h2>
-                    <div class="arrow">></div>
-                </div>
-                <div class="GuiOption">
-                    @foreach (WatchPart elem in Model.AllParts.Where(index => index.TypeId == part.TypeId))
-                    {
 
-                        @if (@Model.Watch.WatchParts.Contains(elem))
-                        {
-                            <fieldset id="@Model.AllParts.FindIndex(item => item.Name == elem.Name)" class="activeOption GuiItem">
-                                <label>
-                                    @elem.Name
-                                    <input type="checkbox" class="hidden" checked="checked">
-                                </label>
-                            </fieldset>
-                            <div class="hidden">
-
-                                <p class="PartModelPath">@elem.ModelPath</p>
-                                <p class="PartName">@elem.Name</p>
-                                <p class="componentTypeId">@elem.TypeId</p>
-                                <p class="ComponentName">@elem.Name</p>
-                                <p class="textureMap">@elem.TextureMap.ImagePath</p>
-                                <p class="metallnessProp">@elem.Shader.Metalness</p>
-                                <p class="normalMap">@elem.Shader.NormalMapPath</p>
-                                <p class="normalIntensity">@elem.Shader.NormalMapIntensity</p>
-                                <p class="roughnessProp">@elem.Shader.Roughness</p>
-                                <p class="EnvMapInt">@elem.Shader.EnvMapIntensity</p>
-
-                            </div>
-                        }
-                        @if (!@Model.Watch.WatchParts.Contains(elem))
-                        {
-                            <div class="inactiveOption GuiItem">
-                                    @elem.Name
-                                    <input type="checkbox" class="hidden">
-                            </div>
-                            <div class="hidden">
-
-                                <p class="PartModelPath">@elem.ModelPath</p>
-                                <p class="PartName">@elem.Name</p>
-                                <p class="componentTypeId">@elem.TypeId</p>
-
-                                <p class="ComponentName">@elem.Name</p>
-                                <p class="textureMap">@elem.TextureMap.ImagePath</p>
-                                <p class="metallnessProp">@elem.Shader.Metalness</p>
-                                <p class="normalMap">@elem.Shader.NormalMapPath</p>
-                                <p class="normalIntensity">@elem.Shader.NormalMapIntensity</p>
-                                <p class="roughnessProp">@elem.Shader.Roughness</p>
-                                <p class="EnvMapInt">@elem.Shader.EnvMapIntensity</p>
-
-                            </div>
-                        }
-
-
-
-                    }
-
-
-                </div>
-
-
-
-
-            </li>
-
-
-
-        }
-
+      
     </ul>
 </div>
 
