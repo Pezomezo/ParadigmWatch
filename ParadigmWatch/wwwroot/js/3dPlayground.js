@@ -1,9 +1,5 @@
 ﻿
 
-
-
-
-
 import { GLTFLoader } from './GLTFLoader.js';
 
 let BackgroundsTexture, BackgroundsNormal, BackSidesTexture, BackSidesNormal, BasesTexture, BasesNormal, DecorationsTexture, DecorationsNormal, RingsTexture, RingsNormal, SleevesTexture, SleevesNormal
@@ -78,8 +74,11 @@ let dataList = []
                     GuiContent.appendChild(currentGuiItem)
 
                     GUI.appendChild(GuiContent)
+                    
                 })
+
                 GuiFunctionality()
+
             })
     }
 
@@ -96,6 +95,10 @@ let HDRIBG = e.options[e.selectedIndex].value;
 
 let enviroment = new THREE.CubeTextureLoader()
     .setPath('models/' + HDRIBG +'/')
+    .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
+
+let enviromentFlipped = new THREE.CubeTextureLoader()
+    .setPath(`models/${HDRIBG}Flipped/`)
     .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
 
 var glass = new THREE.MeshPhongMaterial({
@@ -177,7 +180,7 @@ async function init() {
 
 
 
-    scene.background = enviroment
+    scene.background = enviromentFlipped
 
    
     camera.position.z = 3;
@@ -209,7 +212,8 @@ async function init() {
 
 
 
-    JsonLoader(path)    
+    JsonLoader(path)
+   
 
     var render = function () {
        
@@ -235,7 +239,9 @@ function locator() {
 }
 
 
+function BuildUpAnimation() {
 
+}
 
 async function initialize() {
     init()
@@ -321,6 +327,7 @@ function GuiFunctionality() {
             })
         })
     }
+
 }
 
 // Finds the Child of the scene which we want to switch out 
