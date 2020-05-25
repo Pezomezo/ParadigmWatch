@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParadigmWatch.Data;
 
 namespace ParadigmWatch.Migrations
 {
     [DbContext(typeof(ParadigmWatchContext))]
-    partial class ParadigmWatchContextModelSnapshot : ModelSnapshot
+    [Migration("20200525124529_tweaks")]
+    partial class tweaks
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -425,7 +427,7 @@ namespace ParadigmWatch.Migrations
                             Id = 2,
                             EnvMapIntensity = 2,
                             Metalness = 1.0,
-                            NormalMapIntensity = 0.050000000000000003,
+                            NormalMapIntensity = 0.10000000000000001,
                             NormalMapPath = "models/chrome.png",
                             Roughness = 0.14999999999999999
                         },
