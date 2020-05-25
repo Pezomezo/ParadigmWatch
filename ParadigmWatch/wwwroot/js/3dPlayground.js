@@ -139,8 +139,6 @@ function populateStandardShader(elementTypeRaw, textureMap = undefined, normalMa
     }
 }
 
-
-
 function ShaderBuilder(texture, normal, metallnessProp, normalIntensity, roughnessProp, hasTexture, EnvMapInt, color) {
 
     if (hasTexture) {
@@ -173,8 +171,6 @@ function ShaderBuilder(texture, normal, metallnessProp, normalIntensity, roughne
     }
 
 }
-
-
 
 async function init() {
 
@@ -256,7 +252,6 @@ async function initialize() {
 
 initialize();
 
-
 function animate() {
     requestAnimationFrame(animate);
    
@@ -268,7 +263,9 @@ let controls = new THREE.TrackballControls(camera, renderer.domElement);
 
 controls.rotateSpeed = 1;
 controls.zoomSpeed = 1.2;
-controls.panSpeed = 0.8;
+controls.noPan = true;
+controls.minDistance = 2;
+controls.maxDistance = 8;
 
 controls.keys = [65, 83, 68];
 
@@ -356,8 +353,6 @@ function DeleteModelFromView(guiName) {
 const loader = new GLTFLoader();
 
 function loadModel(jsonObject) {
-   
-
     loader.load(
         jsonObject.ModelPath,
             (model) => {
