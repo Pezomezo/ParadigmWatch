@@ -461,6 +461,7 @@ namespace ParadigmWatch.Migrations
                     { 1, "Apollo", null, 3, 1, 3, 1, 0, null },
                     { 5, "Silver Pointer", null, 4, 1, 4, 5, 0, null },
                     { 7, "Glass", null, 5, 1, 7, 7, 0, null }
+
                 });
 
             migrationBuilder.InsertData(

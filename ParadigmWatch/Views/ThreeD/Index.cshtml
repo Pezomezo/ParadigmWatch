@@ -1,6 +1,7 @@
 ﻿@using ParadigmWatch.Models.ViewModels;
 @using ParadigmWatch.Models;
-@using ParadigmWatch.Infrastructure
+@using ParadigmWatch.Infrastructure;
+
 @model WatchViewModel
 
 
@@ -12,32 +13,89 @@
 
 <p id="startingModel" class="hidden">@Model.Watch.Name</p>
 
+
+
+    @*<p id="jsonFile">@JsonSerializer.Serialize(Model.WatchInitModel)</p>*@
+
+
+
 <div id="threeGui">
-    <ul data-role="listview" data-inset="true" data-shadow="false" id="GUI">
+
+    <ul id="GUI">
         @foreach (WatchPart part in Model.Watch.WatchParts)
         {
-            <li data-role="collapsible" data-iconpos="right" data-inset="false">
-                <h2 class="guiPartType">@part.PartType.Name</h2>
-                <fieldset data-role="controlgroup" data-type="horizontal" style=" z-index:1">
-                    <label>@part.Name<input type="checkbox" class="hidden"></label>
+            <li>
+                <div class="GUIlist">
+                    <h2 class="guiPartType">@part.PartType.Name</h2>
+                    <div class="arrow">></div>
+                </div>
+                <div class="GuiOption">
+                    @foreach (WatchPart elem in Model.AllParts.Where(index => index.TypeId == part.TypeId))
+                    {
 
-                </fieldset>
+                        @if (@Model.Watch.WatchParts.Contains(elem))
+                        {
+                            <fieldset id="@Model.AllParts.FindIndex(item => item.Name == elem.Name)" class="activeOption GuiItem">
+                                <label>
+                                    @elem.Name
+                                    @elem.Id
+                                    <input type="checkbox" class="hidden" checked="checked">
+                                </label>
+                            </fieldset>
+                            <div class="hidden">
+
+                                <p class="PartModelPath">@elem.ModelPath</p>
+                                <p class="PartName">@elem.Name</p>
+                                <p class="componentTypeId">@elem.TypeId</p>
+                                <p class="ComponentName">@elem.Name</p>
+                                <p class="textureMap">@elem.TextureMap.ImagePath</p>
+                                <p class="metallnessProp">@elem.Shader.Metalness</p>
+                                <p class="normalMap">@elem.Shader.NormalMapPath</p>
+                                <p class="normalIntensity">@elem.Shader.NormalMapIntensity</p>
+                                <p class="roughnessProp">@elem.Shader.Roughness</p>
+                                <p class="EnvMapInt">@elem.Shader.EnvMapIntensity</p>
+
+                            </div>
+                        }
+                        @if (!@Model.Watch.WatchParts.Contains(elem))
+                        {
+                            <fieldset class="inactiveOption GuiItem">
+                                <label>
+                                    @elem.Name
+                                    @elem.Id
+                                    <input type="checkbox" class="hidden">
+                                </label>
+                            </fieldset>
+                            <div class="hidden">
+
+                                <p class="PartModelPath">@elem.ModelPath</p>
+                                <p class="PartName">@elem.Name</p>
+                                <p class="componentTypeId">@elem.TypeId</p>
+
+                                <p class="ComponentName">@elem.Name</p>
+                                <p class="textureMap">@elem.TextureMap.ImagePath</p>
+                                <p class="metallnessProp">@elem.Shader.Metalness</p>
+                                <p class="normalMap">@elem.Shader.NormalMapPath</p>
+                                <p class="normalIntensity">@elem.Shader.NormalMapIntensity</p>
+                                <p class="roughnessProp">@elem.Shader.Roughness</p>
+                                <p class="EnvMapInt">@elem.Shader.EnvMapIntensity</p>
+
+                            </div>
+                        }
+
+
+
+                    }
+
+
+                </div>
+
+
+
+
             </li>
-            <li class="hidden">
 
-                <p class="PartModelPath">@part.ModelPath</p>
-                <p class="PartName">@part.Name</p>
-                <p class="componentTypeId">@part.TypeId</p>
 
-                <p class="ComponentName">@part.Name</p>
-                <p class="textureMap">@part.TextureMap.ImagePath</p>
-                <p class="metallnessProp">@part.Shader.Metalness</p>
-                <p class="normalMap">@part.Shader.NormalMapPath</p>
-                <p class="normalIntensity">@part.Shader.NormalMapIntensity</p>
-                <p class="roughnessProp">@part.Shader.Roughness</p>
-                <p class="EnvMapInt">@part.Shader.EnvMapIntensity</p>
-
-            </li>
 
         }
 
@@ -55,6 +113,8 @@
     </select>
 </div>
 
+
+<script type="text/javascript" src="~/js/WatchPartsJSON.js"></script>
 <script src="~/js/Three.js"></script>
 <script src="~/js/GLTFLoader.js" type="module"></script>
 <script src="~/js/TrackballControls.js" type="module"></script>
