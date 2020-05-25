@@ -10,7 +10,6 @@ namespace ParadigmWatch.Controllers
 {
     public class LoginController : Controller
     {
-        // #################### LOGIN #############################
 
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
@@ -62,60 +61,7 @@ namespace ParadigmWatch.Controllers
         public IActionResult AccessDenied()
         {
             return View();
-        }
-
-
-        // #################### Sign UP #######################
-
-        //private UserManager<AppUser> userManager;
-
-        //private IUserValidator<AppUser> userValidator;
-        //private IPasswordValidator<AppUser> passwordValidator;
-        //private IPasswordHasher<AppUser> passwordHasher;
-        //public LoginController(UserManager<AppUser> usrMgr,
-        //    IUserValidator<AppUser> userValid,
-        //    IPasswordValidator<AppUser> passValid,
-        //    IPasswordHasher<AppUser> passwordHash)
-        //{
-        //    userManager = usrMgr;
-        //    userValidator = userValid;
-        //    passwordValidator = passValid;
-        //    passwordHasher = passwordHash;
-        //}
-
-        //public ViewResult Index() => View();
-        //[HttpPost]
-        //public async Task<IActionResult> Index(CreateModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        AppUser user = new AppUser
-        //        {
-        //            UserName = "Adamka",
-        //            FirstName = model.FirstName,
-        //            LastName = model.LastName,
-        //            Email = model.Email,
-        //            Address = model.Address,
-        //            ZipCode = model.ZipCode,
-        //            City = model.City
-        //        };
-        //        IdentityResult result = await userManager.CreateAsync(user, model.Password);
-
-        //        if (result.Succeeded)
-        //        {
-        //            return RedirectToAction("Index");
-        //        }
-        //        else
-        //        {
-        //            foreach (IdentityError error in result.Errors)
-        //            {
-        //                ModelState.AddModelError("", error.Description);
-        //            }
-        //        }
-        //    }
-        //    return View(model);
-        //}
-
+        }     
 
     }
 }
