@@ -38,7 +38,6 @@
                             <fieldset id="@Model.AllParts.FindIndex(item => item.Name == elem.Name)" class="activeOption GuiItem">
                                 <label>
                                     @elem.Name
-                                    @elem.Id
                                     <input type="checkbox" class="hidden" checked="checked">
                                 </label>
                             </fieldset>
@@ -59,13 +58,10 @@
                         }
                         @if (!@Model.Watch.WatchParts.Contains(elem))
                         {
-                            <fieldset class="inactiveOption GuiItem">
-                                <label>
+                            <div class="inactiveOption GuiItem">
                                     @elem.Name
-                                    @elem.Id
                                     <input type="checkbox" class="hidden">
-                                </label>
-                            </fieldset>
+                            </div>
                             <div class="hidden">
 
                                 <p class="PartModelPath">@elem.ModelPath</p>

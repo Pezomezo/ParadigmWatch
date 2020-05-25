@@ -13,15 +13,17 @@ let BackgroundsTexture, BackgroundsNormal, BackSidesTexture, BackSidesNormal, Ba
 
 let GUI = document.getElementById('GUI')
 let path = './js/WatchPartsJSON.js'
+let dataList = []
 
     function JsonLoader(path) {
         fetch(path)
             .then(response => response.json())
             .then(data => {
+                
                 let typeIds = []
 
                 data.forEach(element => {
-
+                    dataList.push(element)
                     typeIds.push(element.TypeId)
                 })
 
@@ -77,8 +79,8 @@ let path = './js/WatchPartsJSON.js'
 
                     //GUI.appendChild(GuiContent)
                 })
+                
             })
-
     }
 
 
@@ -263,39 +265,62 @@ controls.keys = [65, 83, 68];
 
 animate();
 
-let GUIlist = document.getElementsByClassName('GUIlist')
-let GuiOption = document.getElementsByClassName('GuiOption')
-let GuiItem = document.getElementsByClassName('GuiItem')
-//Collapse function
-for (let gui = 0; gui < GUIlist.length; gui++) {
-    let cGui = GUIlist.item(gui)
-    cGui.addEventListener('click', () => {
-        let cOpt = GuiOption.item(gui)
 
 
-        console.log(cOpt.scrollHeight)
-        for (let close = 0; close < GuiOption.length; close++) {
-            if (close != gui) {
-                GuiOption.item(close).style.height = '0px'
+function GuiFunctionality() {
+    let GUIlist = document.getElementsByClassName('GUIlist')
+    let GuiOption = document.getElementsByClassName('GuiOption')
+    let GuiItem = document.getElementsByClassName('GuiItem')
+    //Collapse function
+    for (let gui = 0; gui < GUIlist.length; gui++) {
+        let cGui = GUIlist.item(gui)
+        cGui.addEventListener('click', () => {
+            let cOpt = GuiOption.item(gui)
+
+
+            console.log(cOpt.scrollHeight)
+            for (let close = 0; close < GuiOption.length; close++) {
+                if (close != gui) {
+                    GuiOption.item(close).style.height = '0px'
+                }
             }
-        }
 
-        cOpt.style.height = `${cOpt.scrollHeight}px`
-        
+            cOpt.style.height = `${cOpt.scrollHeight}px`
 
-    })
+
+        })
+    }
+
+    for (let WatchPart = 0; WatchPart < GuiItem.length; WatchPart++) {
+        // Gives each list Item a click event that will allow us to switch out materials on the 3D object
+        GuiItem.item(WatchPart).addEventListener('click', () => {
+            console.log(GuiItem.item(WatchPart).children[0].innerText)
+            console.log(scene.children)
+            // Searches the JSON data to find the selected Object
+            let GuiItemTypes = dataList.filter((type) => {
+                return type.Name == GuiItem.item(WatchPart).innerText;
+            })
+
+            console.log('Gui Items ' + GuiItemTypes[0].TypeId);
+        })
+    }
+
 }
 
-for (let WatchPart = 0; WatchPart < GuiItem.length; WatchPart++) {
-    GuiItem.item(WatchPart).addEventListener('click', () => {
-        console.log(GuiItem.item(WatchPart))
-    })
+// Finds the Child of the scene which we want to switch out 
+function findSelectedType(typeId) {
+    // Finds the child element of the scene we want to switch out
+    let sameTypes = scene.children.filter((child) => {
+        return child.Name.split('-')[1] == typeId;
+    });
+    // splitted the name into two parts [0] = Name, [1] = TypeId
+    let splittedName = sameTypes[0].Name.split('-');
+    return splittedName[0];
 }
 
+function DeleteModelFromView(guiName) {
 
-
-
-
+}
 
 
 
@@ -309,7 +334,7 @@ function loadModel(jsonObject) {
             (model) => {
 
                 let currentScene = model.scene
-                currentScene.name = jsonObject.Name
+                currentScene.name = `${jsonObject.Name}-${jsonObject.TypeId}`
 
                 let path = jsonObject.ModelPath
                 let words = path.split('/');
@@ -327,7 +352,7 @@ function loadModel(jsonObject) {
                 if (words[2] == 'Glasses') {
                     currentScene.children.forEach((element) => {
                         element.material = glass
-                        element.material.name = words[2]
+                        element.material.name = words[2] 
                     })
                     scene.add(currentScene)
                 }
@@ -336,7 +361,7 @@ function loadModel(jsonObject) {
                 else {
                     currentScene.children.forEach((element) => {
                         element.material = populateStandardShader(elemType, currentTexture, currentNorm, currentMetal, currentNormIt, currentRou, currentEnvMapInt)
-                        element.material.name = words[2]
+                        element.material.name = words[2] 
                     })
                     scene.add(currentScene)
                 }
