@@ -4,111 +4,43 @@
     ViewData["Title"] = "Index";
 }
 
-        @* ______________________________________            NEW SECTION           _________________________________________________ *@
+@* ______________________________________            NEW SECTION           _________________________________________________ *@
 
-        <section id="identityContainer">
-           
-            <div class="identityForm">
+<section id="identityContainer">
 
-                <div class="identityRegister">
-                    <div class="loginContent">
-                        <div class="container">
+    <div class="identityForm">
 
-                            <div class="bg-primary m-1 p-1 text-white identityCenter">
-                                <h2 class="identityTitle">Register</h2>
-                                <p class="identityText">and get 10% off every product! </p>
-                            </div>
-                            <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
-                                <ul>
-                                    <li style="display:none"></li>
-                                </ul>
-                            </div>
-                            <div asp-validation-summary=" All" class="text-danger"></div>
-                            <form method="post" asp-action="Index">
-                                <input type="hidden" name="returnUrl" value="/" />
-                                @*<div class="form-RegGroup">
-                                    <label asp-for="FirstName">First name</label><br />
-                                    <input asp-for="FirstName" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="FirstName" name="FirstName" placeholder="John..." />
-                                </div>
-                                <div class="form-RegGroup">
-                                    <label asp-for="LastName">Last name</label><br />
-                                    <input asp-for="LastName" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="LastName" name="LastName" placeholder="Smith..." />
-                                </div>
-                                <div class="form-RegGroup">
-                                    <label asp-for="Email">Email</label><br />
+        <div class="identityRegister">
+            <iframe src='@Url.Action("Index", "Signup")' width="100"   height="1000" frameborder="0"></iframe>
+        </div>
 
-                                    <input asp-for="Email" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="Email" name="Email" placeholder="example@email.com..." />
-                                </div>
-                                <div class="form-RegGroup">
-                                    <label asp-for="Password">Password</label><br />
-                                    <input asp-for="Password" class="form-control idnetityFormRegistration" type="password" data-val="true" data-val-required="The Password field is required." id="Password" name="Password" placeholder="your password" />
-                                </div>
-                                <div class="form-RegGroup">
-                                    <label asp-for="City">City</label><br />
-                                    <input asp-for="City" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="City" name="City" placeholder="Los Angeles" />
-                                </div>
-                                <div class="form-RegGroup">
-                                    <label asp-for="Address">Adress</label><br />
-                                    <input asp-for="Address" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="Adress" name="Address" />
-                                </div>
-                                <div class="form-RegGroup">
-                                    <label asp-for="ZipCode">Zip code</label><br />
-                                    <input asp-for="ZipCode" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="PortelCode" name="PortelCode" placeholder="Portel code" />
-                                </div>*@
-                                <div class="identityLetter">
+        <div class="identityLogin">
+            <div class="loginContent">
+                <div class="container">
 
-                                    <div>
-                                        <input type="radio" />
-                                        <label>I agree privacy policy</label>
-                                    </div>
+                    <div class="bg-primary why p-1 text-white  identityCenter"><h4>Log In</h4></div>
 
-                                    <div>
-                                        <input type="radio" />
-                                        <label>I would like to subscribe newsletter</label>
-                                    </div>
-
-
-                                </div>
-                                <button class="btn btn-primary identityRegBtn" type="submit">Register now</button>
-                                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-                            </form>
+                    <div asp-validation-summary=" All" class="text-danger"></div>
+                    <form method="post" asp-action="Index">
+                        <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+                        <div class="form-group">
+                            <label asp-for="Email">Name</label><br />
+                            <input asp-for="Email" class="form-control" />
                         </div>
-                    </div>
-
-                </div>
-
-                <div class="identityLogin">
-                    <div class="loginContent">
-                        <div class="container">
-
-                            <div class="bg-primary why p-1 text-white  identityCenter"><h4>Log In</h4></div>
-                            <div class="text-danger" summary="All"></div>
-                            <ul>
-                                <li style="display:none"></li>
-                            </ul>
+                        <div class="form-group">
+                            <label asp-for="Password">Password</label><br />
+                            <input asp-for="Password" class="form-control" />
                         </div>
-                        <div asp-validation-summary=" All" class="text-danger"></div>
-                        <form method="post" asp-action="Index">
-                            <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
-                            <div class="form-group">
-                                <label asp-for="Email">Name</label><br />
-                                <input asp-for="Email" class="form-control" />
-                            </div>
-                            <div class="form-group">
-                                <label asp-for="Password">Password</label><br />
-                                <input asp-for="Password" class="form-control" />
-                            </div>
-                            <button class="btn btn-primary identityLoginBtn" type="submit">Submit</button>
-                        </form>
+                        <button class="btn btn-primary identityLoginBtn" type="submit">Submit</button>
                         <a href="#">forget passwords?</a>
-                    </div>
-                    </div>
+                    </form>
                 </div>
             </div>
-           
-        </section>
+        </div>
+    </div>
+</section>
 
-        @* ______________________________________            NEW SECTION           _________________________________________________ *@
+@* ______________________________________            NEW SECTION           _________________________________________________ *@
 
-       
+
 
