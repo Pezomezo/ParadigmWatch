@@ -44,8 +44,8 @@
         </div>
 
         <div class="navigationLinks">
-            <a href="#" class="secondaryLink">Learn More</a>
-            <a href="#" class="primaryLink">Build your own</a>
+            <a id="secondaryLink" class="secondaryLink">Learn More</a>
+            <a id="primaryLink" class="primaryLink">Build your own</a>
         </div>
 
         <div class="arrowController">
@@ -62,7 +62,9 @@
                     <h2 class="sliderText">@item.Watch.Name.ToUpper()</h2>
 
                 </div>
+               
             </div>
+            
         }
 
 
@@ -125,7 +127,7 @@
         @foreach (var item in Model)
         {
             <div class="productContainer foo-2">
-                <a class="productImage">
+                <a asp-controller="ProductPage" asp-action="Index" asp-route-watchId="@item.Watch.Id" class="productImage">
                     <img src="~/Images/@item.Watch.WatchImagePath" alt="" />
                 </a>
                 <div class="productDescription">

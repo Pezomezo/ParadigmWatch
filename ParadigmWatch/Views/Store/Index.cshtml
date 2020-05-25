@@ -66,8 +66,8 @@
                 <p class="storeWatchDesc">@item.Watch.Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. Nullam convallis, </p>
                 <div class="storeButtonsList">
                     <form method="post">
-                        <button class="storeShop" asp-controller="ProductPage" asp-action="Index" asp-route-watchName="@item.Watch.Name">Details</button>
-                        <button class="storeShop">Build your own</button>
+                        <button class="storeShop" asp-controller="ProductPage" asp-action="Index" asp-route-watchId="@item.Watch.Id">Details</button>
+                        <button class="storeShop" asp-controller="ThreeD" asp-action="Index" asp-route-watchId="@item.Watch.Id">Build your own</button>
                     </form>
                     
                 </div>

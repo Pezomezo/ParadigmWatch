@@ -67,6 +67,9 @@ let backButton = document.getElementById('back')
 
 let currentSlide = document.getElementById('currentSlide')
 
+let LearnMoreBTN = document.getElementById('secondaryLink')
+let BuildYourOwnBTN = document.getElementById('primaryLink')
+
 let sliderCounter = 0;
 
 let sliderTexts = document.getElementsByClassName('sliderText');
@@ -135,5 +138,23 @@ backButton.addEventListener('click', () => {
 
 
 
+//  This part is about redirection for the Build and Learn more buttons
 
+BuildYourOwnBTN.addEventListener('click', () => { redirect('ThreeD?watchId=') } );
 
+LearnMoreBTN.addEventListener('click', () => { redirect('ProductPage?watchId=') } );
+
+// ProductPage?watchId=1
+
+function redirect(urlMiddle) {
+    console.log(parseInt(currentSlide.textContent));
+    let current = parseInt(currentSlide.textContent);
+    let theUrl = '';
+    console.log(slides)
+    for (let i = 0; i < slides.length; i++) {
+        if (slides[i].id == current) {
+            theUrl = window.location.href + urlMiddle + current;
+        }
+    }
+    window.location.href = theUrl;
+}
