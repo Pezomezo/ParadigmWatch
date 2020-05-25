@@ -118,10 +118,10 @@
     "TypeId": 8,
     "TextureImagePath": "models/chrome.png",
     "Metalness": 1.0,
-    "NormalMapPath": "models/chrome.png",
+    "NormalMapPath": "models/strap.png",
     "NormalMapIntensity": 0.05,
     "Roughness": 0.15,
-    "EnvMapInt": 2.0,
+    "EnvMapInt": 3.0,
     "Type": "Ring",
     "isSelected": false
   }
