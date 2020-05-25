@@ -1,5 +1,4 @@
-﻿
-import { GLTFLoader } from './GLTFLoader.js';
+﻿import { GLTFLoader } from './GLTFLoader.js';
 
 let BackgroundsTexture, BackgroundsNormal, BackSidesTexture, BackSidesNormal, BasesTexture, BasesNormal, DecorationsTexture, DecorationsNormal, RingsTexture, RingsNormal, SleevesTexture, SleevesNormal
  
