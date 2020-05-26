@@ -56,8 +56,6 @@ let sum = 0
                     currentGuiName.appendChild(currentName)
                     currentGuiName.appendChild(arrow)
 
-
-
                     /* First Section */
 
                     let currentGuiItem = document.createElement('div')
