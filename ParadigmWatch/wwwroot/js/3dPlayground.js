@@ -112,17 +112,19 @@ var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHei
 var renderer = new THREE.WebGLRenderer({ antialias: true });
 //let domElement = document.getElementById('canvas')
 
+// get the initial bacground image
 var e = document.getElementById("bgDropDown");
 let HDRIBG = e.options[e.selectedIndex].value;
-//console.log(HDRIBG + ' : BG HERE')
 
+// The environment reflecting on the object
 let enviroment = new THREE.CubeTextureLoader()
-    .setPath('models/' + HDRIBG +'/')
+    .setPath(`models/${HDRIBG}/`)
     .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
-
+// The bacground environment
 let enviromentFlipped = new THREE.CubeTextureLoader()
     .setPath(`models/${HDRIBG}Flipped/`)
     .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
+console.log('Initial Load: ' + HDRIBG);
 
 var glass = new THREE.MeshPhongMaterial({
     color: 0xffffff,
@@ -133,14 +135,34 @@ var glass = new THREE.MeshPhongMaterial({
     transparent: true
 })
 
-
 glass.envMap.mapping = THREE.CubeRefractionMapping;
 
-//function getBGname()
-//{
-//    let HDRIBG = e.options[e.selectedIndex].value;
-//    console.log(HDRIBG + ' : BG GET')
-//}
+let dropdownElement = document.getElementById('bgDropDown');
+
+let oddClick = true;
+dropdownElement.addEventListener('click', () => {
+    if (!oddClick) {
+
+        var e = document.getElementById("bgDropDown");
+        let HDRIBG = e.options[e.selectedIndex].value;
+
+        enviroment = new THREE.CubeTextureLoader()
+            .setPath(`models/${HDRIBG}/`)
+            .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
+
+        enviromentFlipped = new THREE.CubeTextureLoader()
+            .setPath(`models/${HDRIBG}Flipped/`)
+            .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
+        scene.background = enviroment;
+        console.log(HDRIBG + ': Selected Element');
+
+        oddClick = true;
+    } else {
+        oddClick = false;
+    }
+
+})
+
 // Create a shader with the assigned parameters
 function populateStandardShader(elementTypeRaw, textureMap = undefined, normalMap = undefined, metallnessProp = 0, normalIntensity = 0, roughnessProp = 0, EnvMapInt = 1, color = 0xffffff) {
     let elementType = elementTypeRaw.toString()
@@ -161,8 +183,6 @@ function populateStandardShader(elementTypeRaw, textureMap = undefined, normalMa
         return ShaderBuilder(textureMap, normalMap, metallnessProp, normalIntensity, roughnessProp, hasTexture, EnvMapInt, color)
     }
 }
-
-
 
 function ShaderBuilder(texture, normal, metallnessProp, normalIntensity, roughnessProp, hasTexture, EnvMapInt, color) {
 
@@ -200,8 +220,6 @@ let canvas = document.getElementById('canvas')
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.toneMapping = THREE.ReinhardToneMapping;
 canvas.appendChild(renderer.domElement)
-
-
 
 
 async function init() {
@@ -277,13 +295,20 @@ async function initialize() {
 initialize();
 
 
-
+function animate() {
+    requestAnimationFrame(animate);
+   
+    controls.update();
+    renderer.render(scene, camera);
+}
 
 let controls = new THREE.TrackballControls(camera, renderer.domElement);
 
 controls.rotateSpeed = 1;
 controls.zoomSpeed = 1.2;
-controls.panSpeed = 0.8;
+controls.noPan = true;
+controls.minDistance = 2;
+controls.maxDistance = 8;
 
 controls.keys = [65, 83, 68];
 
@@ -306,7 +331,6 @@ function GuiFunctionality() {
             }
 
             cOpt.style.height = `${cOpt.scrollHeight}px`
-
 
         })
     }
@@ -416,8 +440,6 @@ let animation;
 const loader = new GLTFLoader();
 
 function loadModel(jsonObject) {
-   
-
     loader.load(
         jsonObject.ModelPath,
             (model) => {

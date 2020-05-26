@@ -22,7 +22,7 @@ namespace ParadigmWatch.Models.ViewModels
 
         [JsonIgnore]
         public ISession Session { get; set; }
-        public override void AddItem(Watch product, int quantity)
+        public override void AddItem(SerializableWatchModel product, int quantity)
         {
             base.AddItem(product, quantity);
             Session.SetJson("Cart", this);

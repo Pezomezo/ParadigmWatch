@@ -34,17 +34,22 @@
     </div>
 
 
-    <div id="canvas" class="ThreeDBackgroundSelector loaderContainer">
-        <select onselect="getBGname()" id="bgDropDown" href="#">
-            @foreach (var item in ViewBag.BGNames)
-            {
-                <option>@item.Text</option>
-            }
-        </select>
-    </div>
+<div id="ThreeDBackgroundSelector">
+    <select id="bgDropDown">
+        @foreach (var item in ViewBag.BGNames)
+        {
+            <option id="bgOption" class="backgroundOption">@item.Text</option>
+        }
+    </select>
+</div>
 
 
 <p id="watchId" class="hidden">@Model.Watch.Id</p>
+
+<div id="canvas" class="ThreeDBackgroundSelector">
+    
+</div>
+
 
 <script type="text/javascript" src="~/js/WatchPartsJSON.js"></script>
 <script src="~/js/Three.js"></script>

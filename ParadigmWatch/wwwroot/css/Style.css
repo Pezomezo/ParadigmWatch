@@ -469,7 +469,7 @@ background-color: #C3A261;
     margin-top: 25px;
     flex-direction: column;
     display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
 }
 
 .productContainer {
@@ -493,13 +493,13 @@ margin: 15px 0 15px 0;
 }
 
 .productImage > img {
-max-width: 30%;
+max-width: 200px;
 transition: 1s;
 position: absolute;
 }
 
 .productImage > img:hover{
-max-width: 32%;
+max-width: 220px;
 }
 
 .productDescription {
@@ -1191,14 +1191,20 @@ nav {
         background-color: white;
     }
 
+    .navbar-text{
+        font-size: small;
+    }
+    .navbar-text > b {
+        font-size: medium;
+    }
 
-.sliderText {
-    position: absolute;
-    z-index: 1;
-    font-size: 15vw;
-    color: #C3A261;
-    margin: 0;
-}
+    .sliderText {
+        position: absolute;
+        z-index: 1;
+        font-size: 15vw;
+        color: #C3A261;
+        margin: 0;
+    }
 
 .sliderImg {
     position: absolute;
@@ -1253,7 +1259,7 @@ nav {
 
 
     .productImage > img {
-        max-width: 13%;
+        max-width: 200px;
         transition: 1s;
         position: absolute;
         /*margin-top: 65px;*/
@@ -1263,7 +1269,7 @@ nav {
 
 
         .productImage > img:hover {
-            max-width: 16%;
+            max-width: 220px;
         }
 
     .productsRec p {
@@ -1716,3 +1722,24 @@ width: 80%;
 #ThreeDPage{
     position: absolute;
 }
+
+#ThreeDBackgroundSelector {
+    position: absolute;
+    z-index: 1;
+    height: 15%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 90vw;
+}
+
+#bgDropDown {
+    display: flex;
+    width: 15%;
+    height: 30%;
+    cursor: pointer;
+    padding: .3vw 1% .3vw 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
