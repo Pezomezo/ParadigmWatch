@@ -1529,8 +1529,8 @@ width: 80%;
     align-items: center;
     margin-top: 100px;
     color: black;
-    padding-top:100px;
-    padding:300px;
+    padding-top:20vh;
+    padding-bottom:20vh;
 }
 
 .cart-container {
@@ -1822,12 +1822,12 @@ width: 80%;
     align-items: flex-end;
 }
 .btn{
-    height: 50px;
-    width: 200px;
+    /*height: 50px;
+    width: 200px;*/
     border: none;
     cursor: pointer;
     border-radius: 50px;
-    margin-right: 50px;
+    /*margin-right: 50px;*/
 }
 
 #ThreeDPage{
