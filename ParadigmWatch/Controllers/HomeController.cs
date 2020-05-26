@@ -36,7 +36,7 @@ namespace ParadigmWatch.Controllers
         {
             foreach (var watch in Watches)
             {
-                WatchCreation.InitWatch(watch);
+                WatchCreation.InitWatch(watch.Watch);
             }
         }
        

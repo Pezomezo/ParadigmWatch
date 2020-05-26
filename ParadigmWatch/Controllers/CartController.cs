@@ -14,32 +14,35 @@ namespace ParadigmWatch.Controllers
     {
         private ParadigmWatchContext dataContext;
         private Cart cart;
+        private WatchCreator creator;
 
         public CartController(Cart cartService, ParadigmWatchContext dbContext)
         {
             cart = cartService;
             dataContext = dbContext;
+            creator = new WatchCreator(dataContext);
         }
 
         public ViewResult Index(string returnUrl)
         {
+            Console.WriteLine(this.cart.Lines[0].Product.Price);
             return View(new CartIndexViewModel
             {
-                Cart = cart,
+                Cart = this.cart,
                 ReturnUrl = returnUrl
             });
         }
 
         public RedirectToActionResult AddToCart(int productId, string returnUrl)
         {
-
-            
-
             Watch product = dataContext.Watches
             .FirstOrDefault(p => p.Id == productId);
+            creator.InitWatch(product);
             if (product != null)
             {
-                cart.AddItem(product, 1);
+                cart.AddItem(new SerializableWatchModel() { Id = product.Id, Name = product.Name,
+                    Description = product.Description, Price = product.Price,
+                    WatchImagePath = product.WatchImagePath }, 1);
             }
             Console.WriteLine(product);
             return RedirectToAction("Index", new { returnUrl });
