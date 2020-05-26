@@ -259,25 +259,28 @@ max-width: 50vw;
 }
 
 .sideText {
-position: absolute;
-width: 100%;
-height: 100vh;
-display: flex;
-flex-direction: column;
-justify-content: space-evenly;
+    margin-top: 50px;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .bigParagraph {
-margin: 0 0 0 8vw;
+    display:none;
+/*margin: 0 0 0 8vw;
 transform: rotate(-90deg);
-transform-origin: bottom left;
+transform-origin: bottom left;*/
 }
 
 .bigThinParagraph {
-margin: 0px 0px 0px 12vw;
+    display:none;
+/*margin: 0px 0px 0px 6vw;
 transform: rotate(-90deg);
 transform-origin: bottom left;
-font-weight: 300;
+font-weight: 300;*/
 }
 
 .slideCounter {
@@ -324,7 +327,7 @@ align-self: flex-end;
 .navigationLinks > a {
     white-space: nowrap;
     color: white;
-    margin-right: 40vw;
+    margin-right: 4vw;
 }
 
 .build {
@@ -376,8 +379,9 @@ transition: .5s;
 }
 
 .productTitle {
-font-size: 2em;
-color: #C3A261;
+    display:none;
+/*font-size: 2em;
+color: #C3A261;*/
 }
 
 /*---------------------------------------------             DISCLAIMER             ------------------------------------------------------------*/
@@ -844,6 +848,7 @@ margin-bottom: 25px;
 #storeDisclaimer {
     grid-column: 1/11;
     grid-row: 1/2;
+    padding-top:150px;
     background: linear-gradient(0deg, #1F2125 0%, #343841 100%);
     height: 35vh;
     text-align: center;
@@ -1100,32 +1105,142 @@ margin-bottom: 25px;
     margin: 20px 0 20px 0;
 }
 
-/*button setup*/
-button {
-    border: 2px solid #C3A261;
-    color: #fff;
-    background-color: rgba(255, 0, 0, 0);
+
+/*///////////////////////////////////
+                                                Contact
+                                                                   /////////////////////////////////////*/
+
+
+#contact {
+    grid-column: 2/10;
+    grid-row: 1/6;
+    background-color: #1F2125;
+    padding-top: 159px;
+    padding-bottom: 500px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1360px;
+    margin: 0 auto;
 }
 
-    button:hover {
-        border: 2px solid #C3A261;
-        background-color: rgba(255, 0, 0, 0);
-        color: #4580D9;
-    }
+#contact h3 {
+    color: #C3A261;
+}
 
-    button:focus {
-        outline: 0;
-    }
+#contactContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#contactContacts {
+    font-size: 1.5rem;
+}
+
+#contactText{
+    font-size: 1.5rem;
+}
+
+.contactTextItem {
+    margin: 15px 0 15px 0;
+    font-size: 1rem;
+}
+
+ ul#contactContact {
+    padding-top: 25px;
+}
+
+ul#contactTexts {
+    padding-top: 25px;
+}
+
+#map {
+    height: 200px;
+    border-radius: 25px;
+}
+/*///////////////////////////////////
+                                                About
+                                                                   /////////////////////////////////////*/
 
 
+#about h3 {
+    color: #C3A261;
+}
+#about {
+    grid-column: 2/10;
+    grid-row: 1/6;
+    background-color: #1F2125;
+    padding-top:100px;
+    padding-bottom:500px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1360px;
+    margin: 0 auto;
+
+}
+
+#aboutContent {
+    font-size: 18px;
+    color: #fff;
+    padding-top:50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#aboutContacts {
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+#aboutText {
+    font-size: 1.5rem;
+}
+
+.aboutTextItem {
+    margin: 15px 0 15px 0;
+    font-size: 1rem;
+}
+
+.placeText {
+    color: #C3A261;
+    margin-bottom: 5px;
+}
+
+ul#aboutText {
+    list-style: none;
+}
+
+.abouttext {
+    font-size: 16px;
+    color: #fff;
+}
+.aboutTexttop {
+    padding-bottom: 25px;
+}
+/*///////////////////////////////////
+                                                Favorits
+                                                                   /////////////////////////////////////*/
+
+.favorites h3 {
+    color: #C3A261;
+}
+.favorites {
+    grid-column: 2/10;
+    grid-row: 1/6;
+    background-color: #1F2125;
+    padding-top:100px;
+    padding-bottom:500px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1360px;
+    margin: 0 auto;
+
+}
 
 /*####################################################################################################################################################*/
-
-
-
 @media only screen and (min-width: 1200px) {
-
-nav {
+    nav {
     position: fixed;
     background-color: rgba(0,0,0,0);
     width: 100%;
@@ -1215,23 +1330,30 @@ nav {
         background-color: rgba(0,0,0,0);
     }
 
-.bigParagraph {
-    margin: 0 0 -1.2vw 8vw;
+    .bigParagraph {
+        display: block;
+        margin: 0 0 0 8vw;
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+        /*margin: 0 0 -1.2vw 8vw;
     transform: rotate(-90deg);
     transform-origin: bottom left;
-    font-size: 1.5em;
-}
 
-.bigThinParagraph {
-    margin: 0px 0 5px 10vw;
+    font-size: 1.5em;*/
+    }
+    .bigThinParagraph {
+        display: block;
+        margin: 0px 0px 0px 6vw;
+        transform: rotate(-90deg);
+        transform-origin: bottom left;
+        font-weight: 300;
+        /*margin: 0px 0 5px 9vw;
+
     transform: rotate(-90deg);
     transform-origin: bottom left;
-    font-size: 1.2em;
-}
-
-
-
-.slideDetails {
+    font-size: 1.2em;*/
+    }
+        .slideDetails {
     grid-column: 2 / 4;
     grid-row: 1/10;
     position: absolute;
@@ -1259,6 +1381,7 @@ nav {
     height: 5vh;
     display: flex;
     align-items: center;
+
         
 }
 
@@ -1285,14 +1408,20 @@ nav {
         background-color: white;
     }
 
+    .navbar-text{
+        font-size: small;
+    }
+    .navbar-text > b {
+        font-size: medium;
+    }
 
-.sliderText {
-    position: absolute;
-    z-index: 1;
-    font-size: 15vw;
-    color: #C3A261;
-    margin: 0;
-}
+    .sliderText {
+        position: absolute;
+        z-index: 1;
+        font-size: 15vw;
+        color: #C3A261;
+        margin: 0;
+    }
 
 .sliderImg {
     position: absolute;
@@ -1308,7 +1437,11 @@ nav {
         margin-top: 25px;
     }
 
-
+    .productTitle {
+        display:block;
+font-size: 2em;
+color: #C3A261;
+}
 
     .productContainer {
         width: 25vw;
@@ -1508,6 +1641,8 @@ width: 80%;
     align-items: center;
     margin-top: 100px;
     color: black;
+    padding-top:20vh;
+    padding-bottom:20vh;
 }
 
 .cart-container {
@@ -1663,29 +1798,182 @@ width: 80%;
 }
 
 
+#ThreeDPage {
+    position: absolute;
+    grid-column: 1/11;
+    grid-template-columns: repeat(10, 10vw);
+    grid-template-rows: repeat(10, 10vh);
+    display: grid;
+}
+
+.guiContainer{
+    grid-column: 1/3;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2;
+
+}
+
 #threeGui {
     position: absolute;
     z-index: 1;
-    height: 100%;
+    height: 0%;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 20vw;
+    transition: 3s ease-in-out;
 }
 
 #GUI {
-    padding: 10px;
-
+    padding: 0px;
+    min-width: 50%;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: rgba(0,0,0,0.5);
+    
 }
-#canvas{
+
+
+    #GUI > li:nth-child(even) {
+        background-color: rgba(0, 0, 25,0.5);
+    }
+
+
+#canvas {
     z-index: 0;
     position: absolute;
+    opacity: 0;
 }
 .guiPartType{
     font-size: 1rem;
-}
-.hidden{
-    display: none;
+
 
 }
+
+.GUIlist {
+    display: flex;
+    width: 80%;
+    height: 100%;
+    cursor: pointer;
+    padding: 2vh 10% 2vh 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.GuiOption {
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.5s;
+    background-color: #4580D9;
+}
+
+
+.GUIlist:hover {
+    background-color: #4580D9;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.activeOption, .inactiveOption {
+    border: none;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding:10px 0px 10px 50px;
+    margin: 0;
+}
+
+    .inactiveOption:hover {
+        background-color: white;
+        color: #4580D9;
+    }
+
+
+.activeOption {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    
+}
+.arrow {
+    transition: 0.5s;
+}
+
+.load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#loaderContainer{
+    width: 100%;
+    height: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    background-color: #4580D9;
+    width: 0%;
+    height: 90%;
+    opacity: 1;
+}
+.loadingFull{
+    height: 100vh;
+    transition: 1s;
+}
+.buttonContainer {
+   grid-column: 8/10;
+   grid-row: 9/10;
+   width: 100%;
+   height: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+    position: absolute;
+    z-index: 1;
+    align-items: flex-end;
+}
+.btn{
+    height: 50px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-right: 50px;
+}
+
+
+
+#ThreeDBackgroundSelector {
+    grid-column: 9/10;
+    grid-row: 2/3;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+#bgDropDown {
+    display: flex;
+    width: 100%;
+    height: 50%;
+    cursor: pointer;
+    padding: .3vw 1% .3vw 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+

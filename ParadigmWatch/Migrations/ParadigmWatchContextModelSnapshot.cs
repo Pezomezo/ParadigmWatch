@@ -414,25 +414,25 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 1,
-                            EnvMapIntensity = 0,
+                            EnvMapIntensity = 1,
                             Metalness = 0.0,
                             NormalMapIntensity = 0.10000000000000001,
                             NormalMapPath = "models/strap.png",
-                            Roughness = 0.29999999999999999
+                            Roughness = 0.90000000000000002
                         },
                         new
                         {
                             Id = 2,
-                            EnvMapIntensity = 0,
+                            EnvMapIntensity = 2,
                             Metalness = 1.0,
-                            NormalMapIntensity = 0.10000000000000001,
+                            NormalMapIntensity = 0.050000000000000003,
                             NormalMapPath = "models/chrome.png",
                             Roughness = 0.14999999999999999
                         },
                         new
                         {
                             Id = 3,
-                            EnvMapIntensity = 0,
+                            EnvMapIntensity = 1,
                             Metalness = 0.0,
                             NormalMapIntensity = 0.0,
                             NormalMapPath = "",
@@ -441,8 +441,8 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 4,
-                            EnvMapIntensity = 0,
-                            Metalness = 1.0,
+                            EnvMapIntensity = 1,
+                            Metalness = 0.0,
                             NormalMapIntensity = 0.0,
                             NormalMapPath = "",
                             Roughness = 0.0
@@ -450,11 +450,20 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 5,
-                            EnvMapIntensity = 0,
+                            EnvMapIntensity = 1,
                             Metalness = 0.0,
                             NormalMapIntensity = 0.0,
                             NormalMapPath = "",
                             Roughness = 0.0
+                        },
+                        new
+                        {
+                            Id = 6,
+                            EnvMapIntensity = 3,
+                            Metalness = 1.0,
+                            NormalMapIntensity = 0.050000000000000003,
+                            NormalMapPath = "models/strap.png",
+                            Roughness = 0.14999999999999999
                         });
                 });
 
@@ -544,15 +553,15 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 5,
-                            ImagePath = "Image/something",
+                            ImagePath = "models/Silver.png",
                             TextureDesc = "Smooth life",
-                            TextureName = "Metalic",
+                            TextureName = "Silver",
                             TexturePrice = 50.219999999999999
                         },
                         new
                         {
                             Id = 6,
-                            ImagePath = "Image/something",
+                            ImagePath = "models/gold.png",
                             TextureDesc = "If you are into that Pimpin' lifestyle",
                             TextureName = "Gold",
                             TexturePrice = 250.22
@@ -560,9 +569,57 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 7,
+                            ImagePath = "models/Bronze.png",
+                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureName = "Bronze",
+                            TexturePrice = 250.22
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ImagePath = "models/BlueStrap.png",
+                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureName = "Blue Leather",
+                            TexturePrice = 250.22
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ImagePath = "models/RedsStrap.png",
+                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureName = "Red Leather",
+                            TexturePrice = 250.22
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ImagePath = "models/Brownstrap.png",
+                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureName = "Brown Leather",
+                            TexturePrice = 250.22
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ImagePath = "models/MercuryPattern.png",
+                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureName = "Mercury Dial",
+                            TexturePrice = 250.22
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ImagePath = "models/JunoPattern.png",
+                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureName = "Juno Dial",
+                            TexturePrice = 250.22
+                        },
+                        new
+                        {
+                            Id = 13,
                             ImagePath = "",
-                            TextureDesc = "",
-                            TextureName = "",
+                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureName = "Glass",
                             TexturePrice = 0.0
                         });
                 });
@@ -596,7 +653,7 @@ namespace ParadigmWatch.Migrations
                             Id = 1,
                             Description = "This is a basic model you can configure it to your liking",
                             Name = "Apollo",
-                            Price = 100.5,
+                            Price = 0.0,
                             WatchImagePath = "Apollo.png"
                         },
                         new
@@ -604,7 +661,7 @@ namespace ParadigmWatch.Migrations
                             Id = 2,
                             Description = "Exciting Views, Fresh look, and has a deeper meaning by visualizing the flow of time.",
                             Name = "Juno",
-                            Price = 100.5,
+                            Price = 0.0,
                             WatchImagePath = "Juno.png"
                         },
                         new
@@ -612,7 +669,7 @@ namespace ParadigmWatch.Migrations
                             Id = 3,
                             Description = "A bald statemnt. That is how I would describe this watch.",
                             Name = "Mercury",
-                            Price = 100.5,
+                            Price = 0.0,
                             WatchImagePath = "Mercury.png"
                         });
                 });
@@ -839,7 +896,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 1,
                             ModelPath = "models/Parts/Backgrounds/Apollo.gltf",
-                            Name = "Apollo",
+                            Name = "Apollo Pattern",
                             ShaderId = 3,
                             TextMapId = 1,
                             TextureMapId = 3,
@@ -894,7 +951,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 6,
                             ModelPath = "models/Parts/Sleeves/DefaultSleeve.gltf",
-                            Name = "Sleeves",
+                            Name = "Black Sleeves",
                             ShaderId = 1,
                             TextMapId = 1,
                             TextureMapId = 1,
@@ -905,10 +962,10 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 7,
                             ModelPath = "models/Parts/Glasses/DefaultGlass.gltf",
-                            Name = "Glass",
+                            Name = "Crystal Glass",
                             ShaderId = 5,
                             TextMapId = 1,
-                            TextureMapId = 7,
+                            TextureMapId = 13,
                             TypeId = 7,
                             WatchComponentsId = 0
                         },
@@ -920,6 +977,193 @@ namespace ParadigmWatch.Migrations
                             ShaderId = 2,
                             TextMapId = 1,
                             TextureMapId = 2,
+                            TypeId = 8,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 10,
+                            ModelPath = "models/Parts/Backgrounds/Apollo.gltf",
+                            Name = "Juno Pattern",
+                            ShaderId = 3,
+                            TextMapId = 1,
+                            TextureMapId = 12,
+                            TypeId = 1,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 11,
+                            ModelPath = "models/Parts/Backgrounds/Apollo.gltf",
+                            Name = "Mercury Pattern",
+                            ShaderId = 3,
+                            TextMapId = 1,
+                            TextureMapId = 11,
+                            TypeId = 1,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 12,
+                            ModelPath = "models/Parts/BackSides/DefaultBack.gltf",
+                            Name = "Gold Back part",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 6,
+                            TypeId = 2,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 13,
+                            ModelPath = "models/Parts/BackSides/DefaultBack.gltf",
+                            Name = "Bronze Back part",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 7,
+                            TypeId = 2,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 14,
+                            ModelPath = "models/Parts/BackSides/DefaultBack.gltf",
+                            Name = "Silver Back part",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 5,
+                            TypeId = 2,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 15,
+                            ModelPath = "models/Parts/Bases/DefaultBase.gltf",
+                            Name = "Silver Base",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 5,
+                            TypeId = 3,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 16,
+                            ModelPath = "models/Parts/Bases/DefaultBase.gltf",
+                            Name = "Gold Base",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 6,
+                            TypeId = 3,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 17,
+                            ModelPath = "models/Parts/Bases/DefaultBase.gltf",
+                            Name = "Bronze Base",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 7,
+                            TypeId = 3,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 18,
+                            ModelPath = "models/Parts/Decorations/DefaultDecoration.gltf",
+                            Name = "Silver Decorations",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 5,
+                            TypeId = 4,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 19,
+                            ModelPath = "models/Parts/Decorations/DefaultDecoration.gltf",
+                            Name = "Gold Decorations",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 6,
+                            TypeId = 4,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 20,
+                            ModelPath = "models/Parts/Decorations/DefaultDecoration.gltf",
+                            Name = "Bronze Decorations",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 7,
+                            TypeId = 4,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 21,
+                            ModelPath = "models/Parts/Sleeves/DefaultSleeve.gltf",
+                            Name = "Blue Sleeves",
+                            ShaderId = 1,
+                            TextMapId = 1,
+                            TextureMapId = 8,
+                            TypeId = 6,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 22,
+                            ModelPath = "models/Parts/Sleeves/DefaultSleeve.gltf",
+                            Name = "Red Sleeves",
+                            ShaderId = 1,
+                            TextMapId = 1,
+                            TextureMapId = 9,
+                            TypeId = 6,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 23,
+                            ModelPath = "models/Parts/Sleeves/DefaultSleeve.gltf",
+                            Name = "Brown Sleeves",
+                            ShaderId = 1,
+                            TextMapId = 1,
+                            TextureMapId = 10,
+                            TypeId = 6,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 24,
+                            ModelPath = "models/Parts/Rings/DefaultRing.gltf",
+                            Name = "Silver Ring",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 5,
+                            TypeId = 8,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 25,
+                            ModelPath = "models/Parts/Rings/DefaultRing.gltf",
+                            Name = "Gold Ring",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 6,
+                            TypeId = 8,
+                            WatchComponentsId = 0
+                        },
+                        new
+                        {
+                            Id = 26,
+                            ModelPath = "models/Parts/Rings/DefaultRing.gltf",
+                            Name = "Bronze Ring",
+                            ShaderId = 2,
+                            TextMapId = 1,
+                            TextureMapId = 7,
                             TypeId = 8,
                             WatchComponentsId = 0
                         });

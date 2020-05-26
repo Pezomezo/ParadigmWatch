@@ -13,8 +13,10 @@ namespace ParadigmWatch.Models.ViewModels
         [Required]
         public string LastName { get; set; }
         [Required]
+        [UIHint("email")]
         public string Email { get; set; }
         [Required]
+        [UIHint("password")]
         public string Password { get; set; }
         [Required]
         public string City { get; set; }
