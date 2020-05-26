@@ -624,7 +624,7 @@ prmbtn.addEventListener('click', () => {
 
     let url = window.location.href.split('/')
     let rawurl = url.slice(0, -1)
-    let newurl = `${rawurl[0]}//${rawurl[2]}/ProductPage?configuredWatch=${WatchInfo}`
+    let newurl = `${rawurl[0]}//${rawurl[2]}/ProductPage?watchId=${WatchInfo}`
     window.location.href = newurl
 })
 
