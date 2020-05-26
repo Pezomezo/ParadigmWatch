@@ -116,7 +116,8 @@ namespace ParadigmWatch.Data
                 new Texture() { Id = 9, TextureName = "Red Leather", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/RedsStrap.png", TexturePrice = 250.22m },
                 new Texture() { Id = 10, TextureName = "Brown Leather", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/Brownstrap.png", TexturePrice = 250.22m },
                 new Texture() { Id = 11, TextureName = "Mercury Dial", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/MercuryPattern.png", TexturePrice = 250.22m },
-                new Texture() { Id = 12, TextureName = "Juno Dial", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/JunoPattern.png", TexturePrice = 250.22m }
+                new Texture() { Id = 12, TextureName = "Juno Dial", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/JunoPattern.png", TexturePrice = 250.22m },
+                new Texture() { Id = 13, TextureName = "Glass", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "", TexturePrice = 0m }
 
                 );
 
@@ -157,11 +158,11 @@ namespace ParadigmWatch.Data
                 new WatchPart() { Id = 4, Name = "Chrome Decorations", TextureMapId = 2, ShaderId = 2, TextMapId = 1, TypeId = 4, ModelPath = "models/Parts/Decorations/DefaultDecoration.gltf" },
                 new WatchPart() { Id = 5, Name = "Silver Pointer", TextureMapId = 4, ShaderId = 4, TextMapId = 1, TypeId = 5, ModelPath = "models/Parts/Pointers/DefaultPointer.gltf" },
                 new WatchPart() { Id = 6, Name = "Black Sleeves", TextureMapId = 1, ShaderId = 1, TextMapId = 1, TypeId = 6, ModelPath = "models/Parts/Sleeves/DefaultSleeve.gltf" },
-                new WatchPart() { Id = 7, Name = "Crystal Glass", TextureMapId = 7, ShaderId = 5, TextMapId = 1, TypeId = 7, ModelPath = "models/Parts/Glasses/DefaultGlass.gltf" },
+                new WatchPart() { Id = 7, Name = "Crystal Glass", TextureMapId = 13, ShaderId = 5, TextMapId = 1, TypeId = 7, ModelPath = "models/Parts/Glasses/DefaultGlass.gltf" },
                 new WatchPart() { Id = 8, Name = "Chrome Ring", TextureMapId = 2, ShaderId = 2, TextMapId = 1, TypeId = 8, ModelPath = "models/Parts/Rings/DefaultRing.gltf" },
 
-                new WatchPart() { Id = 10, Name = "Juno Pattern", TextureMapId = 11, ShaderId = 3, TextMapId = 1, TypeId = 1, ModelPath = "models/Parts/Backgrounds/Apollo.gltf" },
-                new WatchPart() { Id = 11, Name = "Mercury Pattern", TextureMapId = 12, ShaderId = 3, TextMapId = 1, TypeId = 1, ModelPath = "models/Parts/Backgrounds/Apollo.gltf" },
+                new WatchPart() { Id = 10, Name = "Juno Pattern", TextureMapId = 12, ShaderId = 3, TextMapId = 1, TypeId = 1, ModelPath = "models/Parts/Backgrounds/Apollo.gltf" },
+                new WatchPart() { Id = 11, Name = "Mercury Pattern", TextureMapId = 11, ShaderId = 3, TextMapId = 1, TypeId = 1, ModelPath = "models/Parts/Backgrounds/Apollo.gltf" },
 
                 new WatchPart() { Id = 12, Name = "Gold Back part", TextureMapId = 6, ShaderId = 2, TextMapId = 1, TypeId = 2, ModelPath = "models/Parts/BackSides/DefaultBack.gltf" },
                 new WatchPart() { Id = 13, Name = "Bronze Back part", TextureMapId = 7, ShaderId = 2, TextMapId = 1, TypeId = 2, ModelPath = "models/Parts/BackSides/DefaultBack.gltf" },
