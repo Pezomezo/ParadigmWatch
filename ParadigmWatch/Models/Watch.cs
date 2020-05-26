@@ -24,6 +24,7 @@ namespace ParadigmWatch.Models
         public void AddComponent(WatchPart part)
         {
             this.WatchParts.Add(part);
+            //this.Price += this.WatchParts.Last().TextureMap.TexturePrice;
         }
     }
 }
