@@ -23,24 +23,27 @@ namespace ParadigmWatch.Controllers
             WatchCreation = new WatchCreator(db);
         }
 
-        public IActionResult Index(int watchId)
+        public IActionResult Index(string watchId)
         {
-            WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(watchId)).First());
+            if (watchId.Length == 1)
+            {
+                WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(int.Parse(watchId))).First());
 
-            WatchCreation.InitWatch(WatchVM.Watch);
-            Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
-            return View(WatchVM);
+                WatchCreation.InitWatch(WatchVM.Watch);
+                Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
+                return View(WatchVM);
+            }
+            else
+            {
+                var ids = watchId.Split("-");
+                WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(int.Parse(ids[0]))).First());
+
+                WatchCreation.InitWatch(WatchVM.Watch);
+                Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
+                return View(WatchVM);
+            }
+            
         }
-        public IActionResult Index(string configuredWatch)
-        {
-            var ids = configuredWatch.Split("-");
-            WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(int.Parse(ids[0]))).First());
 
-
-
-            WatchCreation.InitWatch(WatchVM.Watch);
-            Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
-            return View(WatchVM);
-        }
     }
 }
