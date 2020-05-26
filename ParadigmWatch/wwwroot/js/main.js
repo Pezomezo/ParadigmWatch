@@ -147,14 +147,26 @@ LearnMoreBTN.addEventListener('click', () => { redirect('ProductPage?watchId=') 
 // ProductPage?watchId=1
 
 function redirect(urlMiddle) {
-    console.log(parseInt(currentSlide.textContent));
+    console.log("Slide ID: " +  parseInt(currentSlide.textContent));
     let current = parseInt(currentSlide.textContent);
     let theUrl = '';
     console.log(slides)
     for (let i = 0; i < slides.length; i++) {
+        console.log("Inside the loop: ")
         if (slides[i].id == current) {
-            theUrl = window.location.href + urlMiddle + current;
+            console.log("theurl: " + theUrl)
+            theUrl = window.location.href + urlMiddle + current.toString();
         }
     }
     window.location.href = theUrl;
 }
+
+//Google Maps 
+
+   var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 10.158886, lng: 56.119607 },
+                zoom: 1
+            });
+        }

@@ -1024,14 +1024,123 @@ margin-bottom: 25px;
     margin: 20px 0 20px 0;
 }
 
+/*///////////////////////////////////
+                                                Contact
+                                                                   /////////////////////////////////////*/
 
+#contact {
+    grid-column: 2/10;
+    grid-row: 1/6;
+    background-color: #1F2125;
+    padding-top: 159px;
+    padding-bottom: 500px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+#contact h3 {
+    color: #C3A261;
+}
+
+#contactContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#contactContacts {
+    font-size: 1.5rem;
+}
+
+#contactText{
+    font-size: 1.5rem;
+}
+
+.contactTextItem {
+    margin: 15px 0 15px 0;
+    font-size: 1rem;
+}
+
+ ul#contactContact {
+    padding-top: 25px;
+}
+
+ul#contactTexts {
+    padding-top: 25px;
+}
+
+#map {
+    height: 200px;
+    border-radius: 25px;
+}
+/*///////////////////////////////////
+                                                About
+                                                                   /////////////////////////////////////*/
+
+
+#about h3 {
+    color: #C3A261;
+}
+#about {
+    grid-column: 2/10;
+    grid-row: 1/6;
+    background-color: #1F2125;
+    padding-top:150px;
+    padding-bottom:500px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1360px;
+    margin: 0 auto;
+
+}
+
+#aboutContent {
+    font-size: 18px;
+    color: #fff;
+    padding-bottom:100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#aboutContacts {
+    font-size: 1.5rem;
+    margin: 0 auto;
+}
+
+#aboutText {
+    font-size: 1.5rem;
+}
+
+.aboutTextItem {
+    margin: 15px 0 15px 0;
+    font-size: 1rem;
+}
+
+.placeText {
+    color: #C3A261;
+    margin-bottom: 5px;
+}
+
+ul#aboutText {
+    list-style: none;
+}
+
+.abouttext {
+    font-size: 16px;
+    color: #fff;
+}
+.aboutTexttop {
+    padding-bottom: 25px;
+}
+/*///////////////////////////////////
+                                                Favorits
+                                                                   /////////////////////////////////////*/
 /*####################################################################################################################################################*/
-
-
-
 @media only screen and (min-width: 1200px) {
-
-nav {
+    nav {
     position: fixed;
     background-color: rgba(0,0,0,0);
     width: 100%;
@@ -1420,6 +1529,8 @@ width: 80%;
     align-items: center;
     margin-top: 100px;
     color: black;
+    padding-top:20vh;
+    padding-bottom:20vh;
 }
 
 .cart-container {
@@ -1722,12 +1833,12 @@ width: 80%;
     align-items: flex-end;
 }
 .btn{
-    height: 50px;
-    width: 200px;
+    /*height: 50px;
+    width: 200px;*/
     border: none;
     cursor: pointer;
     border-radius: 50px;
-    margin-right: 50px;
+    /*margin-right: 50px;*/
 }
 
 
