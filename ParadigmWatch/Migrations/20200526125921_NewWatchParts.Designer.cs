@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParadigmWatch.Data;
 
 namespace ParadigmWatch.Migrations
 {
     [DbContext(typeof(ParadigmWatchContext))]
-    partial class ParadigmWatchContextModelSnapshot : ModelSnapshot
+    [Migration("20200526125921_NewWatchParts")]
+    partial class NewWatchParts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -561,7 +563,7 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 6,
-                            ImagePath = "models/gold.png",
+                            ImagePath = "Image/gold.png",
                             TextureDesc = "If you are into that Pimpin' lifestyle",
                             TextureName = "Gold",
                             TexturePrice = 250.22
@@ -569,7 +571,7 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 7,
-                            ImagePath = "models/Bronze.png",
+                            ImagePath = "Image/Bronze.png",
                             TextureDesc = "If you are into that Pimpin' lifestyle",
                             TextureName = "Bronze",
                             TexturePrice = 250.22
@@ -577,7 +579,7 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 8,
-                            ImagePath = "models/BlueStrap.png",
+                            ImagePath = "Image/BlueStrap.png",
                             TextureDesc = "If you are into that Pimpin' lifestyle",
                             TextureName = "Blue Leather",
                             TexturePrice = 250.22
@@ -585,7 +587,7 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 9,
-                            ImagePath = "models/RedsStrap.png",
+                            ImagePath = "Image/RedsStrap.png",
                             TextureDesc = "If you are into that Pimpin' lifestyle",
                             TextureName = "Red Leather",
                             TexturePrice = 250.22
@@ -593,7 +595,7 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 10,
-                            ImagePath = "models/Brownstrap.png",
+                            ImagePath = "Image/Brownstrap.png",
                             TextureDesc = "If you are into that Pimpin' lifestyle",
                             TextureName = "Brown Leather",
                             TexturePrice = 250.22
@@ -601,7 +603,7 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 11,
-                            ImagePath = "models/MercuryPattern.png",
+                            ImagePath = "Image/MercuryPattern.png",
                             TextureDesc = "If you are into that Pimpin' lifestyle",
                             TextureName = "Mercury Dial",
                             TexturePrice = 250.22
@@ -609,7 +611,7 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             Id = 12,
-                            ImagePath = "models/JunoPattern.png",
+                            ImagePath = "Image/JunoPattern.png",
                             TextureDesc = "If you are into that Pimpin' lifestyle",
                             TextureName = "Juno Dial",
                             TexturePrice = 250.22
@@ -888,7 +890,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 1,
                             ModelPath = "models/Parts/Backgrounds/Apollo.gltf",
-                            Name = "Apollo Pattern",
+                            Name = "Apollo",
                             ShaderId = 3,
                             TextMapId = 1,
                             TextureMapId = 3,
@@ -943,7 +945,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 6,
                             ModelPath = "models/Parts/Sleeves/DefaultSleeve.gltf",
-                            Name = "Black Sleeves",
+                            Name = "Sleeves",
                             ShaderId = 1,
                             TextMapId = 1,
                             TextureMapId = 1,
@@ -954,7 +956,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 7,
                             ModelPath = "models/Parts/Glasses/DefaultGlass.gltf",
-                            Name = "Crystal Glass",
+                            Name = "Glass",
                             ShaderId = 5,
                             TextMapId = 1,
                             TextureMapId = 7,
@@ -976,7 +978,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 10,
                             ModelPath = "models/Parts/Backgrounds/Apollo.gltf",
-                            Name = "Juno Pattern",
+                            Name = "Juno",
                             ShaderId = 3,
                             TextMapId = 1,
                             TextureMapId = 11,
@@ -987,7 +989,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 11,
                             ModelPath = "models/Parts/Backgrounds/Apollo.gltf",
-                            Name = "Mercury Pattern",
+                            Name = "Mercury",
                             ShaderId = 3,
                             TextMapId = 1,
                             TextureMapId = 12,

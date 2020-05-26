@@ -1,7 +1,7 @@
 ﻿@using ParadigmWatch.Models.ViewModels;
 @using ParadigmWatch.Models;
 @using ParadigmWatch.Infrastructure;
-
+@using Newtonsoft.Json;
 @model WatchViewModel
 
 
@@ -11,33 +11,40 @@
 
 
 
-<p id="startingModel" class="hidden">@Model.Watch.Name</p>
 
 
+    <div class="load">
+        <div id="loaderContainer">
 
-    @*<p id="jsonFile">@JsonSerializer.Serialize(Model.WatchInitModel)</p>*@
-
-
-
-<div id="threeGui">
-
-    <ul id="GUI">
-
-      
-    </ul>
-</div>
+        </div>
+    </div>
 
 
+    <div class="guiContainer">
+        <div id="threeGui">
 
-<div id="canvas" class="ThreeDBackgroundSelector">
-    <select onselect="getBGname()" id="bgDropDown" href="#">
-        @foreach (var item in ViewBag.BGNames)
-        {
-            <option>@item.Text</option>
-        }
-    </select>
-</div>
+            <ul id="GUI">
+            </ul>
+        </div>
+    </div>
 
+    <div class="buttonContainer">
+        <button class="btn secbtn">Add to cart</button>
+        <button class="btn prmbtn">Config Details</button>
+    </div>
+
+
+    <div id="canvas" class="ThreeDBackgroundSelector loaderContainer">
+        <select onselect="getBGname()" id="bgDropDown" href="#">
+            @foreach (var item in ViewBag.BGNames)
+            {
+                <option>@item.Text</option>
+            }
+        </select>
+    </div>
+
+
+<p id="watchId" class="hidden">@Model.Watch.Id</p>
 
 <script type="text/javascript" src="~/js/WatchPartsJSON.js"></script>
 <script src="~/js/Three.js"></script>
