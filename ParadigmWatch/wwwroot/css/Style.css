@@ -1087,7 +1087,7 @@ ul#contactTexts {
     grid-column: 2/10;
     grid-row: 1/6;
     background-color: #1F2125;
-    padding-top:150px;
+    padding-top:100px;
     padding-bottom:500px;
     display: flex;
     flex-direction: column;
@@ -1099,7 +1099,7 @@ ul#contactTexts {
 #aboutContent {
     font-size: 18px;
     color: #fff;
-    padding-bottom:100px;
+    padding-top:50px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -1833,12 +1833,12 @@ width: 80%;
     align-items: flex-end;
 }
 .btn{
-    /*height: 50px;
-    width: 200px;*/
+    height: 50px;
+    width: 200px;
     border: none;
     cursor: pointer;
     border-radius: 50px;
-    /*margin-right: 50px;*/
+    margin-right: 50px;
 }
 
 

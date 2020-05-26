@@ -25,6 +25,7 @@ namespace ParadigmWatch.Controllers
 
         public IActionResult Index(string watchId)
         {
+
             if (watchId.Length == 1)
             {
                 WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(int.Parse(watchId))).First());
