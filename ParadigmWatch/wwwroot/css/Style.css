@@ -1029,7 +1029,7 @@ margin-bottom: 25px;
                                                                    /////////////////////////////////////*/
 
 #contact {
-    grid-column: 2/11;
+    grid-column: 2/10;
     grid-row: 1/6;
     background-color: #1F2125;
     padding-top: 159px;
@@ -1529,6 +1529,8 @@ width: 80%;
     align-items: center;
     margin-top: 100px;
     color: black;
+    padding-top:100px;
+    padding:300px;
 }
 
 .cart-container {
