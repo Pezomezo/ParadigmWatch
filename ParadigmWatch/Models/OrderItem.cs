@@ -23,6 +23,7 @@ namespace ParadigmWatch.Models
         {
             Watch = watch;
             Quanity = quanity;
+            TotalPrice = watch.Price * quanity;
         }
     }
 }
