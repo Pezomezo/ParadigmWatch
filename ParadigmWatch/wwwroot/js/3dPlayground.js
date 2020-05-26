@@ -629,3 +629,15 @@ prmbtn.addEventListener('click', () => {
 })
 
 
+//CreatedProductParts
+
+let cartBTN = document.getElementsByClassName('secbtn').item(0);
+cartBTN.addEventListener('click', () => {
+    selectedItems.unshift(watchId)
+    let WatchInfo = selectedItems.join('-')
+
+    document.getElementById("CreatedProductParts").setAttribute("value", `${WatchInfo}`);
+    alert(document.getElementById("CreatedProductParts"))
+})
+
+

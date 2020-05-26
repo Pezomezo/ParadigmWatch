@@ -29,7 +29,18 @@
     </div>
 
     <div class="buttonContainer">
-        <button class="btn secbtn">Add to cart</button>
+        <form id="@Model.Watch.Id" asp-action="AddToCart"
+              asp-controller="Cart" method="post">
+            <input id="CreatedProductParts" type="hidden" name="ProductId" value="1-1-2-3-4-5-6-7-8" />
+            <input type="hidden" name="returnUrl"
+                   value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+            <span class="">
+                <button type="submit"
+                        class="btn secbtn">
+                    Add To Cart
+                </button>
+            </span>
+        </form>
         <button class="btn prmbtn">Config Details</button>
     </div>
 

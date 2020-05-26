@@ -105,19 +105,19 @@ namespace ParadigmWatch.Data
                 .HasForeignKey(pt => pt.WatchPartId);
 
             modelBuilder.Entity<Texture>().HasData(
-                new Texture() { Id = 1, TextureName = "Leather", TextureDesc = "This Leather makes you look rich&stuff", ImagePath = "models/strap.png", TexturePrice = 12.22m },
-                new Texture() { Id = 2, TextureName = "Chrome", TextureDesc = "Feel the Gekko", ImagePath = "models/chrome.png", TexturePrice = 15.22m },
+                new Texture() { Id = 1, TextureName = "Leather", TextureDesc = "This Leather makes you look rich&stuff", ImagePath = "models/strap.png", TexturePrice = 50.22m },
+                new Texture() { Id = 2, TextureName = "Chrome", TextureDesc = "Cold but Cool", ImagePath = "models/chrome.png", TexturePrice = 100.22m },
                 new Texture() { Id = 3, TextureName = "Apollo Dial", TextureDesc = "Wanna be the most badass person? try this then!", ImagePath = "models/watchFrontTexture.png", TexturePrice = 33.4m },
-                new Texture() { Id = 4, TextureName = "Solid Handle", TextureDesc = "You are just cruel at this point :D", ImagePath = "", TexturePrice = 120.22m },
-                new Texture() { Id = 5, TextureName = "Silver", TextureDesc = "Smooth life", ImagePath = "models/Silver.png", TexturePrice = 50.22m },
-                new Texture() { Id = 6, TextureName = "Gold", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/gold.png", TexturePrice = 250.22m },
-                new Texture() { Id = 7, TextureName = "Bronze", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/Bronze.png", TexturePrice = 250.22m },
-                new Texture() { Id = 8, TextureName = "Blue Leather", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/BlueStrap.png", TexturePrice = 250.22m },
-                new Texture() { Id = 9, TextureName = "Red Leather", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/RedsStrap.png", TexturePrice = 250.22m },
-                new Texture() { Id = 10, TextureName = "Brown Leather", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/Brownstrap.png", TexturePrice = 250.22m },
-                new Texture() { Id = 11, TextureName = "Mercury Dial", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/MercuryPattern.png", TexturePrice = 250.22m },
-                new Texture() { Id = 12, TextureName = "Juno Dial", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/JunoPattern.png", TexturePrice = 250.22m },
-                new Texture() { Id = 13, TextureName = "Glass", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "", TexturePrice = 0m }
+                new Texture() { Id = 4, TextureName = "Solid Handle", TextureDesc = "Simple but elegant", ImagePath = "", TexturePrice = 80.22m },
+                new Texture() { Id = 5, TextureName = "Silver", TextureDesc = "James Bond would have the same", ImagePath = "models/Silver.png", TexturePrice = 250.22m },
+                new Texture() { Id = 6, TextureName = "Gold", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/gold.png", TexturePrice = 300.22m },
+                new Texture() { Id = 7, TextureName = "Bronze", TextureDesc = "This still makes you look no.1", ImagePath = "models/Bronze.png", TexturePrice = 200.22m },
+                new Texture() { Id = 8, TextureName = "Blue Leather", TextureDesc = "Colorful look for a colorful personality", ImagePath = "models/BlueStrap.png", TexturePrice = 175.22m },
+                new Texture() { Id = 9, TextureName = "Red Leather", TextureDesc = "Bursting with energy", ImagePath = "models/RedsStrap.png", TexturePrice = 175.22m },
+                new Texture() { Id = 10, TextureName = "Brown Leather", TextureDesc = "Smooth criminal", ImagePath = "models/Brownstrap.png", TexturePrice = 150.22m },
+                new Texture() { Id = 11, TextureName = "Mercury Dial", TextureDesc = "This will make some heads turn!", ImagePath = "models/MercuryPattern.png", TexturePrice = 50.22m },
+                new Texture() { Id = 12, TextureName = "Juno Dial", TextureDesc = "Represents the flow of time", ImagePath = "models/JunoPattern.png", TexturePrice = 50.22m },
+                new Texture() { Id = 13, TextureName = "Glass", TextureDesc = "Gorilla Glass XI", ImagePath = "", TexturePrice = 0m }
 
                 );
 
