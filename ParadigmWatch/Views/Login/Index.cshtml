@@ -1,5 +1,5 @@
 ﻿@using ParadigmWatch.Models.ViewModels
-@model LoginModel
+@model AdministrationViewModel
 @{
     ViewData["Title"] = "Index";
 }
@@ -11,7 +11,64 @@
     <div class="identityForm">
 
         <div class="identityRegister">
-            <iframe src='@Url.Action("Index", "Signup")' width="100"   height="1000" frameborder="0"></iframe>
+            <div class="loginContent">
+                <div class="container">
+
+                    <div class="bg-primary m-1 p-1 text-white identityCenter">
+                        <h2 class="identityTitle">Register</h2>
+                        <p class="identityText">and get 10% off every product! </p>
+                    </div>
+                    <div asp-validation-summary=" All" class="text-danger"></div>
+                    <form method="post" asp-controller="Login" asp-action="SignUp">
+                        <div class="form-RegGroup">
+                            <label asp-for="@Model.SignUpModel.FirstName">First name</label><br />
+                            <input asp-for="@Model.SignUpModel.FirstName" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="FirstName" />
+                        </div>
+                        <div class="form-RegGroup">
+                            <label asp-for="@Model.SignUpModel.LastName">Last name</label><br />
+                            <input asp-for="@Model.SignUpModel.LastName" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="LastName" />
+                        </div>
+                        <div class="form-RegGroup">
+                            <label asp-for="@Model.SignUpModel.Email">Email</label><br />
+
+                            <input asp-for="@Model.SignUpModel.Email" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="Email"/>
+                        </div>
+                        <div class="form-RegGroup">
+                            <label asp-for="@Model.SignUpModel.Password">Password</label><br />
+                            <input asp-for="@Model.SignUpModel.Password" class="form-control idnetityFormRegistration" type="password" data-val="true" data-val-required="The Password field is required." id="Password" />
+                        </div>
+                        <div class="form-RegGroup">
+                            <label asp-for="@Model.SignUpModel.City">City</label><br />
+                            <input asp-for="@Model.SignUpModel.City" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="City" />
+                        </div>
+                        <div class="form-RegGroup">
+                            <label asp-for="@Model.SignUpModel.Address">Adress</label><br />
+                            <input asp-for="@Model.SignUpModel.Address" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="Adress"  />
+                        </div>
+                        <div class="form-RegGroup">
+                            <label asp-for="@Model.SignUpModel.ZipCode">Zip code</label><br />
+                            <input asp-for="@Model.SignUpModel.ZipCode" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="PortelCode" />
+                        </div>
+                        <div class="identityLetter">
+
+                            <div>
+                                <input type="radio" />
+                                <label>I agree privacy policy</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" />
+                                <label>I would like to subscribe newsletter</label>
+                            </div>
+
+
+                        </div>
+                        <button class="btn btn-primary identityRegBtn" type="submit">Register now</button>
+                        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+                    </form>
+                </div>
+            </div>
+
         </div>
 
         <div class="identityLogin">
@@ -21,15 +78,15 @@
                     <div class="bg-primary why p-1 text-white  identityCenter"><h4>Log In</h4></div>
 
                     <div asp-validation-summary=" All" class="text-danger"></div>
-                    <form method="post" asp-action="Index">
+                    <form method="post" asp-controller="Login" asp-action="Login">
                         <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
                         <div class="form-group">
-                            <label asp-for="Email">Name</label><br />
-                            <input asp-for="Email" class="form-control" />
+                            <label asp-for="@Model.LoginModel.Email">Name</label><br />
+                            <input asp-for="@Model.LoginModel.Email" class="form-control" />
                         </div>
                         <div class="form-group">
-                            <label asp-for="Password">Password</label><br />
-                            <input asp-for="Password" class="form-control" />
+                            <label asp-for="@Model.LoginModel.Password">Password</label><br />
+                            <input asp-for="@Model.LoginModel.Password" class="form-control" />
                         </div>
                         <button class="btn btn-primary identityLoginBtn" type="submit">Submit</button>
                         <a href="#">forget passwords?</a>

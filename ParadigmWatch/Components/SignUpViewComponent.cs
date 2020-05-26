@@ -33,32 +33,32 @@ namespace ParadigmWatch.Components
         [HttpPost]
         public async Task<IViewComponentResult> InvokeAsync(CreateModel model)
         {
-            if (ModelState.IsValid && model != null)
-            {
-                AppUser user = new AppUser
-                {
-                    UserName = "Adamka",
-                    FirstName = model.FirstName,
-                    LastName = model.LastName,
-                    Email = model.SignUpEmail,
-                    Address = model.Address,
-                    ZipCode = model.ZipCode,
-                    City = model.City
-                };
-                IdentityResult result = await userManager.CreateAsync(user, model.Password);
+            //if (ModelState.IsValid && model != null)
+            //{
+            //    AppUser user = new AppUser
+            //    {
+            //        UserName = "Adamka",
+            //        FirstName = model.FirstName,
+            //        LastName = model.LastName,
+            //        Email = model.SignUpEmail,
+            //        Address = model.Address,
+            //        ZipCode = model.ZipCode,
+            //        City = model.City
+            //    };
+            //    IdentityResult result = await userManager.CreateAsync(user, model.Password);
 
-                if (result.Succeeded)
-                {
-                    return View();
-                }
-                else
-                {
-                    foreach (IdentityError error in result.Errors)
-                    {
-                        ModelState.AddModelError("", error.Description);
-                    }
-                }
-            }
+            //    if (result.Succeeded)
+            //    {
+            //        return View();
+            //    }
+            //    else
+            //    {
+            //        foreach (IdentityError error in result.Errors)
+            //        {
+            //            ModelState.AddModelError("", error.Description);
+            //        }
+            //    }
+            //}
             return View(model);
         }
     }
