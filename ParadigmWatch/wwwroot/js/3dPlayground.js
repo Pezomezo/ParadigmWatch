@@ -294,14 +294,6 @@ async function initialize() {
 
 initialize();
 
-
-function animate() {
-    requestAnimationFrame(animate);
-   
-    controls.update();
-    renderer.render(scene, camera);
-}
-
 let controls = new THREE.TrackballControls(camera, renderer.domElement);
 
 controls.rotateSpeed = 1;
@@ -353,8 +345,6 @@ function GuiFunctionality() {
         // Gives each list Item a click event that will allow us to switch out materials on the 3D object
         GuiItem.item(WatchPart).addEventListener('click', () => {
 
-
-  
             console.log(scene)
             GuiItem.item(WatchPart).classList.toggle('activeOption')
             GuiItem.item(WatchPart).classList.toggle('inactiveOption')
