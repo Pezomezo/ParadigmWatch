@@ -38,14 +38,11 @@ namespace ParadigmWatch.Controllers
             {
                 var ids = watchId.Split("-");
                 WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(int.Parse(ids[0]))).First());
-
-                WatchCreation.InitWatch(WatchVM.Watch);
+                WatchCreation.InitBuiltWatch(WatchVM.Watch, ids);
                 Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
                 return View(WatchVM);
             }
             
         }
-
-
     }
 }
