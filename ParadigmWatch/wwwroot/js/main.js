@@ -4,8 +4,10 @@ var watch = document.querySelector("#arrowButton");
 var position = 0;
 
 //speed
+
 var speed = 15; //px per sec
 var framerate = 60; //frames per sec
+
 
 var last;
 function step() {
@@ -18,7 +20,7 @@ function step() {
 
     // The 1000 / delta gives the perfect speed at all conditions
     position += speed / (1000 / delta);
-    if (position > 12) {
+    if (position > 10) {
         position = 0;
     }
     watch.style.transform = `translateY(${position}px)`;
@@ -60,12 +62,16 @@ sr.reveal('.foo-6', {
     distance: '20px'
 });
 
+
 var slides = document.querySelectorAll('.sliderElement')
+
 
 var nextButton = document.getElementById('next')
 var backButton = document.getElementById('back')
 
+
 var currentSlide = document.getElementById('currentSlide')
+
 
 var LearnMoreBTN = document.getElementById('secondaryLink')
 var BuildYourOwnBTN = document.getElementById('primaryLink')
@@ -74,7 +80,9 @@ var sliderCounter = 0;
 
 var sliderTexts = document.getElementsByClassName('sliderText');
 
+
 var burgerMenu = document.getElementById('burgerMenu')
+
 
 
 for (var sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
@@ -85,8 +93,8 @@ for (var sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
     currentSlider.style.zIndex = `${sliderCount * -1}`
     currentSlider.style.left = '0px'
     currentSlider.style.backgroundSize = 'cover'
-    currentSlider.style.backgroundImage = `url(/Images/${currentText}Background.jpg)`
-    console.log(`url(/Images/${currentText}Background.jpg)`)
+    currentSlider.style.backgroundImage = `url(/Images/${currentText}Background.png)`
+    //console.log(`url(/Images/${currentText}Background.jpg)`)
 
     console.log(document.getElementById(`${sliderCount + 1}`))
 

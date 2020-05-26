@@ -86,8 +86,6 @@ height: 5px;
 background-color: white;
 }
 
-
-
 .logo {
 margin: 25px 0 25px 0;
 display: inline-flex;
@@ -95,6 +93,7 @@ align-items: center;
 width: 8.5%;
 justify-content: flex-end;
 }
+
 .logo > h2{
 font-size: 1rem;
 font-weight: 400;
@@ -133,7 +132,6 @@ padding: 5px;
     color: #C3A261;
 }
 
-
 .login {
 display: inline-flex;
 justify-content: center;
@@ -161,12 +159,57 @@ grid-template-columns: repeat(10, 1fr );
 grid-template-rows: auto auto auto auto auto;
 display: grid;
 }
+
+/*---------------------------------------------             Hero video             ------------------------------------------------------------*/
+
+/*#hero {
+    box-sizing: border-box;
+}*/
+
+#myVideo {
+  //  background-image:url(../Images/ApolloBackground.jpg);
+    position:absolute;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 56.25vw;
+    z-index:-10;
+}
+
+.videoContent {
+    position: absolute;
+    color: #f1f1f1;
+    padding: 20px;
+    grid-column: 3/10;
+    grid-row: 5/10;
+    top: 20vw;
+    left: 13vw;
+}
+
+#myBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    border-radius: 15px;
+    font-size: 18px;
+    padding: 10px;
+    border:none;
+    border-radius:25px;
+    background: rgba(255, 0, 0, 0);
+    color: #fff;
+    cursor: pointer;
+    z-index:11;
+}
+
+    #myBtn:hover {
+        color: #4580D9;
+    }
 /*---------------------------------------------             Hero Slider             ------------------------------------------------------------*/
 #hero {
-grid-column: 1/11;
-grid-row: 1/2;
-height: 100vh;
-
+    grid-column: 1/11;
+    grid-row: 1/2;
+    height: 100vh;
 }
 
 .heroContent {
@@ -206,13 +249,14 @@ z-index: 1;
 font-size: 25vw;
 color: #C3A261;
 margin: 0;
+visibility:hidden;
+
 }
 .sliderImg {
 position: absolute;
 z-index: 2;
 max-width: 50vw;
 }
-
 
 .sideText {
     margin-top: 50px;
@@ -223,7 +267,6 @@ max-width: 50vw;
     flex-direction: column;
     justify-content: space-evenly;
 }
-
 
 .bigParagraph {
     display:none;
@@ -239,6 +282,7 @@ transform: rotate(-90deg);
 transform-origin: bottom left;
 font-weight: 300;*/
 }
+
 .slideCounter {
 position: absolute;
 display: flex;
@@ -285,13 +329,29 @@ align-self: flex-end;
     color: white;
     margin-right: 4vw;
 }
+
+.build {
+    width: 150px;
+    height: 50px;
+    border: 2px solid #C3A261;
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0);
+    margin: 50px 0 0 0;
+    cursor: pointer;
+}
+
+.build:hover a{
+    background-color: rgba(255, 0, 0, 0);
+    color: #4580D9;
+}
+
 .slideController {
-position: absolute;
-grid-column: 9/10;
-grid-row: 8/9;
-width: 100%;
-display: none;
-flex-direction: column;
+    position: absolute;
+    grid-column: 9/10;
+    grid-row: 8/9;
+    width: 100%;
+    display: none;
+    flex-direction: column;
 }
 .slideControllerButtons {
 width: 100%;
@@ -299,7 +359,7 @@ display: flex;
 justify-content: space-between;
 }
 .sliderControlLabel{
-margin: 10px 10px 0 10px ;
+margin: 10px;
 }
 
 .control {
@@ -311,7 +371,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 cursor: pointer;
-transition: 1s;
+transition: .5s;
 }
 .control:hover {
         
@@ -522,20 +582,19 @@ margin-bottom: 25px;
 }
 
 .shop {
-width: 150px;
-height: 50px;
-border-radius: 500px;
-border: none;
-background-color: #C3A261;
-font-weight: 700;
-color: white;
-margin: 50px 0 0 0;
-cursor: pointer;
+    width: 150px;
+    height: 50px;
+    border: 2px solid #C3A261;
+    color:#fff;
+    background-color: rgba(255, 0, 0, 0);
+    font-weight: 700;
+    margin: 50px 0 0 0;
+    cursor: pointer;
 }
-.shop:hover {
-    background-color: white; 
-    color: #C3A261;
-}
+    .shop:hover {
+        border: 2px solid #C3A261;
+        background-color: rgba(255, 0, 0, 0);
+    }
 
 
 /*---------------------------------------------             Premise             ------------------------------------------------------------*/
@@ -578,22 +637,21 @@ width: 60%;
 justify-content: space-between;
 }
 .MediaLink {
-width: 40px;
-height: 40px;
-border-radius: 50%;
-background-color: #C3A261;
-color: white;
-display: flex;
-justify-content: center;
-align-items: center;
-cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #C3A261;
+    background-color: rgba(255, 0, 0, 0);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-.MediaLink:hover{
-background-color: white;
-}
-.MediaLink:hover a{
-    color: #C3A261;
-}
+    .MediaLink:hover a{
+        color: #4580D9;
+        background-color: rgba(255, 0, 0, 0);
+    }
 
 #footerContent{
 display: flex;
@@ -659,9 +717,27 @@ display: flex;
 justify-content: space-between;
 }
 
-.navigationLinksShow button {
+/*.navigationLinksShow button {
 margin: 5px;
+}*/
+
+/*button setup*/
+button {
+    border: 2px solid #C3A261;
+    color: #fff;
+    background-color: rgba(255, 0, 0, 0);
 }
+
+    button:hover {
+        border: 2px solid #C3A261;
+        background-color: rgba(255, 0, 0, 0);
+        color: #4580D9;
+    }
+
+    button:focus {
+        outline: 0;
+    }
+
 
 .navigationLinksShow > a {
     height: 5vh;
@@ -867,9 +943,8 @@ margin-bottom: 25px;
 .storeShop {
     width: 150px;
     height: 50px;
-    border-radius: 300px;
-    border: none;
-    background-color: #C3A261;
+    border: 2px solid #C3A261;
+    background-color: rgba(255, 0, 0, 0);
     font-weight: 700;
     color: white;
     margin: 25px 0 0 25px;
@@ -877,8 +952,9 @@ margin-bottom: 25px;
 }
 
     .storeShop:hover {
-        background-color: white;
-        color: #C3A261;
+        border: 2px solid #C3A261;
+        color: #4580D9;
+        background-color: rgba(255, 0, 0, 0);
     }
 
 
@@ -1029,9 +1105,11 @@ margin-bottom: 25px;
     margin: 20px 0 20px 0;
 }
 
+
 /*///////////////////////////////////
                                                 Contact
                                                                    /////////////////////////////////////*/
+
 
 #contact {
     grid-column: 2/10;
@@ -1260,6 +1338,7 @@ ul#aboutText {
         /*margin: 0 0 -1.2vw 8vw;
     transform: rotate(-90deg);
     transform-origin: bottom left;
+
     font-size: 1.5em;*/
     }
     .bigThinParagraph {
@@ -1269,6 +1348,7 @@ ul#aboutText {
         transform-origin: bottom left;
         font-weight: 300;
         /*margin: 0px 0 5px 9vw;
+
     transform: rotate(-90deg);
     transform-origin: bottom left;
     font-size: 1.2em;*/
@@ -1500,22 +1580,22 @@ margin: 25px;
     margin-bottom: 25px;
 }
 
-.storeShop {
-width: 150px;
-height: 50px;
-border-radius: 300px;
-border: none;
-background-color: #C3A261;
-font-weight: 700;
-color: white;
-margin: 25px 0 0 25px;
-cursor: pointer;
-}
+    .storeShop {
+        width: 150px;
+        height: 50px;
+        border: 2px solid #C3A261;
+        color: #fff;
+        background-color: rgba(255, 0, 0, 0);
+        font-weight: 700;
+        margin: 25px 0 0 25px;
+        cursor: pointer;
+    }
 
-.storeShop:hover {
-    background-color: white;
-    color: #C3A261;
-}
+        .storeShop:hover {
+            border: 2px solid #C3A261;
+            background-color: rgba(255, 0, 0, 0);
+            color: #4580D9;
+        }
 
 
 .storeButtonsList {
