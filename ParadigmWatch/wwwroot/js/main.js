@@ -1,19 +1,19 @@
 ﻿//The arrow effect
-const watch = document.querySelector("#arrowButton");
+var watch = document.querySelector("#arrowButton");
 
-let position = 0;
+var position = 0;
 
 //speed
-const speed = 15; //px per sec
-const framerate = 60; //frames per sec
+var speed = 15; //px per sec
+var framerate = 60; //frames per sec
 
-let last;
+var last;
 function step() {
     // The now preformance
-    const now = performance.now();
+    var now = performance.now();
 
     //difference = delta on now and last now, and if last exist it uses last or it uses 0 if last does not exist
-    const delta = now - last || 0;
+    var delta = now - last || 0;
     last = now;
 
     // The 1000 / delta gives the perfect speed at all conditions
@@ -60,27 +60,27 @@ sr.reveal('.foo-6', {
     distance: '20px'
 });
 
-let slides = document.querySelectorAll('.sliderElement')
+var slides = document.querySelectorAll('.sliderElement')
 
-let nextButton = document.getElementById('next')
-let backButton = document.getElementById('back')
+var nextButton = document.getElementById('next')
+var backButton = document.getElementById('back')
 
-let currentSlide = document.getElementById('currentSlide')
+var currentSlide = document.getElementById('currentSlide')
 
-let LearnMoreBTN = document.getElementById('secondaryLink')
-let BuildYourOwnBTN = document.getElementById('primaryLink')
+var LearnMoreBTN = document.getElementById('secondaryLink')
+var BuildYourOwnBTN = document.getElementById('primaryLink')
 
-let sliderCounter = 0;
+var sliderCounter = 0;
 
-let sliderTexts = document.getElementsByClassName('sliderText');
+var sliderTexts = document.getElementsByClassName('sliderText');
 
-let burgerMenu = document.getElementById('burgerMenu')
+var burgerMenu = document.getElementById('burgerMenu')
 
 
-for (let sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
-    let currentSlider = document.getElementById(`${sliderCount }`)
+for (var sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
+    var currentSlider = document.getElementById(`${sliderCount }`)
     
-    let currentText = sliderTexts[sliderCount -1].textContent.toLowerCase();
+    var currentText = sliderTexts[sliderCount -1].textContent.toLowerCase();
 
     currentSlider.style.zIndex = `${sliderCount * -1}`
     currentSlider.style.left = '0px'
@@ -96,7 +96,7 @@ for (let sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
 nextButton.addEventListener('click', () => {
     if (sliderCounter < slides.length - 1) {
 
-        let currentSlider = document.getElementById(`${sliderCounter + 1}`)
+        var currentSlider = document.getElementById(`${sliderCounter + 1}`)
         currentSlider.style.transition = '1s'
         currentSlider.style.left = '-100vw'
 
@@ -105,8 +105,8 @@ nextButton.addEventListener('click', () => {
         sliderCounter++
         console.log(sliderCounter)
     } else {
-        for (let i = 0; i < slides.length; i++) {
-            let slider = document.getElementById(`${i+1}`)
+        for (var i = 0; i < slides.length; i++) {
+            var slider = document.getElementById(`${i+1}`)
             slider.style.left = '0px'
             sliderCounter = 0;
             currentSlide.textContent = `01`
@@ -117,7 +117,7 @@ nextButton.addEventListener('click', () => {
 backButton.addEventListener('click', () => {
     if (sliderCounter > 0) {
 
-        let currentSlider = document.getElementById(`${sliderCounter}`)
+        var currentSlider = document.getElementById(`${sliderCounter}`)
         currentSlider.style.transition = '1s'
         currentSlider.style.left = '0px'
 
@@ -125,8 +125,8 @@ backButton.addEventListener('click', () => {
         sliderCounter--
         console.log(sliderCounter)
     } else {
-        for (let i = 0; i < slides.length - 1; i++) {
-            let slider = document.getElementById(`${i+1}`)
+        for (var i = 0; i < slides.length - 1; i++) {
+            var slider = document.getElementById(`${i+1}`)
             slider.style.left = '-100vw'
             sliderCounter = 2;
             currentSlide.textContent = `03`
