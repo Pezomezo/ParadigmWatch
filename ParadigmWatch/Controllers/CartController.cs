@@ -32,11 +32,12 @@ namespace ParadigmWatch.Controllers
             });
         }
 
-        public RedirectToActionResult AddToCart(int productId, string returnUrl)
+        public RedirectToActionResult AddToCart(string productId, string returnUrl)
         {
+            var ids = productId.Split("-");
             Watch product = dataContext.Watches
-            .FirstOrDefault(p => p.Id == productId);
-            creator.InitWatch(product);
+            .FirstOrDefault(p => p.Id == int.Parse(ids[0]));
+            creator.InitBuiltWatch(product, ids);
             if (product != null)
             {
                 cart.AddItem(new SerializableWatchModel() { Id = product.Id, Name = product.Name,
