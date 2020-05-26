@@ -1,6 +1,7 @@
 ﻿@using ParadigmWatch.Models.ViewModels;
 @using ParadigmWatch.Models;
-@using ParadigmWatch.Infrastructure
+@using ParadigmWatch.Infrastructure;
+
 @model WatchViewModel
 
 
@@ -12,35 +13,17 @@
 
 <p id="startingModel" class="hidden">@Model.Watch.Name</p>
 
+
+
+    @*<p id="jsonFile">@JsonSerializer.Serialize(Model.WatchInitModel)</p>*@
+
+
+
 <div id="threeGui">
-    <ul data-role="listview" data-inset="true" data-shadow="false" id="GUI">
-        @foreach (WatchPart part in Model.Watch.WatchParts)
-        {
-            <li data-role="collapsible" data-iconpos="right" data-inset="false">
-                <h2 class="guiPartType">@part.PartType.Name</h2>
-                <fieldset data-role="controlgroup" data-type="horizontal" style=" z-index:1">
-                    <label>@part.Name<input type="checkbox" class="hidden"></label>
 
-                </fieldset>
-            </li>
-            <li class="hidden">
+    <ul id="GUI">
 
-                <p class="PartModelPath">@part.ModelPath</p>
-                <p class="PartName">@part.Name</p>
-                <p class="componentTypeId">@part.TypeId</p>
-
-                <p class="ComponentName">@part.Name</p>
-                <p class="textureMap">@part.TextureMap.ImagePath</p>
-                <p class="metallnessProp">@part.Shader.Metalness</p>
-                <p class="normalMap">@part.Shader.NormalMapPath</p>
-                <p class="normalIntensity">@part.Shader.NormalMapIntensity</p>
-                <p class="roughnessProp">@part.Shader.Roughness</p>
-                <p class="EnvMapInt">@part.Shader.EnvMapIntensity</p>
-
-            </li>
-
-        }
-
+      
     </ul>
 </div>
 
@@ -55,6 +38,8 @@
     </select>
 </div>
 
+
+<script type="text/javascript" src="~/js/WatchPartsJSON.js"></script>
 <script src="~/js/Three.js"></script>
 <script src="~/js/GLTFLoader.js" type="module"></script>
 <script src="~/js/TrackballControls.js" type="module"></script>

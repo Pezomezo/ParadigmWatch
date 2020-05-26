@@ -1,0 +1,64 @@
+﻿@model ParadigmWatch.Models.ViewModels.CreateModel
+
+<div class="loginContent">
+    <div class="container">
+
+        <div class="bg-primary m-1 p-1 text-white identityCenter">
+            <h2 class="identityTitle">Register</h2>
+            <p class="identityText">and get 10% off every product! </p>
+        </div>
+        <div asp-validation-summary=" All" class="text-danger"></div>
+        <form method="post" asp-controller="SignUp" asp-action="InvokeAsync">
+            <input type="hidden" name="returnUrl" value="/" />
+            <div class="form-RegGroup">
+                <label asp-for="FirstName">First name</label><br />
+                <input asp-for="FirstName" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="FirstName" name="FirstName" placeholder="John..." />
+            </div>
+            <div class="form-RegGroup">
+                <label asp-for="LastName">Last name</label><br />
+                <input asp-for="LastName" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="LastName" name="LastName" placeholder="Smith..." />
+            </div>
+            <div class="form-RegGroup">
+                <label asp-for="SignUpEmail">Email</label><br />
+
+                <input asp-for="SignUpEmail" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="Email" name="Email" placeholder="example@email.com..." />
+            </div>
+            <div class="form-RegGroup">
+                <label asp-for="Password">Password</label><br />
+                <input asp-for="Password" class="form-control idnetityFormRegistration" type="password" data-val="true" data-val-required="The Password field is required." id="Password" name="Password" placeholder="your password" />
+            </div>
+            <div class="form-RegGroup">
+                <label asp-for="City">City</label><br />
+                <input asp-for="City" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="City" name="City" placeholder="Los Angeles" />
+            </div>
+            <div class="form-RegGroup">
+                <label asp-for="Address">Adress</label><br />
+                <input asp-for="Address" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="Adress" name="Address" />
+            </div>
+            <div class="form-RegGroup">
+                <label asp-for="ZipCode">Zip code</label><br />
+                <input asp-for="ZipCode" class="form-control idnetityFormRegistration" type="text" data-val="true" data-val-required="Field is required." id="PortelCode" name="PortelCode" placeholder="Portel code" />
+            </div>
+            <div class="identityLetter">
+
+                <div>
+                    <input type="radio" />
+                    <label>I agree privacy policy</label>
+                </div>
+
+                <div>
+                    <input type="radio" />
+                    <label>I would like to subscribe newsletter</label>
+                </div>
+
+
+            </div>
+            <button class="btn btn-primary identityRegBtn" type="submit">Register now</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+    @*<div>
+            <a asp-controller="Home" asp-action="Index">Back to List</a>
+    </div>*@
+</div>
+

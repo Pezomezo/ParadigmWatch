@@ -10,12 +10,13 @@ using ParadigmWatch.Models.ViewModels;
 using System.Reflection.Metadata;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace ParadigmWatch.Controllers.Store
 {
     public class ThreeDController : Controller
     {
-        
+
 
         private ParadigmWatchContext DB;
         WatchViewModel WatchVM;
@@ -26,18 +27,28 @@ namespace ParadigmWatch.Controllers.Store
 
         public IActionResult Index(int watchId)
         {
+
             WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(watchId)).First());
             InitWatch();
             FillUpParts();
+            WatchVM.fillWatch();
+
+
+
+            System.IO.File.WriteAllText("./wwwroot/js/WatchPartsJSON.js", JsonConvert.SerializeObject(WatchVM.WatchInitModel, Formatting.Indented));
             Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
             ViewBag.BGNames = GetaBackgrounds();
+            
             return View(WatchVM);
         }
 
         private void FillUpParts()
         {
             DB.WatchParts.ToList().ForEach(part => this.WatchVM.AddPart(part));
+            AddTypes();
         }
+
+
 
         private IEnumerable<SelectListItem> GetaBackgrounds()
         {
@@ -69,7 +80,6 @@ namespace ParadigmWatch.Controllers.Store
         private void InitWatch()
         {
             AddParts();
-            AddTypes();
             FillUpShaders();
             FillUpTextures();
             FillUpTextMap();
@@ -89,7 +99,7 @@ namespace ParadigmWatch.Controllers.Store
         {
             List<WatchPartType> Types = DB.WatchPartyTypes.ToList();
 
-            WatchVM.Watch.WatchParts.ForEach(part => part.PartType = Types.Find(type => type.Id == part.TypeId));
+            WatchVM.AllParts.ForEach(part => part.PartType = Types.Find(type => type.Id == part.TypeId));
         }
 
         private void FillUpTextures()

@@ -118,11 +118,12 @@ namespace ParadigmWatch.Data
                 );
 
             modelBuilder.Entity<StandardShader>().HasData(
-                new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0.1m, NormalMapPath = "models/strap.png", Roughness = 0.3m },
-                new StandardShader() { Id = 2, Metalness = 1m, NormalMapIntensity = 0.1m, NormalMapPath = "models/chrome.png", Roughness = 0.15m },
-                new StandardShader() { Id = 3, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0.5m },
-                new StandardShader() { Id = 4, Metalness = 1m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m },
-                new StandardShader() { Id = 5, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m }
+                new StandardShader() { Id = 1, Metalness = 0m, NormalMapIntensity = 0.1m, NormalMapPath = "models/strap.png", Roughness = 0.9m, EnvMapIntensity = 1},
+                new StandardShader() { Id = 2, Metalness = 1m, NormalMapIntensity = 0.05m, NormalMapPath = "models/chrome.png", Roughness = 0.15m, EnvMapIntensity = 2 },
+                new StandardShader() { Id = 3, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0.5m, EnvMapIntensity = 1 },
+                new StandardShader() { Id = 4, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m, EnvMapIntensity = 1 },
+                new StandardShader() { Id = 5, Metalness = 0m, NormalMapIntensity = 0m, NormalMapPath = "", Roughness = 0m, EnvMapIntensity = 1 },
+                new StandardShader() { Id = 6, Metalness = 1m, NormalMapIntensity = 0.05m, NormalMapPath = "models/strap.png", Roughness = 0.15m, EnvMapIntensity = 3 }
                 );
 
             modelBuilder.Entity<Watch>().HasData(
@@ -150,8 +151,12 @@ namespace ParadigmWatch.Data
                 new WatchPart() { Id = 5, Name = "Silver Pointer", TextureMapId = 4, ShaderId = 4, TextMapId = 1, TypeId = 5, ModelPath = "models/Parts/Pointers/DefaultPointer.gltf" },
                 new WatchPart() { Id = 6, Name = "Sleeves", TextureMapId = 1, ShaderId = 1, TextMapId = 1, TypeId = 6, ModelPath = "models/Parts/Sleeves/DefaultSleeve.gltf" },
                 new WatchPart() { Id = 7, Name = "Glass", TextureMapId = 7, ShaderId = 5, TextMapId = 1, TypeId = 7, ModelPath = "models/Parts/Glasses/DefaultGlass.gltf" },
-                new WatchPart() { Id = 8, Name = "Chrome Ring", TextureMapId = 2, ShaderId = 2, TextMapId = 1, TypeId = 8, ModelPath = "models/Parts/Rings/DefaultRing.gltf" }
+                new WatchPart() { Id = 8, Name = "Chrome Ring", TextureMapId = 2, ShaderId = 2, TextMapId = 1, TypeId = 8, ModelPath = "models/Parts/Rings/DefaultRing.gltf" },
+                new WatchPart() { Id = 9, Name = "Example Ring", TextureMapId = 2, ShaderId = 6, TextMapId = 1, TypeId = 8, ModelPath = "models/Parts/Rings/DefaultRing.gltf" }
+                
             );
+
+            
 
             modelBuilder.Entity<WatchComponents>().HasData(
                 new WatchComponents { WatchId = 1, WatchPartId = 1 },
