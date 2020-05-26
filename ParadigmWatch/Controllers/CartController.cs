@@ -25,7 +25,6 @@ namespace ParadigmWatch.Controllers
 
         public ViewResult Index(string returnUrl)
         {
-            Console.WriteLine(this.cart.Lines[0].Product.Price);
             return View(new CartIndexViewModel
             {
                 Cart = this.cart,
