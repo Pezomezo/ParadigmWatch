@@ -9,7 +9,7 @@ namespace ParadigmWatch.Models.ViewModels
     public class WatchViewModel
     {
         public List<WatchInitModel> WatchInitModel = new List<WatchInitModel>();
-    public Watch Watch { get; set; }
+        public Watch Watch { get; set; }
         public List<WatchPart> AllParts { get; set; } = new List<WatchPart>();
 
 

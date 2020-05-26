@@ -27,7 +27,7 @@ namespace ParadigmWatch.Controllers
         {
             WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(watchId)).First());
 
-            WatchCreation.InitWatch(WatchVM);
+            WatchCreation.InitWatch(WatchVM.Watch);
             Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
             return View(WatchVM);
         }

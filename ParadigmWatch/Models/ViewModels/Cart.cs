@@ -9,7 +9,7 @@ namespace ParadigmWatch.Models.ViewModels
     {
         private List<CartLine> lineCollection = new List<CartLine>();
 
-        public virtual void AddItem(Watch product, int quantity)
+        public virtual void AddItem(SerializableWatchModel product, int quantity)
         {
             // check to see if the product is already in the cart
             CartLine item = lineCollection.Where(p => p.Product.Id == product.Id).FirstOrDefault();
@@ -41,7 +41,7 @@ namespace ParadigmWatch.Models.ViewModels
 
     public class CartLine
     {
-        public Watch Product { get; set; }
+        public SerializableWatchModel Product { get; set; }
         public int Quantity { get; set; }
     }
 }
