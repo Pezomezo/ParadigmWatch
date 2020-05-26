@@ -5,17 +5,25 @@
 
 
 <section id="contact">
-    <h3 class="contact"> Contact</h3>
-        <p class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. <br />
-            Nullam convallis, velit eu varius bibendum, lectus justo consequat tortor, sed commodo enim augue ut lectus. Vestibulum a <br />
-            blandit sapien id, sagittis orci. Praesent sed orci nec tortor efficitur varius. Sed tempor massa nec lorem sagittis, ac.
-        </p>
-           
-        <ul id="Contacts">
-            <li class="ContactsContactsItem">Adress: <br /><address><a href="#" target="_blank" class="btn btn-sm btn-secondary navbar-btn">ParadigmWatch.com</a></address></li>
-            <li class="ContactsContactsItem">Adress: <br /><address>Example</address></li>
-            <li class="ContactsContactsItem">Phone: <br /><address>09 999 9999 99</address></li>
-            <li class="ContactsContactsItem">Email: <br />info@paradimgwatch.com</li>
+
+    <div id="contactContent">
+        <h3 class="contact"> Contact</h3>
+        <ul id="contactTexts">
+            <p class="placeText"> Europa</p>
+            <li class="contactContactsItem abouttext">Adress: <br /><address>London, England</address></li>
+            <li class="contactContactsItem abouttext">Phone: <br /><address>09 999 9999 99</address></li>
+            <li class="contactContactsItem abouttext">Email: <br />info@paradimgwatch.com</li>
         </ul>
+        <ul id="contactContact">
+            <p class="placeText"> Asia</p>
+            <li class="contactContactsItem abouttext">Adress: <br /><address>Sydney, Australia</address></li>
+            <li class="contactContactsItem abouttext">Phone: <br /><address>09 999 9999 99</address></li>
+            <li class="contactContactsItem abouttext">Email: <br />info@paradimgwatch.com</li>
+        </ul>
+    </div>
+    <div id="map"></div>
+
 </section>
+
+<script src="~/js/main.js" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRlYOm2KMsGkxmUiSA21Y8M6WuZ_axavc&callback=initMap" async defer></script>
