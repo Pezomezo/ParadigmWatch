@@ -156,12 +156,46 @@ dropdownElement.addEventListener('click', () => {
         scene.background = enviroment;
         console.log(HDRIBG + ': Selected Element');
 
+
+        deleteJson()
+        ReloadModels()
+         
+         
+
         oddClick = true;
     } else {
         oddClick = false;
     }
 
 })
+
+function deleteJson() {
+    scene.children.forEach(e => {
+        if (e.name != '') {
+            scene.remove(e)
+        }
+    })
+}
+function ReloadModels() {
+    dataList.forEach(e => {
+        if (e.isSelected) {
+            
+            if (e.Name == 'Crystal Glass') {
+                glass = new THREE.MeshPhongMaterial({
+                    color: 0xffffff,
+                    envMap: enviromentFlipped,
+                    refractionRatio: 0.9,
+                    depthWrite: false,
+                    opacity: 0.4,
+                    transparent: true
+                })
+
+            }
+            loadModel(e)
+        }
+            
+    })
+}
 
 // Create a shader with the assigned parameters
 function populateStandardShader(elementTypeRaw, textureMap = undefined, normalMap = undefined, metallnessProp = 0, normalIntensity = 0, roughnessProp = 0, EnvMapInt = 1, color = 0xffffff) {
@@ -295,12 +329,7 @@ async function initialize() {
 initialize();
 
 
-function animate() {
-    requestAnimationFrame(animate);
-   
-    controls.update();
-    renderer.render(scene, camera);
-}
+
 
 let controls = new THREE.TrackballControls(camera, renderer.domElement);
 
@@ -350,6 +379,7 @@ function GuiFunctionality() {
         //}
     }
     for (let WatchPart = 0; WatchPart < GuiItem.length; WatchPart++) {
+
         // Gives each list Item a click event that will allow us to switch out materials on the 3D object
         GuiItem.item(WatchPart).addEventListener('click', () => {
 
@@ -597,5 +627,10 @@ prmbtn.addEventListener('click', () => {
     selectedItems.unshift(watchId)
     let WatchInfo = selectedItems.join('-')
 
-    console.log(WatchInfo)
+    let url = window.location.href.split('/')
+    let rawurl = url.slice(0, -1)
+    let newurl = `${rawurl[0]}//${rawurl[2]}/ProductPage?configuredWatch=${WatchInfo}`
+    window.location.href = newurl
 })
+
+

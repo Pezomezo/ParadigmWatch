@@ -31,5 +31,16 @@ namespace ParadigmWatch.Controllers
             Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
             return View(WatchVM);
         }
+        public IActionResult Index(string configuredWatch)
+        {
+            var ids = configuredWatch.Split("-");
+            WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(int.Parse(ids[0]))).First());
+
+
+
+            WatchCreation.InitWatch(WatchVM.Watch);
+            Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
+            return View(WatchVM);
+        }
     }
 }
