@@ -1574,15 +1574,26 @@ width: 80%;
     font-size: 1em;
 }
 
+.guiContainer{
+    grid-column: 1/3;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2;
+
+}
 
 #threeGui {
     position: absolute;
     z-index: 1;
-    height: 100%;
+    height: 0%;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 20vw;
+    transition: 3s ease-in-out;
 }
 
 #GUI {
@@ -1602,10 +1613,11 @@ width: 80%;
     }
 
 
-    #canvas {
-        z-index: 0;
-        position: absolute;
-    }
+#canvas {
+    z-index: 0;
+    position: absolute;
+    opacity: 0;
+}
 .guiPartType{
     font-size: 1rem;
 
@@ -1662,6 +1674,55 @@ width: 80%;
     transition: 0.5s;
 }
 
+.load {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#loaderContainer{
+    width: 100%;
+    height: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading {
+    background-color: #4580D9;
+    width: 0%;
+    height: 90%;
+    opacity: 1;
+}
+.loadingFull{
+    height: 100vh;
+    transition: 1s;
+}
+.buttonContainer{
+    width: 100%;
+    height: 90vh;
+    display: inline-flex;
+    justify-content: flex-end;
+    position: absolute;
+    z-index: 1;
+    align-items: flex-end;
+}
+.btn{
+    height: 50px;
+    width: 200px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-right: 50px;
+}
+
+#ThreeDPage{
+    position: absolute;
+}
+
 #ThreeDBackgroundSelector {
     position: absolute;
     z-index: 1;
@@ -1681,3 +1742,4 @@ width: 80%;
     justify-content: space-between;
     align-items: center;
 }
+
