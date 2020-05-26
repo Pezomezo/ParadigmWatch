@@ -27,15 +27,18 @@
     </ul>
 </div>
 
+<div id="ThreeDBackgroundSelector">
+    <select id="bgDropDown">
+        @foreach (var item in ViewBag.BGNames)
+        {
+            <option id="bgOption" class="backgroundOption">@item.Text</option>
+        }
+    </select>
+</div>
 
 
 <div id="canvas" class="ThreeDBackgroundSelector">
-    <select onselect="getBGname()" id="bgDropDown" href="#">
-        @foreach (var item in ViewBag.BGNames)
-        {
-            <option>@item.Text</option>
-        }
-    </select>
+    
 </div>
 
 

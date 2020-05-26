@@ -89,17 +89,19 @@ var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHei
 var renderer = new THREE.WebGLRenderer();
 //let domElement = document.getElementById('canvas')
 
+// get the initial bacground image
 var e = document.getElementById("bgDropDown");
 let HDRIBG = e.options[e.selectedIndex].value;
-//console.log(HDRIBG + ' : BG HERE')
 
+// The environment reflecting on the object
 let enviroment = new THREE.CubeTextureLoader()
-    .setPath('models/' + HDRIBG +'/')
+    .setPath(`models/${HDRIBG}/`)
     .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
-
+// The bacground environment
 let enviromentFlipped = new THREE.CubeTextureLoader()
     .setPath(`models/${HDRIBG}Flipped/`)
     .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
+console.log('Initial Load: ' + HDRIBG);
 
 var glass = new THREE.MeshPhongMaterial({
     color: 0xffffff,
@@ -110,14 +112,34 @@ var glass = new THREE.MeshPhongMaterial({
     transparent: true
 })
 
-
 glass.envMap.mapping = THREE.CubeRefractionMapping;
 
-//function getBGname()
-//{
-//    let HDRIBG = e.options[e.selectedIndex].value;
-//    console.log(HDRIBG + ' : BG GET')
-//}
+let dropdownElement = document.getElementById('bgDropDown');
+
+let oddClick = true;
+dropdownElement.addEventListener('click', () => {
+    if (!oddClick) {
+
+        var e = document.getElementById("bgDropDown");
+        let HDRIBG = e.options[e.selectedIndex].value;
+
+        enviroment = new THREE.CubeTextureLoader()
+            .setPath(`models/${HDRIBG}/`)
+            .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
+
+        enviromentFlipped = new THREE.CubeTextureLoader()
+            .setPath(`models/${HDRIBG}Flipped/`)
+            .load(['px.png', 'nx.png', 'py.png', 'ny.png', 'pz.png', 'nz.png']);
+        scene.background = enviroment;
+        console.log(HDRIBG + ': Selected Element');
+
+        oddClick = true;
+    } else {
+        oddClick = false;
+    }
+
+})
+
 // Create a shader with the assigned parameters
 function populateStandardShader(elementTypeRaw, textureMap = undefined, normalMap = undefined, metallnessProp = 0, normalIntensity = 0, roughnessProp = 0, EnvMapInt = 1, color = 0xffffff) {
     let elementType = elementTypeRaw.toString()
@@ -288,7 +310,6 @@ function GuiFunctionality() {
             }
 
             cOpt.style.height = `${cOpt.scrollHeight}px`
-
 
         })
     }
