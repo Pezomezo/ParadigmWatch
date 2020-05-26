@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParadigmWatch.Data;
 
 namespace ParadigmWatch.Migrations
 {
     [DbContext(typeof(ParadigmWatchContext))]
-    partial class ParadigmWatchContextModelSnapshot : ModelSnapshot
+    [Migration("20200526131809_corrections")]
+    partial class corrections
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -888,7 +890,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 1,
                             ModelPath = "models/Parts/Backgrounds/Apollo.gltf",
-                            Name = "Apollo Pattern",
+                            Name = "Apollo",
                             ShaderId = 3,
                             TextMapId = 1,
                             TextureMapId = 3,
@@ -943,7 +945,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 6,
                             ModelPath = "models/Parts/Sleeves/DefaultSleeve.gltf",
-                            Name = "Black Sleeves",
+                            Name = "Sleeves",
                             ShaderId = 1,
                             TextMapId = 1,
                             TextureMapId = 1,
@@ -954,7 +956,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 7,
                             ModelPath = "models/Parts/Glasses/DefaultGlass.gltf",
-                            Name = "Crystal Glass",
+                            Name = "Glass",
                             ShaderId = 5,
                             TextMapId = 1,
                             TextureMapId = 7,
@@ -976,7 +978,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 10,
                             ModelPath = "models/Parts/Backgrounds/Apollo.gltf",
-                            Name = "Juno Pattern",
+                            Name = "Juno",
                             ShaderId = 3,
                             TextMapId = 1,
                             TextureMapId = 11,
@@ -987,7 +989,7 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 11,
                             ModelPath = "models/Parts/Backgrounds/Apollo.gltf",
-                            Name = "Mercury Pattern",
+                            Name = "Mercury",
                             ShaderId = 3,
                             TextMapId = 1,
                             TextureMapId = 12,

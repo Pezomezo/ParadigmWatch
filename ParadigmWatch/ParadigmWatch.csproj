@@ -18,8 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\js\CopyShader.js" />
+    <Content Remove="wwwroot\js\EffectComposer.js" />
+    <Content Remove="wwwroot\js\LuminosityHighPassShader.js" />
     <Content Remove="wwwroot\js\OBJLoader.js" />
+    <Content Remove="wwwroot\js\RenderPass.js" />
     <Content Remove="wwwroot\js\script.js" />
+    <Content Remove="wwwroot\js\ShaderPass.js" />
+    <Content Remove="wwwroot\js\UnrealBloomPass.js" />
   </ItemGroup>
 
   <ItemGroup>
