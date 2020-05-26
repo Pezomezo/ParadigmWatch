@@ -529,7 +529,7 @@ background-color: #C3A261;
     margin-top: 25px;
     flex-direction: column;
     display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
 }
 
 .productContainer {
@@ -553,13 +553,13 @@ margin: 15px 0 15px 0;
 }
 
 .productImage > img {
-max-width: 30%;
+max-width: 200px;
 transition: 1s;
 position: absolute;
 }
 
 .productImage > img:hover{
-max-width: 32%;
+max-width: 220px;
 }
 
 .productDescription {
@@ -1347,7 +1347,7 @@ nav {
 
 
     .productImage > img {
-        max-width: 13%;
+        max-width: 200px;
         transition: 1s;
         position: absolute;
         /*margin-top: 65px;*/
@@ -1357,7 +1357,7 @@ nav {
 
 
         .productImage > img:hover {
-            max-width: 16%;
+            max-width: 220px;
         }
 
     .productsRec p {
