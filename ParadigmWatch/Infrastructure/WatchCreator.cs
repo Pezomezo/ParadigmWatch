@@ -1,6 +1,5 @@
 ﻿using ParadigmWatch.Data;
 using ParadigmWatch.Models;
-using ParadigmWatch.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,49 +14,53 @@ namespace ParadigmWatch.Infrastructure
         {
             DB = db;
         }
-        public void InitWatch(WatchViewModel watch)
+        public void InitWatch(Watch watch)
         {
-            AddParts(watch);
-            AddTypes(watch);
-            FillUpShaders(watch);
-            FillUpTextures(watch);
-            FillUpTextMap(watch);
+            if (watch.WatchParts.Count == 0)
+            {
+                AddParts(watch);
+                AddTypes(watch);
+                FillUpShaders(watch);
+                FillUpTextures(watch);
+                FillUpTextMap(watch);
+            }
+
         }
 
 
-        private void AddParts(WatchViewModel watchvm)
+        private void AddParts(Watch watch)
         {
-            List<WatchComponents> watchComponents = DB.RelationTableWatch.Where(item => item.WatchId == watchvm.Watch.Id).ToList();
+            List<WatchComponents> watchComponents = DB.RelationTableWatch.Where(item => item.WatchId == watch.Id).ToList();
 
             List<WatchPart> watchParts = new List<WatchPart>();
             watchComponents.ForEach(item => watchParts.Add(DB.WatchParts.Find(item.WatchPartId)));
-            watchParts.ForEach(item => watchvm.Watch.AddComponent(item));
+            watchParts.ForEach(item => watch.AddComponent(item));
         }
 
-        private void AddTypes(WatchViewModel watchvm)
+        private void AddTypes(Watch watchvm)
         {
             List<WatchPartType> Types = DB.WatchPartyTypes.ToList();
 
-            watchvm.Watch.WatchParts.ForEach(part => part.PartType = Types.Find(type => type.Id == part.TypeId));
+            watchvm.WatchParts.ForEach(part => part.PartType = Types.Find(type => type.Id == part.TypeId));
         }
 
-        private void FillUpTextures(WatchViewModel watchvm)
+        private void FillUpTextures(Watch watchvm)
         {
             List<Texture> Textures = DB.Textures.ToList();
 
-            watchvm.Watch.WatchParts.ForEach(part => part.TextureMap = Textures.Find(texture => texture.Id == part.TextureMapId));
+            watchvm.WatchParts.ForEach(part => part.TextureMap = Textures.Find(texture => texture.Id == part.TextureMapId));
         }
-        private void FillUpShaders(WatchViewModel watchvm)
+        private void FillUpShaders(Watch watchvm)
         {
             List<StandardShader> Shaders = DB.StandardShaders.ToList();
 
-            watchvm.Watch.WatchParts.ForEach(part => part.Shader = Shaders.Find(shader => shader.Id == part.ShaderId));
+            watchvm.WatchParts.ForEach(part => part.Shader = Shaders.Find(shader => shader.Id == part.ShaderId));
         }
-        private void FillUpTextMap(WatchViewModel watchvm)
+        private void FillUpTextMap(Watch watchvm)
         {
             List<TextMap> Texts = DB.TextMaps.ToList();
 
-            watchvm.Watch.WatchParts.ForEach(part => part.TextMap = Texts.Find(text => text.Id == part.TextMapId));
+            watchvm.WatchParts.ForEach(part => part.TextMap = Texts.Find(text => text.Id == part.TextMapId));
         }
     }
 }

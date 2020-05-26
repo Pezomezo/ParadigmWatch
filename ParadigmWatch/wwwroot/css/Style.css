@@ -1300,14 +1300,20 @@ ul#aboutText {
         background-color: white;
     }
 
+    .navbar-text{
+        font-size: small;
+    }
+    .navbar-text > b {
+        font-size: medium;
+    }
 
-.sliderText {
-    position: absolute;
-    z-index: 1;
-    font-size: 15vw;
-    color: #C3A261;
-    margin: 0;
-}
+    .sliderText {
+        position: absolute;
+        z-index: 1;
+        font-size: 15vw;
+        color: #C3A261;
+        margin: 0;
+    }
 
 .sliderImg {
     position: absolute;
@@ -1763,4 +1769,24 @@ width: 80%;
 }
 .arrow {
     transition: 0.5s;
+}
+
+#ThreeDBackgroundSelector {
+    position: absolute;
+    z-index: 1;
+    height: 15%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 90vw;
+}
+
+#bgDropDown {
+    display: flex;
+    width: 15%;
+    height: 30%;
+    cursor: pointer;
+    padding: .3vw 1% .3vw 2%;
+    justify-content: space-between;
+    align-items: center;
 }
