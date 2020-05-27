@@ -15,66 +15,33 @@
 
 
 <section id="storeProductDisplay">
-    <div class="sortProduct">
-        <div class="sortContent">
-            <div class="sortType">
-                <div class="sortGrid">
-                    <div class="sortGridRow">
-                        <div class="sortGridBox"></div>
-                        <div class="sortGridBox"></div>
-                    </div>
-                    <div class="sortGridRow">
-                        <div class="sortGridBox"></div>
-                        <div class="sortGridBox"></div>
-                    </div>
-                </div>
-                <div class="sortList">
-                    <div class="sortListRow">
-                        <div class="sortListBox"></div>
-                        <div class="sortListBox"></div>
-                        <div class="sortListBox"></div>
-                    </div>
-                    <div class="sortListRow">
-                        <div class="sortListRectangle"></div>
-                        <div class="sortListRectangle"></div>
-                        <div class="sortListRectangle"></div>
-                    </div>
+    @await Html.PartialAsync("_SortingSection")
 
-
-                </div>
-            </div>
-            <div class="sortBy">
-                <label for="sortOrder" class="selector">Select by:</label>
-                <select id="sortOrder">
-                    <option value="A-Z">A to Z</option>
-                    <option value="A-Z">Z to A</option>
-                </select>
-            </div>
-        </div>
-        <div class="separator"></div>
-    </div>
-    
     <div class="storeProducts">
         @foreach (var item in Model)
         {
-        <div class="storeProductContainer">
-            <a class="storeProductImage">
-                <img src="~/Images/@item.Watch.WatchImagePath" alt="" />
-            </a>
-            <div class="storeProductDescription">
-                <h2 class="storeWatchName">@item.Watch.Name</h2>
-                <p class="storeWatchDesc">@item.Watch.Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. Nullam convallis, </p>
-                <div class="storeButtonsList">
-                    <form method="post">
-                        <button class="storeShop" asp-controller="ProductPage" asp-action="Index" asp-route-watchId="@item.Watch.Id.ToString()">Details</button>
-                        <button class="storeShop" asp-controller="ThreeD" asp-action="Index" asp-route-watchId="@item.Watch.Id.ToString()">Build your own</button>
-                    </form>
-                    
+            <div class="storeProductContainer">
+                <a class="storeProductImage">
+                    <img src="~/Images/@item.Watch.WatchImagePath" alt="" />
+                </a>
+                <div class="storeProductDescription">
+                    <h2 class="storeWatchName">@item.Watch.Name</h2>
+                    <p class="storeWatchDesc">@item.Watch.Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget urna iaculis, efficitur felis at, venenatis est. Nullam convallis, </p>
+                    <div class="storeButtonsList">
+                        <form method="post">
+                            <button class="storeShop" asp-controller="ProductPage" asp-action="Index" asp-route-watchId="@item.Watch.Id.ToString()">Details</button>
+                            <button class="storeShop" asp-controller="ThreeD" asp-action="Index" asp-route-watchId="@item.Watch.Id.ToString()">Build your own</button>
+                        </form>
+
+                    </div>
+
                 </div>
-                
+
             </div>
-            
-        </div>
         }
     </div>
 </section>
+
+<script src="~/js/Store.js" type="text/javascript">
+    console.log("Hello World")
+</script>
