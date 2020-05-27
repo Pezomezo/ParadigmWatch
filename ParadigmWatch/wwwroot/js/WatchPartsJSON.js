@@ -12,7 +12,7 @@
     "EnvMapInt": 1.0,
     "Type": "Pattern",
     "Price": 33.4,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/BackSides/DefaultBack.gltf",
@@ -27,7 +27,7 @@
     "EnvMapInt": 2.0,
     "Type": "BackSide",
     "Price": 100.22,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Bases/DefaultBase.gltf",
@@ -42,7 +42,7 @@
     "EnvMapInt": 2.0,
     "Type": "Base",
     "Price": 100.22,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Decorations/DefaultDecoration.gltf",
@@ -57,7 +57,7 @@
     "EnvMapInt": 2.0,
     "Type": "Decoration",
     "Price": 100.22,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Pointers/DefaultPointer.gltf",
@@ -87,7 +87,7 @@
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
     "Price": 50.22,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Glasses/DefaultGlass.gltf",
@@ -117,7 +117,7 @@
     "EnvMapInt": 2.0,
     "Type": "Ring",
     "Price": 100.22,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Backgrounds/Apollo.gltf",
@@ -327,7 +327,7 @@
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
     "Price": 150.22,
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Rings/DefaultRing.gltf",
