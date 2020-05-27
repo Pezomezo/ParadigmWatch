@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParadigmWatch.Data;
 
 namespace ParadigmWatch.Migrations
 {
     [DbContext(typeof(ParadigmWatchContext))]
-    partial class ParadigmWatchContextModelSnapshot : ModelSnapshot
+    [Migration("20200527032351_fixedFileExtensions")]
+    partial class fixedFileExtensions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -538,7 +540,7 @@ namespace ParadigmWatch.Migrations
                             TextureDesc = "Cold but Cool",
                             TextureName = "Chrome",
                             TexturePrice = 100.22,
-                            ThumbnailPath = "models/Thumbnails/chromeThumbnail.jpg"
+                            ThumbnailPath = "models/Thumbnails/chromeThumbnail.png"
                         },
                         new
                         {
@@ -547,7 +549,7 @@ namespace ParadigmWatch.Migrations
                             TextureDesc = "Wanna be the most badass person? try this then!",
                             TextureName = "Apollo Dial",
                             TexturePrice = 33.399999999999999,
-                            ThumbnailPath = "models/watchFrontTexture.png"
+                            ThumbnailPath = "models/watchFrontTexture.jpg"
                         },
                         new
                         {
@@ -556,7 +558,7 @@ namespace ParadigmWatch.Migrations
                             TextureDesc = "Simple but elegant",
                             TextureName = "Solid Handle",
                             TexturePrice = 80.219999999999999,
-                            ThumbnailPath = "models/Thumbnails/steelThumbnail.jpg"
+                            ThumbnailPath = "models/Thumbnails/chromeThumbnail.jpg"
                         },
                         new
                         {
@@ -637,7 +639,7 @@ namespace ParadigmWatch.Migrations
                             TextureDesc = "Gorilla Glass XI",
                             TextureName = "Glass",
                             TexturePrice = 0.0,
-                            ThumbnailPath = "models/Thumbnails/glassThumbnail.jpg"
+                            ThumbnailPath = "models/watchFrontTexture.png"
                         });
                 });
 
