@@ -11,9 +11,8 @@
     "Roughness": 0.5,
     "EnvMapInt": 1.0,
     "Type": "Pattern",
-
     "Price": 33.4,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/BackSides/DefaultBack.gltf",
@@ -27,9 +26,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
-
     "Price": 100.22,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Bases/DefaultBase.gltf",
@@ -43,9 +41,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
-
     "Price": 100.22,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Decorations/DefaultDecoration.gltf",
@@ -59,9 +56,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
-
     "Price": 100.22,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Pointers/DefaultPointer.gltf",
@@ -90,9 +86,8 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
-
     "Price": 50.22,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Glasses/DefaultGlass.gltf",
@@ -121,9 +116,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
-
     "Price": 100.22,
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Backgrounds/Apollo.gltf",
@@ -152,9 +146,8 @@
     "Roughness": 0.5,
     "EnvMapInt": 1.0,
     "Type": "Pattern",
-
     "Price": 50.22,
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/BackSides/DefaultBack.gltf",
@@ -169,7 +162,7 @@
     "EnvMapInt": 2.0,
     "Type": "BackSide",
     "Price": 300.22,
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/BackSides/DefaultBack.gltf",
@@ -183,7 +176,6 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
-
     "Price": 200.22,
     "isSelected": false
   },
@@ -230,7 +222,7 @@
     "EnvMapInt": 2.0,
     "Type": "Base",
     "Price": 300.22,
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Bases/DefaultBase.gltf",
@@ -244,7 +236,6 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
-
     "Price": 200.22,
     "isSelected": false
   },
@@ -290,9 +281,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
-
     "Price": 200.22,
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Sleeves/DefaultSleeve.gltf",
@@ -322,7 +312,7 @@
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
     "Price": 175.22,
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Sleeves/DefaultSleeve.gltf",
@@ -336,7 +326,6 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
-
     "Price": 150.22,
     "isSelected": false
   },
@@ -382,8 +371,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
-
     "Price": 200.22,
-    "isSelected": true
+    "isSelected": false
   }
 ]

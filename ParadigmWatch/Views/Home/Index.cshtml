@@ -7,17 +7,6 @@
 <section id="hero">
 
 
-    <div id="videoController">
-        <video autoplay muted loop id="myVideo">
-            <source src="~/video/backgroundComp1Morph.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-
-        <div class="videoContent">
-
-            <button id="myBtn" onclick="myFunction()">pause</button>
-        </div>
-    </div>
 
     <div class="heroContent">
         <aside class="sideText">
@@ -139,12 +128,12 @@
     <div class="products">
         @foreach (var item in Model)
         {
-            <div class="productContainer foo-2">
+            <div class="productContainer">
                 <a asp-controller="ProductPage" asp-action="Index" asp-route-watchId="@item.Watch.Id" class="productImage">
                     <img src="~/Images/@item.Watch.WatchImagePath" alt="" />
                 </a>
                 <div class="productDescription">
-                    <div class="ellipseWrap"></div>
+                    
                     <h2>@item.Watch.Name</h2>
                     <p>@item.Watch.Description</p>
                 </div>
