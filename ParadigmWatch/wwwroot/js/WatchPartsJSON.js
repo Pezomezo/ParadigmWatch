@@ -11,6 +11,7 @@
     "Roughness": 0.5,
     "EnvMapInt": 1.0,
     "Type": "Pattern",
+
     "Price": 33.4,
     "isSelected": false
   },
@@ -26,6 +27,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
+
     "Price": 100.22,
     "isSelected": false
   },
@@ -41,6 +43,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
+
     "Price": 100.22,
     "isSelected": false
   },
@@ -56,6 +59,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
+
     "Price": 100.22,
     "isSelected": false
   },
@@ -86,6 +90,7 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
+
     "Price": 50.22,
     "isSelected": false
   },
@@ -116,6 +121,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
+
     "Price": 100.22,
     "isSelected": false
   },
@@ -146,6 +152,7 @@
     "Roughness": 0.5,
     "EnvMapInt": 1.0,
     "Type": "Pattern",
+
     "Price": 50.22,
     "isSelected": true
   },
@@ -176,6 +183,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
+
     "Price": 200.22,
     "isSelected": false
   },
@@ -236,6 +244,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
+
     "Price": 200.22,
     "isSelected": false
   },
@@ -281,6 +290,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
+
     "Price": 200.22,
     "isSelected": true
   },
@@ -326,6 +336,7 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
+
     "Price": 150.22,
     "isSelected": false
   },
@@ -371,6 +382,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
+
     "Price": 200.22,
     "isSelected": true
   }
