@@ -56,8 +56,8 @@
     @if (true)
     {
         List<string> textures = new List<string>();
-        textures.Add(Model.Watch.WatchParts[0].TextureMap.TextureName);
-    <p class="BigThumbnail hidden">@Model.Watch.WatchParts[0].TextureMap.ThumbnailPath</p>
+        textures.Add(Model.Watch.WatchParts.ToList().Where(item => item.TypeId == 1).First().TextureMap.TextureName);
+    <p class="BigThumbnail hidden">@Model.Watch.WatchParts.ToList().Where(item => item.TypeId == 1).First().TextureMap.ThumbnailPath</p>
         int counter = 0;
         @foreach (var item in Model.Watch.WatchParts)
         {

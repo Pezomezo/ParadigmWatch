@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace ParadigmWatch.Infrastructure
 {
-    public class WatchCreator
+    public class WatchCreator // This class was created so we can fill up a watch object elegantly
     {
         ParadigmWatchContext DB;
         public WatchCreator(ParadigmWatchContext db)
         {
             DB = db;
         }
+        // This fills up a Watch object with everything
         public void InitWatch(Watch watch)
         {
             if (watch.WatchParts.Count == 0)
@@ -26,7 +27,7 @@ namespace ParadigmWatch.Infrastructure
             }
 
         }
-
+        // This init function fills up the watch object with the part a user has configured for it
         public void InitBuiltWatch(Watch watch, string[] ids)
         {
             AddSelectedParts(watch, ids);
