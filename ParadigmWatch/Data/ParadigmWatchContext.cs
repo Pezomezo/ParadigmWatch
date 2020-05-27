@@ -198,7 +198,6 @@ namespace ParadigmWatch.Data
                 new WatchComponents { WatchId = 1, WatchPartId = 8 },
 
 
-
                 new WatchComponents { WatchId = 2, WatchPartId = 10 },
                 new WatchComponents { WatchId = 2, WatchPartId = 14 },
                 new WatchComponents { WatchId = 2, WatchPartId = 15 },
@@ -207,8 +206,6 @@ namespace ParadigmWatch.Data
                 new WatchComponents { WatchId = 2, WatchPartId = 23 },
                 new WatchComponents { WatchId = 2, WatchPartId = 7 },
                 new WatchComponents { WatchId = 2, WatchPartId = 24 },
-
-
 
                 new WatchComponents { WatchId = 3, WatchPartId = 11 },
                 new WatchComponents { WatchId = 3, WatchPartId = 13 },
