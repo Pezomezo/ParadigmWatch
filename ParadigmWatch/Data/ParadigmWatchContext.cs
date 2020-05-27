@@ -196,22 +196,24 @@ namespace ParadigmWatch.Data
                 new WatchComponents { WatchId = 1, WatchPartId = 6 },
                 new WatchComponents { WatchId = 1, WatchPartId = 7 },
                 new WatchComponents { WatchId = 1, WatchPartId = 8 },
-                new WatchComponents { WatchId = 2, WatchPartId = 1 },
-                new WatchComponents { WatchId = 2, WatchPartId = 2 },
-                new WatchComponents { WatchId = 2, WatchPartId = 3 },
-                new WatchComponents { WatchId = 2, WatchPartId = 4 },
+
+                new WatchComponents { WatchId = 2, WatchPartId = 10 },
+                new WatchComponents { WatchId = 2, WatchPartId = 14 },
+                new WatchComponents { WatchId = 2, WatchPartId = 15 },
+                new WatchComponents { WatchId = 2, WatchPartId = 18 },
                 new WatchComponents { WatchId = 2, WatchPartId = 5 },
-                new WatchComponents { WatchId = 2, WatchPartId = 6 },
+                new WatchComponents { WatchId = 2, WatchPartId = 23 },
                 new WatchComponents { WatchId = 2, WatchPartId = 7 },
-                new WatchComponents { WatchId = 2, WatchPartId = 8 },
-                new WatchComponents { WatchId = 3, WatchPartId = 1 },
-                new WatchComponents { WatchId = 3, WatchPartId = 2 },
-                new WatchComponents { WatchId = 3, WatchPartId = 3 },
-                new WatchComponents { WatchId = 3, WatchPartId = 4 },
+                new WatchComponents { WatchId = 2, WatchPartId = 24 },
+
+                new WatchComponents { WatchId = 3, WatchPartId = 11 },
+                new WatchComponents { WatchId = 3, WatchPartId = 13 },
+                new WatchComponents { WatchId = 3, WatchPartId = 17 },
+                new WatchComponents { WatchId = 3, WatchPartId = 20 },
                 new WatchComponents { WatchId = 3, WatchPartId = 5 },
-                new WatchComponents { WatchId = 3, WatchPartId = 6 },
+                new WatchComponents { WatchId = 3, WatchPartId = 23 },
                 new WatchComponents { WatchId = 3, WatchPartId = 7 },
-                new WatchComponents { WatchId = 3, WatchPartId = 8 }
+                new WatchComponents { WatchId = 3, WatchPartId = 26 }
                 );
 
             modelBuilder.Entity<Backgrounds>().HasData(

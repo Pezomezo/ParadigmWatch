@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParadigmWatch.Data;
 
 namespace ParadigmWatch.Migrations
 {
     [DbContext(typeof(ParadigmWatchContext))]
-    partial class ParadigmWatchContextModelSnapshot : ModelSnapshot
+    [Migration("20200526234841_JunoSetup")]
+    partial class JunoSetup
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -746,97 +748,97 @@ namespace ParadigmWatch.Migrations
                         new
                         {
                             WatchId = 2,
+                            WatchPartId = 1,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
+                            WatchPartId = 2,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
+                            WatchPartId = 3,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
+                            WatchPartId = 4,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
+                            WatchPartId = 5,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
+                            WatchPartId = 6,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
+                            WatchPartId = 7,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 2,
+                            WatchPartId = 8,
+                            Id = 0
+                        },
+                        new
+                        {
+                            WatchId = 3,
                             WatchPartId = 10,
                             Id = 0
                         },
                         new
                         {
-                            WatchId = 2,
+                            WatchId = 3,
                             WatchPartId = 14,
                             Id = 0
                         },
                         new
                         {
-                            WatchId = 2,
+                            WatchId = 3,
                             WatchPartId = 15,
                             Id = 0
                         },
                         new
                         {
-                            WatchId = 2,
+                            WatchId = 3,
                             WatchPartId = 18,
                             Id = 0
                         },
                         new
                         {
-                            WatchId = 2,
+                            WatchId = 3,
                             WatchPartId = 5,
                             Id = 0
                         },
                         new
                         {
-                            WatchId = 2,
+                            WatchId = 3,
                             WatchPartId = 23,
                             Id = 0
                         },
                         new
                         {
-                            WatchId = 2,
+                            WatchId = 3,
                             WatchPartId = 7,
                             Id = 0
                         },
                         new
                         {
-                            WatchId = 2,
+                            WatchId = 3,
                             WatchPartId = 24,
-                            Id = 0
-                        },
-                        new
-                        {
-                            WatchId = 3,
-                            WatchPartId = 11,
-                            Id = 0
-                        },
-                        new
-                        {
-                            WatchId = 3,
-                            WatchPartId = 13,
-                            Id = 0
-                        },
-                        new
-                        {
-                            WatchId = 3,
-                            WatchPartId = 17,
-                            Id = 0
-                        },
-                        new
-                        {
-                            WatchId = 3,
-                            WatchPartId = 20,
-                            Id = 0
-                        },
-                        new
-                        {
-                            WatchId = 3,
-                            WatchPartId = 5,
-                            Id = 0
-                        },
-                        new
-                        {
-                            WatchId = 3,
-                            WatchPartId = 23,
-                            Id = 0
-                        },
-                        new
-                        {
-                            WatchId = 3,
-                            WatchPartId = 7,
-                            Id = 0
-                        },
-                        new
-                        {
-                            WatchId = 3,
-                            WatchPartId = 26,
                             Id = 0
                         });
                 });
