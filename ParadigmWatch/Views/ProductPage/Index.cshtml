@@ -10,6 +10,7 @@
     <div class="ShowContainer">
         <div class="showTop">
             <p id="location">@Url.RouteUrl(ViewContext.RouteData.Values)</p>
+            <p id="WatchName" class="hidden">@Model.Watch.Name</p>
         </div>
         <div class="showDown">
             <h1 class="title">@Model.Watch.Name</h1>
@@ -56,20 +57,23 @@
     {
         List<string> textures = new List<string>();
         textures.Add(Model.Watch.WatchParts[0].TextureMap.TextureName);
+    <p class="BigThumbnail hidden">@Model.Watch.WatchParts[0].TextureMap.ThumbnailPath</p>
         int counter = 0;
         @foreach (var item in Model.Watch.WatchParts)
         {
 
             string foundTexture = textures.Where(texture => texture.Equals(item.TextureMap.TextureName)).FirstOrDefault();
-            if (foundTexture == null && counter < 4)
+            if (foundTexture == null && counter < 3)
             {
                 <div class="component">
                     <h3 class="compTitle">@item.TextureMap.TextureName</h3>
                     <p class="compDesc">@item.TextureMap.TextureDesc</p>
+                    <p class="thumbnails hidden">@item.TextureMap.ThumbnailPath</p>
                 </div>
                 textures.Add(item.TextureMap.TextureName);
+                counter++;
             }
-            counter++;
+            
         }
     }
 
@@ -87,4 +91,3 @@
 </section>
 
 <script src="~/js/ProductPage.js" type="text/javascript"></script>
-<script>console.log('Helo')</script>
