@@ -30,6 +30,7 @@ namespace ParadigmWatch.Models.ViewModels
         {
             AllParts.ForEach(item => WatchInitModel.Add(new WatchInitModel
             {
+                Price = item.TextureMap.TexturePrice,
                 Name = item.Name,
                 Type = item.PartType.Name,
                 WatchPartId = item.Id,
