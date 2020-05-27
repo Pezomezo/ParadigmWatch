@@ -40,6 +40,7 @@
   </ItemGroup>
 
   <ItemGroup>
+
     <None Include="wwwroot\font-awesome\css\font-awesome.css.map" />
     <None Include="wwwroot\font-awesome\fonts\fontawesome-webfont.svg" />
     <None Include="wwwroot\font-awesome\fonts\fontawesome-webfont.woff2" />
@@ -71,6 +72,7 @@
     <None Include="wwwroot\font-awesome\scss\_screen-reader.scss" />
     <None Include="wwwroot\font-awesome\scss\_stacked.scss" />
     <None Include="wwwroot\font-awesome\scss\_variables.scss" />
+
   </ItemGroup>
 
 </Project>
