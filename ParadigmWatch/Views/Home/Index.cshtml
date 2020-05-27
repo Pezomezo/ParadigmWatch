@@ -91,12 +91,12 @@
     <div class="products">
         @foreach (var item in Model)
         {
-            <div class="productContainer foo-2">
+            <div class="productContainer">
                 <a asp-controller="ProductPage" asp-action="Index" asp-route-watchId="@item.Watch.Id" class="productImage">
                     <img src="~/Images/@item.Watch.WatchImagePath" alt="" />
                 </a>
                 <div class="productDescription">
-                    <div class="ellipseWrap"></div>
+                    
                     <h2>@item.Watch.Name</h2>
                     <p>@item.Watch.Description</p>
                 </div>
