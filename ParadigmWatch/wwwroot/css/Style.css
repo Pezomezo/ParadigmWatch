@@ -93,18 +93,20 @@ align-items: center;
 width: 8.5%;
 height: 50%;
 justify-content: flex-end;
+cursor: pointer;
 }
 
-.logo > h2{
-font-size: 1rem;
-font-weight: 400;
-margin-left: 10px;
-
-}
-.logo > img{
-max-height: 50%;
-max-width: 100%;
-}
+    .logo > h2 {
+        font-size: 1rem;
+        font-weight: 400;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+    .logo > img {
+        max-height: 50%;
+        max-width: 100%;
+        cursor: pointer;
+    }
 
 
 
