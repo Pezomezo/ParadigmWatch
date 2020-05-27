@@ -31,3 +31,12 @@ function navStyle() {
 }
 
 setInterval(navStyle, 100)
+
+let logo = document.getElementsByClassName('logo').item(0)
+
+logo.addEventListener('click', () => {
+    let url = window.location.href.split('/')
+    let rawurl = url.slice(0, -1)
+    let newurl = `${rawurl[0]}//${rawurl[2]}/`
+    window.location.href = newurl
+})
