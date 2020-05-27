@@ -106,18 +106,18 @@ namespace ParadigmWatch.Data
                 .HasForeignKey(pt => pt.WatchPartId);
 
             modelBuilder.Entity<Texture>().HasData(
-                new Texture() { Id = 1, TextureName = "Leather", TextureDesc = "This Leather makes you look rich&stuff", ImagePath = "models/strap.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 50.22m },
-                new Texture() { Id = 2, TextureName = "Chrome", TextureDesc = "Cold but Cool", ImagePath = "models/chrome.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 100.22m },
+                new Texture() { Id = 1, TextureName = "Leather", TextureDesc = "This Leather makes you look rich&stuff", ImagePath = "models/strap.png", ThumbnailPath = "models/Thumbnails/blackThumbnail.png", TexturePrice = 50.22m },
+                new Texture() { Id = 2, TextureName = "Chrome", TextureDesc = "Cold but Cool", ImagePath = "models/chrome.png", ThumbnailPath = "models/Thumbnails/chromeThumbnail.png", TexturePrice = 100.22m },
                 new Texture() { Id = 3, TextureName = "Apollo Dial", TextureDesc = "Wanna be the most badass person? try this then!", ImagePath = "models/watchFrontTexture.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 33.4m },
-                new Texture() { Id = 4, TextureName = "Solid Handle", TextureDesc = "Simple but elegant", ImagePath = "", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 80.22m },
-                new Texture() { Id = 5, TextureName = "Silver", TextureDesc = "James Bond would have the same", ImagePath = "models/Silver.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 250.22m },
-                new Texture() { Id = 6, TextureName = "Gold", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/gold.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 300.22m },
-                new Texture() { Id = 7, TextureName = "Bronze", TextureDesc = "This still makes you look no.1", ImagePath = "models/Bronze.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 200.22m },
-                new Texture() { Id = 8, TextureName = "Blue Leather", TextureDesc = "Colorful look for a colorful personality", ImagePath = "models/BlueStrap.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 175.22m },
-                new Texture() { Id = 9, TextureName = "Red Leather", TextureDesc = "Bursting with energy", ImagePath = "models/RedsStrap.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 175.22m },
-                new Texture() { Id = 10, TextureName = "Brown Leather", TextureDesc = "Smooth criminal", ImagePath = "models/Brownstrap.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 150.22m },
-                new Texture() { Id = 11, TextureName = "Mercury Dial", TextureDesc = "This will make some heads turn!", ImagePath = "models/MercuryPattern.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 50.22m },
-                new Texture() { Id = 12, TextureName = "Juno Dial", TextureDesc = "Represents the flow of time", ImagePath = "models/JunoPattern.png", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 50.22m },
+                new Texture() { Id = 4, TextureName = "Solid Handle", TextureDesc = "Simple but elegant", ImagePath = "", ThumbnailPath = "models/Thumbnails/chromeThumbnail.png", TexturePrice = 80.22m },
+                new Texture() { Id = 5, TextureName = "Silver", TextureDesc = "James Bond would have the same", ImagePath = "models/Silver.png", ThumbnailPath = "models/Thumbnails/silverThumbnail.png", TexturePrice = 250.22m },
+                new Texture() { Id = 6, TextureName = "Gold", TextureDesc = "If you are into that Pimpin' lifestyle", ImagePath = "models/gold.png", ThumbnailPath = "models/Thumbnails/goldThumbnail.png", TexturePrice = 300.22m },
+                new Texture() { Id = 7, TextureName = "Bronze", TextureDesc = "This still makes you look no.1", ImagePath = "models/Bronze.png", ThumbnailPath = "models/Thumbnails/bronzThumbnail.png", TexturePrice = 200.22m },
+                new Texture() { Id = 8, TextureName = "Blue Leather", TextureDesc = "Colorful look for a colorful personality", ImagePath = "models/BlueStrap.png", ThumbnailPath = "models/Thumbnails/blueThumbnail.png", TexturePrice = 175.22m },
+                new Texture() { Id = 9, TextureName = "Red Leather", TextureDesc = "Bursting with energy", ImagePath = "models/RedsStrap.png", ThumbnailPath = "models/Thumbnails/redThumbnail.png", TexturePrice = 175.22m },
+                new Texture() { Id = 10, TextureName = "Brown Leather", TextureDesc = "Smooth criminal", ImagePath = "models/Brownstrap.png", ThumbnailPath = "models/Thumbnails/brownThumbnail.png", TexturePrice = 150.22m },
+                new Texture() { Id = 11, TextureName = "Mercury Dial", TextureDesc = "This will make some heads turn!", ImagePath = "models/MercuryPattern.png", ThumbnailPath = "models/MercuryPattern.png", TexturePrice = 50.22m },
+                new Texture() { Id = 12, TextureName = "Juno Dial", TextureDesc = "Represents the flow of time", ImagePath = "models/JunoPattern.png", ThumbnailPath = "models/JunoPattern.png", TexturePrice = 50.22m },
                 new Texture() { Id = 13, TextureName = "Glass", TextureDesc = "Gorilla Glass XI", ImagePath = "", ThumbnailPath = "models/watchFrontTexture.png", TexturePrice = 0m }
 
                 );
