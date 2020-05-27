@@ -594,11 +594,13 @@ margin-bottom: 25px;
     font-weight: 700;
     margin: 50px 0 0 0;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 #productDisplay > button:hover {
     background-color: #C3A261;
     color: white;
+    transition: 0.5s;
 }
 
 
@@ -652,10 +654,12 @@ justify-content: space-between;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: 0.5s;
 }
     .MediaLink:hover {
         color: #4580D9;
         background-color: #C3A261;
+        transition: 0.5s;
     }
 
 #footerContent{
@@ -764,11 +768,13 @@ button {
         display: flex;
         justify-content: center;
         background-color: #4580D9;
+        transition: 0.5s;
     }
-    .navigationLinksShow > a:last-child:hover {
-        color: #4580D9;
-        background-color: white;
-    }
+        .navigationLinksShow > a:last-child:hover {
+            color: #4580D9;
+            background-color: white;
+            transition: 0.5s;
+        }
 
     .imageCenter {
         position: absolute;
@@ -817,11 +823,12 @@ margin-bottom: 25px;
 .component {
 width: 25vw;
 height: 25vw;
-background-color: #343841;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: flex-end;
+
+
 }
 .compTitle{
 margin-bottom: 10px;
@@ -959,10 +966,12 @@ margin-bottom: 25px;
     color: white;
     margin: 25px 0 0 25px;
     cursor: pointer;
+    transition: 0.5s;
 }
 .storeButtonsList > form > button:hover {
     background-color: #C3A261;
     color: white;
+    transition: 0.5s;
 }
 
 
@@ -1379,15 +1388,13 @@ ul#aboutText {
 }
 
 
-.navigationLinks > a {
-        
-    margin-right: 0px;
-    height: 5vh;
-    display: flex;
-    align-items: center;
-
-        
-}
+    .navigationLinks > a {
+        margin-right: 0px;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        transition: 0.5s;
+    }
 
 
     .slideController {
@@ -1397,20 +1404,22 @@ ul#aboutText {
         width: 100%;
     }
 
-.navigationLinks > a:last-child {
-    color: #1F2125;
-    width: 250px;
-    height: 50px;
-    border-radius: 500px;
-    display: flex;
-    justify-content: center;
-    background-color: #4580D9;
-}
-
-    .navigationLinks > a:last-child:hover {
-        color: #4580D9;
-        background-color: white;
+    .navigationLinks > a:last-child {
+        color: #1F2125;
+        width: 250px;
+        height: 50px;
+        border-radius: 500px;
+        display: flex;
+        justify-content: center;
+        background-color: #4580D9;
+        transition: 0.5s;
     }
+
+        .navigationLinks > a:last-child:hover {
+            color: #4580D9;
+            background-color: white;
+            transition: 0.5s;
+        }
 
     .navbar-text{
         font-size: small;
