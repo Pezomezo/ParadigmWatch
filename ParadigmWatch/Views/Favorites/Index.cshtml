@@ -1,19 +1,24 @@
+
 ﻿@using ParadigmWatch.Models.ViewModels;
 @using ParadigmWatch.Infrastructure
 @model WatchViewModel
+
 
 @{
     ViewData["Title"] = "Index";
 }
 
+
+
 <h1>Favorites</h1>
 
 
-<section id="recommendations">
+<section id="recommendations favorites">
     <div class="productsRec">
 
-        @await Component.InvokeAsync("YouMayAlsoLike", Model.Watch.Name)
+        @*@await Component.InvokeAsync("YouMayAlsoLike", Model.Watch.Name)*@
 
     </div>
 </section>
-<script type="text/javascript" src="~/js/ProductPage.js"></script>
+@*<script type="text/javascript" src="~/js/ProductPage.js"></script>*@
+

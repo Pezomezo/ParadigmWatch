@@ -1,4 +1,5 @@
-﻿using ParadigmWatch.Data;
+﻿using Microsoft.AspNetCore.Server.IIS.Core;
+using ParadigmWatch.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,19 +13,18 @@ namespace ParadigmWatch.Models.ViewModels
         public Watch Watch { get; set; }
         public List<WatchPart> AllParts { get; set; } = new List<WatchPart>();
 
-
+        public string selectedWatchParts = "";
 
         public WatchViewModel(Watch watch)
         {
             Watch = watch;
-
+            this.selectedWatchParts = Watch.Id + "-";
         }
 
         public void AddPart(WatchPart part)
         {
             this.AllParts.Add(part);
         }
-
 
         public void fillWatch()
         {
@@ -44,12 +44,21 @@ namespace ParadigmWatch.Models.ViewModels
                 TypeId = item.TypeId,
                 isSelected = Watch.WatchParts.Contains(item)
 
-            }));
-            
+            }));            
+        }
 
+        public void GenerateSelectedItemIds()
+        {
+            if (Watch.WatchParts.Count > 0)
+            {
+                Watch.WatchParts.ForEach(item =>
+                {
+                        this.selectedWatchParts += item.Id.ToString() + "-";
+                });
 
-            
-            
+                this.selectedWatchParts = this.selectedWatchParts.Substring(0, this.selectedWatchParts.Length - 1);
+            }
+
         }
 
     }

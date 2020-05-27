@@ -1,9 +1,11 @@
+
 ﻿
 
 import { GLTFLoader } from './GLTFLoader.js';
 
 
 //initializing dynamic variables, these are later populated by the populateStandardShader() function
+
 let BackgroundsTexture, BackgroundsNormal, BackSidesTexture, BackSidesNormal, BasesTexture, BasesNormal, DecorationsTexture, DecorationsNormal, RingsTexture, RingsNormal, SleevesTexture, SleevesNormal
  
 
@@ -595,6 +597,18 @@ prmbtn.addEventListener('click', () => {
     let rawurl = url.slice(0, -1)
     let newurl = `${rawurl[0]}//${rawurl[2]}/ProductPage?watchId=${WatchInfo}`
     window.location.href = newurl
+})
+
+
+//CreatedProductParts
+
+let cartBTN = document.getElementsByClassName('secbtn').item(0);
+cartBTN.addEventListener('click', () => {
+    selectedItems.unshift(watchId)
+    let WatchInfo = selectedItems.join('-')
+
+    document.getElementById("CreatedProductParts").setAttribute("value", `${WatchInfo}`);
+    alert(document.getElementById("CreatedProductParts"))
 })
 
 

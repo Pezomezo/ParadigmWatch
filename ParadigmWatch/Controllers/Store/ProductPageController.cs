@@ -29,23 +29,19 @@ namespace ParadigmWatch.Controllers
             if (watchId.Length == 1)
             {
                 WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(int.Parse(watchId))).First());
-
                 WatchCreation.InitWatch(WatchVM.Watch);
-                Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
+                WatchVM.GenerateSelectedItemIds();
                 return View(WatchVM);
             }
             else
             {
                 var ids = watchId.Split("-");
                 WatchVM = new WatchViewModel(DB.Watches.Where(watch => watch.Id.Equals(int.Parse(ids[0]))).First());
-
-                WatchCreation.InitWatch(WatchVM.Watch);
-                Console.WriteLine("CAME FROM ANOTHER VIEW: " + WatchVM);
+                WatchCreation.InitBuiltWatch(WatchVM.Watch, ids);
+                WatchVM.GenerateSelectedItemIds();
                 return View(WatchVM);
             }
             
         }
-
-
     }
 }

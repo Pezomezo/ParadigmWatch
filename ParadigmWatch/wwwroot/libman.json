@@ -4,7 +4,9 @@
   "libraries": [
     {
       "library": "font-awesome@4.7.0",
+
       "destination": "wwwroot/font-awesome/",
+
       "files": [
         "css/font-awesome.css",
         "css/font-awesome.css.map",

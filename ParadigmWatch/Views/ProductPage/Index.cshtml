@@ -19,7 +19,7 @@
                 <div class="navigationLinksShow">
                     <form id="@Model.Watch.Id" asp-action="AddToCart"
                           asp-controller="Cart" method="post">
-                        <input type="hidden" name="ProductId" value="@Model.Watch.Id" />
+                        <input type="hidden" name="ProductId" value="@Model.selectedWatchParts" />
                         <input type="hidden" name="returnUrl"
                                value="@ViewContext.HttpContext.Request.PathAndQuery()" />
                         <span class="">
@@ -85,4 +85,3 @@
 
     </div>
 </section>
-<script type="text/javascript" src="~/js/ProductPage.js"></script>

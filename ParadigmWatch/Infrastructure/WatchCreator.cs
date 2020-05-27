@@ -27,6 +27,22 @@ namespace ParadigmWatch.Infrastructure
 
         }
 
+        public void InitBuiltWatch(Watch watch, string[] ids)
+        {
+            AddSelectedParts(watch, ids);
+            AddTypes(watch);
+            FillUpShaders(watch);
+            FillUpTextures(watch);
+            FillUpTextMap(watch);
+        }
+
+        private void AddSelectedParts(Watch watch, string[] ids)
+        {
+            for (int i = 1; i < ids.Length; i++)
+            {
+                watch.AddComponent(DB.WatchParts.Where(item => item.Id == int.Parse(ids[i])).FirstOrDefault());
+            }
+        }
 
         private void AddParts(Watch watch)
         {

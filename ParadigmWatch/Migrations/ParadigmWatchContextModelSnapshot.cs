@@ -524,15 +524,15 @@ namespace ParadigmWatch.Migrations
                             ImagePath = "models/strap.png",
                             TextureDesc = "This Leather makes you look rich&stuff",
                             TextureName = "Leather",
-                            TexturePrice = 12.220000000000001
+                            TexturePrice = 50.219999999999999
                         },
                         new
                         {
                             Id = 2,
                             ImagePath = "models/chrome.png",
-                            TextureDesc = "Feel the Gekko",
+                            TextureDesc = "Cold but Cool",
                             TextureName = "Chrome",
-                            TexturePrice = 15.220000000000001
+                            TexturePrice = 100.22
                         },
                         new
                         {
@@ -546,17 +546,17 @@ namespace ParadigmWatch.Migrations
                         {
                             Id = 4,
                             ImagePath = "",
-                            TextureDesc = "You are just cruel at this point :D",
+                            TextureDesc = "Simple but elegant",
                             TextureName = "Solid Handle",
-                            TexturePrice = 120.22
+                            TexturePrice = 80.219999999999999
                         },
                         new
                         {
                             Id = 5,
                             ImagePath = "models/Silver.png",
-                            TextureDesc = "Smooth life",
+                            TextureDesc = "James Bond would have the same",
                             TextureName = "Silver",
-                            TexturePrice = 50.219999999999999
+                            TexturePrice = 250.22
                         },
                         new
                         {
@@ -564,61 +564,61 @@ namespace ParadigmWatch.Migrations
                             ImagePath = "models/gold.png",
                             TextureDesc = "If you are into that Pimpin' lifestyle",
                             TextureName = "Gold",
-                            TexturePrice = 250.22
+                            TexturePrice = 300.22000000000003
                         },
                         new
                         {
                             Id = 7,
                             ImagePath = "models/Bronze.png",
-                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureDesc = "This still makes you look no.1",
                             TextureName = "Bronze",
-                            TexturePrice = 250.22
+                            TexturePrice = 200.22
                         },
                         new
                         {
                             Id = 8,
                             ImagePath = "models/BlueStrap.png",
-                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureDesc = "Colorful look for a colorful personality",
                             TextureName = "Blue Leather",
-                            TexturePrice = 250.22
+                            TexturePrice = 175.22
                         },
                         new
                         {
                             Id = 9,
                             ImagePath = "models/RedsStrap.png",
-                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureDesc = "Bursting with energy",
                             TextureName = "Red Leather",
-                            TexturePrice = 250.22
+                            TexturePrice = 175.22
                         },
                         new
                         {
                             Id = 10,
                             ImagePath = "models/Brownstrap.png",
-                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureDesc = "Smooth criminal",
                             TextureName = "Brown Leather",
-                            TexturePrice = 250.22
+                            TexturePrice = 150.22
                         },
                         new
                         {
                             Id = 11,
                             ImagePath = "models/MercuryPattern.png",
-                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureDesc = "This will make some heads turn!",
                             TextureName = "Mercury Dial",
-                            TexturePrice = 250.22
+                            TexturePrice = 50.219999999999999
                         },
                         new
                         {
                             Id = 12,
                             ImagePath = "models/JunoPattern.png",
-                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureDesc = "Represents the flow of time",
                             TextureName = "Juno Dial",
-                            TexturePrice = 250.22
+                            TexturePrice = 50.219999999999999
                         },
                         new
                         {
                             Id = 13,
                             ImagePath = "",
-                            TextureDesc = "If you are into that Pimpin' lifestyle",
+                            TextureDesc = "Gorilla Glass XI",
                             TextureName = "Glass",
                             TexturePrice = 0.0
                         });
