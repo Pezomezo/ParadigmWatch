@@ -11,6 +11,8 @@
     "Roughness": 0.5,
     "EnvMapInt": 1.0,
     "Type": "Pattern",
+
+    "Price": 33.4,
     "isSelected": false
   },
   {
@@ -25,6 +27,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
+
+    "Price": 100.22,
     "isSelected": false
   },
   {
@@ -39,6 +43,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
+
+    "Price": 100.22,
     "isSelected": false
   },
   {
@@ -53,6 +59,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
+
+    "Price": 100.22,
     "isSelected": false
   },
   {
@@ -67,6 +75,7 @@
     "Roughness": 0.0,
     "EnvMapInt": 1.0,
     "Type": "Pointer",
+    "Price": 80.22,
     "isSelected": true
   },
   {
@@ -81,6 +90,8 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
+
+    "Price": 50.22,
     "isSelected": false
   },
   {
@@ -95,6 +106,7 @@
     "Roughness": 0.0,
     "EnvMapInt": 1.0,
     "Type": "Glass",
+    "Price": 0.0,
     "isSelected": true
   },
   {
@@ -109,6 +121,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
+
+    "Price": 100.22,
     "isSelected": false
   },
   {
@@ -123,6 +137,7 @@
     "Roughness": 0.5,
     "EnvMapInt": 1.0,
     "Type": "Pattern",
+    "Price": 50.22,
     "isSelected": false
   },
   {
@@ -137,6 +152,8 @@
     "Roughness": 0.5,
     "EnvMapInt": 1.0,
     "Type": "Pattern",
+
+    "Price": 50.22,
     "isSelected": true
   },
   {
@@ -151,7 +168,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
-    "isSelected": false
+    "Price": 300.22,
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/BackSides/DefaultBack.gltf",
@@ -165,7 +183,9 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
-    "isSelected": true
+
+    "Price": 200.22,
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/BackSides/DefaultBack.gltf",
@@ -179,6 +199,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
+    "Price": 250.22,
     "isSelected": false
   },
   {
@@ -193,6 +214,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
+    "Price": 250.22,
     "isSelected": false
   },
   {
@@ -207,7 +229,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
-    "isSelected": false
+    "Price": 300.22,
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Bases/DefaultBase.gltf",
@@ -221,7 +244,9 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
-    "isSelected": true
+
+    "Price": 200.22,
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Decorations/DefaultDecoration.gltf",
@@ -235,6 +260,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
+    "Price": 250.22,
     "isSelected": false
   },
   {
@@ -249,6 +275,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
+    "Price": 300.22,
     "isSelected": false
   },
   {
@@ -263,6 +290,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
+
+    "Price": 200.22,
     "isSelected": true
   },
   {
@@ -277,6 +306,7 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
+    "Price": 175.22,
     "isSelected": false
   },
   {
@@ -291,7 +321,8 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
-    "isSelected": false
+    "Price": 175.22,
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Sleeves/DefaultSleeve.gltf",
@@ -305,7 +336,9 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
-    "isSelected": true
+
+    "Price": 150.22,
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Rings/DefaultRing.gltf",
@@ -319,6 +352,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
+    "Price": 250.22,
     "isSelected": false
   },
   {
@@ -333,6 +367,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
+    "Price": 300.22,
     "isSelected": false
   },
   {
@@ -347,6 +382,8 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
+
+    "Price": 200.22,
     "isSelected": true
   }
 ]

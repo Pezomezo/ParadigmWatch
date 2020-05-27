@@ -20,6 +20,7 @@ namespace ParadigmWatch.Models.ViewModels
         public decimal Roughness { get; set; }
         public decimal EnvMapInt { get; set; }
         public string Type { set; get; }
+        public decimal Price { set; get; }
         public bool isSelected { set; get; }
     }
 }
