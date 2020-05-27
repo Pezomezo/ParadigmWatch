@@ -1,9 +1,10 @@
 ﻿
+// This has the same functionality as the one inside the Main.js
+
 let sortOrder = document.getElementById('sortOrder');
 let oddClick = false;
 sortOrder.addEventListener('click', () => {
     let theUrl = window.location.href.split("/")
-    console.log(theUrl[theUrl.length - 1])
     if (oddClick) {
 
 
