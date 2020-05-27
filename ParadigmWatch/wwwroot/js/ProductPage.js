@@ -1,7 +1,7 @@
-﻿function PathFormat() {
+﻿//Format Url path on roduct page left top corner
+function PathFormat() {
     let loc = document.getElementById('location')
     let WatchName = document.getElementById('WatchName')
-    console.log(loc.textContent)
     let newLoc = loc.textContent.split('/')
     newLoc.push(WatchName.textContent)
 
@@ -10,6 +10,7 @@
 }
 PathFormat()
 
+//populate thumbnail images
 let component = document.getElementsByClassName('component')
 let thumbnails = document.getElementsByClassName('thumbnails')
 
@@ -17,9 +18,8 @@ for (let e = 0; e < component.length; e++) {
     component.item(e).style.background = `url(${thumbnails.item(e).textContent})`
     component.item(e).style.backgroundSize = 'cover'
     component.item(e).style.backgroundRepeat = 'no-repeat'
-    console.log(thumbnails.item(e))
 }
-
+//populat main thumbnail
 let BigThumbnail = document.getElementsByClassName('BigThumbnail').item(0).textContent
 let hlContainer = document.getElementsByClassName('hlContainer').item(0)
 hlContainer.style.background = `url(${BigThumbnail})`
