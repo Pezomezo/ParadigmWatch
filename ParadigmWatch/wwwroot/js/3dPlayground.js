@@ -608,7 +608,6 @@ cartBTN.addEventListener('click', () => {
     let WatchInfo = selectedItems.join('-')
 
     document.getElementById("CreatedProductParts").setAttribute("value", `${WatchInfo}`);
-    alert(document.getElementById("CreatedProductParts"))
 })
 
 

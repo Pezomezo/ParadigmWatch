@@ -8,7 +8,7 @@ var backButton = document.getElementById('back')
 
 var currentSlide = document.getElementById('currentSlide')
 
-
+// I get the buttons from which I will redirect
 var LearnMoreBTN = document.getElementById('secondaryLink')
 var BuildYourOwnBTN = document.getElementById('primaryLink')
 
@@ -98,22 +98,18 @@ backButton.addEventListener('click', () => {
 
 
 //  This part is about redirection for the Build and Learn more buttons
-
 BuildYourOwnBTN.addEventListener('click', () => { redirect('ThreeD?watchId=') } );
 
 LearnMoreBTN.addEventListener('click', () => { redirect('ProductPage?watchId=') } );
 
-// ProductPage?watchId=1
 
+// This method takes in the part of a url we are redirecting to from the base url
 function redirect(urlMiddle) {
-    console.log("Slide ID: " +  parseInt(currentSlide.textContent));
     let current = parseInt(currentSlide.textContent);
     let theUrl = '';
     console.log(slides)
     for (let i = 0; i < slides.length; i++) {
-        console.log("Inside the loop: ")
         if (slides[i].id == current) {
-            console.log("theurl: " + theUrl)
             theUrl = window.location.href + urlMiddle + current.toString();
         }
     }
@@ -122,25 +118,30 @@ function redirect(urlMiddle) {
 
 
 
-
+//This part handles the sorting of the Alphabetic order
+// First off I get the Select element from the view
 let sortOrder = document.getElementById('sortOrder');
+//I initiate a boolean with false so I can detect every second click on the object
 let oddClick = false;
 sortOrder.addEventListener('click', () => {
+    // I take in the url and seperate it by / 
     let theUrl = window.location.href.split("/")
-    console.log(theUrl[theUrl.length - 1])
     if (oddClick) {
-
-        
+        // This if else handles the logic so the program knows of it is part of the Store or the Home page
         if (theUrl[theUrl.length - 1] == "store") {
+            //I take in the selected option inside the Select and take its value which is either A-Z or Z-A
             let order = sortOrder.options[sortOrder.selectedIndex].value.toString().substring(0, 1);
+            // This element holds the list of our watches
             let productList = document.getElementsById('storeDisclaimer')
+            // If the order starts with Z we reverse the list of the watches otherwise we set it to normal
             if (order == 'Z') {
                 productList.style.flexDirection = "column-reverse";
             } else {
                 productList.style.flexDirection = "column";
             }
             oddClick = false;
-        } else {
+        }
+        else {
             let order = sortOrder.options[sortOrder.selectedIndex].value.toString().substring(0, 1);
             let productList = document.getElementsByClassName('products').item(0)
             if (order == 'Z') {
@@ -156,6 +157,8 @@ sortOrder.addEventListener('click', () => {
     }
 })
 
+
+// Here I take in the Column gui element and if we cluck it we get redirected depentent on which url are we on to the Store or we are staying 
 let redirectToStore = document.getElementById('ColumnViewID')
 redirectToStore.addEventListener('click', () => {
     let theUrl = window.location.href.split("/")
@@ -165,7 +168,7 @@ redirectToStore.addEventListener('click', () => {
     }
 })
 
-
+// Here I take in the Column gui element and if we cluck it we get redirected depentent on which url are we on to the Home or we are staying 
 let redirectToHome = document.getElementById('GridViewID')
 redirectToHome.addEventListener('click', () => {
     let theUrl = window.location.href.split("/")
