@@ -20,5 +20,6 @@ namespace ParadigmWatch.Models
         public string TextureDesc { get; set; }
 
         public decimal TexturePrice { get; set; }
+        public string ThumbnailPath { get; set; }
     }
 }
