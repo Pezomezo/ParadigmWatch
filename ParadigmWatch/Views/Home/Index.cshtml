@@ -7,17 +7,6 @@
 <section id="hero">
 
 
-    <div id="videoController">
-        <video autoplay muted loop id="myVideo">
-            <source src="~/video/backgroundComp1Morph.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-
-        <div class="videoContent">
-
-            <button id="myBtn" onclick="myFunction()">pause</button>
-        </div>
-    </div>
 
     <div class="heroContent">
         <aside class="sideText">
@@ -75,9 +64,9 @@
                     <h2 class="sliderText">@item.Watch.Name.ToUpper()</h2>
 
                 </div>
-               
+
             </div>
-            
+
         }
 
 
@@ -98,44 +87,7 @@
 @* ______________________________________            NEW SECTION           _________________________________________________ *@
 
 <section id="productDisplay">
-    <div class="sortProduct">
-        <div class="sortContent">
-            <div class="sortType">
-                <div class="sortGrid">
-                    <div class="sortGridRow">
-                        <div class="sortGridBox"></div>
-                        <div class="sortGridBox"></div>
-                    </div>
-                    <div class="sortGridRow">
-                        <div class="sortGridBox"></div>
-                        <div class="sortGridBox"></div>
-                    </div>
-                </div>
-                <div class="sortList">
-                    <div class="sortListRow">
-                        <div class="sortListBox"></div>
-                        <div class="sortListBox"></div>
-                        <div class="sortListBox"></div>
-                    </div>
-                    <div class="sortListRow">
-                        <div class="sortListRectangle"></div>
-                        <div class="sortListRectangle"></div>
-                        <div class="sortListRectangle"></div>
-                    </div>
-
-
-                </div>
-            </div>
-            <div class="sortBy">
-                <label for="sortOrder" class="selector">Select by:</label>
-                <select id="sortOrder">
-                    <option value="A-Z">A to Z</option>
-                    <option value="A-Z">Z to A</option>
-                </select>
-            </div>
-        </div>
-        <div class="separator"></div>
-    </div>
+    @await Html.PartialAsync("_SortingSection")
     <div class="products">
         @foreach (var item in Model)
         {
