@@ -1,25 +1,21 @@
-﻿
+﻿//get slide details from the dom
 var slides = document.querySelectorAll('.sliderElement')
-
-
 var nextButton = document.getElementById('next')
 var backButton = document.getElementById('back')
-
-
 var currentSlide = document.getElementById('currentSlide')
 
-
+//buttons
 var LearnMoreBTN = document.getElementById('secondaryLink')
 var BuildYourOwnBTN = document.getElementById('primaryLink')
 
+//slider info
 var sliderCounter = 0;
-
 var sliderTexts = document.getElementsByClassName('sliderText');
 
-
+//burger functionalities
 var burgerMenu = document.getElementById('burgerMenu')
 
-
+//arrow animation
 const refreshRate = 1000 / 60;
 const maxXPosition = 50;
 let arrowButton = document.getElementById('arrowButton');
@@ -34,7 +30,7 @@ function step() {
     window.requestAnimationFrame(step);
 }
 window.requestAnimationFrame(step);
-
+//fill up sliders
 for (let sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
     let currentSlider = document.getElementById(`${sliderCount}`)
 
@@ -44,13 +40,11 @@ for (let sliderCount = 1; sliderCount < sliderTexts.length + 1; sliderCount++) {
     currentSlider.style.left = '0px'
     currentSlider.style.backgroundSize = 'cover'
     currentSlider.style.backgroundImage = `url(/Images/${currentText}Background.jpg)`
-    console.log(`url(/Images/${currentText}Background.jpg)`)
 
-    console.log(document.getElementById(`${sliderCount + 1}`))
 
 }
 
-
+// slider next button functionality
 nextButton.addEventListener('click', () => {
     if (sliderCounter < slides.length - 1) {
 
@@ -61,7 +55,6 @@ nextButton.addEventListener('click', () => {
 
         currentSlide.textContent = `0${sliderCounter + 2}`
         sliderCounter++
-        console.log(sliderCounter)
     } else {
         for (let i = 0; i < slides.length; i++) {
             let slider = document.getElementById(`${i + 1}`)
@@ -71,7 +64,7 @@ nextButton.addEventListener('click', () => {
         }
     }
 })
-
+//slider back button funcionalities
 backButton.addEventListener('click', () => {
     if (sliderCounter > 0) {
 
@@ -81,7 +74,6 @@ backButton.addEventListener('click', () => {
 
         currentSlide.textContent = `0${sliderCounter}`
         sliderCounter--
-        console.log(sliderCounter)
     } else {
         for (let i = 0; i < slides.length - 1; i++) {
             let slider = document.getElementById(`${i + 1}`)
@@ -106,14 +98,10 @@ LearnMoreBTN.addEventListener('click', () => { redirect('ProductPage?watchId=') 
 // ProductPage?watchId=1
 
 function redirect(urlMiddle) {
-    console.log("Slide ID: " +  parseInt(currentSlide.textContent));
     let current = parseInt(currentSlide.textContent);
     let theUrl = '';
-    console.log(slides)
     for (let i = 0; i < slides.length; i++) {
-        console.log("Inside the loop: ")
         if (slides[i].id == current) {
-            console.log("theurl: " + theUrl)
             theUrl = window.location.href + urlMiddle + current.toString();
         }
     }
@@ -127,7 +115,6 @@ let sortOrder = document.getElementById('sortOrder');
 let oddClick = false;
 sortOrder.addEventListener('click', () => {
     let theUrl = window.location.href.split("/")
-    console.log(theUrl[theUrl.length - 1])
     if (oddClick) {
 
         

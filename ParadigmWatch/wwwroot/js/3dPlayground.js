@@ -362,12 +362,10 @@ function GuiFunctionality() {
             })
             
             
-            console.log(breaks)
             //find all alike object in JSON
             let GuiItemListTypes = dataList.filter((type) => {
                 return type.TypeId == GuiItemTypes[0].TypeId
             })
-            console.log(GuiItemListTypes)
             //Find bigger number that WatchPart among the Break points. we use the element one before to know which elements are the same part
             //so we can close them later except the one currently active
             let ceiling = breaks.findIndex((max) => {
@@ -608,7 +606,6 @@ cartBTN.addEventListener('click', () => {
     let WatchInfo = selectedItems.join('-')
 
     document.getElementById("CreatedProductParts").setAttribute("value", `${WatchInfo}`);
-    alert(document.getElementById("CreatedProductParts"))
 })
 
 
