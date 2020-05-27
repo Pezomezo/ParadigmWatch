@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ParadigmWatch.Data;
 
 namespace ParadigmWatch.Migrations
 {
     [DbContext(typeof(ParadigmWatchContext))]
-    partial class ParadigmWatchContextModelSnapshot : ModelSnapshot
+    [Migration("20200527035843_pngCorrected")]
+    partial class pngCorrected
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -556,7 +558,7 @@ namespace ParadigmWatch.Migrations
                             TextureDesc = "Simple but elegant",
                             TextureName = "Solid Handle",
                             TexturePrice = 80.219999999999999,
-                            ThumbnailPath = "models/Thumbnails/steelThumbnail.jpg"
+                            ThumbnailPath = "models/Thumbnails/chromeThumbnail.jpg"
                         },
                         new
                         {
