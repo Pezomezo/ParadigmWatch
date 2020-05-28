@@ -6,12 +6,12 @@
     "TypeId": 1,
     "TextureImagePath": "models/watchFrontTexture.png",
     "Metalness": 0.0,
-    "NormalMapPath": "",
+    "NormalMapPath": "models/watchFrontTexture.png",
     "NormalMapIntensity": 0.0,
     "Roughness": 0.5,
     "EnvMapInt": 1.0,
     "Type": "Pattern",
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/BackSides/DefaultBack.gltf",
@@ -25,7 +25,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Bases/DefaultBase.gltf",
@@ -39,7 +39,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Decorations/DefaultDecoration.gltf",
@@ -53,7 +53,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Pointers/DefaultPointer.gltf",
@@ -81,7 +81,7 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Glasses/DefaultGlass.gltf",
@@ -109,7 +109,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
-    "isSelected": true
+    "isSelected": false
   },
   {
     "ModelPath": "models/Parts/Backgrounds/Apollo.gltf",
@@ -118,12 +118,12 @@
     "TypeId": 1,
     "TextureImagePath": "models/JunoPattern.png",
     "Metalness": 0.0,
-    "NormalMapPath": "",
+    "NormalMapPath": "models/watchFrontTexture.png",
     "NormalMapIntensity": 0.0,
     "Roughness": 0.5,
     "EnvMapInt": 1.0,
     "Type": "Pattern",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Backgrounds/Apollo.gltf",
@@ -132,12 +132,12 @@
     "TypeId": 1,
     "TextureImagePath": "models/MercuryPattern.png",
     "Metalness": 0.0,
-    "NormalMapPath": "",
+    "NormalMapPath": "models/watchFrontTexture.png",
     "NormalMapIntensity": 0.0,
     "Roughness": 0.5,
     "EnvMapInt": 1.0,
     "Type": "Pattern",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/BackSides/DefaultBack.gltf",
@@ -151,7 +151,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/BackSides/DefaultBack.gltf",
@@ -179,7 +179,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "BackSide",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Bases/DefaultBase.gltf",
@@ -193,7 +193,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Bases/DefaultBase.gltf",
@@ -207,7 +207,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Base",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Bases/DefaultBase.gltf",
@@ -235,7 +235,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Decorations/DefaultDecoration.gltf",
@@ -263,7 +263,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Decoration",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Sleeves/DefaultSleeve.gltf",
@@ -291,7 +291,7 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Sleeves/DefaultSleeve.gltf",
@@ -305,7 +305,7 @@
     "Roughness": 0.9,
     "EnvMapInt": 1.0,
     "Type": "Sleeve",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Rings/DefaultRing.gltf",
@@ -319,7 +319,7 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
-    "isSelected": false
+    "isSelected": true
   },
   {
     "ModelPath": "models/Parts/Rings/DefaultRing.gltf",
@@ -347,6 +347,6 @@
     "Roughness": 0.15,
     "EnvMapInt": 2.0,
     "Type": "Ring",
-    "isSelected": false
+    "isSelected": true
   }
 ]
